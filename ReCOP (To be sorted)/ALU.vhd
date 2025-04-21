@@ -27,7 +27,7 @@ entity alu is
 		ir_operand		: in bit_16;
 		-- flag control signal
 		clr_z_flag		: in bit_1;
-		reset : in bit_1
+		reset 			: in bit_1
 	);
 end alu;
 
@@ -40,11 +40,11 @@ begin
 	op1_select: process (alu_op1_sel, rx, ir_operand)
 	begin
 		case alu_op1_sel is
-			when "00" =>
+			when am_inherent =>
 				operand_1 <= rx;
-			when "01" =>
+			when am_immediate =>
 				operand_1 <= ir_operand;
-			when "10" => --not used currently
+			when am_direct => --not used currently
 				operand_1 <= X"0001";
 			when others =>
 				operand_1 <= X"0000";

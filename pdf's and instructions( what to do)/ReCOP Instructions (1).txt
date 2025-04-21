@@ -1,4 +1,4 @@
-﻿Pipelined ReCoP Instructions
+﻿ReCoP Instructions
 T1:	if instr_prev(31..30) == “01” or “10” IR(15..0) <- PM[PC], OP(15..0) <- PM[PC+1], PC <- PC + 2 else IR(15..0) <- operand_prev, OP(15..0) <- PM[PC], PC <- PC + 1
 
 AND Rz Rx Operand

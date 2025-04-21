@@ -81,7 +81,7 @@ package opcodes is
 	
 -- operations with direct AM
    -- direct: LSIP Rx 
-	constant lsip: bit_6 := "110111";
+	constant lsip: bit_6 := "110111" := 
 
 ---------------------------
 --  other instructions  --
