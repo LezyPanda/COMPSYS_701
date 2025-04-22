@@ -23,7 +23,8 @@ entity control_unit is
         --mux shit
         pm_sel: in bit_2; -- 00 -> pc, 01 -> ir, 10 -> dprr, 11 -> dm_out
         rf_sel: in bit_2; -- 00
-        
+        dm_in_sel: out bit_2;
+		dm_adr_sel: out bit_2;
 
 
 
