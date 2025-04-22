@@ -20,12 +20,17 @@ entity control_unit is
         -- ADD LED here
 
 
+        --mux shit
+        pm_sel: in bit_2; -- 00 -> pc, 01 -> ir, 10 -> dprr, 11 -> dm_out
+        rf_sel: in bit_2; -- 00
+        
+
+
+
         -- Operation
         opcode: in bit_8;
         rx:     in bit_16;
         rz:     in bit_16;
-
-
 
         -- Program Counter
         mux         : in bit_2;
@@ -35,8 +40,10 @@ entity control_unit is
         reg_ld_r            : in bit_1; 
         reg_rf_input_sel    : in bit_3;
 
-
-
+        -- Program Counter
+        pc_write_flag   : out bit_1; -- Write Program Counter
+        pc_mode         : out bit_2; -- 00 -> Direct Set (Jump?), 01 -> PC + 1, 10 -> PC + 2
+        pc_in           : out bit_16; -- Direct Set to the PC, for jump?
     );
 end control_unit;
 
@@ -81,6 +88,9 @@ architecture behaviour of controlunit is
     reg_ld_r: bit_1 := '0';
     reg_rf_input_sel: bit_3 := "000"; -- 000 -> ir_operand, 001 -> dprr_res_reg, 011 -> aluout, 100 -> rz_max, 101 -> sip_hold, 110 -> er_temp, 111 -> dm_out
 
+    -- Datapath Control
+    signal pc_write_flag_signal : bit_1 := '0'; -- Write Program Counter
+    signal pc_mode_signal       : bit_2 := "00"; -- 00 -> Direct Set (Jump?), 01 -> PC + 1, 10 -> PC + 2
 begin
     alu_inst : alu
         port map (
@@ -141,20 +151,20 @@ begin
         constant useRx          : bit_1 := '0';
         constant useRz          : bit_1 := '1';
         constant useImmediate   : bit_1 := '0';
-    begin
         am := opcode(7 downto 6);
         -- alu_op1_sel: 00 -> rx, 01 -> operand, else -> X"0000"
         -- alu_op2_sel: 0 -> rx, 1 -> rz
         -- (op1 is the right most parameter)
         alu_op1_sel <= am;
+
         useImmediate <= am = am_immediate or am = am_direct;
         case state is
             when T1 =>
-                if am = am_immediate or am = am_direct then
-                    -- get next 16 bits
-                    control_sig <= '1';
+                pc_write_flag_signal <= '1'; 
+                if useImmediate = '1' then
+                    pc_mode_signal <= "10"; -- set pc + 2                    
                 else 
-                    control_sig <= '0';
+                    pc_mode_signal <= "01"; -- set pc + 1
                 end if;
             when T2 =>
                 alu_op1_sel <= am;
@@ -203,32 +213,33 @@ begin
                             mux <= "01"; -- set to pc rx
                         end if;
                     when present =>
-                        null
+                        null;
                     when datacall =>
-                        null
+                        null;
                     when datacall2 =>
-                        null
+                        null;
                     when sz =>
-                        null
+                        null;
                     when strpc => 
-                        null
+                        null;
                     when ssop =>
-                        null
+                        null;
                 end case;
             when T3 =>
                 case opcode(5 downto 0) is
                     when andr | orr | addr | subvr | subr =>
-                    reg_ld_r <= '1'; -- Write result to Rz
-                    reg_rf_input_sel <= "011"; -- ALU result
+                        reg_ld_r <= '1'; -- Write result to Rz
+                        reg_rf_input_sel <= "011"; -- ALU result
                     when ldr =>
                         reg_ld_r <= '1';
                     when str =>
-                        null
+                        null;
                     when jmp =>
                         control_sig <= '1'; --?
                     when present =>
                         if op2 = '0' then
                             mux <= "00";  -- set pc to op1
+                        end if;
                     when datacall | datacall2 => -- mostly placeholder
                         dcpr = op1 + op2; --register.vhd
                         dprr = '1'; -- regfile
@@ -237,17 +248,25 @@ begin
                             mux <= "00"; -- set pc to op1
                         end if;
                     when strpc =>
+                        null;
                         -- DM[op2] = op1
                     when clfz =>
                         z_flag <= '0'; -- clear z_flag
                     when lsip =>
+                        null;
                         --rz = sip
                     when ssop =>
+                        null;
                         -- sop = op1
                     when others =>
-                        null --NOOOOOOP?                    
+                        null; --NOOOOOOP?                    
                 end case;
             end case;
+        end case;
     end process opcode_process;     
+
+    pc_write_flag <= pc_write_flag_signal;
+    pc_mode <= pc_mode_signal;
+
 end behaviour;
 
