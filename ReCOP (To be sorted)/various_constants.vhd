@@ -38,8 +38,10 @@ package various_constants is
 
 -- DataMem address select
 	constant dm_sel_addr_value: bit_2 := "00";
-	constant dm_sel_addr_rx: bit_2 := "01";
-	constant dm_sel_addr_rz: bit_2 := "10";
+	constant dm_sel_addr_pc: bit_2 := "01";
+	constant dm_sel_addr_rx: bit_2 := "10";
+	constant dm_sel_addr_rz: bit_2 := "11";
+
 
 -- register file input select
 

@@ -15,10 +15,11 @@ entity control_unit is
         reset:  in bit_1;
 
 -- all of this stuff is used in the control unit everything else mostly isnt so ctrl f and change it if needed-------------------
-        --mux shit to datapath
-        dm_sel_addr     : in bit_2;
-        dm_sel_in       : in bit_2;
+
         -- Mux Control to datapath
+        dm_sel_addr     : out bit_2;
+        dm_sel_in       : out bit_2;
+        dm_write        : out bit_1;
         ir_in           : out bit_1; 
         pc_in           : out bit_2;
         rf_sel_in       : out bit_3;
@@ -31,16 +32,16 @@ entity control_unit is
         sop_write       : out bit_1; 
         alu_clr_z_flag  : out bit_1:
         reg_write       : out bit_1; 
-        data_mem_write  : out bit_1;
         pc_write_flag   : out bit_1;
         dcpr_write_flag : out bit_1;
 
         -- get from datapath
         alu_z_flag  : in bit_1;
         alu_result  : in bit_16;
-
+        ir_opcode   : in bit_8;
+        
         rz_empty: in bit_1; -- empty flag for Rz register if rz is 00000000000000000000000
-        opcode: in bit_6; -- not used atm can be adapted
+        opcode: in bit_8; -- not used atm can be adapted
         address_mode: in bit_2; -- not used atm can be adapted
     -------------------------------------------------------------------------------------------------------------------
     );
@@ -125,7 +126,7 @@ begin
                 case opcode is
                     when andr => 
                         -- set operation to AND
-                        alu_operation <= alu_and;
+                        alu_operation <= alu_and := 
                         -- set input as aluout
                         rf_sel_in <= rf_sel_in_alu;
                         case am is 
@@ -247,7 +248,7 @@ begin
                     when ldr =>
                         regfile_write <= '1';
                     when str =>
-                        data_mem_write <= '1'; 
+                        dm_write <= '1'; 
                     when jmp =>
                         pc_write_flag <= '1'; 
                     when present =>
@@ -266,7 +267,7 @@ begin
                             pc_write_flag <= '0'; 
                         end if;
                     when strpc =>
-                        data_mem_write <= '1';
+                        dm_write <= '1';
                     when clfz =>
                         -- set a flag to clear z_flag
                         alu_clr_z_flag <= '1'; 

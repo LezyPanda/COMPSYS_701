@@ -14,25 +14,21 @@ entity datapath is
         clk     : in bit_1;
         reset   : in bit_1;
 
-
         -- DE1SoC Peripherals
         button  : in bit_4;
         sw      : in bit_10;
-
-        -- Operation
-        opcode          : out bit_8; -- AM(2) + OPCODE(6)
-        -- rx              : out bit_16;
-        -- rz              : out bit_16;
-        instruction         : out bit_32; -- Instruction Fetch Result
+        -- To add segment displays...etc ??
 
         -- Mux Control
+        dm_sel_addr     : in bit_2;
+        dm_sel_in       : in bit_2;
+        dm_write        : in bit_1;
         ir_in           : in bit_1; 
         pc_in           : in bit_2;
         rf_sel_in       : in bit_3;
         dcpr_sel        : in bit_1;
         sop_write       : in bit_1;
         reg_write       : in bit_1; 
-        data_mem_write  : in bit_1;
         pc_write_flag   : in bit_1;
         pc_mode         : in bit_2;
         alu_clr_z_flag  : in bit_1;
@@ -43,6 +39,7 @@ entity datapath is
         -- Out
         alu_z_flag      : out bit_1;
         alu_result      : out bit_16
+        ir_opcode       : out bit_8; -- AM(2) + OPCODE(6)
     );
 end datapath;
 
@@ -77,6 +74,7 @@ architecture behaviour of datapath is
         );
     end component;
     signal alu_result       : bit_16;
+
     component regfile is
         port (
             clk             : in bit_1;
@@ -110,6 +108,7 @@ architecture behaviour of datapath is
     signal dprr_res     : bit_1;
     signal dprr_res_reg : bit_1;
     signal dprr_wren    : bit_1;
+
     component prog_counter is
         port (
             clk             : in  bit_1;
@@ -122,6 +121,7 @@ architecture behaviour of datapath is
     end component;
     signal pc_in            : bit_15;
     signal pc_out           : bit_16;
+
     component inst_reg is
         port (
             clk         : in  bit_1;
@@ -133,7 +133,7 @@ architecture behaviour of datapath is
             operand     : out bit_16;
         );
     end component;
-    signal ir_opcode       : bit_8; -- AM(2) + OPCODE(6)
+
     component prog_mem is
         port
         (
@@ -144,6 +144,7 @@ architecture behaviour of datapath is
     end component;
     signal prog_mem_in  : bit_15;
     signal prog_mem_out : bit_16;
+
     component data_mem is
         port (
             address	: in bit_12;
@@ -153,9 +154,9 @@ architecture behaviour of datapath is
             q		: out bit_16
         );
     end component;
-    signal data_mem_in  : bit_12;
-    signal data_mem_data : bit_16;
-    signal data_mem_wren: bit_1;
+    signal data_mem_in_addr : bit_12;
+    signal data_mem_in_data : bit_16;
+
     -- End Components
 begin
     alu : alu
@@ -165,7 +166,7 @@ begin
             alu_operation   => alu_operation,
             alu_op1_sel     => alu_op1_sel,
             alu_op2_sel     => alu_op2_sel,
-            alu_carry       => '0',
+            alu_carry       => '0', -- Don't care...
             alu_result      => alu_result,
             rx              => rxValue,
             rz              => rzValue,
@@ -221,10 +222,10 @@ begin
         );
     dm : data_mem
         port map (
-            address => data_mem_in,
+            address => data_mem_in_addr,
             clock   => clk,
-            data    => data_mem_data,
-            wren    => data_mem_wren,
+            data    => data_mem_in_data,
+            wren    => dm_write,
             q       => data_mem_out
         );
     
@@ -280,11 +281,24 @@ begin
 
     -- ALU
 
+    -- Address Register
+    -- What to write to the data memory? Just the
+    -- opcode ? but that does not fit the length
+    -- The first statement needs to be double checked, it named value is it for the opcode?
+    data_mem_in_addr <=     (X"0" & ir_opcode) when dm_sel_addr = dm_sel_addr_value else
+                           pc_out(11 downto 0) when dm_sel_addr = dm_sel_addr_pc else
+                          rxValue(11 downto 0) when dm_sel_addr = dm_sel_addr_rx else
+                          rzValue(11 downto 0) when dm_sel_addr = dm_sel_addr_rz else
+                          X"0000";
+
     -- Data Memory
-    data_mem_in <= opcode
-
-
-    
-
+    -- What to write to the data memory? Just the
+    -- opcode ? but that does not fit the length
+    -- The first statement needs to be double checked, it named value is it for the opcode?
+    data_mem_in_data <=     (X"00" & ir_opcode) when dm_sel_in = dm_sel_in_value else
+                                 ("0" & pc_out) when dm_sel_in = dm_sel_in_pc else
+                                        rxValue when dm_sel_in = dm_sel_in_rx else
+                                        rzValue when dm_sel_in = dm_sel_in_rz else
+                                        X"0000";
 end behaviour;
 
