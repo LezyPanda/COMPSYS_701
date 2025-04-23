@@ -9,12 +9,12 @@ entity prog_counter is
         pc_write_flag   : in  bit_1;
         pc_mode         : in  bit_2;
         pc_in           : in  bit_16;
-        pc_out          : out bit_16
+        pc_out          : out bit_15
     );
 end prog_counter;
 
 architecture behaviour of prog_counter is
-    signal pc_out_signal : bit_16 := X"0000";
+    signal pc_out_signal : bit_15 := X"0000";
 begin
     process(clk, reset)
     begin
@@ -22,11 +22,11 @@ begin
             pc_out_signal <= X"0000";
         elsif rising_edge(clk) and pc_write_flag = '1' then
             case pc_mode is
-                when "00" =>
+                when pc_mode_rz or pc_mode_dm_out =>
                     pc_out_signal <= pc_in;
-                when "01" =>
+                when pc_mode_incr_1 =>
                     pc_out_signal <= pc_out_signal + 1;
-                when "10" =>
+                when pc_mode_incr_2 =>
                     pc_out_signal <= pc_out_signal + 2;
                 when others =>
                     null;

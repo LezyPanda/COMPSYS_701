@@ -16,8 +16,8 @@ end inst_reg;
 
 architecture behaviour of inst_reg is
     signal opcode_signal : bit_8 := X"00";
-    signal rx_signal : bit_16 := X"0000";
-    signal rz_signal : bit_16 := X"0000";
+    signal rx_signal : bit_4 := X"0";
+    signal rz_signal : bit_4 := X"0";
     signal operand_signal : bit_16 := X"0000";
 begin
     process(clk, reset, instruction)

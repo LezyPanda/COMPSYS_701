@@ -51,8 +51,8 @@ begin
         case rf_input_sel is
             when "000" =>
                 data_input_z <= ir_operand;
-				when "001" =>
-					 data_input_z <= X"000"&"000"&dprr_res_reg;
+			when "001" =>
+				data_input_z <= X"000"&"000"&dprr_res_reg;
             when "011" =>
                 data_input_z <= aluout;
             when "100" =>
