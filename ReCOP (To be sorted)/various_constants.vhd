@@ -13,8 +13,8 @@ package various_constants is
 	constant alu_idle: bit_3 := "100";
 	constant alu_max: bit_3 := "101";
 
-	constant alu_sel_op1_rz: bit_2 := '1';
-	constant alu_sel_op1_rx: bit_2 := '0';
+	constant alu_sel_op1_rz: bit_1 := '1';
+	constant alu_sel_op1_rx: bit_1 := '0';
 
 	constant alu_sel_op2_value: bit_1 := '1';
 	constant alu_sel_op2_rx: bit_1 := '0';
