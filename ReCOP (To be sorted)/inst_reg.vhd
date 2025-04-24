@@ -2,6 +2,8 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
+use work.recop_types.all;
+
 entity inst_reg is
     port (
         clk         : in  bit_1;
@@ -10,7 +12,7 @@ entity inst_reg is
         opcode      : out bit_8; -- AM(2) + OPCODE(6)
         rx          : out bit_4;
         rz          : out bit_4;
-        operand     : out bit_16;
+        operand     : out bit_16
     );
 end inst_reg;
 
