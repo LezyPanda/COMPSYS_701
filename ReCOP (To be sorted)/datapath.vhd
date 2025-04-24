@@ -1,12 +1,12 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.STD_LOGIC_ARITH.ALL;
-use IEEE.STD_LOGIC_UNSIGNED.ALL;
-use IEEE.numeric_std.all;
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
 
 use work.recop_types.all;
 use work.various_constants.all;
 use work.opcodes.all;
+
 
 entity datapath is
     port (
@@ -25,7 +25,6 @@ entity datapath is
         dm_write        : in bit_1;
         ir_in           : in bit_1; 
         ir_fetch_start  : in bit_1;
-        pc_in           : in bit_2;
         rf_sel_in       : in bit_3;
         rf_write_flag   : in bit_1; 
         dcpr_sel        : in bit_1;
@@ -39,27 +38,30 @@ entity datapath is
         
         -- Out
         alu_z_flag      : out bit_1;
-        alu_result      : out bit_16
+        alu_result      : out bit_16;
         ir_opcode       : out bit_8; -- AM(2) + OPCODE(6)
-        inst_fetched    : out bit_1;
+        inst_fetched    : out bit_1
     );
 end datapath;
 
 architecture behaviour of datapath is
     -- Common Signals
     type fetchStatus is (IDLE, FETCH_1, FETCH_2, FETCH_3);
-    signal fetch_state  : fetchStatus   := IDLE;
-    signal fetch_inst_1 : bit_16        := X"0000";
-    signal fetch_inst_2 : bit_16        := X"0000";
-    signal rxAddr       : bit_4         := X"0";
-    signal rzAddr       : bit_4;        := X"0";
-    signal rxValue      : bit_16;       := X"0000";
-    signal rzValue      : bit_16;       := X"0000";
-    signal data_mem_out : bit_16;       := X"0000";
-    signal ir_operand   : bit_16;       := X"0000";
-    signal r7           : bit_16;       := X"0000";
+    signal fetch_state  : fetchStatus  := IDLE;
+    signal fetch_inst_1 : bit_16       := (others => '0');
+    signal fetch_inst_2 : bit_16       := (others => '0');
+    signal rxAddr       : bit_4        := (others => '0');
+    signal rzAddr       : bit_4        := (others => '0');
+    signal rxValue      : bit_16       := (others => '0');
+    signal rzValue      : bit_16       := (others => '0');
+    signal data_mem_out : bit_16       := (others => '0');
+    signal ir_operand   : bit_16       := (others => '0');
+    signal r7           : bit_16       := (others => '0');
+    signal instruction  : bit_32       := (others => '0');
 
-    signal inst_fetched_signal : bit_1  := '0'; 
+    signal alu_result_signal    : bit_16 := (others => '0');
+    signal ir_opcode_signal     : bit_8  := (others => '0');
+    signal inst_fetched_signal  : bit_1  := '0'; 
 
     -- Components
     component alu is
@@ -78,7 +80,6 @@ architecture behaviour of datapath is
             reset 			: in bit_1
         );
     end component;
-    signal alu_result       : bit_16;
 
     component regfile is
         port (
@@ -118,12 +119,12 @@ architecture behaviour of datapath is
             reset           : in  bit_1;
             pc_write_flag   : in  bit_1;
             pc_mode         : in  bit_2;
-            pc_in           : in  bit_16;
+            pc_in           : in  bit_15;
             pc_out          : out bit_15
         );
     end component;
     signal pc_in            : bit_15;
-    signal pc_out           : bit_16;
+    signal pc_out           : bit_15;
 
     component inst_reg is
         port (
@@ -131,9 +132,9 @@ architecture behaviour of datapath is
             reset       : in  bit_1;
             instruction : in  bit_32;
             opcode      : out bit_8; -- AM(2) + OPCODE(6)
-            rx          : out bit_16;
-            rz          : out bit_16;
-            operand     : out bit_16;
+            rx          : out bit_4;
+            rz          : out bit_4;
+            operand     : out bit_16
         );
     end component;
 
@@ -212,7 +213,7 @@ architecture behaviour of datapath is
 
     -- End Components
 begin
-    alu : alu
+    impl_alu : alu
         port map (
             clk             => clk,
             z_flag          => alu_z_flag,
@@ -220,14 +221,14 @@ begin
             alu_op1_sel     => alu_sel_op1,
             alu_op2_sel     => alu_sel_op2,
             alu_carry       => '0', -- Don't care...
-            alu_result      => alu_result,
+            alu_result      => alu_result_signal,
             rx              => rxValue,
             rz              => rzValue,
             ir_operand      => ir_operand,
             clr_z_flag      => alu_clr_z_flag,
             reset           => reset
         );
-    rf : regfile
+    impl_rf : regfile
         port map (
             clk             => clk,
             reset           => reset,
@@ -239,7 +240,7 @@ begin
             rf_input_sel    => rf_sel_in,
             ir_operand      => ir_operand,
             dm_out          => data_mem_out,
-            aluout          => alu_result,
+            aluout          => alu_result_signal,
             rz_max          => rz_max,
             sip_hold        => sip_hold,
             er_temp         => er_temp,
@@ -248,7 +249,7 @@ begin
             dprr_res_reg    => dprr_res_reg,
             dprr_wren       => dprr_wren
         );
-    pc : prog_counter
+    impl_pc : prog_counter
         port map (
             clk             => clk,
             reset           => reset,
@@ -257,23 +258,23 @@ begin
             pc_in           => pc_in,
             pc_out          => pc_out
         );
-    ir : inst_reg
+    impl_ir : inst_reg
         port map (
             clk         => clk,
             reset       => reset,
             instruction => instruction,
-            opcode      => ir_opcode,
+            opcode      => ir_opcode_signal,
             rx          => rxAddr,
             rz          => rzAddr,
             operand     => ir_operand
         );
-    pm : prog_mem
+    impl_pm : prog_mem
         port map (
             address => prog_mem_in,
             clock   => clk,
             q       => prog_mem_out
         );
-    dm : data_mem
+    impl_dm : data_mem
         port map (
             address => data_mem_in_addr,
             clock   => clk,
@@ -281,7 +282,7 @@ begin
             wren    => dm_write,
             q       => data_mem_out
         );
-    reg : registers
+    impl_reg : registers
         port map (
             clk             => clk,
             reset           => reset,
@@ -310,21 +311,18 @@ begin
             result          => reg_result
         );
     
+    alu_result <= alu_result_signal;
+    ir_opcode <= ir_opcode_signal;
+    
     -- Program Counter
-    pc_in <=     rx when pc_mode = pc_mode_rx else
-         ir_operand when pc_mode = pc_mode_value else
-             X"0000";
+    pc_in <= rxValue(14 downto 0) when pc_mode = pc_mode_rx else
+          ir_operand(14 downto 0) when pc_mode = pc_mode_value else
+                "000000000000000";
 
     -- Program Memory
     prog_mem_in <= pc_out;
 
     -- Instruction Register
-    fetch_listener : process(pc_out)
-    begin
-        if fetch_state = IDLE then
-            fetch_state <= FETCH_1;
-        end if;
-    end process fetch_listener;
     ir_process : process(clk, reset, ir_fetch_start)
     begin
         if reset = '1' then
@@ -336,8 +334,8 @@ begin
             end if;
             case fetch_state is
                 when IDLE =>
-                    fetch_inst_1 := X"0000";
-                    fetch_inst_2 := X"0000";
+                    fetch_inst_1 <= X"0000";
+                    fetch_inst_2 <= X"0000";
                 when FETCH_1 =>
                     prog_mem_in <= pc_out;
                     fetch_state <= FETCH_2;
@@ -345,7 +343,7 @@ begin
                     fetch_inst_1 <= prog_mem_out;
                     -- This instruction, is fat...
                     if (prog_mem_out(15 downto 14) = am_immediate or fetch_inst_1(15 downto 14) = am_direct) then
-                        prog_mem_in <= pc_out + 1;
+                        prog_mem_in <= std_logic_vector(unsigned(pc_out) + 1);
                         fetch_state <= FETCH_3;
                     else
                         fetch_state <= IDLE;
@@ -372,20 +370,20 @@ begin
     -- What to write to the data memory? Just the
     -- opcode ? but that does not fit the length
     -- The first statement needs to be double checked, it named value is it for the opcode?
-    data_mem_in_addr <=     (X"0" & ir_opcode) when dm_sel_addr = dm_sel_addr_value else
-                           pc_out(11 downto 0) when dm_sel_addr = dm_sel_addr_pc else
-                          rxValue(11 downto 0) when dm_sel_addr = dm_sel_addr_rx else
-                          rzValue(11 downto 0) when dm_sel_addr = dm_sel_addr_rz else
-                          X"0000";
+    data_mem_in_addr <= ("0000" & ir_opcode_signal) when dm_sel_addr = dm_sel_addr_value else
+                                pc_out(11 downto 0) when dm_sel_addr = dm_sel_addr_pc else
+                               rxValue(11 downto 0) when dm_sel_addr = dm_sel_addr_rx else
+                               rzValue(11 downto 0) when dm_sel_addr = dm_sel_addr_rz else
+                                     "000000000000";
 
     -- Data Memory
     -- What to write to the data memory? Just the
     -- opcode ? but that does not fit the length
     -- The first statement needs to be double checked, it named value is it for the opcode?
-    data_mem_in_data <=     (X"00" & ir_opcode) when dm_sel_in = dm_sel_in_value else
-                                 ("0" & pc_out) when dm_sel_in = dm_sel_in_pc else
-                                        rxValue when dm_sel_in = dm_sel_in_rx else
-                                        rzValue when dm_sel_in = dm_sel_in_rz else
-                                        X"0000";
+    data_mem_in_data <= ("00000000" & ir_opcode_signal) when dm_sel_in = dm_sel_in_value else
+                                         ("0" & pc_out) when dm_sel_in = dm_sel_in_pc else
+                                                rxValue when dm_sel_in = dm_sel_in_rx else
+                                                rzValue when dm_sel_in = dm_sel_in_rz else
+                                                X"0000";
 end behaviour;
 

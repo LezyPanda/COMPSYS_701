@@ -12,18 +12,18 @@ entity prog_counter is
         reset           : in  bit_1;
         pc_write_flag   : in  bit_1;
         pc_mode         : in  bit_2;
-        pc_in           : in  bit_16;
+        pc_in           : in  bit_15;
         pc_out          : out bit_15
     );
 end prog_counter;
 
 architecture behaviour of prog_counter is
-    signal pc_out_signal : bit_15 := X"0000";
+    signal pc_out_signal : bit_15 := "000000000000000";
 begin
     process(clk, reset)
     begin
         if reset = '1' then
-            pc_out_signal <= X"0000";
+            pc_out_signal <= "000000000000000";
         elsif rising_edge(clk) and pc_write_flag = '1' then
             case pc_mode is
                 when pc_mode_rx =>
