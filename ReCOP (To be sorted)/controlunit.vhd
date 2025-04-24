@@ -30,7 +30,7 @@ entity control_unit is
         dcpr_sel        : out bit_1;
         --flags to datapath
         sop_write       : out bit_1; 
-        alu_clr_z_flag  : out bit_1:
+        alu_clr_z_flag  : out bit_1;
         reg_write       : out bit_1; 
         pc_write_flag   : out bit_1;
         dcpr_write_flag : out bit_1;
@@ -60,6 +60,22 @@ architecture behaviour of controlunit is
     -- Datapath Control
     signal pc_write_flag_signal : bit_1 := '0'; -- Write Program Counter
     signal pc_mode_signal       : bit_2 := "00"; -- 00 -> Direct Set (Jump?), 01 -> PC + 1, 10 -> PC + 2
+
+    -- Internal control signals
+    signal dm_sel_addr_signal       : bit_2 := (others=>'0');
+    signal dm_sel_in_signal         : bit_2 := (others=>'0');
+    signal dm_write_signal          : bit_1 := '0';
+    signal ir_in_signal             : bit_1 := '0';
+    signal pc_in_signal             : bit_2 := (others=>'0');
+    signal rf_sel_in_signal         : bit_3 := (others=>'0');
+    signal alu_operation_signal     : bit_3 := (others=>'0');
+    signal alu_sel_op1_signal       : bit_1 := '0';
+    signal alu_sel_op2_signal       : bit_1 := '0';
+    signal dcpr_sel_signal          : bit_1 := '0';
+    signal sop_write_signal         : bit_1 := '0';
+    signal alu_clr_z_flag_signal    : bit_1 := '0';
+    signal reg_write_signal         : bit_1 := '0';
+    signal dcpr_write_flag_signal   : bit_1 := '0';
 begin
     -- Reset--------------------------------------------------------------------------------------------------------------------------------------------
     reset_process : process(clk, reset)
@@ -126,73 +142,73 @@ begin
                 case opcode is
                     when andr => 
                         -- set operation to AND
-                        alu_operation <= alu_and := 
+                        alu_operation_signal <= alu_and;
                         -- set input as aluout
-                        rf_sel_in <= rf_sel_in_alu;
+                        rf_sel_in_signal <= rf_sel_in_alu;
                         case am is 
                             when am_Immediate =>
                                 -- set alu_sel_op1 to rx and alu_sel_op2 to immediate value
-                                alu_sel_op1 <= alu_sel_op1_rx;
-                                alu_sel_op2 <= alu_sel_op2_value := 
+                                alu_sel_op1_signal <= alu_sel_op1_rx;
+                                alu_sel_op2_signal <= alu_sel_op2_value;
                                 
                             when am_register =>
                                 -- set alu_sel_op1 to rz and alu_sel_op2 to rx
-                                alu_sel_op1 <= alu_sel_op1_rz;
-                                alu_sel_op2 <= alu_sel_op2_rx;
+                                alu_sel_op1_signal <= alu_sel_op1_rz;
+                                alu_sel_op2_signal <= alu_sel_op2_rx;
                             when others =>
                                 null; 
                         end case;
                     when orr =>
-                        alu_operation <= alu_or;
-                        rf_sel_in <= rf_sel_in_alu;
+                        alu_operation_signal <= alu_or;
+                        rf_sel_in_signal <= rf_sel_in_alu;
                         case am is 
                             when am_Immediate =>
-                                alu_sel_op1 <= alu_sel_op1_rx;
-                                alu_sel_op2 <= alu_sel_op2_value;
+                                alu_sel_op1_signal <= alu_sel_op1_rx;
+                                alu_sel_op2_signal <= alu_sel_op2_value;
                                 
                             when am_register =>
-                                alu_sel_op1 <= alu_sel_op1_rz;
-                                alu_sel_op2 <= alu_sel_op2_rx;
+                                alu_sel_op1_signal <= alu_sel_op1_rz;
+                                alu_sel_op2_signal <= alu_sel_op2_rx;
                             when others =>
                                 null;
                         end case;
                     when addr =>
-                        alu_operation <= alu_add;
-                        rf_sel_in <= rf_sel_in_alu;
+                        alu_operation_signal <= alu_add;
+                        rf_sel_in_signal <= rf_sel_in_alu;
                         case am is 
                             when am_Immediate =>
-                                alu_sel_op1 <= alu_sel_op1_rx;
-                                alu_sel_op2 <= alu_sel_op2_value;
+                                alu_sel_op1_signal <= alu_sel_op1_rx;
+                                alu_sel_op2_signal <= alu_sel_op2_value;
                                 
                             when am_register =>
-                                alu_sel_op1 <= alu_sel_op1_rz;
-                                alu_sel_op2 <= alu_sel_op2_rx;
+                                alu_sel_op1_signal <= alu_sel_op1_rz;
+                                alu_sel_op2_signal <= alu_sel_op2_rx;
                             when others =>
                                 null;
                         end case;
                     when subvr =>
-                        alu_operation <= alu_sub;
-                        rf_sel_in <= rf_sel_in_alu;
-                        alu_sel_op1 <= alu_sel_op1_value;
-                        alu_sel_op2 <= alu_sel_op2_rx;
+                        alu_operation_signal <= alu_sub;
+                        rf_sel_in_signal <= rf_sel_in_alu;
+                        alu_sel_op1_signal <= alu_sel_op1_value;
+                        alu_sel_op2_signal <= alu_sel_op2_rx;
                     when subr =>
-                        alu_operation <= alu_sub;
-                        rf_sel_in <= rf_sel_in_alu;
-                        alu_sel_op1 <= alu_sel_op1_value;
-                        alu_sel_op2 <= alu_sel_op2_rz;
+                        alu_operation_signal <= alu_sub;
+                        rf_sel_in_signal <= rf_sel_in_alu;
+                        alu_sel_op1_signal <= alu_sel_op1_value;
+                        alu_sel_op2_signal <= alu_sel_op2_rz;
                     -- Mem operations
                     when ldr => 
                         case am is 
                             when am_immediate =>
                                 -- set operand as input
-                                rf_sel_in <= rf_sel_in_value; 
+                                rf_sel_in_signal <= rf_sel_in_value; 
                             when am_register =>
-                                rf_sel_in <= rf_sel_in_value; 
+                                rf_sel_in_signal <= rf_sel_in_value; 
                                 -- set data memory as rx
-                                dm_sel_addr <= dm_sel_addr_rx;
+                                dm_sel_addr_signal <= dm_sel_addr_rx;
                             when am_direct =>
-                                rf_sel_in <= rf_sel_in_value; 
-                                dm_sel_addr <= dm_sel_addr_value;
+                                rf_sel_in_signal <= rf_sel_in_value; 
+                                dm_sel_addr_signal <= dm_sel_addr_value;
                             when others =>
                                 null;
                         end case;
@@ -200,83 +216,83 @@ begin
                         case am is 
                             when am_immediate =>
                                 -- set operand as input 
-                                dm_sel_in <= dm_sel_in_value;
+                                dm_sel_in_signal <= dm_sel_in_value;
                                 -- set rz as address to write operand to
-                                dm_sel_addr <= dm_sel_addr_rz; 
+                                dm_sel_addr_signal <= dm_sel_addr_rz; 
                             when am_register =>
-                                dm_sel_in <= dm_sel_in_rx;
-                                dm_sel_addr <= dm_sel_addr_rz; 
+                                dm_sel_in_signal <= dm_sel_in_rx;
+                                dm_sel_addr_signal <= dm_sel_addr_rz; 
                             when am_direct =>
-                                dm_sel_in <= dm_sel_in_rx;
-                                dm_sel_addr <= dm_sel_addr_value; 
+                                dm_sel_in_signal <= dm_sel_in_rx;
+                                dm_sel_addr_signal <= dm_sel_addr_value; 
                             when others =>
                                 null;
                         end case;
                     when jmp => 
                         if am = am_immediate then 
                             --  set operand  as pc mode
-                            pc_mode <= pc_sel_value;
+                            pc_mode_signal <= pc_sel_value;
                         elsif am = am_register then
-                            pc_mode <= pc_sel_rx;
+                            pc_mode_signal <= pc_sel_rx;
                         end if;
                     when present =>
                         -- if rz is empty, op is operand
-                        pc_mode <= pc_sel_value;
+                        pc_mode_signal <= pc_sel_value;
                     when datacall =>       --- not exactly sure tbh
                         if am = am_immediate then 
                             -- set operand as input for dpcr operation
-                            dcpr_sel <= dpcr_value;
+                            dcpr_sel_signal <= dpcr_value;
                         elsif am = am_register then
                             -- set rz as operand 
-                            dcpr_sel <= dpcr_r7;
+                            dcpr_sel_signal <= dpcr_r7;
                         end if;
                     when sz =>
                         -- set pc mode to operand
-                        pc_mode <= pc_sel_value;
+                        pc_mode_signal <= pc_sel_value;
                     when strpc => 
                         -- store pc operation into data memoryu
-                        dm_sel_in <= dm_sel_in_pc;
-                        dm_sel_addr <= dm_sel_addr_value; 
+                        dm_sel_in_signal <= dm_sel_in_pc;
+                        dm_sel_addr_signal <= dm_sel_addr_value; 
                     when ssop =>
-                        dm_sel_in <= dm_sel_in_rx; --?
+                        dm_sel_in_signal <= dm_sel_in_rx; --?
                         -- put rx in op1 and then put op1 to sop
             when T3 =>
                 -- mostly setting flags for datapath to excecute actions
                 case opcode is
                     when andr or orr or addr or subvr or subr =>
-                        regfile_write <= '1'; 
+                        reg_write_signal <= '1'; 
                     when ldr =>
-                        regfile_write <= '1';
+                        reg_write_signal <= '1';
                     when str =>
-                        dm_write <= '1'; 
+                        dm_write_signal <= '1'; 
                     when jmp =>
-                        pc_write_flag <= '1'; 
+                        pc_write_flag_signal <= '1'; 
                     when present =>
                         if rz_empty = '1' then
-                            pc_write_flag <= '1'; 
+                            pc_write_flag_signal <= '1'; 
                         else
-                            pc_write_flag <= '0';   
+                            pc_write_flag_signal <= '0';   
                         end if;
                     when datacall => 
-                        dcpr_write_flag <= '1';
+                        dcpr_write_flag_signal <= '1';
                     when sz =>
                         -- if z flag is one then pc is operand mode
                         if alu_z_flag = '1' then
-                            pc_write_flag <= '1'; 
+                            pc_write_flag_signal <= '1'; 
                         else
-                            pc_write_flag <= '0'; 
+                            pc_write_flag_signal <= '0'; 
                         end if;
                     when strpc =>
-                        dm_write <= '1';
+                        dm_write_signal <= '1';
                     when clfz =>
                         -- set a flag to clear z_flag
-                        alu_clr_z_flag <= '1'; 
+                        alu_clr_z_flag_signal <= '1'; 
                     when lsip =>
                         -- set sip hold to input
-                        rf_sel_in <= rf_sel_in_sip;
-                        regfile_write <= '1';
+                        rf_sel_in_signal <= rf_sel_in_sip;
+                        reg_write_signal <= '1';
                     when ssop =>
-                        sop_write <= '1';
+                        sop_write_signal <= '1';
                     when others =>
                         null; -- NOOOOOOP?
                     end case;
@@ -284,7 +300,23 @@ begin
         end case;
     end process opcode_process;
     
-    pc_write_flag <= pc_write_flag_signal;
-    pc_mode <= pc_mode_signal;
+    -- Output port assignments
+    dm_sel_addr       <= dm_sel_addr_signal;
+    dm_sel_in         <= dm_sel_in_signal;
+    dm_write          <= dm_write_signal;
+    ir_in             <= ir_in_signal;
+    pc_in             <= pc_in_signal;
+    rf_sel_in         <= rf_sel_in_signal;
+    alu_operation     <= alu_operation_signal;
+    alu_sel_op1       <= alu_sel_op1_signal;
+    alu_sel_op2       <= alu_sel_op2_signal;
+    pc_mode           <= pc_mode_signal;
+    pc_write_flag     <= pc_write_flag_signal;
+    dcpr_sel          <= dcpr_sel_signal;
+    sop_write         <= sop_write_signal;
+    alu_clr_z_flag    <= alu_clr_z_flag_signal;
+    reg_write         <= reg_write_signal;
+    dcpr_write_flag   <= dcpr_write_flag_signal;
+
 end behaviour;
 
