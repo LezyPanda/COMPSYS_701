@@ -1,0 +1,187 @@
+{C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/registerfile.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/registerfile.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity registerfile
+-- Compiling architecture SYN of registerfile
+
+} {} {}} {C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/recop_types.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/recop_types.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling package recop_types
+
+} {} {}} {C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/regfile.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/regfile.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package recop_types
+-- Loading package various_constants
+-- Compiling entity regfile
+-- Compiling architecture beh of regfile
+
+} {} {}} {C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/prog_mem.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/prog_mem.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity prog_mem
+-- Compiling architecture SYN of prog_mem
+
+} {} {}} {C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/controlunitTB.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\DH\Documents\GitHub\COMPSYS_701\ReCOP (To be sorted)\controlunitTB.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package recop_types
+-- Loading package opcodes
+-- Loading package various_constants
+-- Compiling entity controlunit_tb
+-- Compiling architecture tb of controlunit_tb
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading entity control_unit
+
+} {} {}} {C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/registers.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/registers.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package recop_types
+-- Loading package opcodes
+-- Compiling entity registers
+-- Compiling architecture beh of registers
+
+} {} {}} {C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/recop_pll.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/recop_pll.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity recop_pll
+-- Compiling architecture SYN of recop_pll
+
+} {} {}} {C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/pll.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/pll.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity pll
+-- Compiling architecture SYN of pll
+
+} {} {}} {C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/memory_model.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/memory_model.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package recop_types
+-- Loading package various_constants
+-- Loading package opcodes
+-- Compiling entity memory
+-- Compiling architecture beh of memory
+
+} {} {}} {C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/various_constants.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/various_constants.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package recop_types
+-- Compiling package various_constants
+
+} {} {}} {C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/opcodes.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/opcodes.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package recop_types
+-- Compiling package opcodes
+
+} {} {}} {C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package recop_types
+-- Loading package various_constants
+-- Loading package opcodes
+-- Compiling entity datapath
+-- Compiling architecture behaviour of datapath
+
+} {} {}} {C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/prog_counter.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\DH\Documents\GitHub\COMPSYS_701\ReCOP (To be sorted)\prog_counter.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package recop_types
+-- Loading package various_constants
+-- Compiling entity prog_counter
+-- Compiling architecture behaviour of prog_counter
+
+} {} {}} {C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/data_mem.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/data_mem.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity data_mem
+-- Compiling architecture SYN of data_mem
+
+} {} {}} {C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/memory_arbiter.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/memory_arbiter.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package recop_types
+-- Compiling entity memory_arbiter
+-- Compiling architecture behaviour of memory_arbiter
+
+} {} {}} {C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package recop_types
+-- Loading package opcodes
+-- Loading package various_constants
+-- Compiling entity control_unit
+-- Compiling architecture behaviour of control_unit
+
+} {} {}} {C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package recop_types
+-- Loading package opcodes
+-- Loading package various_constants
+-- Compiling entity alu
+-- Compiling architecture combined of alu
+
+} {} {}} {C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/inst_reg.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/DH/Documents/GitHub/COMPSYS_701/ReCOP (To be sorted)/inst_reg.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package recop_types
+-- Compiling entity inst_reg
+-- Compiling architecture behaviour of inst_reg
+
+} {} {}}
