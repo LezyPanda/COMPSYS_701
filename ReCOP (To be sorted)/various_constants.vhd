@@ -24,7 +24,7 @@ package various_constants is
 	constant pc_mode_rx		: bit_2 := "00";
 	constant pc_mode_incr_1 : bit_2 := "01";
 	constant pc_mode_incr_2 : bit_2 := "10";
-	constant pc_mode_dm_out : bit_2 := "11";
+	constant pc_mode_value 	: bit_2 := "11";
 
 	-- to replace with above but idk lol so just ctrl f in the control unit and change it || value == operand
 	constant pc_sel_next	: bit_2 := "00";  

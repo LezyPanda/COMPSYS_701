@@ -27,16 +27,15 @@ entity datapath is
         ir_fetch_start  : in bit_1;
         pc_in           : in bit_2;
         rf_sel_in       : in bit_3;
+        rf_write_flag   : in bit_1; 
         dcpr_sel        : in bit_1;
         sop_write       : in bit_1;
-        reg_write       : in bit_1; 
         pc_write_flag   : in bit_1;
         pc_mode         : in bit_2;
         alu_clr_z_flag  : in bit_1;
         alu_operation   : in bit_3;
         alu_sel_op1     : in bit_2;
         alu_sel_op2     : in bit_1;
-    
         
         -- Out
         alu_z_flag      : out bit_1;
@@ -58,8 +57,9 @@ architecture behaviour of datapath is
     signal rzValue      : bit_16;       := X"0000";
     signal data_mem_out : bit_16;       := X"0000";
     signal ir_operand   : bit_16;       := X"0000";
+    signal r7           : bit_16;       := X"0000";
 
-    signal inst_fetched_signal : bit_1;        := '0'; 
+    signal inst_fetched_signal : bit_1  := '0'; 
 
     -- Components
     component alu is
@@ -102,14 +102,12 @@ architecture behaviour of datapath is
             dprr_wren       : in bit_1
         );
     end component;
-    signal rf_id_r      : bit_1;
     signal rf_sel_z     : integer range 0 to 15;
     signal rf_sel_x     : integer range 0 to 15;
     signal rf_input_sel : bit_3;
     signal rz_max       : bit_16;
     signal sip_hold     : bit_16;
     signal er_temp      : bit_1;
-    signal r7           : bit_16;
     signal dprr_res     : bit_1;
     signal dprr_res_reg : bit_1;
     signal dprr_wren    : bit_1;
@@ -161,6 +159,57 @@ architecture behaviour of datapath is
     end component;
     signal data_mem_in_addr : bit_12;
     signal data_mem_in_data : bit_16;
+
+    component registers is
+        port (
+            clk         : in bit_1;
+            reset       : in bit_1;
+            dpcr        : out bit_32;
+            r7          : in bit_16;
+            rx          : in bit_16;
+            ir_operand  : in bit_16;
+            dpcr_lsb_sel: in bit_1;
+            dpcr_wr     : in bit_1;
+            er          : out bit_1;
+            er_wr       : in bit_1;
+            er_clr      : in bit_1;
+            eot         : out bit_1;
+            eot_wr      : in bit_1;
+            eot_clr     : in bit_1;
+            svop        : out bit_16;
+            svop_wr     : in bit_1;
+            sip_r       : out bit_16;
+            sip         : in bit_16;
+            sop         : out bit_16;
+            sop_wr      : in bit_1;
+            dprr        : out bit_2;
+            irq_wr      : in bit_1;
+            irq_clr     : in bit_1;
+            result_wen  : in bit_1;
+            result      : in bit_1
+        );
+    end component;
+    signal reg_dpcr         : bit_32;
+    signal reg_dpcr_lsb_sel : bit_1;
+    signal reg_dpcr_wr      : bit_1;
+    signal reg_er           : bit_1;
+    signal reg_er_wr        : bit_1;
+    signal reg_er_clr       : bit_1;
+    signal reg_eot          : bit_1;
+    signal reg_eot_wr       : bit_1;
+    signal reg_eot_clr      : bit_1;
+    signal reg_svop         : bit_16;
+    signal reg_svop_wr      : bit_1;
+    signal reg_sip_r        : bit_16;
+    signal reg_sip          : bit_16;
+    signal reg_sop          : bit_16;
+    signal reg_sop_wr       : bit_1;
+    signal reg_dprr         : bit_2;
+    signal reg_irq_wr       : bit_1;
+    signal reg_irq_clr      : bit_1;
+    signal reg_result_wen   : bit_1;
+    signal reg_result       : bit_1;
+
     -- End Components
 begin
     alu : alu
@@ -182,7 +231,7 @@ begin
         port map (
             clk             => clk,
             reset           => reset,
-            id_r            => rf_id_r,
+            id_r            => rf_write_flag,
             sel_z           => rf_sel_z,
             sel_x           => rf_sel_x,
             rx              => rxValue,
@@ -232,10 +281,38 @@ begin
             wren    => dm_write,
             q       => data_mem_out
         );
+    reg : registers
+        port map (
+            clk             => clk,
+            reset           => reset,
+            dpcr            => reg_dpcr,
+            r7              => r7,
+            rx              => rxValue,
+            ir_operand      => ir_operand,
+            dpcr_lsb_sel    => reg_dpcr_lsb_sel,
+            dpcr_wr         => reg_dpcr_wr,
+            er              => reg_er,
+            er_wr           => reg_er_wr,
+            er_clr          => reg_er_clr,
+            eot             => reg_eot,
+            eot_wr          => reg_eot_wr,
+            eot_clr         => reg_eot_clr,
+            svop            => reg_svop,
+            svop_wr         => reg_svop_wr,
+            sip_r           => reg_sip_r,
+            sip             => reg_sip,
+            sop             => reg_sop,
+            sop_wr          => reg_sop_wr,
+            dprr            => reg_dprr,
+            irq_wr          => reg_irq_wr,
+            irq_clr         => reg_irq_clr,
+            result_wen      => reg_result_wen,
+            result          => reg_result
+        );
     
     -- Program Counter
     pc_in <=     rx when pc_mode = pc_mode_rx else
-             dm_out when pc_mode = pc_mode_dm else
+         ir_operand when pc_mode = pc_mode_value else
              X"0000";
 
     -- Program Memory

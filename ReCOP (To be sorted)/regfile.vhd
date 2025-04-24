@@ -49,19 +49,19 @@ begin
 	input_select: process (rf_input_sel, ir_operand, dm_out, aluout, rz_max, sip_hold, er_temp, dprr_res_reg)
     begin
         case rf_input_sel is
-            when "000" =>
+            when rf_sel_in_value =>
                 data_input_z <= ir_operand;
-			when "001" =>
+			when rf_sel_in_dprr =>
 				data_input_z <= X"000"&"000"&dprr_res_reg;
-            when "011" =>
+            when rf_sel_in_alu =>
                 data_input_z <= aluout;
-            when "100" =>
+            when rf_sel_in_rz_max =>
                 data_input_z <= rz_max;
-            when "101" =>
+            when rf_sel_in_sip =>
                 data_input_z <= sip_hold;
-            when "110" =>
+            when rf_sel_in_er =>
                 data_input_z <= X"000"&"000"&er_temp;
-            when "111" =>
+            when rf_sel_in_dm =>
                 data_input_z <= dm_out;
             when others =>
                 data_input_z <= X"0000";

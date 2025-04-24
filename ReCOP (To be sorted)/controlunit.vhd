@@ -19,17 +19,17 @@ entity control_unit is
         dm_sel_in       : out bit_2;
         dm_write        : out bit_1;
         ir_in           : out bit_1;
-        ir_fetch_start  : out bit_1; 
+        ir_fetch_start  : out bit_1;
+        pc_mode         : out bit_2;
         pc_in           : out bit_2;
         rf_sel_in       : out bit_3;
         alu_operation   : out bit_3;
         alu_sel_op1     : out bit_2;
         alu_sel_op2     : out bit_1;
-        pc_mode         : out bit_2; 
         dcpr_sel        : out bit_1;
         sop_write       : out bit_1; 
         alu_clr_z_flag  : out bit_1;
-        reg_ld_r        : out bit_1; 
+        rf_write_flag   : out bit_1; 
         pc_write_flag   : out bit_1;
         dcpr_write_flag : out bit_1;
 
@@ -67,7 +67,7 @@ architecture behaviour of control_unit is
     signal dcpr_sel_signal          : bit_1 := '0';
     signal sop_write_signal         : bit_1 := '0';
     signal alu_clr_z_flag_signal    : bit_1 := '0';
-    signal reg_write_signal         : bit_1 := '0';
+    signal rf_write_signal         : bit_1 := '0';
     signal dcpr_write_flag_signal   : bit_1 := '0';
 
 begin
@@ -122,7 +122,7 @@ begin
                 elsif (am = am_direct) then
                     pc_mode_signal <= pc_mode_incr_2;
                 elsif (am = am_register) then
-                    pc_mode_signal <= pc_mode_dm_out;
+                    pc_mode_signal <= pc_mode_incr_1;
                 else
                     pc_mode_signal <= pc_mode_incr_1;
                 end if;
@@ -131,6 +131,7 @@ begin
             when T2 =>
                 next_state <= T3;
                 alu_sel_op1_signal <= am;
+                alu_operation_signal <= alu_idle;
                 \ andr, orr, addr \
                 if (opcode = andr or opcode = orr or opcode = addr) then
                     alu_operation_signal <= alu_and when opcode = andr else
@@ -153,106 +154,100 @@ begin
                     alu_sel_op2_signal <= alu_sel_op2_rx when opcode = subvr else
                                           alu_sel_op2_rz when opcode = subr else
                                           alu_sel_op2_rz;
-                \ ldr -- This part needs to be double checkd -- \
+                \ ldr \
                 elsif (opcode = ldr) then
-                    alu_operation_signal <= alu_idle;
-                    if (am = am_immediate or am = am_register) then
+                    if (am = am_immediate) then
                         rf_sel_in_signal <= rf_sel_in_value;
+                    elsif (am = am_register) then
+                        dm_sel_addr_signal <= dm_sel_addr_rx;
+                        rf_sel_in_signal <= rf_sel_in_dm;
                     elsif (am = am_direct) then
-                        rf_sel_in_signal <= rf_sel_in_value; 
                         dm_sel_addr_signal <= dm_sel_addr_value;
+                        rf_sel_in_signal <= rf_sel_in_dm;
                     end if;
-                \ ----------------------------------------- \
                 \ str \
                 elsif (opcode = str) then
-                    case am is 
-                        when am_immediate =>
-                            -- set operand as input 
-                            dm_sel_in_signal <= dm_sel_in_value;
-                            -- set rz as address to write operand to
-                            dm_sel_addr_signal <= dm_sel_addr_rz; 
-                        when am_register =>
-                            dm_sel_in_signal <= dm_sel_in_rx;
-                            dm_sel_addr_signal <= dm_sel_addr_rz; 
-                        when am_direct =>
-                            dm_sel_in_signal <= dm_sel_in_rx;
-                            dm_sel_addr_signal <= dm_sel_addr_value; 
-                        when others =>
-                            null;
-                    end case;
+                    if (am = am_immediate) then
+                        dm_sel_in_signal <= dm_sel_in_value;
+                        dm_sel_addr_signal <= dm_sel_addr_rz;
+                    elsif (am = am_register) then
+                        dm_sel_in_signal <= dm_sel_in_rx;
+                        dm_sel_addr_signal <= dm_sel_addr_rz;
+                    elsif (am = am_direct) then
+                        dm_sel_in_signal <= dm_sel_in_rx;
+                        dm_sel_addr_signal <= dm_sel_addr_value;
+                    end if;
                 \ jmp \
                 elsif (opcode = jmp) then
-                    if am = am_immediate then 
-                    --  set operand  as pc mode
-                        pc_mode_signal <= pc_sel_value;
-                    elsif am = am_register then
-                        pc_mode_signal <= pc_sel_rx;
+                    if (am = am_immediate) then 
+                        pc_mode_signal <= pc_mode_value;
+                    elsif (am = am_register) then
+                        pc_mode_signal <= pc_mode_rx;
                     end if;
                 \ present \
                 elsif (opcode = present) then
-                    pc_mode_signal <= pc_sel_value;
-                \ datacall -- This part needs to be double checkd -- \
+                    pc_mode_signal <= pc_mode_value;
+                \ datacall \
                 elsif (opcode = datacall) then
                     if am = am_immediate then 
-                        -- set operand as input for dpcr operation
                         dcpr_sel_signal <= dpcr_value;
                     elsif am = am_register then
-                        -- set rz as operand 
                         dcpr_sel_signal <= dpcr_r7;
                     end if;
                 \ sz \
                 elsif (opcode = sz) then
-                    -- set pc mode to operand
-                    pc_mode_signal <= pc_sel_value;
+                    pc_mode_signal <= pc_mode_value;
                 \ strpc \
                 elsif (opcode = strpc) then
-                    -- store pc operation into data memoryu
                     dm_sel_in_signal <= dm_sel_in_pc;
                     dm_sel_addr_signal <= dm_sel_addr_value;
-                \ ssop \
-                elsif (opcode = ssop) then
-                    sop_write_signal <= '1';
-                    -- put rx in op1 and then put op1 to sop
-                \ ----------------------------------------- \
                 end if;
             when T3 =>
                 next_state <= T1;
                 -- mostly setting flags for datapath to excecute actions
                 case opcode is
+                    \ andr, orr, addr, subvr, subr \
                     when andr or orr or addr or subvr or subr =>
-                        reg_write_signal <= '1'; 
+                        rf_write_signal <= '1'; 
+                    \ ldr \
                     when ldr =>
-                        reg_write_signal <= '1';
+                        rf_write_signal <= '1';
+                    \ str \
                     when str =>
-                        dm_write_signal <= '1'; 
+                        dm_write_signal <= '1';
+                    \ jmp \
                     when jmp =>
                         pc_write_flag_signal <= '1'; 
+                    \ present \
                     when present =>
                         if rz_empty = '1' then
                             pc_write_flag_signal <= '1'; 
-                        else
-                            pc_write_flag_signal <= '0';   
                         end if;
+                    \ datacall \
                     when datacall => 
                         dcpr_write_flag_signal <= '1';
+                    \ sz \
                     when sz =>
                         -- if z flag is one then pc is operand mode
                         if alu_z_flag = '1' then
                             pc_write_flag_signal <= '1'; 
-                        else
-                            pc_write_flag_signal <= '0'; 
                         end if;
+                    \ strpc \
                     when strpc =>
                         dm_write_signal <= '1';
+                    \ clfz \
                     when clfz =>
                         -- set a flag to clear z_flag
-                        alu_clr_z_flag_signal <= '1'; 
+                        alu_clr_z_flag_signal <= '1';
+                    \ lsip \
                     when lsip =>
                         -- set sip hold to input
                         rf_sel_in_signal <= rf_sel_in_sip;
-                        reg_write_signal <= '1';
+                        rf_write_signal <= '1';
+                    \ ssop \
                     when ssop =>
                         sop_write_signal <= '1';
+                    \ Noop \
                     when others =>
                         null; -- NOOOOOOP?
                     end case;
@@ -266,16 +261,16 @@ begin
     dm_write          <= dm_write_signal;
     ir_in             <= ir_in_signal;
     pc_in             <= pc_in_signal;
+    pc_mode           <= pc_mode_signal;
     rf_sel_in         <= rf_sel_in_signal;
     alu_operation     <= alu_operation_signal;
     alu_sel_op1       <= alu_sel_op1_signal;
     alu_sel_op2       <= alu_sel_op2_signal;
-    pc_mode           <= pc_mode_signal;
     pc_write_flag     <= pc_write_flag_signal;
     dcpr_sel          <= dcpr_sel_signal;
     sop_write         <= sop_write_signal;
     alu_clr_z_flag    <= alu_clr_z_flag_signal;
-    reg_ld_r         <= reg_write_signal;
+    rf_write_flag     <= rf_write_signal;
     dcpr_write_flag   <= dcpr_write_flag_signal;
 
 end behaviour;

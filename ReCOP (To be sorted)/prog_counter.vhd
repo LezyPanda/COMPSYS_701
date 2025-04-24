@@ -26,9 +26,9 @@ begin
             pc_out_signal <= X"0000";
         elsif rising_edge(clk) and pc_write_flag = '1' then
             case pc_mode is
-                when pc_mode_rz =>
+                when pc_mode_rx =>
                     pc_out_signal <= pc_in;
-                when pc_mode_dm_out =>
+                when pc_mode_value =>
                     pc_out_signal <= pc_in;
                 when pc_mode_incr_1 =>
                     pc_out_signal <= pc_out_signal + 1;
