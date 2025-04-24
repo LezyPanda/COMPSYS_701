@@ -45,7 +45,7 @@ end control_unit;
 
 architecture behaviour of control_unit is
     -- States
-    type state_type is (T0, T1, T2, T3);
+    type state_type is (T1, T2, T3);
     signal state, next_state: state_type;
     -- States End
 
@@ -110,6 +110,8 @@ begin
         -- Default Values
         pc_mode_signal <= pc_mode_incr_1
         ir_fetch_start_signal <= '0';
+        alu_operation_signal <= alu_idle;
+        
         case state is
             when T1 =>
                 next_state <= T2;
