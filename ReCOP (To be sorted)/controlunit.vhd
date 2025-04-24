@@ -129,6 +129,7 @@ begin
             when T2 =>
                 next_state <= T3;
                 alu_sel_op1_signal <= am;
+                \ andr, orr, addr \
                 if (opcode = andr or opcode = orr or opcode = addr) then
                     alu_operation_signal <= alu_and when opcode = andr else
                                              alu_or when opcode = orr else
@@ -142,6 +143,7 @@ begin
                         alu_sel_op1_signal <= alu_sel_op1_rx;
                         alu_sel_op2_signal <= alu_sel_op2_rz;
                     end if;
+                \ subvr, subr \
                 elsif (opcode = subvr or opcode = subr) then
                     alu_operation_signal <= alu_sub;
                     rf_sel_in_signal <= rf_sel_in_alu;
@@ -149,7 +151,7 @@ begin
                     alu_sel_op2_signal <= alu_sel_op2_rx when opcode = subvr else
                                           alu_sel_op2_rz when opcode = subr else
                                           alu_sel_op2_rz;
-                \ -- This part needs to be double checkd -- \
+                \ ldr -- This part needs to be double checkd -- \
                 elsif (opcode = ldr) then
                     alu_operation_signal <= alu_idle;
                     if (am = am_immediate or am = am_register) then
@@ -159,6 +161,7 @@ begin
                         dm_sel_addr_signal <= dm_sel_addr_value;
                     end if;
                 \ ----------------------------------------- \
+                \ str \
                 elsif (opcode = str) then
                     case am is 
                         when am_immediate =>
@@ -175,6 +178,7 @@ begin
                         when others =>
                             null;
                     end case;
+                \ jmp \
                 elsif (opcode = jmp) then
                     if am = am_immediate then 
                     --  set operand  as pc mode
@@ -182,9 +186,10 @@ begin
                     elsif am = am_register then
                         pc_mode_signal <= pc_sel_rx;
                     end if;
+                \ present \
                 elsif (opcode = present) then
                     pc_mode_signal <= pc_sel_value;
-                \ -- This part needs to be double checkd -- \
+                \ datacall -- This part needs to be double checkd -- \
                 elsif (opcode = datacall) then
                     if am = am_immediate then 
                         -- set operand as input for dpcr operation
@@ -193,17 +198,20 @@ begin
                         -- set rz as operand 
                         dcpr_sel_signal <= dpcr_r7;
                     end if;
-                \ ----------------------------------------- \
+                \ sz \
                 elsif (opcode = sz) then
                     -- set pc mode to operand
                     pc_mode_signal <= pc_sel_value;
+                \ strpc \
                 elsif (opcode = strpc) then
                     -- store pc operation into data memoryu
                     dm_sel_in_signal <= dm_sel_in_pc;
                     dm_sel_addr_signal <= dm_sel_addr_value;
+                \ ssop \
                 elsif (opcode = ssop) then
                     sop_write_signal <= '1';
                     -- put rx in op1 and then put op1 to sop
+                \ ----------------------------------------- \
                 end if;
             when T3 =>
                 next_state <= T1;
