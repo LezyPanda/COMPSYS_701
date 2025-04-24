@@ -37,7 +37,7 @@ entity control_unit is
         alu_z_flag      : in bit_1;
         alu_result      : in bit_16;
         ir_opcode       : in bit_8    := (others => '0');
-        inst_fetched    : in bit_16;
+        inst_fetched    : in bit_1;
         
         rz_empty: in bit_1
     );
@@ -108,7 +108,7 @@ begin
         opcode  := ir_opcode(5 downto 0);
 
         -- Default Values
-        pc_mode_signal <= pc_mode_incr_1
+        pc_mode_signal <= pc_mode_incr_1;
         ir_fetch_start_signal <= '0';
         alu_operation_signal <= alu_idle;
         
@@ -132,7 +132,7 @@ begin
                 next_state <= T3;
                 alu_sel_op1_signal <= am;
                 alu_operation_signal <= alu_idle;
-                \ andr, orr, addr \
+               \ andr, orr, addr \
                 if (opcode = andr or opcode = orr or opcode = addr) then
                     alu_operation_signal <= alu_and when opcode = andr else
                                              alu_or when opcode = orr else
@@ -146,7 +146,7 @@ begin
                         alu_sel_op1_signal <= alu_sel_op1_rx;
                         alu_sel_op2_signal <= alu_sel_op2_rz;
                     end if;
-                \ subvr, subr \
+              \ subvr, subr \
                 elsif (opcode = subvr or opcode = subr) then
                     alu_operation_signal <= alu_sub;
                     rf_sel_in_signal <= rf_sel_in_alu;
@@ -154,7 +154,7 @@ begin
                     alu_sel_op2_signal <= alu_sel_op2_rx when opcode = subvr else
                                           alu_sel_op2_rz when opcode = subr else
                                           alu_sel_op2_rz;
-                \ ldr \
+               \ ldr \
                 elsif (opcode = ldr) then
                     if (am = am_immediate) then
                         rf_sel_in_signal <= rf_sel_in_value;
@@ -197,7 +197,7 @@ begin
                 \ sz \
                 elsif (opcode = sz) then
                     pc_mode_signal <= pc_mode_value;
-                \ strpc \
+              \ strpc \
                 elsif (opcode = strpc) then
                     dm_sel_in_signal <= dm_sel_in_pc;
                     dm_sel_addr_signal <= dm_sel_addr_value;
@@ -206,10 +206,10 @@ begin
                 next_state <= T1;
                 -- mostly setting flags for datapath to excecute actions
                 case opcode is
-                    \ andr, orr, addr, subvr, subr \
-                    when andr or orr or addr or subvr or subr =>
-                        rf_write_signal <= '1'; 
-                    \ ldr \
+                   \ andr, orr, addr, subvr, subr \
+                   when andr | orr | addr | subvr | subr =>
+                   rf_write_signal <= '1'; 
+                   \ ldr \
                     when ldr =>
                         rf_write_signal <= '1';
                     \ str \
@@ -218,12 +218,12 @@ begin
                     \ jmp \
                     when jmp =>
                         pc_write_flag_signal <= '1'; 
-                    \ present \
+                   \ present \
                     when present =>
                         if rz_empty = '1' then
                             pc_write_flag_signal <= '1'; 
                         end if;
-                    \ datacall \
+                   \ datacall \
                     when datacall => 
                         dcpr_write_flag_signal <= '1';
                     \ sz \
@@ -232,7 +232,7 @@ begin
                         if alu_z_flag = '1' then
                             pc_write_flag_signal <= '1'; 
                         end if;
-                    \ strpc \
+                   \ strpc \
                     when strpc =>
                         dm_write_signal <= '1';
                     \ clfz \
@@ -247,12 +247,11 @@ begin
                     \ ssop \
                     when ssop =>
                         sop_write_signal <= '1';
-                    \ Noop \
+                   \ Noop \
                     when others =>
                         null; -- NOOOOOOP?
                     end case;
             end case;
-        end case;
     end process opcode_process;
     
     -- Output port assignments
