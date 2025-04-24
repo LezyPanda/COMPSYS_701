@@ -46,7 +46,7 @@ architecture behaviour of control_unit is
     type state_type is (T1, T2, T3);
     signal state, next_state: state_type;
     -- States End
-    
+
     -- Datapath Control
     signal pc_write_flag_signal : bit_1 := '0'; -- Write Program Counter
     signal pc_mode_signal       : bit_2 := "00"; -- 00 -> Direct Set (Jump?), 01 -> PC + 1, 10 -> PC + 2
@@ -97,7 +97,6 @@ begin
     state_process : process(state)
     begin
         case state is
-            when
             when T1 => next_state <= T2;
             when T2 => next_state <= T3;
             when T3 => next_state <= T1;
