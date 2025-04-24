@@ -22,23 +22,31 @@ architecture tb of controlunit_tb is
     signal alu_z_flag     : bit_1   := '0';
     signal opcode         : bit_6   := (others => '0');
     signal address_mode   : bit_2   := (others => '0');
-
+    
+    -- Additional required inputs for control_unit
+    signal alu_result     : bit_16  := (others => '0');
+    signal ir_opcode      : bit_8   := (others => '0');
+    signal inst_fetched   : bit_1   := '1';
+    
     -- Outputs from CUT
     signal ir_in             : bit_1;
-    signal pc_in             : bit_2;
+    signal ir_fetch_start    : bit_1;  -- Replacing pc_in
     signal rf_sel_in         : bit_3;
     signal alu_operation     : bit_3;
-    signal alu_sel_op1       : bit_1;
+    signal alu_sel_op1       : bit_2;  -- Changed to bit_2 to match control_unit
     signal alu_sel_op2       : bit_1;
     signal pc_mode           : bit_2;
     signal dcpr_sel          : bit_1;
     signal sop_write         : bit_1;
     signal alu_clr_z_flag    : bit_1;
-    signal reg_write         : bit_1;
-    signal data_mem_write    : bit_1;
+    signal rf_write_flag     : bit_1;  -- Renamed from reg_write
+    signal dm_write          : bit_1;  -- Renamed from data_mem_write
     signal pc_write_flag     : bit_1;
     signal dcpr_write_flag   : bit_1;
 begin
+    -- Combine opcode and address_mode into ir_opcode
+    ir_opcode <= address_mode & opcode;
+
     -- Instantiate Device Under Test
     CUT: entity work.control_unit
         port map (
@@ -47,7 +55,7 @@ begin
             dm_sel_addr       => dm_sel_addr,
             dm_sel_in         => dm_sel_in,
             ir_in             => ir_in,
-            pc_in             => pc_in,
+            ir_fetch_start    => ir_fetch_start,
             rf_sel_in         => rf_sel_in,
             alu_operation     => alu_operation,
             alu_sel_op1       => alu_sel_op1,
@@ -56,14 +64,15 @@ begin
             dcpr_sel          => dcpr_sel,
             sop_write         => sop_write,
             alu_clr_z_flag    => alu_clr_z_flag,
-            reg_write         => reg_write,
-            data_mem_write    => data_mem_write,
+            rf_write_flag     => rf_write_flag,
+            dm_write          => dm_write,
             pc_write_flag     => pc_write_flag,
             dcpr_write_flag   => dcpr_write_flag,
             rz_empty          => rz_empty,
             alu_z_flag        => alu_z_flag,
-            opcode            => opcode,
-            address_mode      => address_mode
+            alu_result        => alu_result,
+            ir_opcode         => ir_opcode,
+            inst_fetched      => inst_fetched
         );
 
     -- Clock generation: 10 ns period
