@@ -24,6 +24,7 @@ entity datapath is
         dm_sel_in       : in bit_2;
         dm_write        : in bit_1;
         ir_in           : in bit_1; 
+        ir_fetch_start  : in bit_1;
         pc_in           : in bit_2;
         rf_sel_in       : in bit_3;
         dcpr_sel        : in bit_1;
@@ -33,13 +34,15 @@ entity datapath is
         pc_mode         : in bit_2;
         alu_clr_z_flag  : in bit_1;
         alu_operation   : in bit_3;
-        alu_sel_op1     : in bit_1;
+        alu_sel_op1     : in bit_2;
         alu_sel_op2     : in bit_1;
+    
         
         -- Out
         alu_z_flag      : out bit_1;
         alu_result      : out bit_16
         ir_opcode       : out bit_8; -- AM(2) + OPCODE(6)
+        inst_fetched    : out bit_1;
     );
 end datapath;
 
@@ -55,6 +58,8 @@ architecture behaviour of datapath is
     signal rzValue      : bit_16;       := X"0000";
     signal data_mem_out : bit_16;       := X"0000";
     signal ir_operand   : bit_16;       := X"0000";
+
+    signal inst_fetched_signal : bit_1;        := '0'; 
 
     -- Components
     component alu is
@@ -156,7 +161,6 @@ architecture behaviour of datapath is
     end component;
     signal data_mem_in_addr : bit_12;
     signal data_mem_in_data : bit_16;
-
     -- End Components
 begin
     alu : alu
@@ -164,8 +168,8 @@ begin
             clk             => clk,
             z_flag          => alu_z_flag,
             alu_operation   => alu_operation,
-            alu_op1_sel     => alu_op1_sel,
-            alu_op2_sel     => alu_op2_sel,
+            alu_op1_sel     => alu_sel_op1,
+            alu_op2_sel     => alu_sel_op2,
             alu_carry       => '0', -- Don't care...
             alu_result      => alu_result,
             rx              => rxValue,
@@ -244,11 +248,15 @@ begin
             fetch_state <= FETCH_1;
         end if;
     end process fetch_listener;
-    ir_process : process(clk, reset)
+    ir_process : process(clk, reset, ir_fetch_start)
     begin
         if reset = '1' then
             fetch_state <= IDLE;
         elsif rising_edge(clk) then
+            inst_fetched_signal <= '0';
+            if ir_fetch_start = '1' then
+                fetch_state <= FETCH_1;
+            end if;
             case fetch_state is
                 when IDLE =>
                     fetch_inst_1 := X"0000";
@@ -259,12 +267,13 @@ begin
                 when FETCH_2 =>
                     fetch_inst_1 <= prog_mem_out;
                     -- This instruction, is fat...
-                    if (fetch_inst_1(15 downto 14) = am_immediate or fetch_inst_1(15 downto 14) = am_direct) then
+                    if (prog_mem_out(15 downto 14) = am_immediate or fetch_inst_1(15 downto 14) = am_direct) then
                         prog_mem_in <= pc_out + 1;
                         fetch_state <= FETCH_3;
                     else
                         fetch_state <= IDLE;
                     end if;
+                    inst_fetched_signal <= '1';
                 when FETCH_3 =>
                     fetch_inst_2 <= prog_mem_out;
                     fetch_state <= IDLE;
@@ -274,6 +283,7 @@ begin
         end if;
     end process ir_process;
     instruction <= fetch_inst_1 & fetch_inst_2;
+    inst_fetched <= inst_fetched_signal;
 
     -- Reg File
     rf_sel_x <= to_integer(unsigned(rxAddr));

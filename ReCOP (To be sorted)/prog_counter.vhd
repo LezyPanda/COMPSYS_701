@@ -2,6 +2,10 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
+use work.various_constants.all;
+use work.recop_types.all;
+
+
 entity prog_counter is
     port (
         clk             : in  bit_1;
@@ -22,7 +26,9 @@ begin
             pc_out_signal <= X"0000";
         elsif rising_edge(clk) and pc_write_flag = '1' then
             case pc_mode is
-                when pc_mode_rz or pc_mode_dm_out =>
+                when pc_mode_rz =>
+                    pc_out_signal <= pc_in;
+                when pc_mode_dm_out =>
                     pc_out_signal <= pc_in;
                 when pc_mode_incr_1 =>
                     pc_out_signal <= pc_out_signal + 1;

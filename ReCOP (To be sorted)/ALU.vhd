@@ -40,11 +40,11 @@ begin
 	op1_select: process (alu_op1_sel, rx, ir_operand)
 	begin
 		case alu_op1_sel is
-			when am_inherent =>
+			when alu_sel_op1_rx =>
 				operand_1 <= rx;
-			when am_immediate =>
+			when alu_sel_op1_value =>
 				operand_1 <= ir_operand;
-			when am_direct => --not used currently
+			when alu_sel_op1_direct => --not used currently
 				operand_1 <= X"0001";
 			when others =>
 				operand_1 <= X"0000";
@@ -55,9 +55,9 @@ begin
 	op2_select: process (alu_op2_sel, rx, rz)
 	begin
 		case alu_op2_sel is
-			when '0' =>
+			when alu_sel_op2_rx =>
 				operand_2 <= rx;
-			when '1' =>
+			when alu_sel_op2_rz =>
 				operand_2 <= rz;
 			when others =>
 				operand_2 <= X"0000";
