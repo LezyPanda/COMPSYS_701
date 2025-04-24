@@ -14,9 +14,7 @@ entity control_unit is
         clk:    in bit_1;
         reset:  in bit_1;
 
--- all of this stuff is used in the control unit everything else mostly isnt so ctrl f and change it if needed-------------------
-
-        -- Mux Control to datapath
+        -- Mux Control to Datapath
         dm_sel_addr     : out bit_2;
         dm_sel_in       : out bit_2;
         dm_write        : out bit_1;
@@ -28,21 +26,18 @@ entity control_unit is
         alu_sel_op2     : out bit_1;
         pc_mode         : out bit_2; 
         dcpr_sel        : out bit_1;
-        --flags to datapath
         sop_write       : out bit_1; 
         alu_clr_z_flag  : out bit_1;
         reg_write       : out bit_1; 
         pc_write_flag   : out bit_1;
         dcpr_write_flag : out bit_1;
 
-        -- get from datapath
+        -- From Datapath
         alu_z_flag  : in bit_1;
         alu_result  : in bit_16;
         ir_opcode   : in bit_8;
         
         rz_empty: in bit_1; -- empty flag for Rz register if rz is 00000000000000000000000
-        opcode: in bit_8; -- not used atm can be adapted
-        address_mode: in bit_2; -- not used atm can be adapted
     -------------------------------------------------------------------------------------------------------------------
     );
 end control_unit;
@@ -77,7 +72,7 @@ architecture behaviour of controlunit is
     signal reg_write_signal         : bit_1 := '0';
     signal dcpr_write_flag_signal   : bit_1 := '0';
 begin
-    -- Reset--------------------------------------------------------------------------------------------------------------------------------------------
+    -- Reset
     reset_process : process(clk, reset)
     begin
         if (clk'event and clk = '1' and reset = '1') then
@@ -92,10 +87,9 @@ begin
             clr_z_flag      <= '0';
         end if;
     end process reset_process;
--------------------------------------------------------------------------------------------------------------------------------------------
-    --FSM state
-    fsm_process : process(clk, reset)
 
+    -- FSM State Update
+    fsm_process : process(clk, reset)
     begin
         if reset = '1' then
             state <= T1;
@@ -104,7 +98,7 @@ begin
         end if;
     end process fsm_process;
 
-    -- MOOOOve to next thing -----------------------------------------------------------------------------------------------------------
+    -- FSM Next State
     state_process : process(state)
     begin
         case state is
@@ -115,16 +109,17 @@ begin
             when others => next_state <= T1;
         end case;
     end process state_process;
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    opcode_process : process(all)
+    -- Tick
+    opcode_process : process(state)
         variable am             : bit_2 := "00";
         variable useImmediate   : bit_1 := '0';
+        variable opcode         : bit_6 := (others=>'0');
     begin
-        am := opcode(7 downto 6);
+        am := ir_opcode(7 downto 6);
+        opcode := ir_opcode(5 downto 0);
         alu_op1_sel <= am;
         useImmediate := am = am_immediate or am = am_direct;
-
 
         case state is
             when T1 =>
