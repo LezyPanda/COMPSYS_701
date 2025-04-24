@@ -28,7 +28,7 @@ entity control_unit is
         dcpr_sel        : out bit_1;
         sop_write       : out bit_1; 
         alu_clr_z_flag  : out bit_1;
-        reg_write       : out bit_1; 
+        reg_ld_r       : out bit_1; 
         pc_write_flag   : out bit_1;
         dcpr_write_flag : out bit_1;
 
@@ -37,21 +37,16 @@ entity control_unit is
         alu_result  : in bit_16;
         ir_opcode   : in bit_8;
         
-        rz_empty: in bit_1; -- empty flag for Rz register if rz is 00000000000000000000000
-    -------------------------------------------------------------------------------------------------------------------
+        rz_empty: in bit_1
     );
 end control_unit;
 
-architecture behaviour of controlunit is
+architecture behaviour of control_unit is
     -- States
     type state_type is (T1, T2, T3);
     signal state, next_state: state_type;
     -- States End
-
-    -- Register File
-    reg_ld_r: bit_1 := '0';
-    reg_rf_input_sel: bit_3 := "000"; -- 000 -> ir_operand, 001 -> dprr_res_reg, 011 -> aluout, 100 -> rz_max, 101 -> sip_hold, 110 -> er_temp, 111 -> dm_out
-
+    
     -- Datapath Control
     signal pc_write_flag_signal : bit_1 := '0'; -- Write Program Counter
     signal pc_mode_signal       : bit_2 := "00"; -- 00 -> Direct Set (Jump?), 01 -> PC + 1, 10 -> PC + 2
@@ -310,7 +305,7 @@ begin
     dcpr_sel          <= dcpr_sel_signal;
     sop_write         <= sop_write_signal;
     alu_clr_z_flag    <= alu_clr_z_flag_signal;
-    reg_write         <= reg_write_signal;
+    reg_ld_r         <= reg_write_signal;
     dcpr_write_flag   <= dcpr_write_flag_signal;
 
 end behaviour;
