@@ -14,11 +14,6 @@ entity datapath is
         clk     : in bit_1;
         reset   : in bit_1;
 
-        -- DE1SoC Peripherals
-        button  : in bit_4;
-        sw      : in bit_10;
-        -- To add segment displays...etc ??
-
         -- Mux Control
         dm_sel_addr     : in bit_2;
         dm_sel_in       : in bit_2;
@@ -40,7 +35,8 @@ entity datapath is
         alu_z_flag      : out bit_1;
         alu_result      : out bit_16;
         ir_opcode       : out bit_8; -- AM(2) + OPCODE(6)
-        inst_fetched    : out bit_1
+        inst_fetched    : out bit_1;
+        rz_empty        : out bit_1
     );
 end datapath;
 
@@ -313,6 +309,7 @@ begin
     
     alu_result <= alu_result_signal;
     ir_opcode <= ir_opcode_signal;
+    rz_empty <= '1' when rzValue = bit_16'(others => '0') else '0';
     
     -- Program Counter
     pc_in <= rxValue(14 downto 0) when pc_mode = pc_mode_rx else

@@ -37,15 +37,15 @@ entity control_unit is
         alu_result      : in bit_16;
         ir_opcode       : in bit_8    := (others => '0');
         inst_fetched    : in bit_1;
-        
-        rz_empty: in bit_1
+        rz_empty        : in bit_1
     );
 end control_unit;
 
 architecture behaviour of control_unit is
     -- States
     type state_type is (T1, T2, T3);
-    signal state, next_state: state_type;
+    signal state: state_type := T1;
+    signal next_state : state_type := T2;
     -- States End
 
     -- Datapath Control
@@ -98,25 +98,36 @@ begin
         dcpr_write_flag_signal  <= '0';
         alu_clr_z_flag_signal   <= '0';
         sop_write_signal        <= '0';
-        pc_mode_signal          <= pc_mode_incr_1;
         ir_fetch_start_signal   <= '0';
         alu_operation_signal    <= alu_idle;
         
         case state is
             when T1 =>
                 next_state <= T2;
-                if (am = am_inherent) then
-                    pc_mode_signal <= pc_mode_incr_1;
-                elsif (am = am_immediate) then
-                    pc_mode_signal <= pc_mode_incr_2;
-                elsif (am = am_direct) then
-                    pc_mode_signal <= pc_mode_incr_2;
-                elsif (am = am_register) then
-                    pc_mode_signal <= pc_mode_incr_1;
+                if (opcode = jmp) then
+                    if (am = am_immediate) then
+                        pc_mode_signal <= pc_mode_value;
+                    elsif (am = am_register) then
+                        pc_mode_signal <= pc_mode_rx;
+                    end if;
+                elsif (opcode = present) then
+                    pc_mode_signal <= pc_mode_value;
+                elsif (opcode = sz) then
+                    pc_mode_signal <= pc_mode_value;
                 else
-                    pc_mode_signal <= pc_mode_incr_1;
+                    pc_write_flag_signal <= '1';
+                    if (am = am_inherent) then
+                        pc_mode_signal <= pc_mode_incr_1;
+                    elsif (am = am_immediate) then
+                        pc_mode_signal <= pc_mode_incr_2;
+                    elsif (am = am_direct) then
+                        pc_mode_signal <= pc_mode_incr_2;
+                    elsif (am = am_register) then
+                        pc_mode_signal <= pc_mode_incr_1;
+                    else
+                        pc_mode_signal <= pc_mode_incr_1;
+                    end if;
                 end if;
-                pc_write_flag_signal <= '1'; 
                 ir_fetch_start_signal <= '1';
             when T2 =>
                 next_state <= T3;
@@ -213,18 +224,20 @@ begin
                         pc_write_flag_signal <= '1'; 
                    -- present --
                     when present =>
-                        if rz_empty = '1' then
-                            pc_write_flag_signal <= '1'; 
+                        if rz_empty = '0' then
+                            pc_mode_signal <= pc_mode_incr_2;
                         end if;
+                        pc_write_flag_signal <= '1'; 
                    -- datacall --
                     when datacall => 
                         dcpr_write_flag_signal <= '1';
                     -- sz --
                     when sz =>
                         -- if z flag is one then pc is operand mode
-                        if alu_z_flag = '1' then
-                            pc_write_flag_signal <= '1'; 
+                        if alu_z_flag = '0' then
+                            pc_mode_signal <= pc_mode_incr_2;
                         end if;
+                        pc_write_flag_signal <= '1';
                     -- strpc --
                     when strpc =>
                         dm_write_signal <= '1';
@@ -263,6 +276,7 @@ begin
     alu_clr_z_flag    <= alu_clr_z_flag_signal;
     rf_write_flag     <= rf_write_signal;
     dcpr_write_flag   <= dcpr_write_flag_signal;
+    ir_fetch_start    <= ir_fetch_start_signal;
 
 end behaviour;
 
