@@ -79,7 +79,7 @@ architecture combined of recop is
             inst_fetched    : out bit_1;
             rz_empty        : out bit_1
         );
-    end component datapath;
+    end component datapath := 
 
     component control_unit is
         port (

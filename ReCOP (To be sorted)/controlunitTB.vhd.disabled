@@ -79,7 +79,7 @@ begin
         while true loop
             clk <= '0'; wait for 5 ns;
             clk <= '1'; wait for 5 ns;
-        end loop;
+        end loop;E
     end process clk_proc;
 
     -- Stimulus process
@@ -118,4 +118,4 @@ begin
         wait;
     end process stim_proc;
 
-end architecture tb;
+end architecture tb;       

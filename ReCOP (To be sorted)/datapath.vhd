@@ -36,7 +36,12 @@ entity datapath is
         alu_result      : out bit_16;
         ir_opcode       : out bit_8; -- AM(2) + OPCODE(6)
         inst_fetched    : out bit_1;
-        rz_empty        : out bit_1
+        rz_empty        : out bit_1;
+
+        -- Debug Signals
+        debug_pc_out        : out bit_15;
+        debug_fetch_state   : out bit_2;
+        debug_instruction   : out bit_32
     );
 end datapath;
 
@@ -305,6 +310,15 @@ begin
             result_wen      => reg_result_wen,
             result          => reg_result
         );
+    -- Debug Signals
+    debug_pc_out        <= pc_out(14 downto 0);
+    debug_fetch_state   <= "00" when fetch_state = IDLE else
+                          "01" when fetch_state = FETCH_1 else
+                          "10" when fetch_state = FETCH_2 else
+                          "11" when fetch_state = FETCH_3 else
+                          "00";
+    debug_instruction   <= instruction;
+    -- End Debug Signals
     
     alu_result <= alu_result_signal;
     ir_opcode <= ir_opcode_signal;
@@ -316,7 +330,7 @@ begin
                 "000000000000000";
 
     -- Program Memory
-    prog_mem_in <= pc_out;
+    -- prog_mem_in <= pc_out;
 
     -- Instruction Register
     ir_process : process(clk, reset, ir_fetch_start)
@@ -325,13 +339,11 @@ begin
             fetch_state <= IDLE;
         elsif rising_edge(clk) then
             inst_fetched_signal <= '0';
-            if ir_fetch_start = '1' then
-                fetch_state <= FETCH_1;
-            end if;
             case fetch_state is
                 when IDLE =>
-                    fetch_inst_1 <= (others => '0');
-                    fetch_inst_2 <= (others => '0');
+                    if ir_fetch_start = '1' then
+                        fetch_state <= FETCH_1;
+                    end if;
                 when FETCH_1 =>
                     prog_mem_in <= pc_out;
                     fetch_state <= FETCH_2;
