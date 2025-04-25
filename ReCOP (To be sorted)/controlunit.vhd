@@ -69,6 +69,9 @@ architecture behaviour of control_unit is
     signal dcpr_write_flag_signal   : bit_1 := '0';
 
 begin
+    -- set all flags to 0
+
+
     -- Reset
     reset_process : process(clk, reset)
     begin
@@ -94,6 +97,12 @@ begin
         variable useImmediate   : bit_1 := '0';
         variable opcode         : bit_6 := (others => '0');
     begin
+        dm_write_signal <= '0';
+        rf_write_signal <= '0';
+        pc_write_flag_signal <= '0';
+        dcpr_write_flag_signal <= '0';
+        alu_clr_z_flag_signal <= '0';
+        sop_write_signal <= '0';
         am      := ir_opcode(7 downto 6);
         opcode  := ir_opcode(5 downto 0);
 
