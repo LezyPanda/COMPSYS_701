@@ -16,18 +16,18 @@ entity inst_reg is
     );
 end inst_reg;
 architecture behaviour of inst_reg is
-    signal opcode_signal    : bit_8 := X"00";
-    signal rx_signal        : bit_4 := X"0";
-    signal rz_signal        : bit_4 := X"0";
-    signal operand_signal   : bit_16 := X"0000";
+    signal opcode_signal    : bit_8  := (others => '0');
+    signal rx_signal        : bit_4  := (others => '0');
+    signal rz_signal        : bit_4  := (others => '0');
+    signal operand_signal   : bit_16 := (others => '0');
 begin
     process(clk, reset, instruction)
     begin
         if reset = '1' then
-            opcode_signal <= X"00";
-            rx_signal <= X"0";
-            rz_signal <= X"0";
-            operand_signal <= X"0000";
+            opcode_signal   <= (others => '0');
+            rx_signal       <= (others => '0');
+            rz_signal       <= (others => '0');
+            operand_signal  <= (others => '0');
         elsif rising_edge(clk) then
             opcode_signal <= instruction(31 downto 24);
             rx_signal <= instruction(23 downto 20);

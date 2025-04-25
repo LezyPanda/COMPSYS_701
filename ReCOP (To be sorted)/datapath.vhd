@@ -84,8 +84,8 @@ architecture behaviour of datapath is
     component regfile is
         port (
             clk             : in bit_1;
-            reset           : in bit_1;
-            id_r            : in bit_1;
+            init            : in bit_1;
+            ld_r            : in bit_1;
             sel_z           : in integer range 0 to 15;
             sel_x           : in integer range 0 to 15;
             rx              : out bit_16;
@@ -231,8 +231,8 @@ begin
     impl_rf : regfile
         port map (
             clk             => clk,
-            reset           => reset,
-            id_r            => rf_write_flag,
+            init            => reset,
+            ld_r            => rf_write_flag,
             sel_z           => rf_sel_z,
             sel_x           => rf_sel_x,
             rx              => rxValue,
@@ -334,8 +334,8 @@ begin
             end if;
             case fetch_state is
                 when IDLE =>
-                    fetch_inst_1 <= X"0000";
-                    fetch_inst_2 <= X"0000";
+                    fetch_inst_1 <= (others => '0');
+                    fetch_inst_2 <= (others => '0');
                 when FETCH_1 =>
                     prog_mem_in <= pc_out;
                     fetch_state <= FETCH_2;
@@ -384,6 +384,6 @@ begin
                                          ("0" & pc_out) when dm_sel_in = dm_sel_in_pc else
                                                 rxValue when dm_sel_in = dm_sel_in_rx else
                                                 rzValue when dm_sel_in = dm_sel_in_rz else
-                                                X"0000";
+                                     "0000000000000000";
 end behaviour;
 

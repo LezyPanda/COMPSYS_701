@@ -26,9 +26,9 @@ VDI=V1GlTOXLX=9NPLmom63
 !s100 Io=PFnXUR68R6];e57c>53
 Z11 OV;C;10.5b;63
 32
-Z12 !s110 1745505513
+Z12 !s110 1745558927
 !i10b 1
-Z13 !s108 1745505513.000000
+Z13 !s108 1745558927.000000
 Z14 !s90 -reportprogress|300|-work|work|C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd|
 Z15 !s107 C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd|
 !i113 1
@@ -76,9 +76,9 @@ VI2QzE0DlZoPTmzeVP]FOi2
 !s100 2DKdkVY8E@EHGlO]eR45a2
 R11
 32
-Z22 !s110 1745505515
+Z22 !s110 1745558928
 !i10b 1
-Z23 !s108 1745505515.000000
+Z23 !s108 1745558928.000000
 Z24 !s90 -reportprogress|300|-work|work|C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd|
 Z25 !s107 C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd|
 !i113 1
@@ -93,7 +93,7 @@ R6
 R5
 R7
 R8
-DEx4 work 12 control_unit 0 22 I2QzE0DlZoPTmzeVP]FOi2
+Z26 DEx4 work 12 control_unit 0 22 I2QzE0DlZoPTmzeVP]FOi2
 l71
 L45
 V[G5IWVm7I6U5>:m2k]hS42
@@ -109,7 +109,7 @@ R25
 R16
 R17
 Econtrolunit_tb
-w1745416158
+Z27 w1745506238
 R2
 R3
 R4
@@ -117,40 +117,65 @@ R19
 R7
 R8
 R0
-8C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunitTB.vhd
-FC:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunitTB.vhd
+Z28 8C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunitTB.vhd
+Z29 FC:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunitTB.vhd
 l0
 L10
 VFY3A=W;;iL<FXPc>AYnaH2
 !s100 ^0O[4c5hclkea;jU^P?Ed0
 R11
 32
-!s110 1745505516
+Z30 !s110 1745558929
 !i10b 1
-!s108 1745505516.000000
-!s90 -reportprogress|300|-work|work|C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunitTB.vhd|
-!s107 C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunitTB.vhd|
+Z31 !s108 1745558929.000000
+Z32 !s90 -reportprogress|300|-work|work|C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunitTB.vhd|
+Z33 !s107 C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunitTB.vhd|
+!i113 1
+R16
+R17
+Atb
+R6
+R5
+R26
+R2
+R3
+R4
+R19
+R7
+R8
+DEx4 work 14 controlunit_tb 0 22 FY3A=W;;iL<FXPc>AYnaH2
+l46
+L13
+VcB<3L0H:cnAfZJWd^VGSA0
+!s100 ;Pe_eOeC@g;QETziQY]SJ1
+R11
+32
+R30
+!i10b 1
+R31
+R32
+R33
 !i113 1
 R16
 R17
 Edata_mem
-Z26 w1744804229
+Z34 w1744804229
 R7
 R8
 R0
-Z27 8C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/data_mem.vhd
-Z28 FC:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/data_mem.vhd
+Z35 8C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/data_mem.vhd
+Z36 FC:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/data_mem.vhd
 l0
 L43
 V78ZeR1ADIJaIY^[]:h;;l3
 !s100 dzT3^Im]iBlOEc=HdV;9;1
 R11
 32
-Z29 !s110 1745505518
+Z37 !s110 1745558930
 !i10b 1
-Z30 !s108 1745505518.000000
-Z31 !s90 -reportprogress|300|-work|work|C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/data_mem.vhd|
-Z32 !s107 C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/data_mem.vhd|
+Z38 !s108 1745558930.000000
+Z39 !s90 -reportprogress|300|-work|work|C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/data_mem.vhd|
+Z40 !s107 C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/data_mem.vhd|
 !i113 1
 R16
 R17
@@ -164,16 +189,16 @@ VY=@NVA62JSABNgZ>=ID?d1
 !s100 Qnm^cOGO0imbd^PMIm`hY3
 R11
 32
-R29
+R37
 !i10b 1
-R30
-R31
-R32
+R38
+R39
+R40
 !i113 1
 R16
 R17
 Edatapath
-Z33 w1745504050
+Z41 w1745560585
 R3
 R2
 R4
@@ -181,19 +206,19 @@ R19
 R7
 R8
 R0
-Z34 8C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd
-Z35 FC:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd
+Z42 8C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd
+Z43 FC:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd
 l0
 L11
 VG36Dl_Y:N5nL<Ze6I7djz3
 !s100 Rfm]D]i=O9;bkVT_J_IU_2
 R11
 32
-Z36 !s110 1745505519
+Z44 !s110 1745560587
 !i10b 1
-Z37 !s108 1745505519.000000
-Z38 !s90 -reportprogress|300|-work|work|C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd|
-Z39 !s107 C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd|
+Z45 !s108 1745560587.000000
+Z46 !s90 -reportprogress|300|-work|work|C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd|
+Z47 !s107 C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd|
 !i113 1
 R16
 R17
@@ -204,42 +229,89 @@ R4
 R19
 R7
 R8
-DEx4 work 8 datapath 0 22 G36Dl_Y:N5nL<Ze6I7djz3
+Z48 DEx4 work 8 datapath 0 22 G36Dl_Y:N5nL<Ze6I7djz3
 l215
 L47
-VNiQz]l_>C<lie4ZX]?S3E0
-!s100 HhV<BNbQUUhB>P_;G@68`3
+Z49 V5NIXc@1lmD9HbP6JokC0o1
+Z50 !s100 UY`LnmTJOL8n2hTHcGLhP0
 R11
 32
-R36
+R44
 !i10b 1
-R37
-R38
-R39
+R45
+R46
+R47
+!i113 1
+R16
+R17
+Edatapath_tb
+Z51 w1745559242
+R3
+R2
+R4
+R19
+R7
+R8
+R0
+Z52 8C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath_tb.vhd
+Z53 FC:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath_tb.vhd
+l0
+L9
+V8Si]i3EQTS]m2JL5^[h9b1
+!s100 QYc]eif2T2l?=UV8A^k^S0
+R11
+32
+Z54 !s110 1745560576
+!i10b 1
+Z55 !s108 1745560576.000000
+Z56 !s90 -reportprogress|300|-work|work|C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath_tb.vhd|
+Z57 !s107 C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath_tb.vhd|
+!i113 1
+R16
+R17
+Atestbench
+R3
+R2
+R4
+R19
+R7
+R8
+DEx4 work 11 datapath_tb 0 22 8Si]i3EQTS]m2JL5^[h9b1
+l68
+L12
+V;=J36h5Tc9[_C<6Icn35S1
+!s100 W6Shi@iR9]A_BLP=S@lTW1
+R11
+32
+R54
+!i10b 1
+R55
+R56
+R57
 !i113 1
 R16
 R17
 Einst_reg
-Z40 w1745503742
+Z58 w1745505538
 R4
 R5
 R6
 R7
 R8
 R0
-Z41 8C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/inst_reg.vhd
-Z42 FC:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/inst_reg.vhd
+Z59 8C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/inst_reg.vhd
+Z60 FC:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/inst_reg.vhd
 l0
 L7
 VYzjcmVzI`]HYe=igmO4?b1
 !s100 ?3f<iVLmLM?>52dIz0AWD2
 R11
 32
-Z43 !s110 1745505520
+Z61 !s110 1745558933
 !i10b 1
-Z44 !s108 1745505520.000000
-Z45 !s90 -reportprogress|30|-work|work|C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/inst_reg.vhd|
-Z46 !s107 C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/inst_reg.vhd|
+Z62 !s108 1745558933.000000
+Z63 !s90 -reportprogress|30|-work|work|C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/inst_reg.vhd|
+Z64 !s107 C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/inst_reg.vhd|
 !i113 1
 R16
 R17
@@ -256,16 +328,16 @@ V>^z2<JSGei9zZZbC=@Zl_0
 !s100 ZS_o7Ld:DJ27gU]:QVDk13
 R11
 32
-R43
+R61
 !i10b 1
-R44
-R45
-R46
+R62
+R63
+R64
 !i113 1
 R16
 R17
 Ememory
-R26
+R34
 R3
 R2
 R4
@@ -273,19 +345,19 @@ R19
 R7
 R8
 R0
-Z47 8C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/memory_model.vhd
-Z48 FC:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/memory_model.vhd
+Z65 8C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/memory_model.vhd
+Z66 FC:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/memory_model.vhd
 l0
 L10
 VCH1:OHhH1l1QSFHGFQ7B`3
 !s100 VIUgPJVX3?QY4X3l80K]a2
 R11
 32
-Z49 !s110 1745505522
+Z67 !s110 1745558935
 !i10b 1
-Z50 !s108 1745505522.000000
-Z51 !s90 -reportprogress|30|-work|work|C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/memory_model.vhd|
-Z52 !s107 C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/memory_model.vhd|
+Z68 !s108 1745558935.000000
+Z69 !s90 -reportprogress|30|-work|work|C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/memory_model.vhd|
+Z70 !s107 C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/memory_model.vhd|
 !i113 1
 R16
 R17
@@ -303,35 +375,35 @@ V_8UoD@Sg@9b7h^kkG@WWh3
 !s100 Pde6>XN<Pa4kIGLfcRP?80
 R11
 32
-R49
+R67
 !i10b 1
-R50
-R51
-R52
+R68
+R69
+R70
 !i113 1
 R16
 R17
 Ememory_arbiter
-R26
+R34
 R4
 R5
 R6
 R7
 R8
 R0
-Z53 8C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/memory_arbiter.vhd
-Z54 FC:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/memory_arbiter.vhd
+Z71 8C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/memory_arbiter.vhd
+Z72 FC:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/memory_arbiter.vhd
 l0
 L11
 V@[iTgK5XMEhzDESj22b>00
 !s100 ?[0`N_8o5U4MoNV:=?SZA2
 R11
 32
-Z55 !s110 1745505521
+Z73 !s110 1745558934
 !i10b 1
-Z56 !s108 1745505521.000000
-Z57 !s90 -reportprogress|30|-work|work|C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/memory_arbiter.vhd|
-Z58 !s107 C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/memory_arbiter.vhd|
+Z74 !s108 1745558934.000000
+Z75 !s90 -reportprogress|30|-work|work|C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/memory_arbiter.vhd|
+Z76 !s107 C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/memory_arbiter.vhd|
 !i113 1
 R16
 R17
@@ -348,11 +420,11 @@ V<Lik:;1ciED<^Bb4V^a?k2
 !s100 fH6<8ajf@QI5:EeIPF7EY0
 R11
 32
-R55
+R73
 !i10b 1
-R56
-R57
-R58
+R74
+R75
+R76
 !i113 1
 R16
 R17
@@ -370,32 +442,32 @@ VmmCTiQc_@dGNQW7ZkNd_V2
 !s100 YH6S8C_M@a4iM?d77]?=_1
 R11
 32
-!s110 1745505523
+!s110 1745558936
 !i10b 1
-!s108 1745505523.000000
+!s108 1745558936.000000
 !s90 -reportprogress|30|-work|work|C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/opcodes.vhd|
 !s107 C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/opcodes.vhd|
 !i113 1
 R16
 R17
 Epll
-R26
+R34
 R7
 R8
 R0
-Z59 8C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/pll.vhd
-Z60 FC:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/pll.vhd
+Z77 8C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/pll.vhd
+Z78 FC:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/pll.vhd
 l0
 L42
 V5;J?4c@1FLC1U^>?dOiN81
 !s100 NVkD@^BmL7NHl5M>@]n8=3
 R11
 32
-Z61 !s110 1745505524
+Z79 !s110 1745558937
 !i10b 1
-Z62 !s108 1745505524.000000
-Z63 !s90 -reportprogress|30|-work|work|C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/pll.vhd|
-Z64 !s107 C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/pll.vhd|
+Z80 !s108 1745558937.000000
+Z81 !s90 -reportprogress|30|-work|work|C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/pll.vhd|
+Z82 !s107 C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/pll.vhd|
 !i113 1
 R16
 R17
@@ -409,16 +481,16 @@ VZXk`Wi`JRojFCg_NkcUJ[1
 !s100 hB_0dlba4gCWal`Y4c4oO3
 R11
 32
-R61
+R79
 !i10b 1
-R62
-R63
-R64
+R80
+R81
+R82
 !i113 1
 R16
 R17
 Eprog_counter
-R40
+Z83 w1745503742
 R4
 R2
 R5
@@ -426,19 +498,19 @@ R6
 R7
 R8
 R0
-Z65 8C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_counter.vhd
-Z66 FC:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_counter.vhd
+Z84 8C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_counter.vhd
+Z85 FC:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_counter.vhd
 l0
 L9
 VR?KZ[TH113]bzO]HjH^7^2
 !s100 2LU<aiShOl:70[YZmU1EI0
 R11
 32
-Z67 !s110 1745505525
+Z86 !s110 1745558938
 !i10b 1
-Z68 !s108 1745505525.000000
-Z69 !s90 -reportprogress|30|-work|work|C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_counter.vhd|
-Z70 !s107 C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_counter.vhd|
+Z87 !s108 1745558938.000000
+Z88 !s90 -reportprogress|30|-work|work|C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_counter.vhd|
+Z89 !s107 C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_counter.vhd|
 !i113 1
 R16
 R17
@@ -456,32 +528,32 @@ V1<ajldTOahKY2>REXUiJE1
 !s100 BS<F25Y]f[Gl2M1cMLhm@2
 R11
 32
-R67
+R86
 !i10b 1
-R68
-R69
-R70
+R87
+R88
+R89
 !i113 1
 R16
 R17
 Eprog_mem
-R26
+R34
 R7
 R8
 R0
-Z71 8C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_mem.vhd
-Z72 FC:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_mem.vhd
+Z90 8C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_mem.vhd
+Z91 FC:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_mem.vhd
 l0
 L43
 VQ6bAXS`X_em^LB][b;T2M1
 !s100 io`i?H_VdOeNcMg5LO8OI0
 R11
 32
-Z73 !s110 1745505526
+Z92 !s110 1745558940
 !i10b 1
-Z74 !s108 1745505526.000000
-Z75 !s90 -reportprogress|30|-work|work|C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_mem.vhd|
-Z76 !s107 C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_mem.vhd|
+Z93 !s108 1745558939.000000
+Z94 !s90 -reportprogress|30|-work|work|C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_mem.vhd|
+Z95 !s107 C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_mem.vhd|
 !i113 1
 R16
 R17
@@ -495,32 +567,32 @@ V;PK40><a8VGz?HBci^?1A1
 !s100 ]B7Nj[^9^Kf3:;:1MSe<d1
 R11
 32
-R73
+R92
 !i10b 1
-R74
-R75
-R76
+R93
+R94
+R95
 !i113 1
 R16
 R17
 Erecop_pll
-R26
+R34
 R7
 R8
 R0
-Z77 8C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop_pll.vhd
-Z78 FC:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop_pll.vhd
+Z96 8C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop_pll.vhd
+Z97 FC:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop_pll.vhd
 l0
 L43
 VKX=;O<1mV>QzT]hXOC[o50
 !s100 `Hnllo4@OSe?1hzPZXT4F2
 R11
 32
-Z79 !s110 1745505527
+Z98 !s110 1745558941
 !i10b 1
-Z80 !s108 1745505527.000000
-Z81 !s90 -reportprogress|30|-work|work|C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop_pll.vhd|
-Z82 !s107 C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop_pll.vhd|
+Z99 !s108 1745558941.000000
+Z100 !s90 -reportprogress|30|-work|work|C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop_pll.vhd|
+Z101 !s107 C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop_pll.vhd|
 !i113 1
 R16
 R17
@@ -534,11 +606,11 @@ Vk1??i2Q8OVe;ATjf^XWFb0
 !s100 RbMYgXh]4G5@flhc:0^jD3
 R11
 32
-R79
+R98
 !i10b 1
-R80
-R81
-R82
+R99
+R100
+R101
 !i113 1
 R16
 R17
@@ -555,35 +627,35 @@ Vg<]Ja;:4HNl5bc^K^mlhj2
 !s100 lLA<9nj>ZP=ii93F^o1AL1
 R11
 32
-!s110 1745505528
+!s110 1745558942
 !i10b 1
-!s108 1745505528.000000
+!s108 1745558942.000000
 !s90 -reportprogress|30|-work|work|C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop_types.vhd|
 !s107 C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop_types.vhd|
 !i113 1
 R16
 R17
 Eregfile
-Z83 w1745501123
+Z102 w1745501123
 R2
 R4
 R19
 R7
 R8
 R0
-Z84 8C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/regfile.vhd
-Z85 FC:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/regfile.vhd
+Z103 8C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/regfile.vhd
+Z104 FC:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/regfile.vhd
 l0
 L11
 VmA[KC[8TY5Y75MJVAgkm?1
 !s100 _bFCggB?<FOkT@_Zo9:@80
 R11
 32
-Z86 !s110 1745505529
+Z105 !s110 1745558943
 !i10b 1
-Z87 !s108 1745505529.000000
-Z88 !s90 -reportprogress|30|-work|work|C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/regfile.vhd|
-Z89 !s107 C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/regfile.vhd|
+Z106 !s108 1745558943.000000
+Z107 !s90 -reportprogress|30|-work|work|C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/regfile.vhd|
+Z108 !s107 C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/regfile.vhd|
 !i113 1
 R16
 R17
@@ -600,32 +672,32 @@ VKm8:AG`88^1]ijUC2TiPc0
 !s100 FAZ_RLA__;4:^ao:aVOn31
 R11
 32
-R86
+R105
 !i10b 1
-R87
-R88
-R89
+R106
+R107
+R108
 !i113 1
 R16
 R17
 Eregisterfile
-R26
+R34
 R7
 R8
 R0
-Z90 8C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/registerfile.vhd
-Z91 FC:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/registerfile.vhd
+Z109 8C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/registerfile.vhd
+Z110 FC:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/registerfile.vhd
 l0
 L44
 VAAlECS3VIHnIBEPl?`KWc0
 !s100 aX:m[2_VOISNV]U]dTUE_0
 R11
 32
-R86
+Z111 !s110 1745558944
 !i10b 1
-R87
-Z92 !s90 -reportprogress|30|-work|work|C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/registerfile.vhd|
-Z93 !s107 C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/registerfile.vhd|
+Z112 !s108 1745558944.000000
+Z113 !s90 -reportprogress|30|-work|work|C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/registerfile.vhd|
+Z114 !s107 C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/registerfile.vhd|
 !i113 1
 R16
 R17
@@ -639,16 +711,16 @@ V4gT=kC`[OR<IXhY5n:WOM2
 !s100 5aknVdmNThiQenczk4n8?2
 R11
 32
-R86
+R111
 !i10b 1
-R87
-R92
-R93
+R112
+R113
+R114
 !i113 1
 R16
 R17
 Eregisters
-R26
+R34
 R3
 R4
 R5
@@ -656,19 +728,19 @@ R6
 R7
 R8
 R0
-Z94 8C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/registers.vhd
-Z95 FC:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/registers.vhd
+Z115 8C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/registers.vhd
+Z116 FC:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/registers.vhd
 l0
 L12
 Van3XYhgWg6a3kF:V[=9gB2
 !s100 jDLzJhjSzV^oliHAdQDz[3
 R11
 32
-Z96 !s110 1745505530
+Z117 !s110 1745558945
 !i10b 1
-Z97 !s108 1745505530.000000
-Z98 !s90 -reportprogress|30|-work|work|C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/registers.vhd|
-Z99 !s107 C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/registers.vhd|
+Z118 !s108 1745558945.000000
+Z119 !s90 -reportprogress|30|-work|work|C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/registers.vhd|
+Z120 !s107 C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/registers.vhd|
 !i113 1
 R16
 R17
@@ -686,11 +758,11 @@ Vh0jo[9X4N_zJD3`2chlcl1
 !s100 2bK7:cVc[ee`?Ef`RK5Yg2
 R11
 32
-R96
+R117
 !i10b 1
-R97
-R98
-R99
+R118
+R119
+R120
 !i113 1
 R16
 R17
@@ -698,7 +770,7 @@ Pvarious_constants
 R4
 R7
 R8
-R83
+R102
 R0
 8C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/various_constants.vhd
 FC:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/various_constants.vhd
@@ -708,9 +780,9 @@ Vc2<fYO;n_j>I=NzoGkb5J3
 !s100 G8Hd0W8hWLAKHMl7m8]P41
 R11
 32
-!s110 1745505531
+!s110 1745558946
 !i10b 1
-!s108 1745505531.000000
+!s108 1745558946.000000
 !s90 -reportprogress|30|-work|work|C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/various_constants.vhd|
 !s107 C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/various_constants.vhd|
 !i113 1
