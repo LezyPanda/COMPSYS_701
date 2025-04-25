@@ -53,31 +53,22 @@ architecture behaviour of control_unit is
     signal pc_mode_signal       : bit_2 := "00"; -- 00 -> Direct Set (Jump?), 01 -> PC + 1, 10 -> PC + 2
 
     -- Internal control signals
-    signal dm_sel_addr_signal       : bit_2 := (others=>'0');
-    signal dm_sel_in_signal         : bit_2 := (others=>'0');
+    signal dm_sel_addr_signal       : bit_2 := (others => '0');
+    signal dm_sel_in_signal         : bit_2 := (others => '0');
     signal dm_write_signal          : bit_1 := '0';
     signal ir_in_signal             : bit_1 := '0';
     signal ir_fetch_start_signal    : bit_1 := '0';
-    signal rf_sel_in_signal         : bit_3 := (others=>'0');
-    signal alu_operation_signal     : bit_3 := (others=>'0');
+    signal rf_sel_in_signal         : bit_3 := (others => '0');
+    signal alu_operation_signal     : bit_3 := (others => '0');
     signal alu_sel_op1_signal       : bit_2 := "00";
     signal alu_sel_op2_signal       : bit_1 := '0';
     signal dcpr_sel_signal          : bit_1 := '0';
     signal sop_write_signal         : bit_1 := '0';
     signal alu_clr_z_flag_signal    : bit_1 := '0';
-    signal rf_write_signal         : bit_1 := '0';
+    signal rf_write_signal          : bit_1 := '0';
     signal dcpr_write_flag_signal   : bit_1 := '0';
 
 begin
-    -- set all flags to 0
-
-
-    -- Reset
-    reset_process : process(clk, reset)
-    begin
-        if (clk'event and clk = '1' and reset = '1') then
-        end if;
-    end process reset_process;
 
     -- FSM State Update
     fsm_process : process(clk, reset)
@@ -93,23 +84,23 @@ begin
 
     -- Tick
     opcode_process : process(state)
-        variable am             : bit_2 := "00";
+        variable am             : bit_2 := (others => '0');
         variable useImmediate   : bit_1 := '0';
         variable opcode         : bit_6 := (others => '0');
     begin
-        dm_write_signal <= '0';
-        rf_write_signal <= '0';
-        pc_write_flag_signal <= '0';
-        dcpr_write_flag_signal <= '0';
-        alu_clr_z_flag_signal <= '0';
-        sop_write_signal <= '0';
         am      := ir_opcode(7 downto 6);
         opcode  := ir_opcode(5 downto 0);
 
         -- Default Values
-        pc_mode_signal <= pc_mode_incr_1;
-        ir_fetch_start_signal <= '0';
-        alu_operation_signal <= alu_idle;
+        dm_write_signal         <= '0';
+        rf_write_signal         <= '0';
+        pc_write_flag_signal    <= '0';
+        dcpr_write_flag_signal  <= '0';
+        alu_clr_z_flag_signal   <= '0';
+        sop_write_signal        <= '0';
+        pc_mode_signal          <= pc_mode_incr_1;
+        ir_fetch_start_signal   <= '0';
+        alu_operation_signal    <= alu_idle;
         
         case state is
             when T1 =>
@@ -208,10 +199,10 @@ begin
                 next_state <= T1;
                 -- mostly setting flags for datapath to excecute actions
                 case opcode is
-                   -- andr, orr, addr, subvr, subr --
-                   when andr | orr | addr | subvr | subr =>
-                   rf_write_signal <= '1'; 
-                   -- ldr --
+                    -- andr, orr, addr, subvr, subr --
+                    when andr | orr | addr | subvr | subr =>
+                        rf_write_signal <= '1'; 
+                    -- ldr --
                     when ldr =>
                         rf_write_signal <= '1';
                     -- str --
@@ -234,7 +225,7 @@ begin
                         if alu_z_flag = '1' then
                             pc_write_flag_signal <= '1'; 
                         end if;
-                   -- strpc --
+                    -- strpc --
                     when strpc =>
                         dm_write_signal <= '1';
                     -- clfz --
@@ -249,7 +240,7 @@ begin
                     -- ssop --
                     when ssop =>
                         sop_write_signal <= '1';
-                   -- Noop --
+                    -- Noop --
                     when others =>
                         null; -- NOOOOOOP?
                     end case;
