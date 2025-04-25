@@ -33,9 +33,8 @@ entity regfile is
 		r7 : out bit_16;
 		dprr_res : in bit_1;
 		dprr_res_reg : in bit_1;
-		dprr_wren : in bit_1
-				
-		);
+		dprr_wren : in bit_1			
+	);
 end regfile;
 
 architecture beh of regfile is
