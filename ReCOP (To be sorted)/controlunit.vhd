@@ -18,19 +18,20 @@ entity control_unit is
         dm_sel_addr     : out bit_2;
         dm_sel_in       : out bit_2;
         dm_write        : out bit_1;
-        ir_in           : out bit_1;
         ir_fetch_start  : out bit_1;
-        pc_mode         : out bit_2;
         rf_sel_in       : out bit_3;
+        rf_write_flag   : out bit_1;
+        pc_write_flag   : out bit_1;
+        pc_mode         : out bit_2;
+        alu_clr_z_flag  : out bit_1;
         alu_operation   : out bit_3;
         alu_sel_op1     : out bit_2;
         alu_sel_op2     : out bit_1;
-        dcpr_sel        : out bit_1;
-        sop_write       : out bit_1; 
-        alu_clr_z_flag  : out bit_1;
-        rf_write_flag   : out bit_1; 
-        pc_write_flag   : out bit_1;
-        dcpr_write_flag : out bit_1;
+        dpcr_write_flag : out bit_1;
+        dpcr_sel        : out bit_1;
+        sop_write       : out bit_1;
+
+        
 
         -- From Datapath
         alu_z_flag      : in bit_1;
@@ -56,17 +57,16 @@ architecture behaviour of control_unit is
     signal dm_sel_addr_signal       : bit_2 := (others => '0');
     signal dm_sel_in_signal         : bit_2 := (others => '0');
     signal dm_write_signal          : bit_1 := '0';
-    signal ir_in_signal             : bit_1 := '0';
     signal ir_fetch_start_signal    : bit_1 := '0';
     signal rf_sel_in_signal         : bit_3 := (others => '0');
     signal alu_operation_signal     : bit_3 := (others => '0');
     signal alu_sel_op1_signal       : bit_2 := "00";
     signal alu_sel_op2_signal       : bit_1 := '0';
-    signal dcpr_sel_signal          : bit_1 := '0';
+    signal dpcr_sel_signal          : bit_1 := '0';
     signal sop_write_signal         : bit_1 := '0';
     signal alu_clr_z_flag_signal    : bit_1 := '0';
     signal rf_write_signal          : bit_1 := '0';
-    signal dcpr_write_flag_signal   : bit_1 := '0';
+    signal dpcr_write_flag_signal   : bit_1 := '0';
 
 begin
 
@@ -95,7 +95,7 @@ begin
         dm_write_signal         <= '0';
         rf_write_signal         <= '0';
         pc_write_flag_signal    <= '0';
-        dcpr_write_flag_signal  <= '0';
+        dpcr_write_flag_signal  <= '0';
         alu_clr_z_flag_signal   <= '0';
         sop_write_signal        <= '0';
         ir_fetch_start_signal   <= '0';
@@ -194,9 +194,9 @@ begin
                         pc_mode_signal <= pc_mode_value;
                     when datacall => -- datacall --
                         if am = am_immediate then 
-                            dcpr_sel_signal <= dpcr_value;
+                            dpcr_sel_signal <= dpcr_value;
                         elsif am = am_register then
-                            dcpr_sel_signal <= dpcr_r7;
+                            dpcr_sel_signal <= dpcr_r7;
                         end if;
                     when sz => -- sz --
                         pc_mode_signal <= pc_mode_value;
@@ -230,7 +230,7 @@ begin
                         pc_write_flag_signal <= '1'; 
                    -- datacall --
                     when datacall => 
-                        dcpr_write_flag_signal <= '1';
+                        dpcr_write_flag_signal <= '1';
                     -- sz --
                     when sz =>
                         -- if z flag is one then pc is operand mode
@@ -264,18 +264,17 @@ begin
     dm_sel_addr       <= dm_sel_addr_signal;
     dm_sel_in         <= dm_sel_in_signal;
     dm_write          <= dm_write_signal;
-    ir_in             <= ir_in_signal;
     pc_mode           <= pc_mode_signal;
     rf_sel_in         <= rf_sel_in_signal;
     alu_operation     <= alu_operation_signal;
     alu_sel_op1       <= alu_sel_op1_signal;
     alu_sel_op2       <= alu_sel_op2_signal;
     pc_write_flag     <= pc_write_flag_signal;
-    dcpr_sel          <= dcpr_sel_signal;
+    dpcr_sel          <= dpcr_sel_signal;
     sop_write         <= sop_write_signal;
     alu_clr_z_flag    <= alu_clr_z_flag_signal;
     rf_write_flag     <= rf_write_signal;
-    dcpr_write_flag   <= dcpr_write_flag_signal;
+    dpcr_write_flag   <= dpcr_write_flag_signal;
     ir_fetch_start    <= ir_fetch_start_signal;
 
 end behaviour;

@@ -18,19 +18,19 @@ entity datapath is
         dm_sel_addr     : in bit_2;
         dm_sel_in       : in bit_2;
         dm_write        : in bit_1;
-        ir_in           : in bit_1; 
         ir_fetch_start  : in bit_1;
         rf_sel_in       : in bit_3;
         rf_write_flag   : in bit_1; 
-        dcpr_sel        : in bit_1;
-        sop_write       : in bit_1;
         pc_write_flag   : in bit_1;
         pc_mode         : in bit_2;
         alu_clr_z_flag  : in bit_1;
         alu_operation   : in bit_3;
         alu_sel_op1     : in bit_2;
         alu_sel_op2     : in bit_1;
-        
+        dpcr_write_flag : in bit_1;
+        dpcr_sel        : in bit_1;
+        sop_write       : in bit_1;
+
         -- Out
         alu_z_flag      : out bit_1;
         alu_result      : out bit_16;
@@ -200,7 +200,6 @@ architecture behaviour of datapath is
     signal reg_sip_r        : bit_16;
     signal reg_sip          : bit_16;
     signal reg_sop          : bit_16;
-    signal reg_sop_wr       : bit_1;
     signal reg_dprr         : bit_2;
     signal reg_irq_wr       : bit_1;
     signal reg_irq_clr      : bit_1;
@@ -299,7 +298,7 @@ begin
             sip_r           => reg_sip_r,
             sip             => reg_sip,
             sop             => reg_sop,
-            sop_wr          => reg_sop_wr,
+            sop_wr          => sop_write,
             dprr            => reg_dprr,
             irq_wr          => reg_irq_wr,
             irq_clr         => reg_irq_clr,
@@ -310,7 +309,7 @@ begin
     alu_result <= alu_result_signal;
     ir_opcode <= ir_opcode_signal;
     rz_empty <= '1' when rzValue = bit_16'(others => '0') else '0';
-    
+
     -- Program Counter
     pc_in <= rxValue(14 downto 0) when pc_mode = pc_mode_rx else
           ir_operand(14 downto 0) when pc_mode = pc_mode_value else
