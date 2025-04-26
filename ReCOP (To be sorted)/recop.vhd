@@ -65,6 +65,7 @@ architecture combined of recop is
     -- Debug Signals CU
     signal debug_state          : bit_2;
     signal debug_next_state     : bit_2;
+    signal debug_flag           : bit_8;
 
     -- Signals
     signal ledr_signal : bit_10 := "0000000000";
@@ -125,7 +126,8 @@ architecture combined of recop is
             debug_ir_operand    : out bit_16;
             -- Debug Signals
             debug_rf_reg_listen : in integer range 0 to 15;
-            debug_rf_reg_result : out bit_16
+            debug_rf_reg_result : out bit_16;
+            debug_flag          : out bit_8
         );
     end component;
 
@@ -205,7 +207,8 @@ begin
             debug_rz_value  => debug_rz_value,
             debug_ir_operand => debug_ir_operand,
             debug_rf_reg_listen => debug_rf_reg_listen,
-            debug_rf_reg_result => debug_rf_reg_result
+            debug_rf_reg_result => debug_rf_reg_result,
+            debug_flag => debug_flag
         );
 
     -- Control Unit Instance
@@ -239,7 +242,7 @@ begin
         );
 
     clk <= clock_50 when sw(0) = '1' else '0';
-    reset <= '1' when sw(0) = '1' else '0';
+    reset <= '1' when sw(9) = '1' else '0';
     -- hex0_signal <= "0000000" when sw(0) = '1' else "1111111";
     -- hex1_signal <= "0000000" when sw(1) = '1' else "1111111";
     -- hex2_signal <= "0000000" when sw(2) = '1' else "1111111";
@@ -249,6 +252,11 @@ begin
 
     debug_rf_reg_listen <= to_integer(unsigned(sw(3 downto 0)));
     hex0_in_signal <= debug_rf_reg_result(3 downto 0);
+    hex1_in_signal <= "1111";
+    hex2_in_signal <= "1111";
+    hex3_in_signal <= "1111";
+    hex4_in_signal <= "1111";
+    hex5_in_signal <= sw(3 downto 0);
 
 
     ledr_signal <= sw(9) & sw(8) & sw(7) & sw(6) & sw(5) & sw(4) & sw(3) & sw(2) & sw(1) & sw(0);

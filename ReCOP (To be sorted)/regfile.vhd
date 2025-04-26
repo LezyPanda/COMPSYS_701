@@ -36,7 +36,7 @@ entity regfile is
 		
 		
 		-- Debug Signals, maybe replace with dprr, idk
-		debeg_rf_reg_listen: in integer range 0 to 15;
+		debug_rf_reg_listen: in integer range 0 to 15;
 		debug_rf_reg_result: out bit_16
 	);
 end regfile;
@@ -45,6 +45,7 @@ architecture beh of regfile is
 	type reg_array is array (15 downto 0) of bit_16;
 	signal regs: reg_array;
 	signal data_input_z: bit_16;
+	signal debug_rf_reg_result_signal: bit_16 := (others => '0');
 begin
 	r7 <=regs(7);
 
@@ -79,19 +80,17 @@ begin
 			-- write data into Rz if ld signal is asserted
 			if ld_r = '1' then
 				regs(sel_z) <= data_input_z;
-				if (debeg_rf_reg_listen = sel_z) then
-					debug_rf_reg_result <= data_input_z;
+				if (debug_rf_reg_listen = sel_z) then
+					debug_rf_reg_result_signal <= data_input_z;
 				end if;
 			elsif dprr_wren = '1' then
 				regs(0) <= X"000"&"000"&dprr_res;
 			end if;
 		end if;
 	end process;
-	
+	debug_rf_reg_result <= debug_rf_reg_result_signal;
 
 	rx <= regs(sel_x);
 	rz <= regs(sel_z);
 
-
-	
 end beh;

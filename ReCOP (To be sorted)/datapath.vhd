@@ -50,7 +50,9 @@ entity datapath is
         debug_rz_value      : out bit_16;
         debug_ir_operand    : out bit_16;
         debug_rf_reg_listen : in integer range 0 to 15;
-        debug_rf_reg_result : out bit_16
+        debug_rf_reg_result : out bit_16;
+
+        debug_flag          : out bit_8
     );
 end datapath;
 
@@ -340,6 +342,8 @@ begin
     debug_rx_value      <= rxValue;
     debug_rz_value      <= rzValue;
     debug_ir_operand    <= ir_operand;
+
+    debug_flag <= pc_out(7 downto 0);
     -- End Debug Signals
     
     alu_result <= alu_result_signal;
