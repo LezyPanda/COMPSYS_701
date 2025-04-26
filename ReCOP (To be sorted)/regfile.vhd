@@ -2,8 +2,7 @@
 
 library ieee;
 use ieee.std_logic_1164.all;
-
-use IEEE.numeric_std.all;
+use ieee.numeric_std.all;
 
 use work.recop_types.all;
 use work.various_constants.all;
@@ -33,7 +32,12 @@ entity regfile is
 		r7 : out bit_16;
 		dprr_res : in bit_1;
 		dprr_res_reg : in bit_1;
-		dprr_wren : in bit_1			
+		dprr_wren : in bit_1;
+		
+		
+		-- Debug Signals, maybe replace with dprr, idk
+		debeg_rf_reg_listen: in integer range 0 to 15;
+		debug_rf_reg_result: out bit_16
 	);
 end regfile;
 
@@ -75,6 +79,9 @@ begin
 			-- write data into Rz if ld signal is asserted
 			if ld_r = '1' then
 				regs(sel_z) <= data_input_z;
+				if (debeg_rf_reg_listen = sel_z) then
+					debug_rf_reg_result <= data_input_z;
+				end if;
 			elsif dprr_wren = '1' then
 				regs(0) <= X"000"&"000"&dprr_res;
 			end if;

@@ -48,7 +48,9 @@ entity datapath is
         debug_rz_addr       : out bit_4;
         debug_rx_value      : out bit_16;
         debug_rz_value      : out bit_16;
-        debug_ir_operand    : out bit_16
+        debug_ir_operand    : out bit_16;
+        debug_rf_reg_listen : in integer range 0 to 15;
+        debug_rf_reg_result : out bit_16
     );
 end datapath;
 
@@ -108,7 +110,10 @@ architecture behaviour of datapath is
             r7              : out bit_16;
             dprr_res        : in bit_1;
             dprr_res_reg    : in bit_1;
-            dprr_wren       : in bit_1
+            dprr_wren       : in bit_1;
+            -- Debug Signals
+            debug_rf_reg_listen: in integer range 0 to 15;
+            debug_rf_reg_result: out bit_16
         );
     end component;
     signal rf_sel_z     : integer range 0 to 15;
@@ -254,7 +259,10 @@ begin
             r7              => r7,
             dprr_res        => dprr_res,
             dprr_res_reg    => dprr_res_reg,
-            dprr_wren       => dprr_wren
+            dprr_wren       => dprr_wren,
+            -- Debug Signals
+            debug_rf_reg_listen => debug_rf_reg_listen,
+            debug_rf_reg_result => debug_rf_reg_result
         );
     impl_pc : prog_counter
         port map (
