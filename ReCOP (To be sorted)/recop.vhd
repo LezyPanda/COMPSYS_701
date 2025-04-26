@@ -241,8 +241,13 @@ begin
             debug_next_state => debug_next_state
         );
 
-    clk <= clock_50 when sw(0) = '1' else '0';
-    reset <= '1' when sw(9) = '1' else '0';
+    clk <= clock_50;
+    --reset <= '1' when sw(9) = '1' else '0';
+    reset <= '1' when key(0) = '1' else '0';
+
+    -- This breaks! for some reason it compiles, however the whole thing will just not work (memory could not be read)
+    -- reset <= '1' when key(0) = '0' else '1';
+    
     -- hex0_signal <= "0000000" when sw(0) = '1' else "1111111";
     -- hex1_signal <= "0000000" when sw(1) = '1' else "1111111";
     -- hex2_signal <= "0000000" when sw(2) = '1' else "1111111";

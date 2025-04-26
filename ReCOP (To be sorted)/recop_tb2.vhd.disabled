@@ -2,8 +2,7 @@
 
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.std_logic_unsigned.all;
-use ieee.std_logic_arith.all;
+use ieee.numeric_std.all;
 
 use work.recop_types.all;
 use work.opcodes.all;
@@ -61,9 +60,15 @@ architecture combined of recop_tb2 is
     signal debug_rx_value       : bit_16;
     signal debug_rz_value       : bit_16;
     signal debug_ir_operand     : bit_16;
+    signal debug_rf_reg_listen  : integer range 0 to 15;
+    signal debug_rf_reg_result  : bit_16;
+    signal debug_flag           : bit_8;
     -- Debug Signals CU
     signal debug_state          : bit_2;
     signal debug_next_state     : bit_2;
+
+
+    signal temp                 : bit_4 := "0010";
 
     component datapath is
         port (
@@ -99,7 +104,11 @@ architecture combined of recop_tb2 is
             debug_rz_addr       : out bit_4;
             debug_rx_value      : out bit_16;
             debug_rz_value      : out bit_16;
-            debug_ir_operand    : out bit_16
+            debug_ir_operand    : out bit_16;
+            debug_rf_reg_listen : in integer range 0 to 15;
+            debug_rf_reg_result : out bit_16;
+    
+            debug_flag          : out bit_8
         );
     end component;
 
@@ -169,7 +178,10 @@ begin
             debug_rz_addr   => debug_rz_addr,
             debug_rx_value  => debug_rx_value,
             debug_rz_value  => debug_rz_value,
-            debug_ir_operand => debug_ir_operand
+            debug_ir_operand => debug_ir_operand,
+            debug_rf_reg_listen => debug_rf_reg_listen,
+            debug_rf_reg_result => debug_rf_reg_result,
+            debug_flag      => debug_flag
         );
 
     -- Control Unit Instance
@@ -201,6 +213,11 @@ begin
             debug_state     => debug_state,
             debug_next_state => debug_next_state
         );
+
+    -- Test
+    debug_rf_reg_listen <= to_integer(unsigned(temp));
+
+
     -- Simulated Clock Process
     clk_process : process
     begin

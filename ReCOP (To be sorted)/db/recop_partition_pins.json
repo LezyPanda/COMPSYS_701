@@ -142,6 +142,10 @@
 				{
 					"name" : "clock_50",
 					"strict" : false
+				},
+				{
+					"name" : "key[0]",
+					"strict" : false
 				}
 			]
 		}
