@@ -96,7 +96,7 @@ begin
     end process fsm_process;
 
     -- Tick
-    opcode_process : process(clk, reset, state)
+    opcode_process : process(clk, reset, state, ir_opcode)
         variable am             : bit_2 := (others => '0');
         variable opcode         : bit_6 := (others => '0');
     begin
