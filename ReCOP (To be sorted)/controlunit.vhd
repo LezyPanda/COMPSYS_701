@@ -61,7 +61,7 @@ architecture behaviour of control_unit is
     signal dm_write_signal          : bit_1 := '0';
     signal ir_fetch_start_signal    : bit_1 := '0';
     signal rf_sel_in_signal         : bit_3 := (others => '0');
-    signal alu_operation_signal     : bit_3 := (others => '0');
+    signal alu_operation_signal     : bit_3 := alu_idle;
     signal alu_sel_op1_signal       : bit_2 := "00";
     signal alu_sel_op2_signal       : bit_1 := '0';
     signal dpcr_sel_signal          : bit_1 := '0';
@@ -98,7 +98,6 @@ begin
     -- Tick
     opcode_process : process(clk, reset, state)
         variable am             : bit_2 := (others => '0');
-        variable useImmediate   : bit_1 := '0';
         variable opcode         : bit_6 := (others => '0');
     begin
         am      := ir_opcode(7 downto 6);
@@ -113,9 +112,9 @@ begin
             alu_clr_z_flag_signal   <= '0';
             sop_write_signal        <= '0';
             ir_fetch_start_signal   <= '0';
-            alu_operation_signal    <= alu_idle;
             case state is
                 when T0 =>
+                    alu_operation_signal <= alu_idle;
                     next_state <= T1;
                     ir_fetch_start_signal <= '1';
                 when T1 =>
@@ -226,6 +225,7 @@ begin
                     end case;
                 when T3 =>
                     next_state <= T0;
+                    alu_operation_signal <= alu_hold;
                     -- mostly setting flags for datapath to excecute actions
                     case opcode is
                         -- andr, orr, addr, subvr, subr --

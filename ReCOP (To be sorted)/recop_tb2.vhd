@@ -54,6 +54,13 @@ architecture combined of recop_tb2 is
     signal debug_pc_out         : bit_15;
     signal debug_fetch_state    : bit_2;
     signal debug_instruction    : bit_32;
+    signal debug_prog_mem_in    : bit_15;
+    signal debug_prog_mem_out   : bit_16;
+    signal debug_rx_addr        : bit_4;
+    signal debug_rz_addr        : bit_4;
+    signal debug_rx_value       : bit_16;
+    signal debug_rz_value       : bit_16;
+    signal debug_ir_operand     : bit_16;
     -- Debug Signals CU
     signal debug_state          : bit_2;
     signal debug_next_state     : bit_2;
@@ -85,7 +92,14 @@ architecture combined of recop_tb2 is
             -- Debug Signals
             debug_pc_out        : out bit_15;
             debug_fetch_state   : out bit_2;
-            debug_instruction   : out bit_32
+            debug_instruction   : out bit_32;
+            debug_prog_mem_in   : out bit_15;
+            debug_prog_mem_out  : out bit_16;
+            debug_rx_addr       : out bit_4;
+            debug_rz_addr       : out bit_4;
+            debug_rx_value      : out bit_16;
+            debug_rz_value      : out bit_16;
+            debug_ir_operand    : out bit_16
         );
     end component;
 
@@ -148,7 +162,14 @@ begin
             -- Debug Signals
             debug_pc_out    => debug_pc_out,
             debug_fetch_state => debug_fetch_state,
-            debug_instruction => debug_instruction
+            debug_instruction => debug_instruction,
+            debug_prog_mem_in => debug_prog_mem_in,
+            debug_prog_mem_out => debug_prog_mem_out,
+            debug_rx_addr   => debug_rx_addr,
+            debug_rz_addr   => debug_rz_addr,
+            debug_rx_value  => debug_rx_value,
+            debug_rz_value  => debug_rz_value,
+            debug_ir_operand => debug_ir_operand
         );
 
     -- Control Unit Instance

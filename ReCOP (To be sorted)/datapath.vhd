@@ -41,7 +41,14 @@ entity datapath is
         -- Debug Signals
         debug_pc_out        : out bit_15;
         debug_fetch_state   : out bit_2;
-        debug_instruction   : out bit_32
+        debug_instruction   : out bit_32;
+        debug_prog_mem_in   : out bit_15;
+        debug_prog_mem_out  : out bit_16;
+        debug_rx_addr       : out bit_4;
+        debug_rz_addr       : out bit_4;
+        debug_rx_value      : out bit_16;
+        debug_rz_value      : out bit_16;
+        debug_ir_operand    : out bit_16
     );
 end datapath;
 
@@ -62,7 +69,7 @@ architecture behaviour of datapath is
 
     signal alu_result_signal    : bit_16 := (others => '0');
     signal ir_opcode_signal     : bit_8  := (others => '0');
-    signal inst_fetched_signal  : bit_1  := '0'; 
+    signal inst_fetched_signal  : bit_1  := '0';
 
     -- Components
     component alu is
@@ -133,8 +140,8 @@ architecture behaviour of datapath is
             reset       : in  bit_1;
             instruction : in  bit_32;
             opcode      : out bit_8; -- AM(2) + OPCODE(6)
-            rx          : out bit_4;
             rz          : out bit_4;
+            rx          : out bit_4;
             operand     : out bit_16
         );
     end component;
@@ -264,8 +271,8 @@ begin
             reset       => reset,
             instruction => instruction,
             opcode      => ir_opcode_signal,
-            rx          => rxAddr,
             rz          => rzAddr,
+            rx          => rxAddr,
             operand     => ir_operand
         );
     impl_pm : prog_mem
@@ -318,6 +325,13 @@ begin
                           "11" when fetch_state = FETCH_3 else
                           "00";
     debug_instruction   <= instruction;
+    debug_prog_mem_in   <= prog_mem_in;
+    debug_prog_mem_out  <= prog_mem_out;
+    debug_rx_addr       <= rxAddr;
+    debug_rz_addr       <= rzAddr;
+    debug_rx_value      <= rxValue;
+    debug_rz_value      <= rzValue;
+    debug_ir_operand    <= ir_operand;
     -- End Debug Signals
     
     alu_result <= alu_result_signal;
@@ -350,15 +364,17 @@ begin
                 when FETCH_2 =>
                     fetch_inst_1 <= prog_mem_out;
                     -- This instruction, is fat...
-                    if (prog_mem_out(15 downto 14) = am_immediate or fetch_inst_1(15 downto 14) = am_direct) then
+                    if (prog_mem_out(15 downto 14) = am_immediate or prog_mem_out(15 downto 14) = am_direct) then
                         prog_mem_in <= std_logic_vector(unsigned(pc_out) + 1);
                         fetch_state <= FETCH_3;
                     else
+                        fetch_inst_2 <= (others => '0');
+                        inst_fetched_signal <= '1';
                         fetch_state <= IDLE;
                     end if;
-                    inst_fetched_signal <= '1';
                 when FETCH_3 =>
                     fetch_inst_2 <= prog_mem_out;
+                    inst_fetched_signal <= '1';
                     fetch_state <= IDLE;
                 when others =>
                     null;

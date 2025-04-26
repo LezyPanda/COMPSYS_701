@@ -12,6 +12,7 @@ package various_constants is
 	constant alu_or: bit_3 		:= "011";
 	constant alu_idle: bit_3 	:= "100";
 	constant alu_max: bit_3 	:= "101";
+	constant alu_hold: bit_3 	:= "110";
 
 	constant alu_sel_op1_rx		: bit_2 := "00";
 	constant alu_sel_op1_value	: bit_2 := "01";
