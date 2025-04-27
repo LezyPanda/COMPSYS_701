@@ -84,7 +84,7 @@ begin
     -- End Debug Signals
 
     -- FSM State Update
-    fsm_process : process(clk, reset)
+    fsm_process : process(clk, reset, next_state)
     begin
         if reset = '1' then
             state <= T0;
@@ -94,14 +94,22 @@ begin
     end process fsm_process;
 
     -- Tick
-    opcode_process : process(clk, reset, state, ir_opcode)
+    opcode_process : process(clk, reset, state, ir_opcode, inst_fetched)
         variable am             : bit_2 := (others => '0');
         variable opcode         : bit_6 := (others => '0');
     begin
         am      := ir_opcode(7 downto 6);
         opcode  := ir_opcode(5 downto 0);
 
-        if (reset = '0' and rising_edge(clk)) then
+        if (reset = '1') then
+            dm_write_signal         <= '0';
+            rf_write_signal         <= '0';
+            pc_write_flag_signal    <= '0';
+            dpcr_write_flag_signal  <= '0';
+            alu_clr_z_flag_signal   <= '0';
+            sop_write_signal        <= '0';
+            ir_fetch_start_signal   <= '0';
+        elsif (rising_edge(clk)) then
             -- Default Values
             dm_write_signal         <= '0';
             rf_write_signal         <= '0';
@@ -114,9 +122,11 @@ begin
                 when T0 =>
                     alu_operation_signal <= alu_idle;
                     next_state <= T1;
+                    pc_write_flag_signal <= '0';
                     ir_fetch_start_signal <= '1';
                 when T1 =>
                     ir_fetch_start_signal <= '0';
+                    pc_write_flag_signal <= '0';
                     if (inst_fetched = '1') then
                         next_state <= T2;
                         if (opcode = jmp) then
@@ -145,6 +155,7 @@ begin
                         end if;
                     end if;
                 when T2 =>
+                    pc_write_flag_signal <= '0';
                     next_state <= T3;
                     alu_sel_op1_signal <= am;
                     alu_operation_signal <= alu_idle;
@@ -222,6 +233,7 @@ begin
                             null;
                     end case;
                 when T3 =>
+                    pc_write_flag_signal <= '0';
                     next_state <= T0;
                     alu_operation_signal <= alu_hold;
                     -- mostly setting flags for datapath to excecute actions

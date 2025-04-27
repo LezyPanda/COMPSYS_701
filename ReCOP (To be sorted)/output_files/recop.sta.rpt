@@ -1,5 +1,5 @@
 Timing Analyzer report for recop
-Sun Apr 27 04:03:27 2025
+Sun Apr 27 16:36:59 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -99,26 +99,26 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
-; Average used               ; 2.24        ;
+; Average used               ; 2.32        ;
 ; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   9.8%      ;
-;     Processor 3            ;   9.6%      ;
-;     Processor 4            ;   9.6%      ;
-;     Processor 5            ;   8.0%      ;
-;     Processor 6            ;   8.0%      ;
-;     Processor 7            ;   8.0%      ;
-;     Processor 8            ;   8.0%      ;
-;     Processor 9            ;   7.9%      ;
-;     Processor 10           ;   7.9%      ;
-;     Processor 11           ;   7.9%      ;
-;     Processor 12           ;   7.9%      ;
-;     Processor 13           ;   7.9%      ;
-;     Processor 14           ;   7.9%      ;
-;     Processor 15           ;   7.9%      ;
-;     Processor 16           ;   7.9%      ;
+;     Processor 2            ;  10.5%      ;
+;     Processor 3            ;  10.5%      ;
+;     Processor 4            ;  10.4%      ;
+;     Processor 5            ;   8.4%      ;
+;     Processor 6            ;   8.4%      ;
+;     Processor 7            ;   8.4%      ;
+;     Processor 8            ;   8.4%      ;
+;     Processor 9            ;   8.4%      ;
+;     Processor 10           ;   8.4%      ;
+;     Processor 11           ;   8.4%      ;
+;     Processor 12           ;   8.4%      ;
+;     Processor 13           ;   8.4%      ;
+;     Processor 14           ;   8.4%      ;
+;     Processor 15           ;   8.3%      ;
+;     Processor 16           ;   8.3%      ;
 +----------------------------+-------------+
 
 
@@ -137,8 +137,8 @@ refer to the applicable agreement for further details.
 +------------+-----------------+--------------------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                             ; Note ;
 +------------+-----------------+--------------------------------------------------------+------+
-; 110.64 MHz ; 110.64 MHz      ; control_unit:impl_control_unit|alu_operation_signal[0] ;      ;
-; 162.36 MHz ; 162.36 MHz      ; clock_50                                               ;      ;
+; 120.54 MHz ; 120.54 MHz      ; control_unit:impl_control_unit|alu_operation_signal[0] ;      ;
+; 148.15 MHz ; 148.15 MHz      ; clock_50                                               ;      ;
 +------------+-----------------+--------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -154,8 +154,8 @@ HTML report is unavailable in plain text report export.
 +--------------------------------------------------------+---------+---------------+
 ; Clock                                                  ; Slack   ; End Point TNS ;
 +--------------------------------------------------------+---------+---------------+
-; control_unit:impl_control_unit|alu_operation_signal[0] ; -10.583 ; -161.048      ;
-; clock_50                                               ; -5.159  ; -4161.324     ;
+; control_unit:impl_control_unit|alu_operation_signal[0] ; -10.517 ; -161.682      ;
+; clock_50                                               ; -5.750  ; -4131.981     ;
 +--------------------------------------------------------+---------+---------------+
 
 
@@ -164,8 +164,8 @@ HTML report is unavailable in plain text report export.
 +--------------------------------------------------------+-------+---------------+
 ; Clock                                                  ; Slack ; End Point TNS ;
 +--------------------------------------------------------+-------+---------------+
-; clock_50                                               ; 0.333 ; 0.000         ;
-; control_unit:impl_control_unit|alu_operation_signal[0] ; 0.916 ; 0.000         ;
+; clock_50                                               ; 0.336 ; 0.000         ;
+; control_unit:impl_control_unit|alu_operation_signal[0] ; 0.596 ; 0.000         ;
 +--------------------------------------------------------+-------+---------------+
 
 
@@ -186,16 +186,15 @@ No paths to report.
 +--------------------------------------------------------+--------+---------------+
 ; Clock                                                  ; Slack  ; End Point TNS ;
 +--------------------------------------------------------+--------+---------------+
-; clock_50                                               ; -2.174 ; -3926.598     ;
-; control_unit:impl_control_unit|alu_operation_signal[0] ; 0.306  ; 0.000         ;
+; clock_50                                               ; -2.174 ; -3934.384     ;
+; control_unit:impl_control_unit|alu_operation_signal[0] ; 0.336  ; 0.000         ;
 +--------------------------------------------------------+--------+---------------+
 
 
 -----------------------------------------------
 ; Slow 1100mV 85C Model Metastability Summary ;
 -----------------------------------------------
-Design MTBF is not calculated because the design doesn't meet its timing requirements.
-
+No synchronizer chains to report.
 
 
 +----------------------------------------------------------------------------------------------+
@@ -203,8 +202,8 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +------------+-----------------+--------------------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                             ; Note ;
 +------------+-----------------+--------------------------------------------------------+------+
-; 112.38 MHz ; 112.38 MHz      ; control_unit:impl_control_unit|alu_operation_signal[0] ;      ;
-; 163.24 MHz ; 163.24 MHz      ; clock_50                                               ;      ;
+; 123.33 MHz ; 123.33 MHz      ; control_unit:impl_control_unit|alu_operation_signal[0] ;      ;
+; 147.82 MHz ; 147.82 MHz      ; clock_50                                               ;      ;
 +------------+-----------------+--------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -214,8 +213,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------------------------------------------------------+---------+---------------+
 ; Clock                                                  ; Slack   ; End Point TNS ;
 +--------------------------------------------------------+---------+---------------+
-; control_unit:impl_control_unit|alu_operation_signal[0] ; -10.529 ; -161.812      ;
-; clock_50                                               ; -5.126  ; -4012.141     ;
+; control_unit:impl_control_unit|alu_operation_signal[0] ; -10.507 ; -161.169      ;
+; clock_50                                               ; -5.765  ; -3968.621     ;
 +--------------------------------------------------------+---------+---------------+
 
 
@@ -224,8 +223,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------------------------------------------------------+-------+---------------+
 ; Clock                                                  ; Slack ; End Point TNS ;
 +--------------------------------------------------------+-------+---------------+
-; clock_50                                               ; 0.309 ; 0.000         ;
-; control_unit:impl_control_unit|alu_operation_signal[0] ; 0.972 ; 0.000         ;
+; clock_50                                               ; 0.317 ; 0.000         ;
+; control_unit:impl_control_unit|alu_operation_signal[0] ; 0.559 ; 0.000         ;
 +--------------------------------------------------------+-------+---------------+
 
 
@@ -246,16 +245,15 @@ No paths to report.
 +--------------------------------------------------------+--------+---------------+
 ; Clock                                                  ; Slack  ; End Point TNS ;
 +--------------------------------------------------------+--------+---------------+
-; clock_50                                               ; -2.174 ; -3932.806     ;
-; control_unit:impl_control_unit|alu_operation_signal[0] ; 0.298  ; 0.000         ;
+; clock_50                                               ; -2.174 ; -3941.676     ;
+; control_unit:impl_control_unit|alu_operation_signal[0] ; 0.323  ; 0.000         ;
 +--------------------------------------------------------+--------+---------------+
 
 
 ----------------------------------------------
 ; Slow 1100mV 0C Model Metastability Summary ;
 ----------------------------------------------
-Design MTBF is not calculated because the design doesn't meet its timing requirements.
-
+No synchronizer chains to report.
 
 
 +---------------------------------------------------------------------------------+
@@ -263,8 +261,8 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +--------------------------------------------------------+--------+---------------+
 ; Clock                                                  ; Slack  ; End Point TNS ;
 +--------------------------------------------------------+--------+---------------+
-; control_unit:impl_control_unit|alu_operation_signal[0] ; -5.985 ; -88.646       ;
-; clock_50                                               ; -2.982 ; -2141.267     ;
+; control_unit:impl_control_unit|alu_operation_signal[0] ; -6.064 ; -92.103       ;
+; clock_50                                               ; -3.412 ; -2151.668     ;
 +--------------------------------------------------------+--------+---------------+
 
 
@@ -273,8 +271,8 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +--------------------------------------------------------+-------+---------------+
 ; Clock                                                  ; Slack ; End Point TNS ;
 +--------------------------------------------------------+-------+---------------+
-; clock_50                                               ; 0.177 ; 0.000         ;
-; control_unit:impl_control_unit|alu_operation_signal[0] ; 0.395 ; 0.000         ;
+; clock_50                                               ; 0.178 ; 0.000         ;
+; control_unit:impl_control_unit|alu_operation_signal[0] ; 0.322 ; 0.000         ;
 +--------------------------------------------------------+-------+---------------+
 
 
@@ -295,16 +293,15 @@ No paths to report.
 +--------------------------------------------------------+--------+---------------+
 ; Clock                                                  ; Slack  ; End Point TNS ;
 +--------------------------------------------------------+--------+---------------+
-; clock_50                                               ; -2.174 ; -3737.890     ;
-; control_unit:impl_control_unit|alu_operation_signal[0] ; 0.336  ; 0.000         ;
+; clock_50                                               ; -2.174 ; -3738.815     ;
+; control_unit:impl_control_unit|alu_operation_signal[0] ; 0.357  ; 0.000         ;
 +--------------------------------------------------------+--------+---------------+
 
 
 -----------------------------------------------
 ; Fast 1100mV 85C Model Metastability Summary ;
 -----------------------------------------------
-Design MTBF is not calculated because the design doesn't meet its timing requirements.
-
+No synchronizer chains to report.
 
 
 +---------------------------------------------------------------------------------+
@@ -312,8 +309,8 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +--------------------------------------------------------+--------+---------------+
 ; Clock                                                  ; Slack  ; End Point TNS ;
 +--------------------------------------------------------+--------+---------------+
-; control_unit:impl_control_unit|alu_operation_signal[0] ; -5.526 ; -82.404       ;
-; clock_50                                               ; -2.682 ; -1798.527     ;
+; control_unit:impl_control_unit|alu_operation_signal[0] ; -5.515 ; -84.814       ;
+; clock_50                                               ; -3.043 ; -1797.013     ;
 +--------------------------------------------------------+--------+---------------+
 
 
@@ -322,8 +319,8 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +--------------------------------------------------------+-------+---------------+
 ; Clock                                                  ; Slack ; End Point TNS ;
 +--------------------------------------------------------+-------+---------------+
-; clock_50                                               ; 0.169 ; 0.000         ;
-; control_unit:impl_control_unit|alu_operation_signal[0] ; 0.422 ; 0.000         ;
+; clock_50                                               ; 0.168 ; 0.000         ;
+; control_unit:impl_control_unit|alu_operation_signal[0] ; 0.316 ; 0.000         ;
 +--------------------------------------------------------+-------+---------------+
 
 
@@ -344,16 +341,15 @@ No paths to report.
 +--------------------------------------------------------+--------+---------------+
 ; Clock                                                  ; Slack  ; End Point TNS ;
 +--------------------------------------------------------+--------+---------------+
-; clock_50                                               ; -2.174 ; -3739.514     ;
-; control_unit:impl_control_unit|alu_operation_signal[0] ; 0.356  ; 0.000         ;
+; clock_50                                               ; -2.174 ; -3740.373     ;
+; control_unit:impl_control_unit|alu_operation_signal[0] ; 0.379  ; 0.000         ;
 +--------------------------------------------------------+--------+---------------+
 
 
 ----------------------------------------------
 ; Fast 1100mV 0C Model Metastability Summary ;
 ----------------------------------------------
-Design MTBF is not calculated because the design doesn't meet its timing requirements.
-
+No synchronizer chains to report.
 
 
 +------------------------------------------------------------------------------------------------------------------------+
@@ -361,12 +357,12 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +---------------------------------------------------------+-----------+-------+----------+---------+---------------------+
 ; Clock                                                   ; Setup     ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +---------------------------------------------------------+-----------+-------+----------+---------+---------------------+
-; Worst-case Slack                                        ; -10.583   ; 0.169 ; N/A      ; N/A     ; -2.174              ;
-;  clock_50                                               ; -5.159    ; 0.169 ; N/A      ; N/A     ; -2.174              ;
-;  control_unit:impl_control_unit|alu_operation_signal[0] ; -10.583   ; 0.395 ; N/A      ; N/A     ; 0.298               ;
-; Design-wide TNS                                         ; -4322.372 ; 0.0   ; 0.0      ; 0.0     ; -3932.806           ;
-;  clock_50                                               ; -4161.324 ; 0.000 ; N/A      ; N/A     ; -3932.806           ;
-;  control_unit:impl_control_unit|alu_operation_signal[0] ; -161.812  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
+; Worst-case Slack                                        ; -10.517   ; 0.168 ; N/A      ; N/A     ; -2.174              ;
+;  clock_50                                               ; -5.765    ; 0.168 ; N/A      ; N/A     ; -2.174              ;
+;  control_unit:impl_control_unit|alu_operation_signal[0] ; -10.517   ; 0.316 ; N/A      ; N/A     ; 0.323               ;
+; Design-wide TNS                                         ; -4293.663 ; 0.0   ; 0.0      ; 0.0     ; -3941.676           ;
+;  clock_50                                               ; -4131.981 ; 0.000 ; N/A      ; N/A     ; -3941.676           ;
+;  control_unit:impl_control_unit|alu_operation_signal[0] ; -161.682  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
 +---------------------------------------------------------+-----------+-------+----------+---------+---------------------+
 
 
@@ -698,7 +694,7 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +--------------------------------------------------------+--------------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                             ; To Clock                                               ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +--------------------------------------------------------+--------------------------------------------------------+----------+----------+----------+----------+
-; clock_50                                               ; clock_50                                               ; 19725    ; 0        ; 0        ; 0        ;
+; clock_50                                               ; clock_50                                               ; 19693    ; 0        ; 0        ; 0        ;
 ; control_unit:impl_control_unit|alu_operation_signal[0] ; clock_50                                               ; 1        ; 273      ; 0        ; 0        ;
 ; clock_50                                               ; control_unit:impl_control_unit|alu_operation_signal[0] ; 0        ; 0        ; 12513    ; 0        ;
 ; control_unit:impl_control_unit|alu_operation_signal[0] ; control_unit:impl_control_unit|alu_operation_signal[0] ; 0        ; 0        ; 168      ; 168      ;
@@ -711,7 +707,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +--------------------------------------------------------+--------------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                             ; To Clock                                               ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +--------------------------------------------------------+--------------------------------------------------------+----------+----------+----------+----------+
-; clock_50                                               ; clock_50                                               ; 19725    ; 0        ; 0        ; 0        ;
+; clock_50                                               ; clock_50                                               ; 19693    ; 0        ; 0        ; 0        ;
 ; control_unit:impl_control_unit|alu_operation_signal[0] ; clock_50                                               ; 1        ; 273      ; 0        ; 0        ;
 ; clock_50                                               ; control_unit:impl_control_unit|alu_operation_signal[0] ; 0        ; 0        ; 12513    ; 0        ;
 ; control_unit:impl_control_unit|alu_operation_signal[0] ; control_unit:impl_control_unit|alu_operation_signal[0] ; 0        ; 0        ; 168      ; 168      ;
@@ -739,7 +735,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 11    ; 11   ;
-; Unconstrained Input Port Paths  ; 456   ; 456  ;
+; Unconstrained Input Port Paths  ; 473   ; 473  ;
 ; Unconstrained Output Ports      ; 24    ; 24   ;
 ; Unconstrained Output Port Paths ; 514   ; 514  ;
 +---------------------------------+-------+------+
@@ -863,7 +859,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Apr 27 04:03:20 2025
+    Info: Processing started: Sun Apr 27 16:36:53 2025
 Info: Command: quartus_sta recop -c recop
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -882,104 +878,96 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -10.583
+Info (332146): Worst-case setup slack is -10.517
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -10.583            -161.048 control_unit:impl_control_unit|alu_operation_signal[0] 
-    Info (332119):    -5.159           -4161.324 clock_50 
-Info (332146): Worst-case hold slack is 0.333
+    Info (332119):   -10.517            -161.682 control_unit:impl_control_unit|alu_operation_signal[0] 
+    Info (332119):    -5.750           -4131.981 clock_50 
+Info (332146): Worst-case hold slack is 0.336
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.333               0.000 clock_50 
-    Info (332119):     0.916               0.000 control_unit:impl_control_unit|alu_operation_signal[0] 
+    Info (332119):     0.336               0.000 clock_50 
+    Info (332119):     0.596               0.000 control_unit:impl_control_unit|alu_operation_signal[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -2.174
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.174           -3926.598 clock_50 
-    Info (332119):     0.306               0.000 control_unit:impl_control_unit|alu_operation_signal[0] 
-Info (332114): Report Metastability: Found 32 synchronizer chains.
-    Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
+    Info (332119):    -2.174           -3934.384 clock_50 
+    Info (332119):     0.336               0.000 control_unit:impl_control_unit|alu_operation_signal[0] 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -10.529
+Info (332146): Worst-case setup slack is -10.507
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -10.529            -161.812 control_unit:impl_control_unit|alu_operation_signal[0] 
-    Info (332119):    -5.126           -4012.141 clock_50 
-Info (332146): Worst-case hold slack is 0.309
+    Info (332119):   -10.507            -161.169 control_unit:impl_control_unit|alu_operation_signal[0] 
+    Info (332119):    -5.765           -3968.621 clock_50 
+Info (332146): Worst-case hold slack is 0.317
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.309               0.000 clock_50 
-    Info (332119):     0.972               0.000 control_unit:impl_control_unit|alu_operation_signal[0] 
+    Info (332119):     0.317               0.000 clock_50 
+    Info (332119):     0.559               0.000 control_unit:impl_control_unit|alu_operation_signal[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -2.174
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.174           -3932.806 clock_50 
-    Info (332119):     0.298               0.000 control_unit:impl_control_unit|alu_operation_signal[0] 
-Info (332114): Report Metastability: Found 32 synchronizer chains.
-    Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
+    Info (332119):    -2.174           -3941.676 clock_50 
+    Info (332119):     0.323               0.000 control_unit:impl_control_unit|alu_operation_signal[0] 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -5.985
+Info (332146): Worst-case setup slack is -6.064
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -5.985             -88.646 control_unit:impl_control_unit|alu_operation_signal[0] 
-    Info (332119):    -2.982           -2141.267 clock_50 
-Info (332146): Worst-case hold slack is 0.177
+    Info (332119):    -6.064             -92.103 control_unit:impl_control_unit|alu_operation_signal[0] 
+    Info (332119):    -3.412           -2151.668 clock_50 
+Info (332146): Worst-case hold slack is 0.178
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.177               0.000 clock_50 
-    Info (332119):     0.395               0.000 control_unit:impl_control_unit|alu_operation_signal[0] 
+    Info (332119):     0.178               0.000 clock_50 
+    Info (332119):     0.322               0.000 control_unit:impl_control_unit|alu_operation_signal[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -2.174
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.174           -3737.890 clock_50 
-    Info (332119):     0.336               0.000 control_unit:impl_control_unit|alu_operation_signal[0] 
-Info (332114): Report Metastability: Found 32 synchronizer chains.
-    Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
+    Info (332119):    -2.174           -3738.815 clock_50 
+    Info (332119):     0.357               0.000 control_unit:impl_control_unit|alu_operation_signal[0] 
 Info: Analyzing Fast 1100mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -5.526
+Info (332146): Worst-case setup slack is -5.515
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -5.526             -82.404 control_unit:impl_control_unit|alu_operation_signal[0] 
-    Info (332119):    -2.682           -1798.527 clock_50 
-Info (332146): Worst-case hold slack is 0.169
+    Info (332119):    -5.515             -84.814 control_unit:impl_control_unit|alu_operation_signal[0] 
+    Info (332119):    -3.043           -1797.013 clock_50 
+Info (332146): Worst-case hold slack is 0.168
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.169               0.000 clock_50 
-    Info (332119):     0.422               0.000 control_unit:impl_control_unit|alu_operation_signal[0] 
+    Info (332119):     0.168               0.000 clock_50 
+    Info (332119):     0.316               0.000 control_unit:impl_control_unit|alu_operation_signal[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -2.174
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.174           -3739.514 clock_50 
-    Info (332119):     0.356               0.000 control_unit:impl_control_unit|alu_operation_signal[0] 
-Info (332114): Report Metastability: Found 32 synchronizer chains.
-    Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
+    Info (332119):    -2.174           -3740.373 clock_50 
+    Info (332119):     0.379               0.000 control_unit:impl_control_unit|alu_operation_signal[0] 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 5333 megabytes
-    Info: Processing ended: Sun Apr 27 04:03:27 2025
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:12
+    Info: Peak virtual memory: 5331 megabytes
+    Info: Processing ended: Sun Apr 27 16:36:59 2025
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:11
 
 

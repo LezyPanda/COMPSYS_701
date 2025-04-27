@@ -1,5 +1,5 @@
 MIF/HEX Update report for recop
-Sun Apr 27 03:58:35 2025
+Sun Apr 27 17:20:57 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -35,7 +35,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+
 ; MIF/HEX Update Summary                                        ;
 +-----------------------+---------------------------------------+
-; MIF/HEX Update Status ; Successful - Sun Apr 27 03:58:35 2025 ;
+; MIF/HEX Update Status ; Successful - Sun Apr 27 17:20:57 2025 ;
 ; Revision Name         ; recop                                 ;
 ; Top-level Entity Name ; recop                                 ;
 ; Family                ; Cyclone V                             ;
@@ -58,10 +58,10 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime MIF/HEX Update
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Apr 27 03:58:32 2025
+    Info: Processing started: Sun Apr 27 17:20:54 2025
 Info: Command: quartus_cdb recop -c recop --update_mif
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Warning (113031): 11 out of 4096 addresses are reinitialized. The latest initialized data will replace the existing data. There are 11 warnings found, and 10 warnings are reported. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/rawOutput.mif Line: 1
+Warning (113031): 8 out of 4096 addresses are reinitialized. The latest initialized data will replace the existing data. There are 8 warnings found, and 8 warnings are reported. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/rawOutput.mif Line: 1
     Warning (113030): Memory Initialization File address 0 is reinitialized File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ Line: 10
     Warning (113030): Memory Initialization File address 1 is reinitialized File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ Line: 11
     Warning (113030): Memory Initialization File address 2 is reinitialized File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ Line: 12
@@ -70,15 +70,13 @@ Warning (113031): 11 out of 4096 addresses are reinitialized. The latest initial
     Warning (113030): Memory Initialization File address 5 is reinitialized File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ Line: 15
     Warning (113030): Memory Initialization File address 6 is reinitialized File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ Line: 16
     Warning (113030): Memory Initialization File address 7 is reinitialized File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ Line: 17
-    Warning (113030): Memory Initialization File address 8 is reinitialized File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ Line: 18
-    Warning (113030): Memory Initialization File address 9 is reinitialized File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ Line: 19
 Critical Warning (127005): Memory depth (32768) in the design file differs from memory depth (4096) in the Memory Initialization File "C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/rawOutput.mif" -- setting initial value for remaining addresses to 0
 Info (39024): Processed the following Memory Initialization File(s)
     Info (39025): Processed Memory Initialization File C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/rawOutput.mif File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/rawOutput.mif Line: 0
-Info: Quartus Prime MIF/HEX Update was successful. 0 errors, 13 warnings
-    Info: Peak virtual memory: 4891 megabytes
-    Info: Processing ended: Sun Apr 27 03:58:35 2025
+Info: Quartus Prime MIF/HEX Update was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 4938 megabytes
+    Info: Processing ended: Sun Apr 27 17:20:57 2025
     Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Total CPU time (on all processors): 00:00:04
 
 
