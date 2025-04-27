@@ -100,9 +100,12 @@ def assemble_instruction(parts, labels, pc):
         elif am == 'direct':
             operand = labels.get(ops[1], 0)
     elif len(ops) == 3:
+        three_regs = ['ADD','SUB','SUBV','AND','OR']
+        if mnemonic not in three_regs:
+            raise Exception(f"Instruction {mnemonic} does not support three-register form")
         am = detect_addr_mode(ops[2])
         rz = parse_register(ops[0])
-        if am == 'register':
+        if mnemonic in ['ADD','SUB','SUBV','AND','OR']:
             rx = parse_register(ops[2])
         else:
             rx = parse_register(ops[1])
