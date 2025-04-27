@@ -102,7 +102,10 @@ def assemble_instruction(parts, labels, pc):
     elif len(ops) == 3:
         am = detect_addr_mode(ops[2])
         rz = parse_register(ops[0])
-        rx = parse_register(ops[1])
+        if am == 'register':
+            rx = parse_register(ops[2])
+        else:
+            rx = parse_register(ops[1])
         if am == 'immediate':
             operand = parse_immediate(ops[2])
         elif am == 'direct':
