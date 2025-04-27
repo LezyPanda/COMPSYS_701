@@ -38,7 +38,6 @@ package various_constants is
 	constant dm_sel_in_value	: bit_2 := "00";
 	constant dm_sel_in_pc		: bit_2 := "01";
 	constant dm_sel_in_rx		: bit_2 := "10";
-	constant dm_sel_in_rz		: bit_2 := "11";
 
 	-- register file input select
 	constant rf_sel_in_value	: bit_3 := "000"; -- used
