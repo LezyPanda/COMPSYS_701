@@ -14,3 +14,6 @@ modelsim/work/_info
 modelsim/work/_lib.qdb
 modelsim/work.mpf
 /modelsim/work
+ReCOP (To be sorted)/rawOutput.mif
+ReCOP-ASM Package/test.asm
+modelsim/rawOutput.mif
