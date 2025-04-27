@@ -36,13 +36,13 @@ entity regfile is
 		
 		
 		-- Debug Signals, maybe replace with dprr, idk
+		debug_all_regs : out reg_array;
 		debug_rf_reg_listen: in integer range 0 to 15;
 		debug_rf_reg_result: out bit_16
 	);
 end regfile;
 
 architecture beh of regfile is
-	type reg_array is array (15 downto 0) of bit_16;
 	signal regs: reg_array;
 	signal data_input_z: bit_16;
 begin
@@ -84,6 +84,7 @@ begin
 			end if;
 		end if;
 	end process;
+	debug_all_regs <= regs;
 	debug_rf_reg_result <= regs(debug_rf_reg_listen);
 
 	rx <= regs(sel_x);

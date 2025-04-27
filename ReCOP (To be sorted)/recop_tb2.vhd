@@ -57,12 +57,13 @@ architecture combined of recop_tb2 is
     signal debug_flag           : bit_8;
     signal debug_inst_raw_1     : bit_16;
     signal debug_inst_raw_2     : bit_16;
+    signal debug_all_regs       : reg_array;
     -- Debug Signals CU
     signal debug_state          : bit_2;
     signal debug_next_state     : bit_2;
 
 
-    signal temp                 : bit_4 := "0010";
+    signal temp                 : bit_4 := "0011";
 
     component datapath is
         port (
@@ -106,7 +107,8 @@ architecture combined of recop_tb2 is
             debug_rf_reg_result : out bit_16;
             debug_flag          : out bit_8;
             debug_inst_raw_1    : out bit_16;
-            debug_inst_raw_2    : out bit_16
+            debug_inst_raw_2    : out bit_16;
+            debug_all_regs      : out reg_array
         );
     end component;
 
@@ -184,7 +186,8 @@ begin
             debug_rf_reg_result => debug_rf_reg_result,
             debug_flag      => debug_flag,
             debug_inst_raw_1 => debug_inst_raw_1,
-            debug_inst_raw_2 => debug_inst_raw_2
+            debug_inst_raw_2 => debug_inst_raw_2,
+            debug_all_regs  => debug_all_regs
         );
 
     -- Control Unit Instance

@@ -26,5 +26,6 @@ package recop_types is
 	subtype bit_3 is std_logic_vector(2 downto 0);
 	subtype bit_2 is std_logic_vector(1 downto 0);
 	subtype bit_1 is std_logic;
+	type reg_array is array (15 downto 0) of std_logic_vector(15 downto 0);
 
 end recop_types;

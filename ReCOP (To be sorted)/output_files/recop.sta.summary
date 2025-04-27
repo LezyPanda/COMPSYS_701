@@ -3,99 +3,99 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'control_unit:impl_control_unit|alu_operation_signal[0]'
-Slack : -10.517
-TNS   : -161.682
+Slack : -10.280
+TNS   : -157.860
 
 Type  : Slow 1100mV 85C Model Setup 'clock_50'
-Slack : -5.750
-TNS   : -4131.981
+Slack : -5.782
+TNS   : -4186.081
 
 Type  : Slow 1100mV 85C Model Hold 'clock_50'
-Slack : 0.336
+Slack : 0.362
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'control_unit:impl_control_unit|alu_operation_signal[0]'
-Slack : 0.596
+Slack : 0.981
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clock_50'
 Slack : -2.174
-TNS   : -3934.384
+TNS   : -3933.142
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'control_unit:impl_control_unit|alu_operation_signal[0]'
-Slack : 0.336
+Slack : 0.232
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Setup 'control_unit:impl_control_unit|alu_operation_signal[0]'
-Slack : -10.507
-TNS   : -161.169
+Slack : -10.367
+TNS   : -158.466
 
 Type  : Slow 1100mV 0C Model Setup 'clock_50'
-Slack : -5.765
-TNS   : -3968.621
+Slack : -5.780
+TNS   : -4031.415
 
 Type  : Slow 1100mV 0C Model Hold 'clock_50'
-Slack : 0.317
+Slack : 0.330
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'control_unit:impl_control_unit|alu_operation_signal[0]'
-Slack : 0.559
+Slack : 1.038
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clock_50'
 Slack : -2.174
-TNS   : -3941.676
+TNS   : -3940.044
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'control_unit:impl_control_unit|alu_operation_signal[0]'
-Slack : 0.323
+Slack : 0.236
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'control_unit:impl_control_unit|alu_operation_signal[0]'
-Slack : -6.064
-TNS   : -92.103
+Slack : -5.750
+TNS   : -87.940
 
 Type  : Fast 1100mV 85C Model Setup 'clock_50'
-Slack : -3.412
-TNS   : -2151.668
+Slack : -3.335
+TNS   : -2182.329
 
 Type  : Fast 1100mV 85C Model Hold 'clock_50'
 Slack : 0.178
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'control_unit:impl_control_unit|alu_operation_signal[0]'
-Slack : 0.322
+Slack : 0.502
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clock_50'
 Slack : -2.174
-TNS   : -3738.815
+TNS   : -3738.959
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'control_unit:impl_control_unit|alu_operation_signal[0]'
-Slack : 0.357
+Slack : 0.290
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'control_unit:impl_control_unit|alu_operation_signal[0]'
-Slack : -5.515
-TNS   : -84.814
+Slack : -5.312
+TNS   : -81.577
 
 Type  : Fast 1100mV 0C Model Setup 'clock_50'
-Slack : -3.043
-TNS   : -1797.013
+Slack : -2.967
+TNS   : -1829.971
 
 Type  : Fast 1100mV 0C Model Hold 'clock_50'
-Slack : 0.168
+Slack : 0.167
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'control_unit:impl_control_unit|alu_operation_signal[0]'
-Slack : 0.316
+Slack : 0.523
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clock_50'
 Slack : -2.174
-TNS   : -3740.373
+TNS   : -3740.599
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'control_unit:impl_control_unit|alu_operation_signal[0]'
-Slack : 0.379
+Slack : 0.330
 TNS   : 0.000
 
 ------------------------------------------------------------

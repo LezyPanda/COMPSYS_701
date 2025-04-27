@@ -112,7 +112,6 @@ begin
         elsif (rising_edge(clk)) then
             -- Default Values
             dm_write_signal         <= '0';
-            rf_write_signal         <= '0';
             pc_write_flag_signal    <= '0';
             dpcr_write_flag_signal  <= '0';
             alu_clr_z_flag_signal   <= '0';
@@ -123,6 +122,7 @@ begin
                     alu_operation_signal <= alu_idle;
                     next_state <= T1;
                     pc_write_flag_signal <= '0';
+                    rf_write_signal         <= '0';
                     ir_fetch_start_signal <= '1';
                 when T1 =>
                     ir_fetch_start_signal <= '0';

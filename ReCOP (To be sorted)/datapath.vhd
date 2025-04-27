@@ -56,7 +56,8 @@ entity datapath is
         debug_rf_reg_result : out bit_16;
         debug_flag          : out bit_8;
         debug_inst_raw_1    : out bit_16;
-        debug_inst_raw_2    : out bit_16
+        debug_inst_raw_2    : out bit_16;
+        debug_all_regs     : out reg_array
     );
 end datapath;
 
@@ -119,8 +120,9 @@ architecture behaviour of datapath is
             dprr_res_reg    : in bit_1;
             dprr_wren       : in bit_1;
             -- Debug Signals
-            debug_rf_reg_listen: in integer range 0 to 15;
-            debug_rf_reg_result: out bit_16
+            debug_all_regs      : out reg_array;
+            debug_rf_reg_listen : in integer range 0 to 15;
+            debug_rf_reg_result : out bit_16
         );
     end component;
     signal rf_sel_z     : integer range 0 to 15;
@@ -230,19 +232,19 @@ architecture behaviour of datapath is
     signal reg_result_wen   : bit_1;
     signal reg_result       : bit_1;
 
-    component memory is
-        port (
-            clk: in bit_1 := '0';
-            --pm_rd: in bit_1 := '0';
-            pm_address: in bit_16 := X"0000";
-            pm_outdata: out bit_16 := X"0000";
-            --dm_rd: in bit_1 := '0';
-            dm_address: in bit_16 := X"0000";
-            dm_outdata: out bit_16 := X"0000";
-            dm_wr: in bit_1 := '0';
-            dm_indata: in bit_16 := X"0000"
-        );
-    end component;
+    -- component memory is
+    --     port (
+    --         clk: in bit_1 := '0';
+    --         --pm_rd: in bit_1 := '0';
+    --         pm_address: in bit_16 := X"0000";
+    --         pm_outdata: out bit_16 := X"0000";
+    --         --dm_rd: in bit_1 := '0';
+    --         dm_address: in bit_16 := X"0000";
+    --         dm_outdata: out bit_16 := X"0000";
+    --         dm_wr: in bit_1 := '0';
+    --         dm_indata: in bit_16 := X"0000"
+    --     );
+    -- end component;
     signal mem_model_pm_in_addr : bit_16 := (others => '0');
     signal mem_model_dm_in_addr : bit_16 := (others => '0');
     -- End Components
@@ -283,6 +285,7 @@ begin
             dprr_res_reg    => dprr_res_reg,
             dprr_wren       => dprr_wren,
             -- Debug Signals
+            debug_all_regs      => debug_all_regs,
             debug_rf_reg_listen => debug_rf_reg_listen,
             debug_rf_reg_result => debug_rf_reg_result
         );
@@ -347,18 +350,18 @@ begin
             result_wen      => reg_result_wen,
             result          => reg_result
         );
-    impl_mem : memory
-        port map (
-            clk         => clk,
-            --pm_rd      => '0',
-            pm_address  => mem_model_pm_in_addr,
-            pm_outdata => prog_mem_out,
-            --dm_rd      => '0',
-            dm_address  => mem_model_dm_in_addr,
-            dm_outdata  => data_mem_out,
-            dm_wr       => dm_write,
-            dm_indata   => data_mem_in_data
-        );
+    -- impl_mem : memory
+    --     port map (
+    --         clk         => clk,
+    --         --pm_rd      => '0',
+    --         pm_address  => mem_model_pm_in_addr,
+    --         pm_outdata => prog_mem_out,
+    --         --dm_rd      => '0',
+    --         dm_address  => mem_model_dm_in_addr,
+    --         dm_outdata  => data_mem_out,
+    --         dm_wr       => dm_write,
+    --         dm_indata   => data_mem_in_data
+    --     );
     -- Debug Signals
     debug_pc_out        <= pc_out(14 downto 0);
     debug_fetch_state   <= "00" when fetch_state = IDLE else
@@ -457,16 +460,16 @@ begin
                                rzValue(11 downto 0) when dm_sel_addr = dm_sel_addr_rz else
                                      "000000000000";
 
+
     -- Data Memory
     data_mem_in_data <= ("00000000" & ir_opcode_signal) when dm_sel_in = dm_sel_in_value else
                                          ("0" & pc_out) when dm_sel_in = dm_sel_in_pc else
                                                 rxValue when dm_sel_in = dm_sel_in_rx else
-                                                rzValue when dm_sel_in = dm_sel_in_rz else
                                      "0000000000000000";
 
-    -- Memory Model
-    mem_model_pm_in_addr <= "0" & prog_mem_in;
-    mem_model_dm_in_addr <= "0000" & data_mem_in_addr;
+    -- Memory Model weird
+    -- mem_model_pm_in_addr <= "0" & prog_mem_in;
+    -- mem_model_dm_in_addr <= "0000" & data_mem_in_addr;
 
 end behaviour;
 
