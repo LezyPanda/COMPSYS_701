@@ -243,6 +243,8 @@ architecture behaviour of datapath is
             dm_indata: in bit_16 := X"0000"
         );
     end component;
+    signal mem_model_pm_in_addr : bit_16 := (others => '0');
+    signal mem_model_dm_in_addr : bit_16 := (others => '0');
     -- End Components
 begin
     impl_alu : alu
@@ -349,10 +351,10 @@ begin
         port map (
             clk         => clk,
             --pm_rd      => '0',
-            pm_address  => prog_mem_in,
+            pm_address  => mem_model_pm_in_addr,
             pm_outdata => prog_mem_out,
             --dm_rd      => '0',
-            dm_address  => data_mem_in_addr,
+            dm_address  => mem_model_dm_in_addr,
             dm_outdata  => data_mem_out,
             dm_wr       => dm_write,
             dm_indata   => data_mem_in_data
@@ -461,5 +463,10 @@ begin
                                                 rxValue when dm_sel_in = dm_sel_in_rx else
                                                 rzValue when dm_sel_in = dm_sel_in_rz else
                                      "0000000000000000";
+
+    -- Memory Model
+    mem_model_pm_in_addr <= "0" & prog_mem_in;
+    mem_model_dm_in_addr <= "0000" & data_mem_in_addr;
+
 end behaviour;
 
