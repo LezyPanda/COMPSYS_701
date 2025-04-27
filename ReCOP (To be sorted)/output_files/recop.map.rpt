@@ -1,5 +1,5 @@
 Analysis & Synthesis report for recop
-Fri Apr 25 18:50:44 2025
+Sun Apr 27 23:43:24 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -10,7 +10,34 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. State Machine - |recop|control_unit:impl_control_unit|next_state
+ 10. State Machine - |recop|control_unit:impl_control_unit|state
+ 11. State Machine - |recop|datapath:impl_datapath|next_fetch_state
+ 12. State Machine - |recop|datapath:impl_datapath|fetch_state
+ 13. User-Specified and Inferred Latches
+ 14. General Register Statistics
+ 15. Inverted Register Statistics
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Source assignments for datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component|altsyncram_c8i1:auto_generated
+ 18. Source assignments for datapath:impl_datapath|data_mem:impl_dm|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated
+ 19. Parameter Settings for User Entity Instance: datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component
+ 20. Parameter Settings for User Entity Instance: datapath:impl_datapath|data_mem:impl_dm|altsyncram:altsyncram_component
+ 21. altsyncram Parameter Settings by Entity Instance
+ 22. Port Connectivity Checks: "control_unit:impl_control_unit"
+ 23. Port Connectivity Checks: "datapath:impl_datapath|registers:impl_reg"
+ 24. Port Connectivity Checks: "datapath:impl_datapath|alu:impl_alu"
+ 25. Port Connectivity Checks: "datapath:impl_datapath"
+ 26. Port Connectivity Checks: "Bcd2seg7:hex4_inst"
+ 27. Port Connectivity Checks: "Bcd2seg7:hex3_inst"
+ 28. Port Connectivity Checks: "Bcd2seg7:hex2_inst"
+ 29. Port Connectivity Checks: "Bcd2seg7:hex1_inst"
+ 30. Post-Synthesis Netlist Statistics for Top Partition
+ 31. Elapsed Time Per Partition
+ 32. Analysis & Synthesis Messages
 
 
 
@@ -33,22 +60,27 @@ refer to the applicable agreement for further details.
 
 
 
-+---------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                              ;
-+-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Fri Apr 25 18:50:44 2025           ;
-; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
-; Revision Name               ; recop                                       ;
-; Top-level Entity Name       ; recop                                       ;
-; Family                      ; Cyclone V                                   ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
-; Total registers             ; N/A until Partition Merge                   ;
-; Total pins                  ; N/A until Partition Merge                   ;
-; Total virtual pins          ; N/A until Partition Merge                   ;
-; Total block memory bits     ; N/A until Partition Merge                   ;
-; Total PLLs                  ; N/A until Partition Merge                   ;
-; Total DLLs                  ; N/A until Partition Merge                   ;
-+-----------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sun Apr 27 23:43:24 2025       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; recop                                       ;
+; Top-level Entity Name           ; recop                                       ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 392                                         ;
+; Total pins                      ; 67                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 589,824                                     ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -147,11 +179,561 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
+;     Processors 9-16        ;   0.0%      ;
 +----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                 ;
++----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                   ; Library ;
++----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------+---------+
+; various_constants.vhd            ; yes             ; User VHDL File                         ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/various_constants.vhd  ;         ;
+; registers.vhd                    ; yes             ; User VHDL File                         ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/registers.vhd          ;         ;
+; regfile.vhd                      ; yes             ; User VHDL File                         ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/regfile.vhd            ;         ;
+; recop_types.vhd                  ; yes             ; User VHDL File                         ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop_types.vhd        ;         ;
+; prog_mem.vhd                     ; yes             ; User Wizard-Generated File             ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_mem.vhd           ;         ;
+; prog_counter.vhd                 ; yes             ; User VHDL File                         ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_counter.vhd       ;         ;
+; opcodes.vhd                      ; yes             ; User VHDL File                         ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/opcodes.vhd            ;         ;
+; inst_reg.vhd                     ; yes             ; User VHDL File                         ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/inst_reg.vhd           ;         ;
+; datapath.vhd                     ; yes             ; User VHDL File                         ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd           ;         ;
+; data_mem.vhd                     ; yes             ; User Wizard-Generated File             ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/data_mem.vhd           ;         ;
+; controlunit.vhd                  ; yes             ; User VHDL File                         ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd        ;         ;
+; ALU.vhd                          ; yes             ; User VHDL File                         ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd                ;         ;
+; recop.vhd                        ; yes             ; Auto-Found VHDL File                   ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd              ;         ;
+; bcd2seg7.vhd                     ; yes             ; Auto-Found VHDL File                   ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/bcd2seg7.vhd           ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf          ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc   ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc             ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc          ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc          ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc           ;         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc              ;         ;
+; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc              ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc            ;         ;
+; db/altsyncram_c8i1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/db/altsyncram_c8i1.tdf ;         ;
+; rawOutput.mif                    ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/rawOutput.mif          ;         ;
+; db/decode_61a.tdf                ; yes             ; Auto-Generated Megafunction            ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/db/decode_61a.tdf      ;         ;
+; db/mux_chb.tdf                   ; yes             ; Auto-Generated Megafunction            ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/db/mux_chb.tdf         ;         ;
+; db/altsyncram_q6j1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/db/altsyncram_q6j1.tdf ;         ;
++----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 436            ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 530            ;
+;     -- 7 input functions                    ; 18             ;
+;     -- 6 input functions                    ; 292            ;
+;     -- 5 input functions                    ; 40             ;
+;     -- 4 input functions                    ; 59             ;
+;     -- <=3 input functions                  ; 121            ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 392            ;
+;                                             ;                ;
+; I/O pins                                    ; 67             ;
+; Total MLAB memory bits                      ; 0              ;
+; Total block memory bits                     ; 589824         ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; clock_50~input ;
+; Maximum fan-out                             ; 536            ;
+; Total fan-out                               ; 6291           ;
+; Average fan-out                             ; 5.24           ;
++---------------------------------------------+----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                           ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                  ; Entity Name     ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |recop                                       ; 530 (0)             ; 392 (0)                   ; 589824            ; 0          ; 67   ; 0            ; |recop                                                                                                                               ; recop           ; work         ;
+;    |Bcd2seg7:hex0_inst|                      ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |recop|Bcd2seg7:hex0_inst                                                                                                            ; Bcd2seg7        ; work         ;
+;    |Bcd2seg7:hex5_inst|                      ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |recop|Bcd2seg7:hex5_inst                                                                                                            ; Bcd2seg7        ; work         ;
+;    |control_unit:impl_control_unit|          ; 61 (61)             ; 28 (28)                   ; 0                 ; 0          ; 0    ; 0            ; |recop|control_unit:impl_control_unit                                                                                                ; control_unit    ; work         ;
+;    |datapath:impl_datapath|                  ; 455 (51)            ; 364 (56)                  ; 589824            ; 0          ; 0    ; 0            ; |recop|datapath:impl_datapath                                                                                                        ; datapath        ; work         ;
+;       |alu:impl_alu|                         ; 87 (87)             ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |recop|datapath:impl_datapath|alu:impl_alu                                                                                           ; alu             ; work         ;
+;       |data_mem:impl_dm|                     ; 0 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |recop|datapath:impl_datapath|data_mem:impl_dm                                                                                       ; data_mem        ; work         ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |recop|datapath:impl_datapath|data_mem:impl_dm|altsyncram:altsyncram_component                                                       ; altsyncram      ; work         ;
+;             |altsyncram_q6j1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |recop|datapath:impl_datapath|data_mem:impl_dm|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated                        ; altsyncram_q6j1 ; work         ;
+;       |inst_reg:impl_ir|                     ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |recop|datapath:impl_datapath|inst_reg:impl_ir                                                                                       ; inst_reg        ; work         ;
+;       |prog_counter:impl_pc|                 ; 31 (31)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |recop|datapath:impl_datapath|prog_counter:impl_pc                                                                                   ; prog_counter    ; work         ;
+;       |prog_mem:impl_pm|                     ; 56 (0)              ; 3 (0)                     ; 524288            ; 0          ; 0    ; 0            ; |recop|datapath:impl_datapath|prog_mem:impl_pm                                                                                       ; prog_mem        ; work         ;
+;          |altsyncram:altsyncram_component|   ; 56 (0)              ; 3 (0)                     ; 524288            ; 0          ; 0    ; 0            ; |recop|datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component                                                       ; altsyncram      ; work         ;
+;             |altsyncram_c8i1:auto_generated| ; 56 (0)              ; 3 (3)                     ; 524288            ; 0          ; 0    ; 0            ; |recop|datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component|altsyncram_c8i1:auto_generated                        ; altsyncram_c8i1 ; work         ;
+;                |decode_61a:rden_decode|      ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |recop|datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component|altsyncram_c8i1:auto_generated|decode_61a:rden_decode ; decode_61a      ; work         ;
+;                |mux_chb:mux2|                ; 48 (48)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |recop|datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component|altsyncram_c8i1:auto_generated|mux_chb:mux2           ; mux_chb         ; work         ;
+;       |regfile:impl_rf|                      ; 230 (230)           ; 256 (256)                 ; 0                 ; 0          ; 0    ; 0            ; |recop|datapath:impl_datapath|regfile:impl_rf                                                                                        ; regfile         ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                            ;
++-------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------+---------------+
+; Name                                                                                                              ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF           ;
++-------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------+---------------+
+; datapath:impl_datapath|data_mem:impl_dm|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 4096         ; 16           ; --           ; --           ; 65536  ; None          ;
+; datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component|altsyncram_c8i1:auto_generated|ALTSYNCRAM ; AUTO ; ROM         ; 32768        ; 16           ; --           ; --           ; 524288 ; rawOutput.mif ;
++-------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------+---------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------+
+; State Machine - |recop|control_unit:impl_control_unit|next_state              ;
++---------------+---------------+---------------+---------------+---------------+
+; Name          ; next_state.T3 ; next_state.T2 ; next_state.T1 ; next_state.T0 ;
++---------------+---------------+---------------+---------------+---------------+
+; next_state.T0 ; 0             ; 0             ; 0             ; 0             ;
+; next_state.T1 ; 0             ; 0             ; 1             ; 1             ;
+; next_state.T2 ; 0             ; 1             ; 0             ; 1             ;
+; next_state.T3 ; 1             ; 0             ; 0             ; 1             ;
++---------------+---------------+---------------+---------------+---------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------+
+; State Machine - |recop|control_unit:impl_control_unit|state ;
++----------+----------+----------+----------+-----------------+
+; Name     ; state.T3 ; state.T2 ; state.T1 ; state.T0        ;
++----------+----------+----------+----------+-----------------+
+; state.T0 ; 0        ; 0        ; 0        ; 0               ;
+; state.T1 ; 0        ; 0        ; 1        ; 1               ;
+; state.T2 ; 0        ; 1        ; 0        ; 1               ;
+; state.T3 ; 1        ; 0        ; 0        ; 1               ;
++----------+----------+----------+----------+-----------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |recop|datapath:impl_datapath|next_fetch_state                                                                    ;
++--------------------------+--------------------------+--------------------------+--------------------------+-----------------------+
+; Name                     ; next_fetch_state.FETCH_3 ; next_fetch_state.FETCH_2 ; next_fetch_state.FETCH_1 ; next_fetch_state.IDLE ;
++--------------------------+--------------------------+--------------------------+--------------------------+-----------------------+
+; next_fetch_state.IDLE    ; 0                        ; 0                        ; 0                        ; 0                     ;
+; next_fetch_state.FETCH_1 ; 0                        ; 0                        ; 1                        ; 1                     ;
+; next_fetch_state.FETCH_2 ; 0                        ; 1                        ; 0                        ; 1                     ;
+; next_fetch_state.FETCH_3 ; 1                        ; 0                        ; 0                        ; 1                     ;
++--------------------------+--------------------------+--------------------------+--------------------------+-----------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------+
+; State Machine - |recop|datapath:impl_datapath|fetch_state                                                ;
++---------------------+---------------------+---------------------+---------------------+------------------+
+; Name                ; fetch_state.FETCH_3 ; fetch_state.FETCH_2 ; fetch_state.FETCH_1 ; fetch_state.IDLE ;
++---------------------+---------------------+---------------------+---------------------+------------------+
+; fetch_state.IDLE    ; 0                   ; 0                   ; 0                   ; 0                ;
+; fetch_state.FETCH_1 ; 0                   ; 0                   ; 1                   ; 1                ;
+; fetch_state.FETCH_2 ; 0                   ; 1                   ; 0                   ; 1                ;
+; fetch_state.FETCH_3 ; 1                   ; 0                   ; 0                   ; 1                ;
++---------------------+---------------------+---------------------+---------------------+------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                      ;
++-----------------------------------------------------+-------------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                       ; Free of Timing Hazards ;
++-----------------------------------------------------+-------------------------------------------+------------------------+
+; datapath:impl_datapath|alu:impl_alu|result[1]       ; datapath:impl_datapath|alu:impl_alu|Mux32 ; yes                    ;
+; datapath:impl_datapath|alu:impl_alu|result[0]       ; datapath:impl_datapath|alu:impl_alu|Mux32 ; yes                    ;
+; datapath:impl_datapath|alu:impl_alu|result[3]       ; datapath:impl_datapath|alu:impl_alu|Mux32 ; yes                    ;
+; datapath:impl_datapath|alu:impl_alu|result[2]       ; datapath:impl_datapath|alu:impl_alu|Mux32 ; yes                    ;
+; datapath:impl_datapath|alu:impl_alu|result[4]       ; datapath:impl_datapath|alu:impl_alu|Mux32 ; yes                    ;
+; datapath:impl_datapath|alu:impl_alu|result[5]       ; datapath:impl_datapath|alu:impl_alu|Mux32 ; yes                    ;
+; datapath:impl_datapath|alu:impl_alu|result[6]       ; datapath:impl_datapath|alu:impl_alu|Mux32 ; yes                    ;
+; datapath:impl_datapath|alu:impl_alu|result[7]       ; datapath:impl_datapath|alu:impl_alu|Mux32 ; yes                    ;
+; datapath:impl_datapath|alu:impl_alu|result[8]       ; datapath:impl_datapath|alu:impl_alu|Mux32 ; yes                    ;
+; datapath:impl_datapath|alu:impl_alu|result[9]       ; datapath:impl_datapath|alu:impl_alu|Mux32 ; yes                    ;
+; datapath:impl_datapath|alu:impl_alu|result[10]      ; datapath:impl_datapath|alu:impl_alu|Mux32 ; yes                    ;
+; datapath:impl_datapath|alu:impl_alu|result[11]      ; datapath:impl_datapath|alu:impl_alu|Mux32 ; yes                    ;
+; datapath:impl_datapath|alu:impl_alu|result[12]      ; datapath:impl_datapath|alu:impl_alu|Mux32 ; yes                    ;
+; datapath:impl_datapath|alu:impl_alu|result[13]      ; datapath:impl_datapath|alu:impl_alu|Mux32 ; yes                    ;
+; datapath:impl_datapath|alu:impl_alu|result[14]      ; datapath:impl_datapath|alu:impl_alu|Mux32 ; yes                    ;
+; datapath:impl_datapath|alu:impl_alu|result[15]      ; datapath:impl_datapath|alu:impl_alu|Mux32 ; yes                    ;
+; Number of user-specified and inferred latches = 16  ;                                           ;                        ;
++-----------------------------------------------------+-------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 392   ;
+; Number of registers using Synchronous Clear  ; 16    ;
+; Number of registers using Synchronous Load   ; 15    ;
+; Number of registers using Asynchronous Clear ; 353   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 334   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------+
+; Inverted Register Statistics                                     ;
++--------------------------------------------------------+---------+
+; Inverted Register                                      ; Fan out ;
++--------------------------------------------------------+---------+
+; control_unit:impl_control_unit|alu_operation_signal[2] ; 19      ;
+; Total number of inverted registers = 1                 ;         ;
++--------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+; 4:1                ; 15 bits   ; 30 LEs        ; 0 LEs                ; 30 LEs                 ; Yes        ; |recop|datapath:impl_datapath|prog_mem_in[13]                                                                                                   ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |recop|datapath:impl_datapath|fetch_inst_2[8]                                                                                                   ;
+; 5:1                ; 14 bits   ; 42 LEs        ; 28 LEs               ; 14 LEs                 ; Yes        ; |recop|datapath:impl_datapath|prog_counter:impl_pc|pc_out_signal[9]                                                                             ;
+; 70:1               ; 3 bits    ; 138 LEs       ; 12 LEs               ; 126 LEs                ; Yes        ; |recop|control_unit:impl_control_unit|rf_sel_in_signal[2]                                                                                       ;
+; 25:1               ; 2 bits    ; 32 LEs        ; 12 LEs               ; 20 LEs                 ; Yes        ; |recop|control_unit:impl_control_unit|pc_mode_signal[1]                                                                                         ;
+; 1:1                ; 16 bits   ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |recop|datapath:impl_datapath|regfile:impl_rf|regs                                                                                              ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |recop|datapath:impl_datapath|alu:impl_alu|Mux9                                                                                                 ;
+; 6:1                ; 15 bits   ; 60 LEs        ; 45 LEs               ; 15 LEs                 ; No         ; |recop|datapath:impl_datapath|regfile:impl_rf|Mux12                                                                                             ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |recop|datapath:impl_datapath|data_mem_in_data[10]                                                                                              ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |recop|datapath:impl_datapath|data_mem_in_data[4]                                                                                               ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |recop|datapath:impl_datapath|data_mem_in_addr[11]                                                                                              ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |recop|datapath:impl_datapath|data_mem_in_addr[4]                                                                                               ;
+; 7:1                ; 16 bits   ; 64 LEs        ; 48 LEs               ; 16 LEs                 ; No         ; |recop|datapath:impl_datapath|alu:impl_alu|Mux30                                                                                                ;
+; 16:1               ; 4 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |recop|datapath:impl_datapath|regfile:impl_rf|Mux30                                                                                             ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |recop|Bcd2seg7:hex0_inst|conv_out[0]                                                                                                           ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |recop|Bcd2seg7:hex5_inst|conv_out[0]                                                                                                           ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |recop|datapath:impl_datapath|regfile:impl_rf|Mux56                                                                                             ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |recop|datapath:impl_datapath|regfile:impl_rf|Mux37                                                                                             ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |recop|datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component|altsyncram_c8i1:auto_generated|mux_chb:mux2|l3_w9_n0_mux_dataout ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component|altsyncram_c8i1:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                              ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                               ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for datapath:impl_datapath|data_mem:impl_dm|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                              ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                               ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+----------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                     ;
++------------------------------------+----------------------+----------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                  ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                               ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                             ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                             ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                           ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                  ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                                                  ;
+; WIDTH_A                            ; 16                   ; Signed Integer                                           ;
+; WIDTHAD_A                          ; 15                   ; Signed Integer                                           ;
+; NUMWORDS_A                         ; 32768                ; Signed Integer                                           ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                                  ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                  ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                  ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                  ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                  ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                  ;
+; WIDTH_B                            ; 1                    ; Untyped                                                  ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                                  ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                                  ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                  ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                  ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                  ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                  ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                  ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                  ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                  ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                  ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                  ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                  ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                  ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                  ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                           ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                  ;
+; RAM_BLOCK_TYPE                     ; M4K                  ; Untyped                                                  ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                  ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                  ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                  ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                  ;
+; INIT_FILE                          ; rawOutput.mif        ; Untyped                                                  ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                  ;
+; MAXIMUM_DEPTH                      ; 4096                 ; Signed Integer                                           ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                                  ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                  ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                                  ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                  ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                  ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                  ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                  ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                  ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                  ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                                  ;
+; CBXI_PARAMETER                     ; altsyncram_c8i1      ; Untyped                                                  ;
++------------------------------------+----------------------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:impl_datapath|data_mem:impl_dm|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+----------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                     ;
++------------------------------------+----------------------+----------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                  ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                               ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                             ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                             ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                           ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                  ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                                                  ;
+; WIDTH_A                            ; 16                   ; Signed Integer                                           ;
+; WIDTHAD_A                          ; 12                   ; Signed Integer                                           ;
+; NUMWORDS_A                         ; 4096                 ; Signed Integer                                           ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                                  ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                  ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                  ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                  ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                  ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                  ;
+; WIDTH_B                            ; 1                    ; Untyped                                                  ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                                  ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                                  ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                  ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                  ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                  ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                  ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                  ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                  ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                  ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                  ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                  ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                  ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                  ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                  ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                           ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                  ;
+; RAM_BLOCK_TYPE                     ; M4K                  ; Untyped                                                  ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                  ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                  ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                  ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                  ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                                  ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                  ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                  ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                                  ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                  ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                                  ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                  ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                  ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                  ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                  ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                  ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                  ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                                  ;
+; CBXI_PARAMETER                     ; altsyncram_q6j1      ; Untyped                                                  ;
++------------------------------------+----------------------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                                    ;
++-------------------------------------------+-------------------------------------------------------------------------+
+; Name                                      ; Value                                                                   ;
++-------------------------------------------+-------------------------------------------------------------------------+
+; Number of entity instances                ; 2                                                                       ;
+; Entity Instance                           ; datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                                                     ;
+;     -- WIDTH_A                            ; 16                                                                      ;
+;     -- NUMWORDS_A                         ; 32768                                                                   ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                            ;
+;     -- WIDTH_B                            ; 1                                                                       ;
+;     -- NUMWORDS_B                         ; 1                                                                       ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                  ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                            ;
+;     -- RAM_BLOCK_TYPE                     ; M4K                                                                     ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                               ;
+; Entity Instance                           ; datapath:impl_datapath|data_mem:impl_dm|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                                             ;
+;     -- WIDTH_A                            ; 16                                                                      ;
+;     -- NUMWORDS_A                         ; 4096                                                                    ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                            ;
+;     -- WIDTH_B                            ; 1                                                                       ;
+;     -- NUMWORDS_B                         ; 1                                                                       ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                  ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                            ;
+;     -- RAM_BLOCK_TYPE                     ; M4K                                                                     ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                               ;
++-------------------------------------------+-------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "control_unit:impl_control_unit"                                                                 ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port             ; Type   ; Severity ; Details                                                                             ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; debug_state      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; debug_next_state ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:impl_datapath|registers:impl_reg"                                           ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; dpcr  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; er    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; eot   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; svop  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; sip_r ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; sop   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; dprr  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:impl_datapath|alu:impl_alu" ;
++-----------+-------+----------+----------------------------------+
+; Port      ; Type  ; Severity ; Details                          ;
++-----------+-------+----------+----------------------------------+
+; alu_carry ; Input ; Info     ; Stuck at GND                     ;
++-----------+-------+----------+----------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:impl_datapath"                                                                                                        ;
++----------------------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port                       ; Type   ; Severity ; Details                                                                                                  ;
++----------------------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; debug_pc_out               ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; debug_fetch_state          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; debug_instruction          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; debug_prog_mem_in          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; debug_prog_mem_out         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; debug_rx_addr              ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; debug_rz_addr              ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; debug_rx_value             ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; debug_rz_value             ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; debug_ir_operand           ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; debug_rf_reg_result[15..4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; debug_flag                 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; debug_data_mem_in_addr     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; debug_data_mem_in_data     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; debug_data_mem_out         ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; debug_inst_raw_1           ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; debug_inst_raw_2           ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; debug_all_regs             ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++----------------------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "Bcd2seg7:hex4_inst" ;
++---------+-------+----------+-------------------+
+; Port    ; Type  ; Severity ; Details           ;
++---------+-------+----------+-------------------+
+; conv_in ; Input ; Info     ; Stuck at VCC      ;
++---------+-------+----------+-------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "Bcd2seg7:hex3_inst" ;
++---------+-------+----------+-------------------+
+; Port    ; Type  ; Severity ; Details           ;
++---------+-------+----------+-------------------+
+; conv_in ; Input ; Info     ; Stuck at VCC      ;
++---------+-------+----------+-------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "Bcd2seg7:hex2_inst" ;
++---------+-------+----------+-------------------+
+; Port    ; Type  ; Severity ; Details           ;
++---------+-------+----------+-------------------+
+; conv_in ; Input ; Info     ; Stuck at VCC      ;
++---------+-------+----------+-------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "Bcd2seg7:hex1_inst" ;
++---------+-------+----------+-------------------+
+; Port    ; Type  ; Severity ; Details           ;
++---------+-------+----------+-------------------+
+; conv_in ; Input ; Info     ; Stuck at VCC      ;
++---------+-------+----------+-------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 392                         ;
+;     CLR               ; 51                          ;
+;     ENA               ; 17                          ;
+;     ENA CLR           ; 286                         ;
+;     ENA CLR SCLR      ; 16                          ;
+;     ENA SLD           ; 15                          ;
+;     plain             ; 7                           ;
+; arriav_lcell_comb     ; 533                         ;
+;     arith             ; 46                          ;
+;         1 data inputs ; 30                          ;
+;         4 data inputs ; 15                          ;
+;         5 data inputs ; 1                           ;
+;     extend            ; 18                          ;
+;         7 data inputs ; 18                          ;
+;     normal            ; 469                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 5                           ;
+;         3 data inputs ; 84                          ;
+;         4 data inputs ; 44                          ;
+;         5 data inputs ; 39                          ;
+;         6 data inputs ; 292                         ;
+; boundary_port         ; 67                          ;
+; stratixv_ram_block    ; 144                         ;
+;                       ;                             ;
+; Max LUT depth         ; 7.50                        ;
+; Average LUT depth     ; 4.24                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -160,7 +742,7 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri Apr 25 18:50:35 2025
+    Info: Processing started: Sun Apr 27 23:43:14 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off recop -c recop
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -173,8 +755,8 @@ Info (12021): Found 2 design units, including 1 entities, in source file registe
     Info (12022): Found design unit 1: registerfile-SYN File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/registerfile.vhd Line: 60
     Info (12023): Found entity 1: registerfile File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/registerfile.vhd Line: 44
 Info (12021): Found 2 design units, including 1 entities, in source file regfile.vhd
-    Info (12022): Found design unit 1: regfile-beh File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/regfile.vhd Line: 40
-    Info (12023): Found entity 1: regfile File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/regfile.vhd Line: 11
+    Info (12022): Found design unit 1: regfile-beh File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/regfile.vhd Line: 45
+    Info (12023): Found entity 1: regfile File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/regfile.vhd Line: 10
 Info (12021): Found 1 design units, including 0 entities, in source file recop_types.vhd
     Info (12022): Found design unit 1: recop_types File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop_types.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file recop_pll.vhd
@@ -200,29 +782,228 @@ Info (12021): Found 2 design units, including 1 entities, in source file memory_
 Info (12021): Found 2 design units, including 1 entities, in source file inst_reg.vhd
     Info (12022): Found design unit 1: inst_reg-behaviour File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/inst_reg.vhd Line: 18
     Info (12023): Found entity 1: inst_reg File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/inst_reg.vhd Line: 7
-Info (12021): Found 2 design units, including 1 entities, in source file datapath_tb.vhd
-    Info (12022): Found design unit 1: datapath_tb-testbench File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath_tb.vhd Line: 12
-    Info (12023): Found entity 1: datapath_tb File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath_tb.vhd Line: 9
+Warning (12019): Can't analyze file -- file datapath_tb.vhd is missing
 Info (12021): Found 2 design units, including 1 entities, in source file datapath.vhd
-    Info (12022): Found design unit 1: datapath-behaviour File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 47
+    Info (12022): Found design unit 1: datapath-behaviour File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 64
     Info (12023): Found entity 1: datapath File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file data_mem.vhd
     Info (12022): Found design unit 1: data_mem-SYN File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/data_mem.vhd Line: 55
     Info (12023): Found entity 1: data_mem File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/data_mem.vhd Line: 43
-Info (12021): Found 2 design units, including 1 entities, in source file controlunittb.vhd
-    Info (12022): Found design unit 1: controlunit_tb-tb File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunitTB.vhd Line: 13
-    Info (12023): Found entity 1: controlunit_tb File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunitTB.vhd Line: 10
+Warning (12019): Can't analyze file -- file controlunitTB.vhd is missing
 Info (12021): Found 2 design units, including 1 entities, in source file controlunit.vhd
     Info (12022): Found design unit 1: control_unit-behaviour File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 45
-    Info (12023): Found entity 1: control_unit File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 11
+    Info (12023): Found entity 1: control_unit File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
     Info (12022): Found design unit 1: alu-combined File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 34
     Info (12023): Found entity 1: alu File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 13
-Error (12007): Top-level design entity "recop" is undefined
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 1 warning
-    Error: Peak virtual memory: 4844 megabytes
-    Error: Processing ended: Fri Apr 25 18:50:44 2025
-    Error: Elapsed time: 00:00:09
-    Error: Total CPU time (on all processors): 00:00:18
+Warning (12125): Using design file recop.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: recop-combined File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 25
+    Info (12023): Found entity 1: recop File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 10
+Info (12127): Elaborating entity "recop" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(53): object "debug_pc_out" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 53
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(54): object "debug_fetch_state" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 54
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(55): object "debug_instruction" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 55
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(56): object "debug_prog_mem_in" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 56
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(57): object "debug_prog_mem_out" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 57
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(58): object "debug_rx_addr" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 58
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(59): object "debug_rz_addr" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 59
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(60): object "debug_rx_value" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 60
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(61): object "debug_rz_value" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 61
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(62): object "debug_ir_operand" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 62
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(66): object "debug_state" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 66
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(67): object "debug_next_state" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 67
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(68): object "debug_flag" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 68
+Warning (12125): Using design file bcd2seg7.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: Bcd2seg7-aBcd2seg7 File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/bcd2seg7.vhd Line: 11
+    Info (12023): Found entity 1: Bcd2seg7 File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/bcd2seg7.vhd Line: 4
+Info (12128): Elaborating entity "Bcd2seg7" for hierarchy "Bcd2seg7:hex0_inst" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 166
+Info (12128): Elaborating entity "datapath" for hierarchy "datapath:impl_datapath" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 174
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(131): used implicit default value for signal "rz_max" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 131
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(132): used implicit default value for signal "sip_hold" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 132
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(133): used implicit default value for signal "er_temp" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 133
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(134): used implicit default value for signal "dprr_res" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 134
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(135): used implicit default value for signal "dprr_res_reg" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 135
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(136): used implicit default value for signal "dprr_wren" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 136
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(215): object "reg_dpcr" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 215
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(216): used implicit default value for signal "reg_dpcr_lsb_sel" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 216
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(217): used implicit default value for signal "reg_dpcr_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 217
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(218): object "reg_er" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 218
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(219): used implicit default value for signal "reg_er_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 219
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(220): used implicit default value for signal "reg_er_clr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 220
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(221): object "reg_eot" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 221
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(222): used implicit default value for signal "reg_eot_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 222
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(223): used implicit default value for signal "reg_eot_clr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 223
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(224): object "reg_svop" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 224
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(225): used implicit default value for signal "reg_svop_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 225
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(226): object "reg_sip_r" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 226
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(227): used implicit default value for signal "reg_sip" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 227
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(228): object "reg_sop" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 228
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(229): object "reg_dprr" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 229
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(230): used implicit default value for signal "reg_irq_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 230
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(231): used implicit default value for signal "reg_irq_clr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 231
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(232): used implicit default value for signal "reg_result_wen" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 232
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(233): used implicit default value for signal "reg_result" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 233
+Info (12128): Elaborating entity "alu" for hierarchy "datapath:impl_datapath|alu:impl_alu" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 252
+Warning (10631): VHDL Process Statement warning at ALU.vhd(68): inferring latch(es) for signal or variable "result", which holds its previous value in one or more paths through the process File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Warning (10492): VHDL Process Statement warning at ALU.vhd(90): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 90
+Info (10041): Inferred latch for "result[0]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[1]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[2]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[3]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[4]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[5]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[6]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[7]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[8]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[9]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[10]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[11]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[12]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[13]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[14]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[15]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Info (12128): Elaborating entity "regfile" for hierarchy "datapath:impl_datapath|regfile:impl_rf" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 267
+Info (12128): Elaborating entity "prog_counter" for hierarchy "datapath:impl_datapath|prog_counter:impl_pc" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 292
+Warning (10492): VHDL Process Statement warning at prog_counter.vhd(29): signal "pc_write_flag" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_counter.vhd Line: 29
+Warning (10492): VHDL Process Statement warning at prog_counter.vhd(29): signal "prev_write_flag" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_counter.vhd Line: 29
+Info (12128): Elaborating entity "inst_reg" for hierarchy "datapath:impl_datapath|inst_reg:impl_ir" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 301
+Info (12128): Elaborating entity "prog_mem" for hierarchy "datapath:impl_datapath|prog_mem:impl_pm" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 311
+Info (12128): Elaborating entity "altsyncram" for hierarchy "datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_mem.vhd Line: 87
+Info (12130): Elaborated megafunction instantiation "datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_mem.vhd Line: 87
+Info (12133): Instantiated megafunction "datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_mem.vhd Line: 87
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "rawOutput.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone II"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "maximum_depth" = "4096"
+    Info (12134): Parameter "numwords_a" = "32768"
+    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "ram_block_type" = "M4K"
+    Info (12134): Parameter "widthad_a" = "15"
+    Info (12134): Parameter "width_a" = "16"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Warning (287001): Assertion warning: Device family Cyclone V does not have M4K blocks -- using available memory blocks File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/db/altsyncram_c8i1.tdf Line: 2621
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_c8i1.tdf
+    Info (12023): Found entity 1: altsyncram_c8i1 File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/db/altsyncram_c8i1.tdf Line: 31
+Info (12128): Elaborating entity "altsyncram_c8i1" for hierarchy "datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component|altsyncram_c8i1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Warning (113031): 4 out of 4096 addresses are reinitialized. The latest initialized data will replace the existing data. There are 4 warnings found, and 4 warnings are reported. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/rawOutput.mif Line: 1
+    Warning (113030): Memory Initialization File address 0 is reinitialized File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ Line: 10
+    Warning (113030): Memory Initialization File address 1 is reinitialized File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ Line: 11
+    Warning (113030): Memory Initialization File address 2 is reinitialized File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ Line: 12
+    Warning (113030): Memory Initialization File address 3 is reinitialized File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ Line: 13
+Critical Warning (127005): Memory depth (32768) in the design file differs from memory depth (4096) in the Memory Initialization File "C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/rawOutput.mif" -- setting initial value for remaining addresses to 0 File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_mem.vhd Line: 87
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_61a.tdf
+    Info (12023): Found entity 1: decode_61a File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/db/decode_61a.tdf Line: 22
+Info (12128): Elaborating entity "decode_61a" for hierarchy "datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component|altsyncram_c8i1:auto_generated|decode_61a:rden_decode" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/db/altsyncram_c8i1.tdf Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_chb.tdf
+    Info (12023): Found entity 1: mux_chb File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/db/mux_chb.tdf Line: 22
+Info (12128): Elaborating entity "mux_chb" for hierarchy "datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component|altsyncram_c8i1:auto_generated|mux_chb:mux2" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/db/altsyncram_c8i1.tdf Line: 40
+Info (12128): Elaborating entity "data_mem" for hierarchy "datapath:impl_datapath|data_mem:impl_dm" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 317
+Info (12128): Elaborating entity "altsyncram" for hierarchy "datapath:impl_datapath|data_mem:impl_dm|altsyncram:altsyncram_component" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/data_mem.vhd Line: 90
+Info (12130): Elaborated megafunction instantiation "datapath:impl_datapath|data_mem:impl_dm|altsyncram:altsyncram_component" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/data_mem.vhd Line: 90
+Info (12133): Instantiated megafunction "datapath:impl_datapath|data_mem:impl_dm|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/data_mem.vhd Line: 90
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "intended_device_family" = "Cyclone II"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "4096"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "ram_block_type" = "M4K"
+    Info (12134): Parameter "widthad_a" = "12"
+    Info (12134): Parameter "width_a" = "16"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Warning (287001): Assertion warning: Device family Cyclone V does not have M4K blocks -- using available memory blocks File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/db/altsyncram_q6j1.tdf Line: 413
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_q6j1.tdf
+    Info (12023): Found entity 1: altsyncram_q6j1 File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/db/altsyncram_q6j1.tdf Line: 27
+Info (12128): Elaborating entity "altsyncram_q6j1" for hierarchy "datapath:impl_datapath|data_mem:impl_dm|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Info (12128): Elaborating entity "registers" for hierarchy "datapath:impl_datapath|registers:impl_reg" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 325
+Info (12128): Elaborating entity "control_unit" for hierarchy "control_unit:impl_control_unit" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 215
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[1] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 104
+Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[0] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 104
+Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[3] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 104
+Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[2] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 104
+Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[4] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 104
+Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[5] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 104
+Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[6] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 104
+Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[7] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 104
+Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[8] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 104
+Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[9] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 104
+Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[10] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 104
+Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[11] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 104
+Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[12] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 104
+Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[13] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 104
+Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[14] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 104
+Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[15] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 104
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "hex1[0]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 17
+    Warning (13410): Pin "hex1[1]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 17
+    Warning (13410): Pin "hex1[2]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 17
+    Warning (13410): Pin "hex1[3]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 17
+    Warning (13410): Pin "hex1[4]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 17
+    Warning (13410): Pin "hex1[5]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 17
+    Warning (13410): Pin "hex1[6]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 17
+    Warning (13410): Pin "hex2[0]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 18
+    Warning (13410): Pin "hex2[1]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 18
+    Warning (13410): Pin "hex2[2]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 18
+    Warning (13410): Pin "hex2[3]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 18
+    Warning (13410): Pin "hex2[4]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 18
+    Warning (13410): Pin "hex2[5]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 18
+    Warning (13410): Pin "hex2[6]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 18
+    Warning (13410): Pin "hex3[0]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 19
+    Warning (13410): Pin "hex3[1]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 19
+    Warning (13410): Pin "hex3[2]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 19
+    Warning (13410): Pin "hex3[3]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 19
+    Warning (13410): Pin "hex3[4]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 19
+    Warning (13410): Pin "hex3[5]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 19
+    Warning (13410): Pin "hex3[6]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 19
+    Warning (13410): Pin "hex4[0]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 20
+    Warning (13410): Pin "hex4[1]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 20
+    Warning (13410): Pin "hex4[2]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 20
+    Warning (13410): Pin "hex4[3]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 20
+    Warning (13410): Pin "hex4[4]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 20
+    Warning (13410): Pin "hex4[5]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 20
+    Warning (13410): Pin "hex4[6]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 20
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "key[1]" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 13
+    Warning (15610): No output dependent on input pin "key[2]" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 13
+    Warning (15610): No output dependent on input pin "key[3]" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 13
+Info (21057): Implemented 1072 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 15 input pins
+    Info (21059): Implemented 52 output pins
+    Info (21061): Implemented 861 logic cells
+    Info (21064): Implemented 144 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 121 warnings
+    Info: Peak virtual memory: 4958 megabytes
+    Info: Processing ended: Sun Apr 27 23:43:24 2025
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:20
 
 

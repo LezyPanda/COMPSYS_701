@@ -76,6 +76,8 @@ begin
 				result <= operand_2 and operand_1;
 			when alu_or =>
 				result <= operand_2 or operand_1;
+			when alu_hold =>
+				null;
 			when others =>
 				result <= X"0000";
 		end case;
