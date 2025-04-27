@@ -126,7 +126,6 @@ begin
                     ir_fetch_start_signal <= '1';
                 when T1 =>
                     ir_fetch_start_signal <= '0';
-                    pc_write_flag_signal <= '0';
                     if (inst_fetched = '1') then
                         next_state <= T2;
                         if (opcode = jmp) then
@@ -140,7 +139,6 @@ begin
                         elsif (opcode = sz) then
                             pc_mode_signal <= pc_mode_value;
                         else
-                            pc_write_flag_signal <= '1';
                             if (am = am_inherent) then
                                 pc_mode_signal <= pc_mode_incr_1;
                             elsif (am = am_immediate) then
@@ -155,7 +153,6 @@ begin
                         end if;
                     end if;
                 when T2 =>
-                    pc_write_flag_signal <= '0';
                     next_state <= T3;
                     alu_sel_op1_signal <= am;
                     alu_operation_signal <= alu_idle;
@@ -233,7 +230,7 @@ begin
                             null;
                     end case;
                 when T3 =>
-                    pc_write_flag_signal <= '0';
+                    pc_write_flag_signal <= '1';
                     next_state <= T0;
                     alu_operation_signal <= alu_hold;
                     -- mostly setting flags for datapath to excecute actions

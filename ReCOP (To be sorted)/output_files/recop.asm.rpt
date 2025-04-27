@@ -1,5 +1,5 @@
 Assembler report for recop
-Sun Apr 27 20:40:45 2025
+Sun Apr 27 23:56:27 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sun Apr 27 20:40:45 2025 ;
+; Assembler Status      ; Successful - Sun Apr 27 23:56:27 2025 ;
 ; Revision Name         ; recop                                 ;
 ; Top-level Entity Name ; recop                                 ;
 ; Family                ; Cyclone V                             ;
@@ -93,8 +93,8 @@ refer to the applicable agreement for further details.
 +----------------+-----------------------------------------------------------------------------------------+
 ; Option         ; Setting                                                                                 ;
 +----------------+-----------------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x020BBE93                                                                              ;
-; Checksum       ; 0x020BBE93                                                                              ;
+; JTAG usercode  ; 0x020BC9EC                                                                              ;
+; Checksum       ; 0x020BC9EC                                                                              ;
 +----------------+-----------------------------------------------------------------------------------------+
 
 
@@ -104,14 +104,14 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Apr 27 20:40:38 2025
+    Info: Processing started: Sun Apr 27 23:56:21 2025
 Info: Command: quartus_asm --read_settings_files=on --write_settings_files=off recop -c recop
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4891 megabytes
-    Info: Processing ended: Sun Apr 27 20:40:46 2025
-    Info: Elapsed time: 00:00:08
+    Info: Peak virtual memory: 4871 megabytes
+    Info: Processing ended: Sun Apr 27 23:56:27 2025
+    Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:07
 
 
