@@ -24,6 +24,14 @@ To Update Memory (mif) -> Processing -> Update Memory Initialization File
 Processing -> Start -> Start Assembler
 Reprogram the FPGA -> Tools -> Programmer -> Start
 
+
+-- Assembler --
+We have our python assembler asm_to_mif.py
+Double click to run it, it reads ../ReCOP-ASM Package/test.asm and output to:
+../modelsim/rawOutput.mif
+and ../ReCOP (To be sorted)/rawOutput.mif
+
+
 28/04/2025
 Starting from the right switches, indicates the id of the register.
 The left most segment display is the reg selected, the right most is the value of it (0~9)
