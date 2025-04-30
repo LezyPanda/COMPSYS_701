@@ -1,6 +1,10 @@
-	LDR R1 #2
-	STR R1 $2
-	LDR R2 $2
+	LDR R1 #1
+	LDR R2 #2
+	LDR R3 #12
+	JMP R3
+	LDR R3 #3
+	LDR R4 #4
+	LDR R5 #5
 	
 ENDPROG
 END
