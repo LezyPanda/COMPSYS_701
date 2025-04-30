@@ -111,7 +111,6 @@ begin
             ir_fetch_start_signal   <= '0';
         elsif (rising_edge(clk)) then
             -- Default Values
-            dm_write_signal         <= '0';
             pc_write_flag_signal    <= '0';
             dpcr_write_flag_signal  <= '0';
             alu_clr_z_flag_signal   <= '0';
@@ -119,6 +118,7 @@ begin
             ir_fetch_start_signal   <= '0';
             case state is
                 when T0 =>
+                    dm_write_signal         <= '0';
                     alu_operation_signal <= alu_idle;
                     next_state <= T1;
                     pc_write_flag_signal <= '0';

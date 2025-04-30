@@ -1,5 +1,6 @@
-	LDR R1 #4
-	STR R2 R1
-	LDR R3 R2
+	LDR R1 #2
+	STR R1 $2
+	LDR R2 $2
+	
 ENDPROG
 END

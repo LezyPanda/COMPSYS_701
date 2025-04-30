@@ -427,7 +427,10 @@ begin
                 when FETCH_2 =>
                     fetch_inst_1 <= prog_mem_out;
                     -- This instruction, is fat...
-                    if (prog_mem_out(15 downto 14) = am_immediate or prog_mem_out(15 downto 14) = am_direct) then
+                    if (prog_mem_out(15 downto 14) = am_immediate) then
+                        prog_mem_in <= std_logic_vector(unsigned(pc_out) + 1);
+                        next_fetch_state <= FETCH_3;
+                    elsif (prog_mem_out(15 downto 14) = am_direct) then
                         prog_mem_in <= std_logic_vector(unsigned(pc_out) + 1);
                         next_fetch_state <= FETCH_3;
                     else
@@ -454,7 +457,7 @@ begin
     -- ALU
 
     -- Address Register
-    data_mem_in_addr <= ("0000" & ir_opcode_signal) when dm_sel_addr = dm_sel_addr_value else
+    data_mem_in_addr <= ir_operand(11 downto 0) when dm_sel_addr = dm_sel_addr_value else
                                 pc_out(11 downto 0) when dm_sel_addr = dm_sel_addr_pc else
                                rxValue(11 downto 0) when dm_sel_addr = dm_sel_addr_rx else
                                rzValue(11 downto 0) when dm_sel_addr = dm_sel_addr_rz else
@@ -462,7 +465,7 @@ begin
 
 
     -- Data Memory
-    data_mem_in_data <= ("00000000" & ir_opcode_signal) when dm_sel_in = dm_sel_in_value else
+    data_mem_in_data <= ir_operand when dm_sel_in = dm_sel_in_value else
                                          ("0" & pc_out) when dm_sel_in = dm_sel_in_pc else
                                                 rxValue when dm_sel_in = dm_sel_in_rx else
                                      "0000000000000000";

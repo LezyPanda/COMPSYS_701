@@ -1,5 +1,5 @@
 Analysis & Synthesis report for recop
-Sun Apr 27 23:43:24 2025
+Wed Apr 30 15:54:23 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -63,7 +63,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Apr 27 23:43:24 2025       ;
+; Analysis & Synthesis Status     ; Successful - Wed Apr 30 15:54:23 2025       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; recop                                       ;
 ; Top-level Entity Name           ; recop                                       ;
@@ -175,11 +175,11 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 16          ;
-; Maximum allowed            ; 16          ;
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 14          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 16          ;
+; Maximum used               ; 14          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
@@ -189,45 +189,44 @@ refer to the applicable agreement for further details.
 ;     Processor 5            ;   0.0%      ;
 ;     Processor 6            ;   0.0%      ;
 ;     Processor 7            ;   0.0%      ;
-;     Processor 8            ;   0.0%      ;
-;     Processors 9-16        ;   0.0%      ;
+;     Processors 8-14        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                 ;
-+----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                   ; Library ;
-+----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------+---------+
-; various_constants.vhd            ; yes             ; User VHDL File                         ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/various_constants.vhd  ;         ;
-; registers.vhd                    ; yes             ; User VHDL File                         ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/registers.vhd          ;         ;
-; regfile.vhd                      ; yes             ; User VHDL File                         ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/regfile.vhd            ;         ;
-; recop_types.vhd                  ; yes             ; User VHDL File                         ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop_types.vhd        ;         ;
-; prog_mem.vhd                     ; yes             ; User Wizard-Generated File             ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_mem.vhd           ;         ;
-; prog_counter.vhd                 ; yes             ; User VHDL File                         ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_counter.vhd       ;         ;
-; opcodes.vhd                      ; yes             ; User VHDL File                         ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/opcodes.vhd            ;         ;
-; inst_reg.vhd                     ; yes             ; User VHDL File                         ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/inst_reg.vhd           ;         ;
-; datapath.vhd                     ; yes             ; User VHDL File                         ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd           ;         ;
-; data_mem.vhd                     ; yes             ; User Wizard-Generated File             ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/data_mem.vhd           ;         ;
-; controlunit.vhd                  ; yes             ; User VHDL File                         ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd        ;         ;
-; ALU.vhd                          ; yes             ; User VHDL File                         ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd                ;         ;
-; recop.vhd                        ; yes             ; Auto-Found VHDL File                   ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd              ;         ;
-; bcd2seg7.vhd                     ; yes             ; Auto-Found VHDL File                   ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/bcd2seg7.vhd           ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf          ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc   ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc             ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc          ;         ;
-; aglobal181.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc          ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc           ;         ;
-; altrom.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc              ;         ;
-; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc              ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc            ;         ;
-; db/altsyncram_c8i1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/db/altsyncram_c8i1.tdf ;         ;
-; rawOutput.mif                    ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/rawOutput.mif          ;         ;
-; db/decode_61a.tdf                ; yes             ; Auto-Generated Megafunction            ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/db/decode_61a.tdf      ;         ;
-; db/mux_chb.tdf                   ; yes             ; Auto-Generated Megafunction            ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/db/mux_chb.tdf         ;         ;
-; db/altsyncram_q6j1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/db/altsyncram_q6j1.tdf ;         ;
-+----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                  ;
++----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                    ; Library ;
++----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------+---------+
+; various_constants.vhd            ; yes             ; User VHDL File                         ; C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/various_constants.vhd  ;         ;
+; registers.vhd                    ; yes             ; User VHDL File                         ; C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/registers.vhd          ;         ;
+; regfile.vhd                      ; yes             ; User VHDL File                         ; C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/regfile.vhd            ;         ;
+; recop_types.vhd                  ; yes             ; User VHDL File                         ; C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop_types.vhd        ;         ;
+; prog_mem.vhd                     ; yes             ; User Wizard-Generated File             ; C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/prog_mem.vhd           ;         ;
+; prog_counter.vhd                 ; yes             ; User VHDL File                         ; C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/prog_counter.vhd       ;         ;
+; opcodes.vhd                      ; yes             ; User VHDL File                         ; C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/opcodes.vhd            ;         ;
+; inst_reg.vhd                     ; yes             ; User VHDL File                         ; C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/inst_reg.vhd           ;         ;
+; datapath.vhd                     ; yes             ; User VHDL File                         ; C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd           ;         ;
+; data_mem.vhd                     ; yes             ; User Wizard-Generated File             ; C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/data_mem.vhd           ;         ;
+; controlunit.vhd                  ; yes             ; User VHDL File                         ; C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/controlunit.vhd        ;         ;
+; ALU.vhd                          ; yes             ; User VHDL File                         ; C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd                ;         ;
+; recop.vhd                        ; yes             ; Auto-Found VHDL File                   ; C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd              ;         ;
+; bcd2seg7.vhd                     ; yes             ; Auto-Found VHDL File                   ; C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/bcd2seg7.vhd           ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf           ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc    ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc              ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc           ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc           ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc            ;         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc               ;         ;
+; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc               ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc             ;         ;
+; db/altsyncram_c8i1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/db/altsyncram_c8i1.tdf ;         ;
+; rawOutput.mif                    ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/rawOutput.mif          ;         ;
+; db/decode_61a.tdf                ; yes             ; Auto-Generated Megafunction            ; C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/db/decode_61a.tdf      ;         ;
+; db/mux_chb.tdf                   ; yes             ; Auto-Generated Megafunction            ; C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/db/mux_chb.tdf         ;         ;
+; db/altsyncram_q6j1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/db/altsyncram_q6j1.tdf ;         ;
++----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -235,12 +234,12 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 436            ;
+; Estimate of Logic utilization (ALMs needed) ; 438            ;
 ;                                             ;                ;
 ; Combinational ALUT usage for logic          ; 530            ;
 ;     -- 7 input functions                    ; 18             ;
-;     -- 6 input functions                    ; 292            ;
-;     -- 5 input functions                    ; 40             ;
+;     -- 6 input functions                    ; 296            ;
+;     -- 5 input functions                    ; 36             ;
 ;     -- 4 input functions                    ; 59             ;
 ;     -- <=3 input functions                  ; 121            ;
 ;                                             ;                ;
@@ -254,8 +253,8 @@ refer to the applicable agreement for further details.
 ;                                             ;                ;
 ; Maximum fan-out node                        ; clock_50~input ;
 ; Maximum fan-out                             ; 536            ;
-; Total fan-out                               ; 6291           ;
-; Average fan-out                             ; 5.24           ;
+; Total fan-out                               ; 6295           ;
+; Average fan-out                             ; 5.25           ;
 +---------------------------------------------+----------------+
 
 
@@ -403,19 +402,18 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; 4:1                ; 15 bits   ; 30 LEs        ; 0 LEs                ; 30 LEs                 ; Yes        ; |recop|datapath:impl_datapath|prog_mem_in[13]                                                                                                   ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |recop|datapath:impl_datapath|fetch_inst_2[8]                                                                                                   ;
-; 5:1                ; 14 bits   ; 42 LEs        ; 28 LEs               ; 14 LEs                 ; Yes        ; |recop|datapath:impl_datapath|prog_counter:impl_pc|pc_out_signal[9]                                                                             ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 0 LEs                ; 30 LEs                 ; Yes        ; |recop|datapath:impl_datapath|prog_mem_in[14]                                                                                                   ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |recop|datapath:impl_datapath|fetch_inst_2[9]                                                                                                   ;
+; 5:1                ; 14 bits   ; 42 LEs        ; 28 LEs               ; 14 LEs                 ; Yes        ; |recop|datapath:impl_datapath|prog_counter:impl_pc|pc_out_signal[10]                                                                            ;
 ; 70:1               ; 3 bits    ; 138 LEs       ; 12 LEs               ; 126 LEs                ; Yes        ; |recop|control_unit:impl_control_unit|rf_sel_in_signal[2]                                                                                       ;
 ; 25:1               ; 2 bits    ; 32 LEs        ; 12 LEs               ; 20 LEs                 ; Yes        ; |recop|control_unit:impl_control_unit|pc_mode_signal[1]                                                                                         ;
 ; 1:1                ; 16 bits   ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |recop|datapath:impl_datapath|regfile:impl_rf|regs                                                                                              ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |recop|datapath:impl_datapath|alu:impl_alu|Mux9                                                                                                 ;
-; 6:1                ; 15 bits   ; 60 LEs        ; 45 LEs               ; 15 LEs                 ; No         ; |recop|datapath:impl_datapath|regfile:impl_rf|Mux12                                                                                             ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |recop|datapath:impl_datapath|data_mem_in_data[10]                                                                                              ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |recop|datapath:impl_datapath|data_mem_in_data[4]                                                                                               ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |recop|datapath:impl_datapath|data_mem_in_addr[11]                                                                                              ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |recop|datapath:impl_datapath|data_mem_in_addr[4]                                                                                               ;
-; 7:1                ; 16 bits   ; 64 LEs        ; 48 LEs               ; 16 LEs                 ; No         ; |recop|datapath:impl_datapath|alu:impl_alu|Mux30                                                                                                ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |recop|datapath:impl_datapath|alu:impl_alu|Mux8                                                                                                 ;
+; 6:1                ; 15 bits   ; 60 LEs        ; 45 LEs               ; 15 LEs                 ; No         ; |recop|datapath:impl_datapath|regfile:impl_rf|Mux10                                                                                             ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |recop|datapath:impl_datapath|data_mem_in_data[13]                                                                                              ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |recop|datapath:impl_datapath|data_mem_in_data[6]                                                                                               ;
+; 5:1                ; 12 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |recop|datapath:impl_datapath|data_mem_in_addr[1]                                                                                               ;
+; 7:1                ; 16 bits   ; 64 LEs        ; 48 LEs               ; 16 LEs                 ; No         ; |recop|datapath:impl_datapath|alu:impl_alu|Mux31                                                                                                ;
 ; 16:1               ; 4 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |recop|datapath:impl_datapath|regfile:impl_rf|Mux30                                                                                             ;
 ; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |recop|Bcd2seg7:hex0_inst|conv_out[0]                                                                                                           ;
 ; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |recop|Bcd2seg7:hex5_inst|conv_out[0]                                                                                                           ;
@@ -717,8 +715,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         2 data inputs ; 5                           ;
 ;         3 data inputs ; 84                          ;
 ;         4 data inputs ; 44                          ;
-;         5 data inputs ; 39                          ;
-;         6 data inputs ; 292                         ;
+;         5 data inputs ; 35                          ;
+;         6 data inputs ; 296                         ;
 ; boundary_port         ; 67                          ;
 ; stratixv_ram_block    ; 144                         ;
 ;                       ;                             ;
@@ -732,7 +730,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -742,135 +740,135 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Apr 27 23:43:14 2025
+    Info: Processing started: Wed Apr 30 15:54:15 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off recop -c recop
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
 Info (12021): Found 1 design units, including 0 entities, in source file various_constants.vhd
-    Info (12022): Found design unit 1: various_constants File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/various_constants.vhd Line: 7
+    Info (12022): Found design unit 1: various_constants File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/various_constants.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file registers.vhd
-    Info (12022): Found design unit 1: registers-beh File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/registers.vhd Line: 48
-    Info (12023): Found entity 1: registers File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/registers.vhd Line: 12
+    Info (12022): Found design unit 1: registers-beh File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/registers.vhd Line: 48
+    Info (12023): Found entity 1: registers File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/registers.vhd Line: 12
 Info (12021): Found 2 design units, including 1 entities, in source file registerfile.vhd
-    Info (12022): Found design unit 1: registerfile-SYN File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/registerfile.vhd Line: 60
-    Info (12023): Found entity 1: registerfile File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/registerfile.vhd Line: 44
+    Info (12022): Found design unit 1: registerfile-SYN File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/registerfile.vhd Line: 60
+    Info (12023): Found entity 1: registerfile File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/registerfile.vhd Line: 44
 Info (12021): Found 2 design units, including 1 entities, in source file regfile.vhd
-    Info (12022): Found design unit 1: regfile-beh File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/regfile.vhd Line: 45
-    Info (12023): Found entity 1: regfile File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/regfile.vhd Line: 10
+    Info (12022): Found design unit 1: regfile-beh File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/regfile.vhd Line: 45
+    Info (12023): Found entity 1: regfile File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/regfile.vhd Line: 10
 Info (12021): Found 1 design units, including 0 entities, in source file recop_types.vhd
-    Info (12022): Found design unit 1: recop_types File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop_types.vhd Line: 5
+    Info (12022): Found design unit 1: recop_types File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop_types.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file recop_pll.vhd
-    Info (12022): Found design unit 1: recop_pll-SYN File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop_pll.vhd Line: 52
-    Info (12023): Found entity 1: recop_pll File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop_pll.vhd Line: 43
+    Info (12022): Found design unit 1: recop_pll-SYN File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop_pll.vhd Line: 52
+    Info (12023): Found entity 1: recop_pll File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop_pll.vhd Line: 43
 Info (12021): Found 2 design units, including 1 entities, in source file prog_mem.vhd
-    Info (12022): Found design unit 1: prog_mem-SYN File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_mem.vhd Line: 53
-    Info (12023): Found entity 1: prog_mem File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_mem.vhd Line: 43
+    Info (12022): Found design unit 1: prog_mem-SYN File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/prog_mem.vhd Line: 53
+    Info (12023): Found entity 1: prog_mem File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/prog_mem.vhd Line: 43
 Info (12021): Found 2 design units, including 1 entities, in source file prog_counter.vhd
-    Info (12022): Found design unit 1: prog_counter-behaviour File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_counter.vhd Line: 20
-    Info (12023): Found entity 1: prog_counter File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_counter.vhd Line: 9
+    Info (12022): Found design unit 1: prog_counter-behaviour File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/prog_counter.vhd Line: 20
+    Info (12023): Found entity 1: prog_counter File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/prog_counter.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file pll.vhd
-    Info (12022): Found design unit 1: pll-SYN File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/pll.vhd Line: 52
-    Info (12023): Found entity 1: pll File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/pll.vhd Line: 42
+    Info (12022): Found design unit 1: pll-SYN File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/pll.vhd Line: 52
+    Info (12023): Found entity 1: pll File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/pll.vhd Line: 42
 Info (12021): Found 1 design units, including 0 entities, in source file opcodes.vhd
-    Info (12022): Found design unit 1: opcodes File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/opcodes.vhd Line: 7
+    Info (12022): Found design unit 1: opcodes File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/opcodes.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file memory_model.vhd
-    Info (12022): Found design unit 1: memory-beh File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/memory_model.vhd Line: 27
-    Info (12023): Found entity 1: memory File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/memory_model.vhd Line: 10
+    Info (12022): Found design unit 1: memory-beh File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/memory_model.vhd Line: 27
+    Info (12023): Found entity 1: memory File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/memory_model.vhd Line: 10
 Info (12021): Found 2 design units, including 1 entities, in source file memory_arbiter.vhd
-    Info (12022): Found design unit 1: memory_arbiter-behaviour File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/memory_arbiter.vhd Line: 35
-    Info (12023): Found entity 1: memory_arbiter File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/memory_arbiter.vhd Line: 11
+    Info (12022): Found design unit 1: memory_arbiter-behaviour File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/memory_arbiter.vhd Line: 35
+    Info (12023): Found entity 1: memory_arbiter File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/memory_arbiter.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file inst_reg.vhd
-    Info (12022): Found design unit 1: inst_reg-behaviour File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/inst_reg.vhd Line: 18
-    Info (12023): Found entity 1: inst_reg File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/inst_reg.vhd Line: 7
+    Info (12022): Found design unit 1: inst_reg-behaviour File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/inst_reg.vhd Line: 18
+    Info (12023): Found entity 1: inst_reg File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/inst_reg.vhd Line: 7
 Warning (12019): Can't analyze file -- file datapath_tb.vhd is missing
 Info (12021): Found 2 design units, including 1 entities, in source file datapath.vhd
-    Info (12022): Found design unit 1: datapath-behaviour File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 64
-    Info (12023): Found entity 1: datapath File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 11
+    Info (12022): Found design unit 1: datapath-behaviour File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 64
+    Info (12023): Found entity 1: datapath File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file data_mem.vhd
-    Info (12022): Found design unit 1: data_mem-SYN File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/data_mem.vhd Line: 55
-    Info (12023): Found entity 1: data_mem File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/data_mem.vhd Line: 43
+    Info (12022): Found design unit 1: data_mem-SYN File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/data_mem.vhd Line: 55
+    Info (12023): Found entity 1: data_mem File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/data_mem.vhd Line: 43
 Warning (12019): Can't analyze file -- file controlunitTB.vhd is missing
 Info (12021): Found 2 design units, including 1 entities, in source file controlunit.vhd
-    Info (12022): Found design unit 1: control_unit-behaviour File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 45
-    Info (12023): Found entity 1: control_unit File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 9
+    Info (12022): Found design unit 1: control_unit-behaviour File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/controlunit.vhd Line: 45
+    Info (12023): Found entity 1: control_unit File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/controlunit.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
-    Info (12022): Found design unit 1: alu-combined File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 34
-    Info (12023): Found entity 1: alu File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 13
+    Info (12022): Found design unit 1: alu-combined File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 34
+    Info (12023): Found entity 1: alu File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 13
 Warning (12125): Using design file recop.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: recop-combined File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 25
-    Info (12023): Found entity 1: recop File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 10
+    Info (12022): Found design unit 1: recop-combined File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 25
+    Info (12023): Found entity 1: recop File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 10
 Info (12127): Elaborating entity "recop" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at recop.vhd(53): object "debug_pc_out" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 53
-Warning (10036): Verilog HDL or VHDL warning at recop.vhd(54): object "debug_fetch_state" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 54
-Warning (10036): Verilog HDL or VHDL warning at recop.vhd(55): object "debug_instruction" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 55
-Warning (10036): Verilog HDL or VHDL warning at recop.vhd(56): object "debug_prog_mem_in" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 56
-Warning (10036): Verilog HDL or VHDL warning at recop.vhd(57): object "debug_prog_mem_out" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 57
-Warning (10036): Verilog HDL or VHDL warning at recop.vhd(58): object "debug_rx_addr" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 58
-Warning (10036): Verilog HDL or VHDL warning at recop.vhd(59): object "debug_rz_addr" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 59
-Warning (10036): Verilog HDL or VHDL warning at recop.vhd(60): object "debug_rx_value" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 60
-Warning (10036): Verilog HDL or VHDL warning at recop.vhd(61): object "debug_rz_value" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 61
-Warning (10036): Verilog HDL or VHDL warning at recop.vhd(62): object "debug_ir_operand" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 62
-Warning (10036): Verilog HDL or VHDL warning at recop.vhd(66): object "debug_state" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 66
-Warning (10036): Verilog HDL or VHDL warning at recop.vhd(67): object "debug_next_state" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 67
-Warning (10036): Verilog HDL or VHDL warning at recop.vhd(68): object "debug_flag" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 68
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(53): object "debug_pc_out" assigned a value but never read File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 53
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(54): object "debug_fetch_state" assigned a value but never read File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 54
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(55): object "debug_instruction" assigned a value but never read File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 55
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(56): object "debug_prog_mem_in" assigned a value but never read File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 56
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(57): object "debug_prog_mem_out" assigned a value but never read File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 57
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(58): object "debug_rx_addr" assigned a value but never read File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 58
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(59): object "debug_rz_addr" assigned a value but never read File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 59
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(60): object "debug_rx_value" assigned a value but never read File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 60
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(61): object "debug_rz_value" assigned a value but never read File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 61
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(62): object "debug_ir_operand" assigned a value but never read File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 62
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(66): object "debug_state" assigned a value but never read File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 66
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(67): object "debug_next_state" assigned a value but never read File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 67
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(68): object "debug_flag" assigned a value but never read File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 68
 Warning (12125): Using design file bcd2seg7.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: Bcd2seg7-aBcd2seg7 File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/bcd2seg7.vhd Line: 11
-    Info (12023): Found entity 1: Bcd2seg7 File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/bcd2seg7.vhd Line: 4
-Info (12128): Elaborating entity "Bcd2seg7" for hierarchy "Bcd2seg7:hex0_inst" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 166
-Info (12128): Elaborating entity "datapath" for hierarchy "datapath:impl_datapath" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 174
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(131): used implicit default value for signal "rz_max" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 131
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(132): used implicit default value for signal "sip_hold" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 132
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(133): used implicit default value for signal "er_temp" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 133
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(134): used implicit default value for signal "dprr_res" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 134
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(135): used implicit default value for signal "dprr_res_reg" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 135
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(136): used implicit default value for signal "dprr_wren" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 136
-Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(215): object "reg_dpcr" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 215
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(216): used implicit default value for signal "reg_dpcr_lsb_sel" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 216
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(217): used implicit default value for signal "reg_dpcr_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 217
-Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(218): object "reg_er" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 218
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(219): used implicit default value for signal "reg_er_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 219
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(220): used implicit default value for signal "reg_er_clr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 220
-Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(221): object "reg_eot" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 221
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(222): used implicit default value for signal "reg_eot_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 222
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(223): used implicit default value for signal "reg_eot_clr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 223
-Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(224): object "reg_svop" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 224
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(225): used implicit default value for signal "reg_svop_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 225
-Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(226): object "reg_sip_r" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 226
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(227): used implicit default value for signal "reg_sip" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 227
-Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(228): object "reg_sop" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 228
-Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(229): object "reg_dprr" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 229
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(230): used implicit default value for signal "reg_irq_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 230
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(231): used implicit default value for signal "reg_irq_clr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 231
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(232): used implicit default value for signal "reg_result_wen" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 232
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(233): used implicit default value for signal "reg_result" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 233
-Info (12128): Elaborating entity "alu" for hierarchy "datapath:impl_datapath|alu:impl_alu" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 252
-Warning (10631): VHDL Process Statement warning at ALU.vhd(68): inferring latch(es) for signal or variable "result", which holds its previous value in one or more paths through the process File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
-Warning (10492): VHDL Process Statement warning at ALU.vhd(90): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 90
-Info (10041): Inferred latch for "result[0]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
-Info (10041): Inferred latch for "result[1]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
-Info (10041): Inferred latch for "result[2]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
-Info (10041): Inferred latch for "result[3]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
-Info (10041): Inferred latch for "result[4]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
-Info (10041): Inferred latch for "result[5]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
-Info (10041): Inferred latch for "result[6]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
-Info (10041): Inferred latch for "result[7]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
-Info (10041): Inferred latch for "result[8]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
-Info (10041): Inferred latch for "result[9]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
-Info (10041): Inferred latch for "result[10]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
-Info (10041): Inferred latch for "result[11]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
-Info (10041): Inferred latch for "result[12]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
-Info (10041): Inferred latch for "result[13]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
-Info (10041): Inferred latch for "result[14]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
-Info (10041): Inferred latch for "result[15]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
-Info (12128): Elaborating entity "regfile" for hierarchy "datapath:impl_datapath|regfile:impl_rf" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 267
-Info (12128): Elaborating entity "prog_counter" for hierarchy "datapath:impl_datapath|prog_counter:impl_pc" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 292
-Warning (10492): VHDL Process Statement warning at prog_counter.vhd(29): signal "pc_write_flag" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_counter.vhd Line: 29
-Warning (10492): VHDL Process Statement warning at prog_counter.vhd(29): signal "prev_write_flag" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_counter.vhd Line: 29
-Info (12128): Elaborating entity "inst_reg" for hierarchy "datapath:impl_datapath|inst_reg:impl_ir" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 301
-Info (12128): Elaborating entity "prog_mem" for hierarchy "datapath:impl_datapath|prog_mem:impl_pm" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 311
-Info (12128): Elaborating entity "altsyncram" for hierarchy "datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_mem.vhd Line: 87
-Info (12130): Elaborated megafunction instantiation "datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_mem.vhd Line: 87
-Info (12133): Instantiated megafunction "datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_mem.vhd Line: 87
+    Info (12022): Found design unit 1: Bcd2seg7-aBcd2seg7 File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/bcd2seg7.vhd Line: 11
+    Info (12023): Found entity 1: Bcd2seg7 File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/bcd2seg7.vhd Line: 4
+Info (12128): Elaborating entity "Bcd2seg7" for hierarchy "Bcd2seg7:hex0_inst" File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 166
+Info (12128): Elaborating entity "datapath" for hierarchy "datapath:impl_datapath" File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 174
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(131): used implicit default value for signal "rz_max" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 131
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(132): used implicit default value for signal "sip_hold" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 132
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(133): used implicit default value for signal "er_temp" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 133
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(134): used implicit default value for signal "dprr_res" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 134
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(135): used implicit default value for signal "dprr_res_reg" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 135
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(136): used implicit default value for signal "dprr_wren" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 136
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(215): object "reg_dpcr" assigned a value but never read File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 215
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(216): used implicit default value for signal "reg_dpcr_lsb_sel" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 216
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(217): used implicit default value for signal "reg_dpcr_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 217
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(218): object "reg_er" assigned a value but never read File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 218
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(219): used implicit default value for signal "reg_er_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 219
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(220): used implicit default value for signal "reg_er_clr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 220
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(221): object "reg_eot" assigned a value but never read File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 221
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(222): used implicit default value for signal "reg_eot_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 222
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(223): used implicit default value for signal "reg_eot_clr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 223
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(224): object "reg_svop" assigned a value but never read File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 224
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(225): used implicit default value for signal "reg_svop_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 225
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(226): object "reg_sip_r" assigned a value but never read File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 226
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(227): used implicit default value for signal "reg_sip" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 227
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(228): object "reg_sop" assigned a value but never read File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 228
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(229): object "reg_dprr" assigned a value but never read File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 229
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(230): used implicit default value for signal "reg_irq_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 230
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(231): used implicit default value for signal "reg_irq_clr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 231
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(232): used implicit default value for signal "reg_result_wen" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 232
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(233): used implicit default value for signal "reg_result" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 233
+Info (12128): Elaborating entity "alu" for hierarchy "datapath:impl_datapath|alu:impl_alu" File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 252
+Warning (10631): VHDL Process Statement warning at ALU.vhd(68): inferring latch(es) for signal or variable "result", which holds its previous value in one or more paths through the process File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Warning (10492): VHDL Process Statement warning at ALU.vhd(90): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 90
+Info (10041): Inferred latch for "result[0]" at ALU.vhd(68) File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[1]" at ALU.vhd(68) File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[2]" at ALU.vhd(68) File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[3]" at ALU.vhd(68) File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[4]" at ALU.vhd(68) File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[5]" at ALU.vhd(68) File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[6]" at ALU.vhd(68) File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[7]" at ALU.vhd(68) File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[8]" at ALU.vhd(68) File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[9]" at ALU.vhd(68) File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[10]" at ALU.vhd(68) File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[11]" at ALU.vhd(68) File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[12]" at ALU.vhd(68) File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[13]" at ALU.vhd(68) File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[14]" at ALU.vhd(68) File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[15]" at ALU.vhd(68) File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 68
+Info (12128): Elaborating entity "regfile" for hierarchy "datapath:impl_datapath|regfile:impl_rf" File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 267
+Info (12128): Elaborating entity "prog_counter" for hierarchy "datapath:impl_datapath|prog_counter:impl_pc" File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 292
+Warning (10492): VHDL Process Statement warning at prog_counter.vhd(29): signal "pc_write_flag" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/prog_counter.vhd Line: 29
+Warning (10492): VHDL Process Statement warning at prog_counter.vhd(29): signal "prev_write_flag" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/prog_counter.vhd Line: 29
+Info (12128): Elaborating entity "inst_reg" for hierarchy "datapath:impl_datapath|inst_reg:impl_ir" File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 301
+Info (12128): Elaborating entity "prog_mem" for hierarchy "datapath:impl_datapath|prog_mem:impl_pm" File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 311
+Info (12128): Elaborating entity "altsyncram" for hierarchy "datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component" File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/prog_mem.vhd Line: 87
+Info (12130): Elaborated megafunction instantiation "datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component" File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/prog_mem.vhd Line: 87
+Info (12133): Instantiated megafunction "datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/prog_mem.vhd Line: 87
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
     Info (12134): Parameter "init_file" = "rawOutput.mif"
@@ -886,26 +884,28 @@ Info (12133): Instantiated megafunction "datapath:impl_datapath|prog_mem:impl_pm
     Info (12134): Parameter "widthad_a" = "15"
     Info (12134): Parameter "width_a" = "16"
     Info (12134): Parameter "width_byteena_a" = "1"
-Warning (287001): Assertion warning: Device family Cyclone V does not have M4K blocks -- using available memory blocks File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/db/altsyncram_c8i1.tdf Line: 2621
+Warning (287001): Assertion warning: Device family Cyclone V does not have M4K blocks -- using available memory blocks File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/db/altsyncram_c8i1.tdf Line: 2621
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_c8i1.tdf
-    Info (12023): Found entity 1: altsyncram_c8i1 File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/db/altsyncram_c8i1.tdf Line: 31
+    Info (12023): Found entity 1: altsyncram_c8i1 File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/db/altsyncram_c8i1.tdf Line: 31
 Info (12128): Elaborating entity "altsyncram_c8i1" for hierarchy "datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component|altsyncram_c8i1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Warning (113031): 4 out of 4096 addresses are reinitialized. The latest initialized data will replace the existing data. There are 4 warnings found, and 4 warnings are reported. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/rawOutput.mif Line: 1
-    Warning (113030): Memory Initialization File address 0 is reinitialized File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ Line: 10
-    Warning (113030): Memory Initialization File address 1 is reinitialized File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ Line: 11
-    Warning (113030): Memory Initialization File address 2 is reinitialized File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ Line: 12
-    Warning (113030): Memory Initialization File address 3 is reinitialized File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ Line: 13
-Critical Warning (127005): Memory depth (32768) in the design file differs from memory depth (4096) in the Memory Initialization File "C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/rawOutput.mif" -- setting initial value for remaining addresses to 0 File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/prog_mem.vhd Line: 87
+Warning (113031): 6 out of 4096 addresses are reinitialized. The latest initialized data will replace the existing data. There are 6 warnings found, and 6 warnings are reported. File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/rawOutput.mif Line: 1
+    Warning (113030): Memory Initialization File address 0 is reinitialized File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ Line: 10
+    Warning (113030): Memory Initialization File address 1 is reinitialized File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ Line: 11
+    Warning (113030): Memory Initialization File address 2 is reinitialized File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ Line: 12
+    Warning (113030): Memory Initialization File address 3 is reinitialized File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ Line: 13
+    Warning (113030): Memory Initialization File address 4 is reinitialized File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ Line: 14
+    Warning (113030): Memory Initialization File address 5 is reinitialized File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ Line: 15
+Critical Warning (127005): Memory depth (32768) in the design file differs from memory depth (4096) in the Memory Initialization File "C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/rawOutput.mif" -- setting initial value for remaining addresses to 0 File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/prog_mem.vhd Line: 87
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_61a.tdf
-    Info (12023): Found entity 1: decode_61a File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/db/decode_61a.tdf Line: 22
-Info (12128): Elaborating entity "decode_61a" for hierarchy "datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component|altsyncram_c8i1:auto_generated|decode_61a:rden_decode" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/db/altsyncram_c8i1.tdf Line: 39
+    Info (12023): Found entity 1: decode_61a File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/db/decode_61a.tdf Line: 22
+Info (12128): Elaborating entity "decode_61a" for hierarchy "datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component|altsyncram_c8i1:auto_generated|decode_61a:rden_decode" File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/db/altsyncram_c8i1.tdf Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_chb.tdf
-    Info (12023): Found entity 1: mux_chb File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/db/mux_chb.tdf Line: 22
-Info (12128): Elaborating entity "mux_chb" for hierarchy "datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component|altsyncram_c8i1:auto_generated|mux_chb:mux2" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/db/altsyncram_c8i1.tdf Line: 40
-Info (12128): Elaborating entity "data_mem" for hierarchy "datapath:impl_datapath|data_mem:impl_dm" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 317
-Info (12128): Elaborating entity "altsyncram" for hierarchy "datapath:impl_datapath|data_mem:impl_dm|altsyncram:altsyncram_component" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/data_mem.vhd Line: 90
-Info (12130): Elaborated megafunction instantiation "datapath:impl_datapath|data_mem:impl_dm|altsyncram:altsyncram_component" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/data_mem.vhd Line: 90
-Info (12133): Instantiated megafunction "datapath:impl_datapath|data_mem:impl_dm|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/data_mem.vhd Line: 90
+    Info (12023): Found entity 1: mux_chb File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/db/mux_chb.tdf Line: 22
+Info (12128): Elaborating entity "mux_chb" for hierarchy "datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component|altsyncram_c8i1:auto_generated|mux_chb:mux2" File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/db/altsyncram_c8i1.tdf Line: 40
+Info (12128): Elaborating entity "data_mem" for hierarchy "datapath:impl_datapath|data_mem:impl_dm" File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 317
+Info (12128): Elaborating entity "altsyncram" for hierarchy "datapath:impl_datapath|data_mem:impl_dm|altsyncram:altsyncram_component" File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/data_mem.vhd Line: 90
+Info (12130): Elaborated megafunction instantiation "datapath:impl_datapath|data_mem:impl_dm|altsyncram:altsyncram_component" File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/data_mem.vhd Line: 90
+Info (12133): Instantiated megafunction "datapath:impl_datapath|data_mem:impl_dm|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/data_mem.vhd Line: 90
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
     Info (12134): Parameter "intended_device_family" = "Cyclone II"
@@ -920,90 +920,90 @@ Info (12133): Instantiated megafunction "datapath:impl_datapath|data_mem:impl_dm
     Info (12134): Parameter "widthad_a" = "12"
     Info (12134): Parameter "width_a" = "16"
     Info (12134): Parameter "width_byteena_a" = "1"
-Warning (287001): Assertion warning: Device family Cyclone V does not have M4K blocks -- using available memory blocks File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/db/altsyncram_q6j1.tdf Line: 413
+Warning (287001): Assertion warning: Device family Cyclone V does not have M4K blocks -- using available memory blocks File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/db/altsyncram_q6j1.tdf Line: 413
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_q6j1.tdf
-    Info (12023): Found entity 1: altsyncram_q6j1 File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/db/altsyncram_q6j1.tdf Line: 27
+    Info (12023): Found entity 1: altsyncram_q6j1 File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/db/altsyncram_q6j1.tdf Line: 27
 Info (12128): Elaborating entity "altsyncram_q6j1" for hierarchy "datapath:impl_datapath|data_mem:impl_dm|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Info (12128): Elaborating entity "registers" for hierarchy "datapath:impl_datapath|registers:impl_reg" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/datapath.vhd Line: 325
-Info (12128): Elaborating entity "control_unit" for hierarchy "control_unit:impl_control_unit" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 215
+Info (12128): Elaborating entity "registers" for hierarchy "datapath:impl_datapath|registers:impl_reg" File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/datapath.vhd Line: 325
+Info (12128): Elaborating entity "control_unit" for hierarchy "control_unit:impl_control_unit" File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 215
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[1] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 104
-Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[0] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 104
-Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[3] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 104
-Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[2] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 104
-Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[4] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 104
-Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[5] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 104
-Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[6] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 104
-Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[7] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 104
-Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[8] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 104
-Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[9] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 104
-Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[10] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 104
-Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[11] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 104
-Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[12] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 104
-Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[13] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 104
-Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[14] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 104
-Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[15] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ALU.vhd Line: 68
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/controlunit.vhd Line: 104
+Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[1] has unsafe behavior File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/controlunit.vhd Line: 104
+Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[0] has unsafe behavior File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/controlunit.vhd Line: 104
+Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[3] has unsafe behavior File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/controlunit.vhd Line: 104
+Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[2] has unsafe behavior File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/controlunit.vhd Line: 104
+Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[4] has unsafe behavior File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/controlunit.vhd Line: 104
+Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[5] has unsafe behavior File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/controlunit.vhd Line: 104
+Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[6] has unsafe behavior File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/controlunit.vhd Line: 104
+Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[7] has unsafe behavior File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/controlunit.vhd Line: 104
+Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[8] has unsafe behavior File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/controlunit.vhd Line: 104
+Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[9] has unsafe behavior File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/controlunit.vhd Line: 104
+Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[10] has unsafe behavior File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/controlunit.vhd Line: 104
+Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[11] has unsafe behavior File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/controlunit.vhd Line: 104
+Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[12] has unsafe behavior File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/controlunit.vhd Line: 104
+Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[13] has unsafe behavior File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/controlunit.vhd Line: 104
+Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[14] has unsafe behavior File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/controlunit.vhd Line: 104
+Warning (13012): Latch datapath:impl_datapath|alu:impl_alu|result[15] has unsafe behavior File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/controlunit.vhd Line: 104
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "hex1[0]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 17
-    Warning (13410): Pin "hex1[1]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 17
-    Warning (13410): Pin "hex1[2]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 17
-    Warning (13410): Pin "hex1[3]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 17
-    Warning (13410): Pin "hex1[4]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 17
-    Warning (13410): Pin "hex1[5]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 17
-    Warning (13410): Pin "hex1[6]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 17
-    Warning (13410): Pin "hex2[0]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 18
-    Warning (13410): Pin "hex2[1]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 18
-    Warning (13410): Pin "hex2[2]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 18
-    Warning (13410): Pin "hex2[3]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 18
-    Warning (13410): Pin "hex2[4]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 18
-    Warning (13410): Pin "hex2[5]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 18
-    Warning (13410): Pin "hex2[6]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 18
-    Warning (13410): Pin "hex3[0]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 19
-    Warning (13410): Pin "hex3[1]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 19
-    Warning (13410): Pin "hex3[2]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 19
-    Warning (13410): Pin "hex3[3]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 19
-    Warning (13410): Pin "hex3[4]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 19
-    Warning (13410): Pin "hex3[5]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 19
-    Warning (13410): Pin "hex3[6]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 19
-    Warning (13410): Pin "hex4[0]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 20
-    Warning (13410): Pin "hex4[1]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 20
-    Warning (13410): Pin "hex4[2]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 20
-    Warning (13410): Pin "hex4[3]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 20
-    Warning (13410): Pin "hex4[4]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 20
-    Warning (13410): Pin "hex4[5]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 20
-    Warning (13410): Pin "hex4[6]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 20
+    Warning (13410): Pin "hex1[0]" is stuck at VCC File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 17
+    Warning (13410): Pin "hex1[1]" is stuck at VCC File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 17
+    Warning (13410): Pin "hex1[2]" is stuck at VCC File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 17
+    Warning (13410): Pin "hex1[3]" is stuck at VCC File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 17
+    Warning (13410): Pin "hex1[4]" is stuck at VCC File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 17
+    Warning (13410): Pin "hex1[5]" is stuck at VCC File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 17
+    Warning (13410): Pin "hex1[6]" is stuck at VCC File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 17
+    Warning (13410): Pin "hex2[0]" is stuck at VCC File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 18
+    Warning (13410): Pin "hex2[1]" is stuck at VCC File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 18
+    Warning (13410): Pin "hex2[2]" is stuck at VCC File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 18
+    Warning (13410): Pin "hex2[3]" is stuck at VCC File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 18
+    Warning (13410): Pin "hex2[4]" is stuck at VCC File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 18
+    Warning (13410): Pin "hex2[5]" is stuck at VCC File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 18
+    Warning (13410): Pin "hex2[6]" is stuck at VCC File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 18
+    Warning (13410): Pin "hex3[0]" is stuck at VCC File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 19
+    Warning (13410): Pin "hex3[1]" is stuck at VCC File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 19
+    Warning (13410): Pin "hex3[2]" is stuck at VCC File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 19
+    Warning (13410): Pin "hex3[3]" is stuck at VCC File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 19
+    Warning (13410): Pin "hex3[4]" is stuck at VCC File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 19
+    Warning (13410): Pin "hex3[5]" is stuck at VCC File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 19
+    Warning (13410): Pin "hex3[6]" is stuck at VCC File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 19
+    Warning (13410): Pin "hex4[0]" is stuck at VCC File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 20
+    Warning (13410): Pin "hex4[1]" is stuck at VCC File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 20
+    Warning (13410): Pin "hex4[2]" is stuck at VCC File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 20
+    Warning (13410): Pin "hex4[3]" is stuck at VCC File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 20
+    Warning (13410): Pin "hex4[4]" is stuck at VCC File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 20
+    Warning (13410): Pin "hex4[5]" is stuck at VCC File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 20
+    Warning (13410): Pin "hex4[6]" is stuck at VCC File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 20
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 3 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "key[1]" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 13
-    Warning (15610): No output dependent on input pin "key[2]" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 13
-    Warning (15610): No output dependent on input pin "key[3]" File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/recop.vhd Line: 13
+    Warning (15610): No output dependent on input pin "key[1]" File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 13
+    Warning (15610): No output dependent on input pin "key[2]" File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 13
+    Warning (15610): No output dependent on input pin "key[3]" File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/recop.vhd Line: 13
 Info (21057): Implemented 1072 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 52 output pins
     Info (21061): Implemented 861 logic cells
     Info (21064): Implemented 144 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 121 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 123 warnings
     Info: Peak virtual memory: 4958 megabytes
-    Info: Processing ended: Sun Apr 27 23:43:24 2025
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:20
+    Info: Processing ended: Wed Apr 30 15:54:23 2025
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:15
 
 

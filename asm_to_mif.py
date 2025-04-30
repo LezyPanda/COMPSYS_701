@@ -103,6 +103,9 @@ def assemble_instruction(parts, labels, pc):
         elif am == 'direct':
             key = ops[1][1:]
             operand = int(key) if key.isdigit() else labels.get(key, 0)
+            if (mnemonic == 'STR'):
+                rz = 0
+                rx = parse_register(ops[0])
     elif len(ops) == 3:
         three_regs = ['ADD','SUB','SUBV','AND','OR']
         if mnemonic not in three_regs:

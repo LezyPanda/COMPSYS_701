@@ -1,5 +1,5 @@
 MIF/HEX Update report for recop
-Sun Apr 27 23:56:00 2025
+Wed Apr 30 16:43:58 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -35,7 +35,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+
 ; MIF/HEX Update Summary                                        ;
 +-----------------------+---------------------------------------+
-; MIF/HEX Update Status ; Successful - Sun Apr 27 23:56:00 2025 ;
+; MIF/HEX Update Status ; Successful - Wed Apr 30 16:43:58 2025 ;
 ; Revision Name         ; recop                                 ;
 ; Top-level Entity Name ; recop                                 ;
 ; Family                ; Cyclone V                             ;
@@ -43,13 +43,13 @@ refer to the applicable agreement for further details.
 +-----------------------+---------------------------------------+
 
 
-+-----------------------------------------------------------------------+
-; MIF/HEX Update Processed Files                                        ;
-+-----------------------------------------------------------------------+
-; File Name                                                             ;
-+-----------------------------------------------------------------------+
-; C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/rawOutput.mif ;
-+-----------------------------------------------------------------------+
++------------------------------------------------------------------------+
+; MIF/HEX Update Processed Files                                         ;
++------------------------------------------------------------------------+
+; File Name                                                              ;
++------------------------------------------------------------------------+
+; C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/rawOutput.mif ;
++------------------------------------------------------------------------+
 
 
 +-------------------------+
@@ -58,21 +58,23 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime MIF/HEX Update
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Apr 27 23:55:57 2025
+    Info: Processing started: Wed Apr 30 16:43:56 2025
 Info: Command: quartus_cdb recop -c recop --update_mif
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Warning (113031): 4 out of 4096 addresses are reinitialized. The latest initialized data will replace the existing data. There are 4 warnings found, and 4 warnings are reported. File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/rawOutput.mif Line: 1
-    Warning (113030): Memory Initialization File address 0 is reinitialized File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ Line: 10
-    Warning (113030): Memory Initialization File address 1 is reinitialized File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ Line: 11
-    Warning (113030): Memory Initialization File address 2 is reinitialized File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ Line: 12
-    Warning (113030): Memory Initialization File address 3 is reinitialized File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/ Line: 13
-Critical Warning (127005): Memory depth (32768) in the design file differs from memory depth (4096) in the Memory Initialization File "C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/rawOutput.mif" -- setting initial value for remaining addresses to 0
+Warning (113031): 6 out of 4096 addresses are reinitialized. The latest initialized data will replace the existing data. There are 6 warnings found, and 6 warnings are reported. File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/rawOutput.mif Line: 1
+    Warning (113030): Memory Initialization File address 0 is reinitialized File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ Line: 10
+    Warning (113030): Memory Initialization File address 1 is reinitialized File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ Line: 11
+    Warning (113030): Memory Initialization File address 2 is reinitialized File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ Line: 12
+    Warning (113030): Memory Initialization File address 3 is reinitialized File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ Line: 13
+    Warning (113030): Memory Initialization File address 4 is reinitialized File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ Line: 14
+    Warning (113030): Memory Initialization File address 5 is reinitialized File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/ Line: 15
+Critical Warning (127005): Memory depth (32768) in the design file differs from memory depth (4096) in the Memory Initialization File "C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/rawOutput.mif" -- setting initial value for remaining addresses to 0
 Info (39024): Processed the following Memory Initialization File(s)
-    Info (39025): Processed Memory Initialization File C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/rawOutput.mif File: C:/Users/thoye/Desktop/COMPSYS_701/ReCOP (To be sorted)/rawOutput.mif Line: 0
-Info: Quartus Prime MIF/HEX Update was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 4885 megabytes
-    Info: Processing ended: Sun Apr 27 23:56:01 2025
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:03
+    Info (39025): Processed Memory Initialization File C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/rawOutput.mif File: C:/Users/Thomas/Desktop/COMPSYS 701/ReCOP (To be sorted)/rawOutput.mif Line: 0
+Info: Quartus Prime MIF/HEX Update was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 4881 megabytes
+    Info: Processing ended: Wed Apr 30 16:43:58 2025
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 
