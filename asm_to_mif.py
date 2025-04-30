@@ -62,6 +62,8 @@ def parse_line(line):
 def detect_addr_mode(operand):
     if operand.startswith('#'):
         return 'immediate'
+    elif operand.startswith('$'):
+        return 'direct'
     elif operand.startswith('R'):
         return 'register'
     elif operand == '':
@@ -89,7 +91,8 @@ def assemble_instruction(parts, labels, pc):
         elif am == 'immediate':
             operand = parse_immediate(ops[0])
         elif am == 'direct':
-            operand = labels.get(ops[0], 0)
+            key = ops[0][1:]
+            operand = int(key) if key.isdigit() else labels.get(key, 0)
     elif len(ops) == 2:
         am = detect_addr_mode(ops[1])
         rz = parse_register(ops[0])
@@ -98,7 +101,8 @@ def assemble_instruction(parts, labels, pc):
         elif am == 'immediate':
             operand = parse_immediate(ops[1])
         elif am == 'direct':
-            operand = labels.get(ops[1], 0)
+            key = ops[1][1:]
+            operand = int(key) if key.isdigit() else labels.get(key, 0)
     elif len(ops) == 3:
         three_regs = ['ADD','SUB','SUBV','AND','OR']
         if mnemonic not in three_regs:
@@ -112,7 +116,8 @@ def assemble_instruction(parts, labels, pc):
         if am == 'immediate':
             operand = parse_immediate(ops[2])
         elif am == 'direct':
-            operand = labels.get(ops[2], 0)
+            key = ops[2][1:]
+            operand = int(key) if key.isdigit() else labels.get(key, 0)
     am_bits = address_modes[am]
     instr = int(am_bits + opcode, 2)
     word1 = (instr << 8) | ((rz & 0xF) << 4) | (rx & 0xF)
