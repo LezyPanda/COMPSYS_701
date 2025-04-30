@@ -91,8 +91,11 @@ def assemble_instruction(parts, labels, pc):
         elif am == 'immediate':
             operand = parse_immediate(ops[0])
         elif am == 'direct':
-            key = ops[0][1:]
-            operand = int(key) if key.isdigit() else labels.get(key, 0)
+            if (mnemonic == 'JMP'):
+                operand = parse_immediate(ops[0])
+            else:
+                key = ops[0][1:]
+                operand = int(key) if key.isdigit() else labels.get(key, 0)
     elif len(ops) == 2:
         am = detect_addr_mode(ops[1])
         rz = parse_register(ops[0])
