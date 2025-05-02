@@ -85,10 +85,10 @@ def assemble_instruction(parts, labels, pc):
     if mnemonic in ['NOOP', 'END', 'ENDPROG']:
         am = 'inherent'
     elif len(ops) == 1:
-        if (mnemonic = 'JMP'):
+        if (mnemonic == 'JMP'):
             if (ops[0].startswith('R')):
                 am = 'register'
-                rz = parse_register(ops[0])
+                rx = parse_register(ops[0])
             else:
                 am = 'direct'
                 operand = int(key) if key.isdigit() else labels.get(key, 0)
@@ -97,7 +97,6 @@ def assemble_instruction(parts, labels, pc):
             if am == 'register':
                 rz = parse_register(ops[0])
             elif am == 'immediate':
-                if (mnemonic == 'JMP'):
                 operand = parse_immediate(ops[0])
             elif am == 'direct':
                 if (mnemonic == 'JMP'):
