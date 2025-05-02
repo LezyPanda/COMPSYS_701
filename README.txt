@@ -24,10 +24,19 @@ To Update Memory (mif) -> Processing -> Update Memory Initialization File
 Processing -> Start -> Start Assembler
 Reprogram the FPGA -> Tools -> Programmer -> Start
 
+-- Assembler --
+We have our python assembler asm_to_mif2.py
+Double click to run it, it reads ../ReCOP-ASM Package/test.asm and output to:
+../modelsim/rawOutput.mif
+and ../ReCOP (To be sorted)/rawOutput.mif
+
 28/04/2025
 Starting from the right switches, indicates the id of the register.
-The left most segment display is the reg selected, the right most is the value of it (0~9)
+The left most segment display is the reg selected, the right most is the value of it (0 ~ 9)
 Hold the KEY0 (right most button) to show
-
+Since only 1 7-segment display is used for each purpose, it will only display the index of
+register 0 ~ 9, althought it works for register 0 ~ 15.
+The value of the selected register only supports 0 ~ 9, means it will only display if the
+data first digit is within 0 ~ 9.
 
 
