@@ -85,12 +85,13 @@ def assemble_instruction(parts, labels, pc):
     if mnemonic in ['NOOP', 'END', 'ENDPROG']:
         am = 'inherent'
     elif len(ops) == 1:
-        if mnemonic in ['JMP','PRESENT','SZ','STRPC','MAX']:
+        if mnemonic in ['PRESENT','SZ','STRPC','MAX']:
             am = 'immediate'
         else:
             am = detect_addr_mode(ops[0])
         if am == 'register':
-            rz = parse_register(ops[0])
+            if mnemonic == 'JMP':
+                rx = parse_register(ops[0])
         elif am == 'immediate':
             raw = ops[0]
             core = raw[1:] if raw.startswith('#') else raw
@@ -157,9 +158,12 @@ def instr_length(line):
     if len(ops) == 3:
         mode = detect_addr_mode(ops[2])
         return 2 if mode in ['immediate','direct'] else 1
-
-    if len(ops) in [1,2] and m in ['JMP','PRESENT','SZ','STRPC','MAX']:
+    if m == 'JMP' and len(ops) == 1:
+        mode = detect_addr_mode(ops[0])
+        return 1 if mode == 'register' else 2
+    if len(ops) in [1,2] and m in ['PRESENT','SZ','STRPC','MAX']:
         return 2
+    # default: two-word if last operand is immediate/direct, else one-word
     am = detect_addr_mode(ops[-1]) if ops else 'inherent'
     return 2 if am in ['immediate','direct'] else 1
 
