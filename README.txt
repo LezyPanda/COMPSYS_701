@@ -26,7 +26,7 @@ Reprogram the FPGA -> Tools -> Programmer -> Start
 
 
 -- Assembler --
-We have our python assembler asm_to_mif.py
+We have our python assembler asm_to_mif2.py
 Double click to run it, it reads ../ReCOP-ASM Package/test.asm and output to:
 ../modelsim/rawOutput.mif
 and ../ReCOP (To be sorted)/rawOutput.mif
