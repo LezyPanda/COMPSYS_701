@@ -85,10 +85,11 @@ def assemble_instruction(parts, labels, pc):
     if mnemonic in ['NOOP', 'END', 'ENDPROG']:
         am = 'inherent'
     elif len(ops) == 1:
-        if mnemonic in ['PRESENT','SZ','STRPC','MAX']:
+        mode = detect_addr_mode(ops[0])
+        if mnemonic in ['PRESENT','SZ','STRPC','MAX'] or (mnemonic == 'JMP' and mode != 'register'):
             am = 'immediate'
         else:
-            am = detect_addr_mode(ops[0])
+            am = mode
         if am == 'register':
             if mnemonic == 'JMP':
                 rx = parse_register(ops[0])
@@ -163,7 +164,6 @@ def instr_length(line):
         return 1 if mode == 'register' else 2
     if len(ops) in [1,2] and m in ['PRESENT','SZ','STRPC','MAX']:
         return 2
-    # default: two-word if last operand is immediate/direct, else one-word
     am = detect_addr_mode(ops[-1]) if ops else 'inherent'
     return 2 if am in ['immediate','direct'] else 1
 
@@ -177,7 +177,6 @@ def assemble(asm_lines):
             continue
         if parsed[0] == 'label':
             label = parsed[1]
-            # assign word-based PC for label
             labels[label] = pc
             if parsed[2].strip().upper() in ['ENDPROG', 'END']:
                 continue
