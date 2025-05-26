@@ -1,0 +1,271 @@
+# Reading C:/intelFPGA/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do IRP_PD-ASP_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlib ip
+# vmap ip ip
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap ip ip 
+# Modifying modelsim.ini
+# vcom -93 -work ip {C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:45:39 on May 26,2025
+# vcom -reportprogress 300 -93 -work ip C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity TdmaMinFifo
+# -- Compiling architecture SYN of tdmaminfifo
+# End time: 07:45:40 on May 26,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMinTypes.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:45:40 on May 26,2025
+# vcom -reportprogress 300 -93 -work work C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMinTypes.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package TdmaMinTypes
+# -- Compiling package body TdmaMinTypes
+# -- Loading package TdmaMinTypes
+# End time: 07:45:40 on May 26,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMinSlots.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:45:40 on May 26,2025
+# vcom -reportprogress 300 -93 -work work C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMinSlots.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TdmaMinSlots
+# -- Compiling architecture rtl of TdmaMinSlots
+# End time: 07:45:40 on May 26,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMinSwitch.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:45:40 on May 26,2025
+# vcom -reportprogress 300 -93 -work work C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMinSwitch.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity TdmaMinSwitch
+# -- Compiling architecture rtl of TdmaMinSwitch
+# End time: 07:45:40 on May 26,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMinInterface.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:45:40 on May 26,2025
+# vcom -reportprogress 300 -93 -work work C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMinInterface.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity TdmaMinInterface
+# -- Compiling architecture rtl of TdmaMinInterface
+# -- Loading entity TdmaMinFifo
+# End time: 07:45:40 on May 26,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/PdAsp.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:45:40 on May 26,2025
+# vcom -reportprogress 300 -93 -work work C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/PdAsp.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity PdAsp
+# -- Compiling architecture aPdASP of PdAsp
+# End time: 07:45:40 on May 26,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMinStage.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:45:40 on May 26,2025
+# vcom -reportprogress 300 -93 -work work C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMinStage.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity TdmaMinStage
+# -- Compiling architecture rtl of TdmaMinStage
+# -- Loading entity TdmaMinSwitch
+# End time: 07:45:40 on May 26,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMinFabric.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:45:40 on May 26,2025
+# vcom -reportprogress 300 -93 -work work C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMinFabric.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity TdmaMinFabric
+# -- Compiling architecture rtl of TdmaMinFabric
+# -- Loading entity TdmaMinStage
+# End time: 07:45:40 on May 26,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMin.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:45:40 on May 26,2025
+# vcom -reportprogress 300 -93 -work work C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMin.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity TdmaMin
+# -- Compiling architecture rtl of TdmaMin
+# -- Loading entity TdmaMinSlots
+# -- Loading entity TdmaMinFabric
+# -- Loading entity TdmaMinInterface
+# End time: 07:45:40 on May 26,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:45:40 on May 26,2025
+# vcom -reportprogress 300 -93 -work work C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TdmaMinTypes
+# -- Compiling entity IRP_PD_ASP
+# -- Compiling architecture rtl of IRP_PD_ASP
+# -- Loading entity TdmaMin
+# -- Loading entity PdAsp
+# End time: 07:45:40 on May 26,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vcom -reportprogress 300 -work work {C:/Users/lazyp/OneDrive/Documents/IRP/Signal Generators/sine_filter_rom_pkg.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:57:21 on May 26,2025
+# vcom -reportprogress 300 -work work C:/Users/lazyp/OneDrive/Documents/IRP/Signal Generators/sine_filter_rom_pkg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package sine_filter_rom_pkg
+# End time: 07:57:21 on May 26,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {C:/Users/lazyp/OneDrive/Documents/IRP/Signal Generators/sine_filter_rom_pkg.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:57:23 on May 26,2025
+# vcom -reportprogress 30 -work work C:/Users/lazyp/OneDrive/Documents/IRP/Signal Generators/sine_filter_rom_pkg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package sine_filter_rom_pkg
+# End time: 07:57:23 on May 26,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/testbench/tb_PdAsp.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:57:30 on May 26,2025
+# vcom -reportprogress 300 -work work C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/testbench/tb_PdAsp.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# ** Error: (vcom-11) Could not find work.correlation_rom_pkg.
+# ** Error (suppressible): C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/testbench/tb_PdAsp.vhd(4): (vcom-1195) Cannot find expanded name "work.correlation_rom_pkg".
+# ** Error: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/testbench/tb_PdAsp.vhd(4): Unknown expanded name.
+# -- Loading package TdmaMinTypes
+# ** Error: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/testbench/tb_PdAsp.vhd(7): VHDL Compiler exiting
+# End time: 07:57:30 on May 26,2025, Elapsed time: 0:00:00
+# Errors: 4, Warnings: 0
+vcom -reportprogress 300 -work work C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/testbench/tb_PdAsp.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:57:56 on May 26,2025
+# vcom -reportprogress 300 -work work C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/testbench/tb_PdAsp.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package sine_filter_rom_pkg
+# -- Loading package TdmaMinTypes
+# -- Compiling entity tb_PdAsp
+# -- Compiling architecture sim of tb_PdAsp
+# -- Loading entity PdAsp
+# End time: 07:57:56 on May 26,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.tb_pdasp
+# vsim work.tb_pdasp 
+# Start time: 07:59:16 on May 26,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.sine_filter_rom_pkg
+# Loading work.tdmamintypes(body)
+# Loading work.tb_pdasp(sim)
+# Loading work.pdasp(apdasp)
+add wave -position insertpoint  \
+sim:/tb_pdasp/wave \
+sim:/tb_pdasp/peak_detected \
+sim:/tb_pdasp/corr_count \
+sim:/tb_pdasp/corr_min \
+sim:/tb_pdasp/corr_max
+run .05 ms
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 5 ns  Iteration: 1  Instance: /tb_pdasp/DUT
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 5 ns  Iteration: 1  Instance: /tb_pdasp/DUT
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 1  Instance: /tb_pdasp/DUT
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 1  Instance: /tb_pdasp/DUT
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 1  Instance: /tb_pdasp/DUT
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 1  Instance: /tb_pdasp/DUT
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 35 ns  Iteration: 1  Instance: /tb_pdasp/DUT
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 35 ns  Iteration: 1  Instance: /tb_pdasp/DUT
+vsim work.pdasp
+# End time: 08:03:59 on May 26,2025, Elapsed time: 0:04:43
+# Errors: 0, Warnings: 8
+# vsim work.pdasp 
+# Start time: 08:03:59 on May 26,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tdmamintypes(body)
+# Loading work.pdasp(apdasp)
+vsim work.tb_pdasp
+# End time: 08:10:07 on May 26,2025, Elapsed time: 0:06:08
+# Errors: 0, Warnings: 0
+# vsim work.tb_pdasp 
+# Start time: 08:10:07 on May 26,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.sine_filter_rom_pkg
+# Loading work.tdmamintypes(body)
+# Loading work.tb_pdasp(sim)
+# Loading work.pdasp(apdasp)
+add wave -position insertpoint  \
+sim:/tb_pdasp/wave \
+sim:/tb_pdasp/peak_detected \
+sim:/tb_pdasp/corr_count \
+sim:/tb_pdasp/corr_min \
+sim:/tb_pdasp/corr_max
+# End time: 08:21:54 on May 26,2025, Elapsed time: 0:11:47
+# Errors: 0, Warnings: 0

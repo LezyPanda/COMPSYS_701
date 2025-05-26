@@ -1,0 +1,990 @@
+Analysis & Synthesis report for IRP_PD-ASP
+Mon May 26 07:41:48 2025
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram
+ 14. Source assignments for TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram
+ 15. Source assignments for TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram
+ 16. Parameter Settings for User Entity Instance: Top-level Entity: |IRP_PD_ASP
+ 17. Parameter Settings for User Entity Instance: TdmaMin:tdma_min
+ 18. Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinSlots:slots
+ 19. Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinFabric:fabric
+ 20. Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinFabric:fabric|TdmaMinStage:\staging:1:stage
+ 21. Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinFabric:fabric|TdmaMinStage:\staging:0:stage
+ 22. Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface
+ 23. Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component
+ 24. Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface
+ 25. Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component
+ 26. Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface
+ 27. Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component
+ 28. Parameter Settings for User Entity Instance: PdAsp:asp_adc
+ 29. scfifo Parameter Settings by Entity Instance
+ 30. Port Connectivity Checks: "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo"
+ 31. Port Connectivity Checks: "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo"
+ 32. Port Connectivity Checks: "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo"
+ 33. Port Connectivity Checks: "TdmaMin:tdma_min|TdmaMinFabric:fabric|TdmaMinStage:\staging:0:stage"
+ 34. Port Connectivity Checks: "TdmaMin:tdma_min|TdmaMinFabric:fabric|TdmaMinStage:\staging:1:stage"
+ 35. Port Connectivity Checks: "TdmaMin:tdma_min"
+ 36. Post-Synthesis Netlist Statistics for Top Partition
+ 37. Elapsed Time Per Partition
+ 38. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon May 26 07:41:48 2025       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; IRP_PD-ASP                                  ;
+; Top-level Entity Name           ; IRP_PD_ASP                                  ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 312                                         ;
+; Total pins                      ; 69                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 27,648                                      ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; IRP_PD_ASP         ; IRP_PD-ASP         ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 24          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 16          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
+;     Processors 9-16        ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                        ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                    ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
+; ip/TdmaMinFifo/TdmaMinFifo.vhd   ; yes             ; User Wizard-Generated File   ; C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd ; ip      ;
+; TdmaMin/TdmaMinTypes.vhd         ; yes             ; User VHDL File               ; C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMinTypes.vhd       ;         ;
+; TdmaMin/TdmaMinSwitch.vhd        ; yes             ; User VHDL File               ; C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMinSwitch.vhd      ;         ;
+; TdmaMin/TdmaMinStage.vhd         ; yes             ; User VHDL File               ; C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMinStage.vhd       ;         ;
+; TdmaMin/TdmaMinSlots.vhd         ; yes             ; User VHDL File               ; C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMinSlots.vhd       ;         ;
+; TdmaMin/TdmaMinInterface.vhd     ; yes             ; User VHDL File               ; C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMinInterface.vhd   ;         ;
+; TdmaMin/TdmaMinFabric.vhd        ; yes             ; User VHDL File               ; C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMinFabric.vhd      ;         ;
+; TdmaMin/TdmaMin.vhd              ; yes             ; User VHDL File               ; C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMin.vhd            ;         ;
+; src/PdAsp.vhd                    ; yes             ; User VHDL File               ; C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/PdAsp.vhd                  ;         ;
+; src/IRP_PD_ASP.vhd               ; yes             ; User VHDL File               ; C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd             ;         ;
+; scfifo.tdf                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/scfifo.tdf               ;         ;
+; a_regfifo.inc                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_regfifo.inc            ;         ;
+; a_dpfifo.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_dpfifo.inc             ;         ;
+; a_i2fifo.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_i2fifo.inc             ;         ;
+; a_fffifo.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_fffifo.inc             ;         ;
+; a_f2fifo.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_f2fifo.inc             ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc           ;         ;
+; db/scfifo_l191.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/db/scfifo_l191.tdf             ;         ;
+; db/a_dpfifo_s791.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/db/a_dpfifo_s791.tdf           ;         ;
+; db/altsyncram_r3i1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/db/altsyncram_r3i1.tdf         ;         ;
+; db/cmpr_7l8.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/db/cmpr_7l8.tdf                ;         ;
+; db/cntr_i2b.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/db/cntr_i2b.tdf                ;         ;
+; db/cntr_v27.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/db/cntr_v27.tdf                ;         ;
+; db/cntr_j2b.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/db/cntr_j2b.tdf                ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 270            ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 459            ;
+;     -- 7 input functions                    ; 0              ;
+;     -- 6 input functions                    ; 68             ;
+;     -- 5 input functions                    ; 105            ;
+;     -- 4 input functions                    ; 30             ;
+;     -- <=3 input functions                  ; 256            ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 312            ;
+;                                             ;                ;
+; I/O pins                                    ; 69             ;
+; Total MLAB memory bits                      ; 0              ;
+; Total block memory bits                     ; 27648          ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 420            ;
+; Total fan-out                               ; 4108           ;
+; Average fan-out                             ; 4.04           ;
++---------------------------------------------+----------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                    ;
++--------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
+; Compilation Hierarchy Node                       ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                      ; Entity Name      ; Library Name ;
++--------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
+; |IRP_PD_ASP                                      ; 459 (1)             ; 312 (0)                   ; 27648             ; 0          ; 69   ; 0            ; |IRP_PD_ASP                                                                                                                                                                              ; IRP_PD_ASP       ; work         ;
+;    |PdAsp:asp_adc|                               ; 317 (317)           ; 189 (189)                 ; 0                 ; 0          ; 0    ; 0            ; |IRP_PD_ASP|PdAsp:asp_adc                                                                                                                                                                ; PdAsp            ; work         ;
+;    |TdmaMin:tdma_min|                            ; 141 (0)             ; 123 (0)                   ; 27648             ; 0          ; 0    ; 0            ; |IRP_PD_ASP|TdmaMin:tdma_min                                                                                                                                                             ; TdmaMin          ; work         ;
+;       |TdmaMinFabric:fabric|                     ; 28 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinFabric:fabric                                                                                                                                        ; TdmaMinFabric    ; work         ;
+;          |TdmaMinStage:\staging:0:stage|         ; 28 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinFabric:fabric|TdmaMinStage:\staging:0:stage                                                                                                          ; TdmaMinStage     ; work         ;
+;             |TdmaMinSwitch:\switches:0:switch|   ; 28 (28)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinFabric:fabric|TdmaMinStage:\staging:0:stage|TdmaMinSwitch:\switches:0:switch                                                                         ; TdmaMinSwitch    ; work         ;
+;       |TdmaMinInterface:\interfaces:0:interface| ; 31 (3)              ; 27 (0)                    ; 9216              ; 0          ; 0    ; 0            ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface                                                                                                                    ; TdmaMinInterface ; work         ;
+;          |TdmaMinFifo:fifo|                      ; 28 (0)              ; 27 (0)                    ; 9216              ; 0          ; 0    ; 0            ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo                                                                                                   ; TdmaMinFifo      ; ip           ;
+;             |scfifo:scfifo_component|            ; 28 (0)              ; 27 (0)                    ; 9216              ; 0          ; 0    ; 0            ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component                                                                           ; scfifo           ; work         ;
+;                |scfifo_l191:auto_generated|      ; 28 (0)              ; 27 (0)                    ; 9216              ; 0          ; 0    ; 0            ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated                                                ; scfifo_l191      ; work         ;
+;                   |a_dpfifo_s791:dpfifo|         ; 28 (11)             ; 27 (12)                   ; 9216              ; 0          ; 0    ; 0            ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo                           ; a_dpfifo_s791    ; work         ;
+;                      |altsyncram_r3i1:FIFOram|   ; 0 (0)               ; 0 (0)                     ; 9216              ; 0          ; 0    ; 0            ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram   ; altsyncram_r3i1  ; work         ;
+;                      |cmpr_7l8:three_comparison| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cmpr_7l8:three_comparison ; cmpr_7l8         ; work         ;
+;                      |cntr_i2b:rd_ptr_msb|       ; 7 (7)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_i2b:rd_ptr_msb       ; cntr_i2b         ; work         ;
+;                      |cntr_v27:usedw_counter|    ; 8 (8)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_v27:usedw_counter    ; cntr_v27         ; work         ;
+;       |TdmaMinInterface:\interfaces:1:interface| ; 49 (5)              ; 67 (30)                   ; 9216              ; 0          ; 0    ; 0            ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface                                                                                                                    ; TdmaMinInterface ; work         ;
+;          |TdmaMinFifo:fifo|                      ; 44 (0)              ; 37 (0)                    ; 9216              ; 0          ; 0    ; 0            ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo                                                                                                   ; TdmaMinFifo      ; ip           ;
+;             |scfifo:scfifo_component|            ; 44 (0)              ; 37 (0)                    ; 9216              ; 0          ; 0    ; 0            ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component                                                                           ; scfifo           ; work         ;
+;                |scfifo_l191:auto_generated|      ; 44 (0)              ; 37 (0)                    ; 9216              ; 0          ; 0    ; 0            ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated                                                ; scfifo_l191      ; work         ;
+;                   |a_dpfifo_s791:dpfifo|         ; 44 (21)             ; 37 (14)                   ; 9216              ; 0          ; 0    ; 0            ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo                           ; a_dpfifo_s791    ; work         ;
+;                      |altsyncram_r3i1:FIFOram|   ; 0 (0)               ; 0 (0)                     ; 9216              ; 0          ; 0    ; 0            ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram   ; altsyncram_r3i1  ; work         ;
+;                      |cntr_i2b:rd_ptr_msb|       ; 7 (7)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_i2b:rd_ptr_msb       ; cntr_i2b         ; work         ;
+;                      |cntr_j2b:wr_ptr|           ; 8 (8)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_j2b:wr_ptr           ; cntr_j2b         ; work         ;
+;                      |cntr_v27:usedw_counter|    ; 8 (8)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_v27:usedw_counter    ; cntr_v27         ; work         ;
+;       |TdmaMinInterface:\interfaces:2:interface| ; 31 (3)              ; 27 (0)                    ; 9216              ; 0          ; 0    ; 0            ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface                                                                                                                    ; TdmaMinInterface ; work         ;
+;          |TdmaMinFifo:fifo|                      ; 28 (0)              ; 27 (0)                    ; 9216              ; 0          ; 0    ; 0            ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo                                                                                                   ; TdmaMinFifo      ; ip           ;
+;             |scfifo:scfifo_component|            ; 28 (0)              ; 27 (0)                    ; 9216              ; 0          ; 0    ; 0            ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component                                                                           ; scfifo           ; work         ;
+;                |scfifo_l191:auto_generated|      ; 28 (0)              ; 27 (0)                    ; 9216              ; 0          ; 0    ; 0            ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated                                                ; scfifo_l191      ; work         ;
+;                   |a_dpfifo_s791:dpfifo|         ; 28 (11)             ; 27 (12)                   ; 9216              ; 0          ; 0    ; 0            ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo                           ; a_dpfifo_s791    ; work         ;
+;                      |altsyncram_r3i1:FIFOram|   ; 0 (0)               ; 0 (0)                     ; 9216              ; 0          ; 0    ; 0            ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram   ; altsyncram_r3i1  ; work         ;
+;                      |cmpr_7l8:three_comparison| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cmpr_7l8:three_comparison ; cmpr_7l8         ; work         ;
+;                      |cntr_i2b:rd_ptr_msb|       ; 7 (7)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_i2b:rd_ptr_msb       ; cntr_i2b         ; work         ;
+;                      |cntr_v27:usedw_counter|    ; 8 (8)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_v27:usedw_counter    ; cntr_v27         ; work         ;
+;       |TdmaMinSlots:slots|                       ; 2 (2)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinSlots:slots                                                                                                                                          ; TdmaMinSlots     ; work         ;
++--------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                                                           ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
+; Name                                                                                                                                                                                  ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF  ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
+; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 256          ; 40           ; 256          ; 40           ; 10240 ; None ;
+; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 256          ; 40           ; 256          ; 40           ; 10240 ; None ;
+; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 256          ; 40           ; 256          ; 40           ; 10240 ; None ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                   ;
++--------+--------------+---------+--------------+--------------+----------------------------------------------------------------------------------------+--------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                                                        ; IP Include File                ;
++--------+--------------+---------+--------------+--------------+----------------------------------------------------------------------------------------+--------------------------------+
+; Altera ; FIFO         ; 20.1    ; N/A          ; N/A          ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo ; ip/TdmaMinFifo/TdmaMinFifo.vhd ;
+; Altera ; FIFO         ; 20.1    ; N/A          ; N/A          ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo ; ip/TdmaMinFifo/TdmaMinFifo.vhd ;
+; Altera ; FIFO         ; 20.1    ; N/A          ; N/A          ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo ; ip/TdmaMinFifo/TdmaMinFifo.vhd ;
++--------+--------------+---------+--------------+--------------+----------------------------------------------------------------------------------------+--------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                                                                                                                                                                  ;
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Register name                                                                                                                                                                            ; Reason for Removal                                                                                                                                                       ;
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; PdAsp:asp_adc|sendSignal.data[21..27]                                                                                                                                                    ; Stuck at GND due to stuck port data_in                                                                                                                                   ;
+; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_j2b:wr_ptr|counter_reg_bit[0..7] ; Stuck at GND due to stuck port clock_enable                                                                                                                              ;
+; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|recv.addr[2..7]                                                                                                                ; Stuck at GND due to stuck port data_in                                                                                                                                   ;
+; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_j2b:wr_ptr|counter_reg_bit[0..7] ; Stuck at GND due to stuck port clock_enable                                                                                                                              ;
+; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|full_dff                              ; Lost fanout                                                                                                                                                              ;
+; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|full_dff                              ; Lost fanout                                                                                                                                                              ;
+; PdAsp:asp_adc|sendSignal.data[31]                                                                                                                                                        ; Merged with PdAsp:asp_adc|sendSignal.data[30]                                                                                                                            ;
+; PdAsp:asp_adc|current_correlation_value[0]                                                                                                                                               ; Merged with PdAsp:asp_adc|last_correlation_value[0]                                                                                                                      ;
+; PdAsp:asp_adc|current_correlation_value[1]                                                                                                                                               ; Merged with PdAsp:asp_adc|last_correlation_value[1]                                                                                                                      ;
+; PdAsp:asp_adc|current_correlation_value[2]                                                                                                                                               ; Merged with PdAsp:asp_adc|last_correlation_value[2]                                                                                                                      ;
+; PdAsp:asp_adc|current_correlation_value[3]                                                                                                                                               ; Merged with PdAsp:asp_adc|last_correlation_value[3]                                                                                                                      ;
+; PdAsp:asp_adc|current_correlation_value[4]                                                                                                                                               ; Merged with PdAsp:asp_adc|last_correlation_value[4]                                                                                                                      ;
+; PdAsp:asp_adc|current_correlation_value[5]                                                                                                                                               ; Merged with PdAsp:asp_adc|last_correlation_value[5]                                                                                                                      ;
+; PdAsp:asp_adc|current_correlation_value[6]                                                                                                                                               ; Merged with PdAsp:asp_adc|last_correlation_value[6]                                                                                                                      ;
+; PdAsp:asp_adc|current_correlation_value[7]                                                                                                                                               ; Merged with PdAsp:asp_adc|last_correlation_value[7]                                                                                                                      ;
+; PdAsp:asp_adc|current_correlation_value[8]                                                                                                                                               ; Merged with PdAsp:asp_adc|last_correlation_value[8]                                                                                                                      ;
+; PdAsp:asp_adc|current_correlation_value[9]                                                                                                                                               ; Merged with PdAsp:asp_adc|last_correlation_value[9]                                                                                                                      ;
+; PdAsp:asp_adc|current_correlation_value[10]                                                                                                                                              ; Merged with PdAsp:asp_adc|last_correlation_value[10]                                                                                                                     ;
+; PdAsp:asp_adc|current_correlation_value[11]                                                                                                                                              ; Merged with PdAsp:asp_adc|last_correlation_value[11]                                                                                                                     ;
+; PdAsp:asp_adc|current_correlation_value[12]                                                                                                                                              ; Merged with PdAsp:asp_adc|last_correlation_value[12]                                                                                                                     ;
+; PdAsp:asp_adc|current_correlation_value[13]                                                                                                                                              ; Merged with PdAsp:asp_adc|last_correlation_value[13]                                                                                                                     ;
+; PdAsp:asp_adc|current_correlation_value[14]                                                                                                                                              ; Merged with PdAsp:asp_adc|last_correlation_value[14]                                                                                                                     ;
+; PdAsp:asp_adc|current_correlation_value[15]                                                                                                                                              ; Merged with PdAsp:asp_adc|last_correlation_value[15]                                                                                                                     ;
+; PdAsp:asp_adc|current_correlation_value[16]                                                                                                                                              ; Merged with PdAsp:asp_adc|last_correlation_value[16]                                                                                                                     ;
+; PdAsp:asp_adc|current_correlation_value[17]                                                                                                                                              ; Merged with PdAsp:asp_adc|last_correlation_value[17]                                                                                                                     ;
+; PdAsp:asp_adc|current_correlation_value[18]                                                                                                                                              ; Merged with PdAsp:asp_adc|last_correlation_value[18]                                                                                                                     ;
+; PdAsp:asp_adc|current_correlation_value[19]                                                                                                                                              ; Merged with PdAsp:asp_adc|last_correlation_value[19]                                                                                                                     ;
+; PdAsp:asp_adc|current_correlation_value[20]                                                                                                                                              ; Merged with PdAsp:asp_adc|last_correlation_value[20]                                                                                                                     ;
+; PdAsp:asp_adc|current_correlation_value[21]                                                                                                                                              ; Merged with PdAsp:asp_adc|last_correlation_value[21]                                                                                                                     ;
+; PdAsp:asp_adc|current_correlation_value[22]                                                                                                                                              ; Merged with PdAsp:asp_adc|last_correlation_value[22]                                                                                                                     ;
+; PdAsp:asp_adc|current_correlation_value[23]                                                                                                                                              ; Merged with PdAsp:asp_adc|last_correlation_value[23]                                                                                                                     ;
+; PdAsp:asp_adc|current_correlation_value[24]                                                                                                                                              ; Merged with PdAsp:asp_adc|last_correlation_value[24]                                                                                                                     ;
+; PdAsp:asp_adc|current_correlation_value[25]                                                                                                                                              ; Merged with PdAsp:asp_adc|last_correlation_value[25]                                                                                                                     ;
+; PdAsp:asp_adc|current_correlation_value[26]                                                                                                                                              ; Merged with PdAsp:asp_adc|last_correlation_value[26]                                                                                                                     ;
+; PdAsp:asp_adc|current_correlation_value[27]                                                                                                                                              ; Merged with PdAsp:asp_adc|last_correlation_value[27]                                                                                                                     ;
+; PdAsp:asp_adc|current_correlation_value[28]                                                                                                                                              ; Merged with PdAsp:asp_adc|last_correlation_value[28]                                                                                                                     ;
+; PdAsp:asp_adc|current_correlation_value[29]                                                                                                                                              ; Merged with PdAsp:asp_adc|last_correlation_value[29]                                                                                                                     ;
+; PdAsp:asp_adc|current_correlation_value[30]                                                                                                                                              ; Merged with PdAsp:asp_adc|last_correlation_value[30]                                                                                                                     ;
+; PdAsp:asp_adc|current_correlation_value[31]                                                                                                                                              ; Merged with PdAsp:asp_adc|last_correlation_value[31]                                                                                                                     ;
+; PdAsp:asp_adc|current_correlation_value[32]                                                                                                                                              ; Merged with PdAsp:asp_adc|last_correlation_value[32]                                                                                                                     ;
+; PdAsp:asp_adc|current_correlation_value[33]                                                                                                                                              ; Merged with PdAsp:asp_adc|last_correlation_value[33]                                                                                                                     ;
+; PdAsp:asp_adc|current_correlation_value[34]                                                                                                                                              ; Merged with PdAsp:asp_adc|last_correlation_value[34]                                                                                                                     ;
+; PdAsp:asp_adc|current_correlation_value[35]                                                                                                                                              ; Merged with PdAsp:asp_adc|last_correlation_value[35]                                                                                                                     ;
+; PdAsp:asp_adc|current_correlation_value[36]                                                                                                                                              ; Merged with PdAsp:asp_adc|last_correlation_value[36]                                                                                                                     ;
+; PdAsp:asp_adc|current_correlation_value[37]                                                                                                                                              ; Merged with PdAsp:asp_adc|last_correlation_value[37]                                                                                                                     ;
+; PdAsp:asp_adc|current_correlation_value[38]                                                                                                                                              ; Merged with PdAsp:asp_adc|last_correlation_value[38]                                                                                                                     ;
+; PdAsp:asp_adc|current_correlation_value[39]                                                                                                                                              ; Merged with PdAsp:asp_adc|last_correlation_value[39]                                                                                                                     ;
+; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|usedw_is_0_dff                        ; Merged with TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|empty_dff ;
+; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|usedw_is_0_dff                        ; Merged with TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|empty_dff ;
+; PdAsp:asp_adc|previous_maximum[0]                                                                                                                                                        ; Merged with PdAsp:asp_adc|correlation_max[0]                                                                                                                             ;
+; PdAsp:asp_adc|previous_maximum[20]                                                                                                                                                       ; Merged with PdAsp:asp_adc|correlation_max[20]                                                                                                                            ;
+; PdAsp:asp_adc|previous_maximum[39]                                                                                                                                                       ; Merged with PdAsp:asp_adc|correlation_max[39]                                                                                                                            ;
+; PdAsp:asp_adc|previous_maximum[38]                                                                                                                                                       ; Merged with PdAsp:asp_adc|correlation_max[38]                                                                                                                            ;
+; PdAsp:asp_adc|previous_maximum[37]                                                                                                                                                       ; Merged with PdAsp:asp_adc|correlation_max[37]                                                                                                                            ;
+; PdAsp:asp_adc|previous_maximum[36]                                                                                                                                                       ; Merged with PdAsp:asp_adc|correlation_max[36]                                                                                                                            ;
+; PdAsp:asp_adc|previous_maximum[35]                                                                                                                                                       ; Merged with PdAsp:asp_adc|correlation_max[35]                                                                                                                            ;
+; PdAsp:asp_adc|previous_maximum[34]                                                                                                                                                       ; Merged with PdAsp:asp_adc|correlation_max[34]                                                                                                                            ;
+; PdAsp:asp_adc|previous_maximum[33]                                                                                                                                                       ; Merged with PdAsp:asp_adc|correlation_max[33]                                                                                                                            ;
+; PdAsp:asp_adc|previous_maximum[32]                                                                                                                                                       ; Merged with PdAsp:asp_adc|correlation_max[32]                                                                                                                            ;
+; PdAsp:asp_adc|previous_maximum[31]                                                                                                                                                       ; Merged with PdAsp:asp_adc|correlation_max[31]                                                                                                                            ;
+; PdAsp:asp_adc|previous_maximum[30]                                                                                                                                                       ; Merged with PdAsp:asp_adc|correlation_max[30]                                                                                                                            ;
+; PdAsp:asp_adc|previous_maximum[29]                                                                                                                                                       ; Merged with PdAsp:asp_adc|correlation_max[29]                                                                                                                            ;
+; PdAsp:asp_adc|previous_maximum[28]                                                                                                                                                       ; Merged with PdAsp:asp_adc|correlation_max[28]                                                                                                                            ;
+; PdAsp:asp_adc|previous_maximum[27]                                                                                                                                                       ; Merged with PdAsp:asp_adc|correlation_max[27]                                                                                                                            ;
+; PdAsp:asp_adc|previous_maximum[26]                                                                                                                                                       ; Merged with PdAsp:asp_adc|correlation_max[26]                                                                                                                            ;
+; PdAsp:asp_adc|previous_maximum[25]                                                                                                                                                       ; Merged with PdAsp:asp_adc|correlation_max[25]                                                                                                                            ;
+; PdAsp:asp_adc|previous_maximum[24]                                                                                                                                                       ; Merged with PdAsp:asp_adc|correlation_max[24]                                                                                                                            ;
+; PdAsp:asp_adc|previous_maximum[23]                                                                                                                                                       ; Merged with PdAsp:asp_adc|correlation_max[23]                                                                                                                            ;
+; PdAsp:asp_adc|previous_maximum[22]                                                                                                                                                       ; Merged with PdAsp:asp_adc|correlation_max[22]                                                                                                                            ;
+; PdAsp:asp_adc|previous_maximum[21]                                                                                                                                                       ; Merged with PdAsp:asp_adc|correlation_max[21]                                                                                                                            ;
+; PdAsp:asp_adc|previous_maximum[19]                                                                                                                                                       ; Merged with PdAsp:asp_adc|correlation_max[19]                                                                                                                            ;
+; PdAsp:asp_adc|previous_maximum[18]                                                                                                                                                       ; Merged with PdAsp:asp_adc|correlation_max[18]                                                                                                                            ;
+; PdAsp:asp_adc|previous_maximum[17]                                                                                                                                                       ; Merged with PdAsp:asp_adc|correlation_max[17]                                                                                                                            ;
+; PdAsp:asp_adc|previous_maximum[16]                                                                                                                                                       ; Merged with PdAsp:asp_adc|correlation_max[16]                                                                                                                            ;
+; PdAsp:asp_adc|previous_maximum[15]                                                                                                                                                       ; Merged with PdAsp:asp_adc|correlation_max[15]                                                                                                                            ;
+; PdAsp:asp_adc|previous_maximum[14]                                                                                                                                                       ; Merged with PdAsp:asp_adc|correlation_max[14]                                                                                                                            ;
+; PdAsp:asp_adc|previous_maximum[13]                                                                                                                                                       ; Merged with PdAsp:asp_adc|correlation_max[13]                                                                                                                            ;
+; PdAsp:asp_adc|previous_maximum[12]                                                                                                                                                       ; Merged with PdAsp:asp_adc|correlation_max[12]                                                                                                                            ;
+; PdAsp:asp_adc|previous_maximum[11]                                                                                                                                                       ; Merged with PdAsp:asp_adc|correlation_max[11]                                                                                                                            ;
+; PdAsp:asp_adc|previous_maximum[10]                                                                                                                                                       ; Merged with PdAsp:asp_adc|correlation_max[10]                                                                                                                            ;
+; PdAsp:asp_adc|previous_maximum[9]                                                                                                                                                        ; Merged with PdAsp:asp_adc|correlation_max[9]                                                                                                                             ;
+; PdAsp:asp_adc|previous_maximum[8]                                                                                                                                                        ; Merged with PdAsp:asp_adc|correlation_max[8]                                                                                                                             ;
+; PdAsp:asp_adc|previous_maximum[7]                                                                                                                                                        ; Merged with PdAsp:asp_adc|correlation_max[7]                                                                                                                             ;
+; PdAsp:asp_adc|previous_maximum[6]                                                                                                                                                        ; Merged with PdAsp:asp_adc|correlation_max[6]                                                                                                                             ;
+; PdAsp:asp_adc|previous_maximum[5]                                                                                                                                                        ; Merged with PdAsp:asp_adc|correlation_max[5]                                                                                                                             ;
+; PdAsp:asp_adc|previous_maximum[4]                                                                                                                                                        ; Merged with PdAsp:asp_adc|correlation_max[4]                                                                                                                             ;
+; PdAsp:asp_adc|previous_maximum[3]                                                                                                                                                        ; Merged with PdAsp:asp_adc|correlation_max[3]                                                                                                                             ;
+; PdAsp:asp_adc|previous_maximum[2]                                                                                                                                                        ; Merged with PdAsp:asp_adc|correlation_max[2]                                                                                                                             ;
+; PdAsp:asp_adc|previous_maximum[1]                                                                                                                                                        ; Merged with PdAsp:asp_adc|correlation_max[1]                                                                                                                             ;
+; Total Number of Removed Registers = 114                                                                                                                                                  ;                                                                                                                                                                          ;
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 312   ;
+; Number of registers using Synchronous Clear  ; 88    ;
+; Number of registers using Synchronous Load   ; 20    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 160   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |IRP_PD_ASP|PdAsp:asp_adc|sendSignal.data[28]                                      ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |IRP_PD_ASP|PdAsp:asp_adc|counter_prev[0]                                          ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |IRP_PD_ASP|PdAsp:asp_adc|peak_type[0]                                             ;
+; 7:1                ; 28 bits   ; 112 LEs       ; 56 LEs               ; 56 LEs                 ; Yes        ; |IRP_PD_ASP|TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|recv.data[0] ;
+; 6:1                ; 20 bits   ; 80 LEs        ; 40 LEs               ; 40 LEs                 ; Yes        ; |IRP_PD_ASP|PdAsp:asp_adc|sendSignal.data[0]                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                                                                  ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                                                   ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                                                                  ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                                                   ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                                                                  ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                                                   ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |IRP_PD_ASP ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; ports          ; 3     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TdmaMin:tdma_min ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; ports          ; 3     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinSlots:slots ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; stages         ; 2     ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinFabric:fabric ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; stages         ; 2     ; Signed Integer                                            ;
+; ports          ; 3     ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinFabric:fabric|TdmaMinStage:\staging:1:stage ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; terminals      ; 4     ; Signed Integer                                                                          ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinFabric:fabric|TdmaMinStage:\staging:0:stage ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; terminals      ; 4     ; Signed Integer                                                                          ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface ;
++----------------+-------+-------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------+
+; stages         ; 2     ; Signed Integer                                                                ;
+; identity       ; 0     ; Signed Integer                                                                ;
++----------------+-------+-------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component ;
++-------------------------+-------------+---------------------------------------------------------------------------------------------------------+
+; Parameter Name          ; Value       ; Type                                                                                                    ;
++-------------------------+-------------+---------------------------------------------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS       ; ON          ; AUTO_CARRY                                                                                              ;
+; IGNORE_CARRY_BUFFERS    ; OFF         ; IGNORE_CARRY                                                                                            ;
+; AUTO_CASCADE_CHAINS     ; ON          ; AUTO_CASCADE                                                                                            ;
+; IGNORE_CASCADE_BUFFERS  ; OFF         ; IGNORE_CASCADE                                                                                          ;
+; lpm_width               ; 40          ; Signed Integer                                                                                          ;
+; LPM_NUMWORDS            ; 256         ; Signed Integer                                                                                          ;
+; LPM_WIDTHU              ; 8           ; Signed Integer                                                                                          ;
+; LPM_SHOWAHEAD           ; ON          ; Untyped                                                                                                 ;
+; UNDERFLOW_CHECKING      ; ON          ; Untyped                                                                                                 ;
+; OVERFLOW_CHECKING       ; ON          ; Untyped                                                                                                 ;
+; ALLOW_RWCYCLE_WHEN_FULL ; OFF         ; Untyped                                                                                                 ;
+; ADD_RAM_OUTPUT_REGISTER ; OFF         ; Untyped                                                                                                 ;
+; ALMOST_FULL_VALUE       ; 0           ; Untyped                                                                                                 ;
+; ALMOST_EMPTY_VALUE      ; 0           ; Untyped                                                                                                 ;
+; ENABLE_ECC              ; FALSE       ; Untyped                                                                                                 ;
+; USE_EAB                 ; ON          ; Untyped                                                                                                 ;
+; MAXIMIZE_SPEED          ; 5           ; Untyped                                                                                                 ;
+; DEVICE_FAMILY           ; Cyclone V   ; Untyped                                                                                                 ;
+; OPTIMIZE_FOR_SPEED      ; 5           ; Untyped                                                                                                 ;
+; CBXI_PARAMETER          ; scfifo_l191 ; Untyped                                                                                                 ;
++-------------------------+-------------+---------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface ;
++----------------+-------+-------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------+
+; stages         ; 2     ; Signed Integer                                                                ;
+; identity       ; 1     ; Signed Integer                                                                ;
++----------------+-------+-------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component ;
++-------------------------+-------------+---------------------------------------------------------------------------------------------------------+
+; Parameter Name          ; Value       ; Type                                                                                                    ;
++-------------------------+-------------+---------------------------------------------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS       ; ON          ; AUTO_CARRY                                                                                              ;
+; IGNORE_CARRY_BUFFERS    ; OFF         ; IGNORE_CARRY                                                                                            ;
+; AUTO_CASCADE_CHAINS     ; ON          ; AUTO_CASCADE                                                                                            ;
+; IGNORE_CASCADE_BUFFERS  ; OFF         ; IGNORE_CASCADE                                                                                          ;
+; lpm_width               ; 40          ; Signed Integer                                                                                          ;
+; LPM_NUMWORDS            ; 256         ; Signed Integer                                                                                          ;
+; LPM_WIDTHU              ; 8           ; Signed Integer                                                                                          ;
+; LPM_SHOWAHEAD           ; ON          ; Untyped                                                                                                 ;
+; UNDERFLOW_CHECKING      ; ON          ; Untyped                                                                                                 ;
+; OVERFLOW_CHECKING       ; ON          ; Untyped                                                                                                 ;
+; ALLOW_RWCYCLE_WHEN_FULL ; OFF         ; Untyped                                                                                                 ;
+; ADD_RAM_OUTPUT_REGISTER ; OFF         ; Untyped                                                                                                 ;
+; ALMOST_FULL_VALUE       ; 0           ; Untyped                                                                                                 ;
+; ALMOST_EMPTY_VALUE      ; 0           ; Untyped                                                                                                 ;
+; ENABLE_ECC              ; FALSE       ; Untyped                                                                                                 ;
+; USE_EAB                 ; ON          ; Untyped                                                                                                 ;
+; MAXIMIZE_SPEED          ; 5           ; Untyped                                                                                                 ;
+; DEVICE_FAMILY           ; Cyclone V   ; Untyped                                                                                                 ;
+; OPTIMIZE_FOR_SPEED      ; 5           ; Untyped                                                                                                 ;
+; CBXI_PARAMETER          ; scfifo_l191 ; Untyped                                                                                                 ;
++-------------------------+-------------+---------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface ;
++----------------+-------+-------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------+
+; stages         ; 2     ; Signed Integer                                                                ;
+; identity       ; 2     ; Signed Integer                                                                ;
++----------------+-------+-------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component ;
++-------------------------+-------------+---------------------------------------------------------------------------------------------------------+
+; Parameter Name          ; Value       ; Type                                                                                                    ;
++-------------------------+-------------+---------------------------------------------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS       ; ON          ; AUTO_CARRY                                                                                              ;
+; IGNORE_CARRY_BUFFERS    ; OFF         ; IGNORE_CARRY                                                                                            ;
+; AUTO_CASCADE_CHAINS     ; ON          ; AUTO_CASCADE                                                                                            ;
+; IGNORE_CASCADE_BUFFERS  ; OFF         ; IGNORE_CASCADE                                                                                          ;
+; lpm_width               ; 40          ; Signed Integer                                                                                          ;
+; LPM_NUMWORDS            ; 256         ; Signed Integer                                                                                          ;
+; LPM_WIDTHU              ; 8           ; Signed Integer                                                                                          ;
+; LPM_SHOWAHEAD           ; ON          ; Untyped                                                                                                 ;
+; UNDERFLOW_CHECKING      ; ON          ; Untyped                                                                                                 ;
+; OVERFLOW_CHECKING       ; ON          ; Untyped                                                                                                 ;
+; ALLOW_RWCYCLE_WHEN_FULL ; OFF         ; Untyped                                                                                                 ;
+; ADD_RAM_OUTPUT_REGISTER ; OFF         ; Untyped                                                                                                 ;
+; ALMOST_FULL_VALUE       ; 0           ; Untyped                                                                                                 ;
+; ALMOST_EMPTY_VALUE      ; 0           ; Untyped                                                                                                 ;
+; ENABLE_ECC              ; FALSE       ; Untyped                                                                                                 ;
+; USE_EAB                 ; ON          ; Untyped                                                                                                 ;
+; MAXIMIZE_SPEED          ; 5           ; Untyped                                                                                                 ;
+; DEVICE_FAMILY           ; Cyclone V   ; Untyped                                                                                                 ;
+; OPTIMIZE_FOR_SPEED      ; 5           ; Untyped                                                                                                 ;
+; CBXI_PARAMETER          ; scfifo_l191 ; Untyped                                                                                                 ;
++-------------------------+-------------+---------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PdAsp:asp_adc ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; difference     ; 5000  ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; scfifo Parameter Settings by Entity Instance                                                                                    ;
++----------------------------+----------------------------------------------------------------------------------------------------+
+; Name                       ; Value                                                                                              ;
++----------------------------+----------------------------------------------------------------------------------------------------+
+; Number of entity instances ; 3                                                                                                  ;
+; Entity Instance            ; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component ;
+;     -- FIFO Type           ; Single Clock                                                                                       ;
+;     -- lpm_width           ; 40                                                                                                 ;
+;     -- LPM_NUMWORDS        ; 256                                                                                                ;
+;     -- LPM_SHOWAHEAD       ; ON                                                                                                 ;
+;     -- USE_EAB             ; ON                                                                                                 ;
+; Entity Instance            ; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component ;
+;     -- FIFO Type           ; Single Clock                                                                                       ;
+;     -- lpm_width           ; 40                                                                                                 ;
+;     -- LPM_NUMWORDS        ; 256                                                                                                ;
+;     -- LPM_SHOWAHEAD       ; ON                                                                                                 ;
+;     -- USE_EAB             ; ON                                                                                                 ;
+; Entity Instance            ; TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component ;
+;     -- FIFO Type           ; Single Clock                                                                                       ;
+;     -- lpm_width           ; 40                                                                                                 ;
+;     -- LPM_NUMWORDS        ; 256                                                                                                ;
+;     -- LPM_SHOWAHEAD       ; ON                                                                                                 ;
+;     -- USE_EAB             ; ON                                                                                                 ;
++----------------------------+----------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo"         ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; full ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo"         ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; full ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo"         ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; full ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "TdmaMin:tdma_min|TdmaMinFabric:fabric|TdmaMinStage:\staging:0:stage"                ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; o[3] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "TdmaMin:tdma_min|TdmaMinFabric:fabric|TdmaMinStage:\staging:1:stage" ;
++------+-------+----------+-----------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                               ;
++------+-------+----------+-----------------------------------------------------------------------+
+; i[3] ; Input ; Info     ; Stuck at GND                                                          ;
++------+-------+----------+-----------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "TdmaMin:tdma_min"                                                                       ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; sends[0] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; sends[2] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; recvs[0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; recvs[2] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 312                         ;
+;     ENA               ; 140                         ;
+;     ENA SCLR          ; 20                          ;
+;     SCLR              ; 48                          ;
+;     SCLR SLD          ; 20                          ;
+;     plain             ; 84                          ;
+; arriav_lcell_comb     ; 459                         ;
+;     arith             ; 114                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 67                          ;
+;         2 data inputs ; 46                          ;
+;     normal            ; 265                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 9                           ;
+;         3 data inputs ; 47                          ;
+;         4 data inputs ; 30                          ;
+;         5 data inputs ; 105                         ;
+;         6 data inputs ; 68                          ;
+;     shared            ; 80                          ;
+;         2 data inputs ; 80                          ;
+; boundary_port         ; 69                          ;
+; stratixv_ram_block    ; 108                         ;
+;                       ;                             ;
+; Max LUT depth         ; 12.60                       ;
+; Average LUT depth     ; 5.38                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Mon May 26 07:41:39 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off IRP_PD-ASP -c IRP_PD-ASP
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 24 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file ip/tdmaminfifo/tdmaminfifo.vhd
+    Info (12022): Found design unit 1: tdmaminfifo-SYN File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd Line: 57
+    Info (12023): Found entity 1: TdmaMinFifo File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd Line: 43
+Info (12021): Found 2 design units, including 0 entities, in source file tdmamin/tdmamintypes.vhd
+    Info (12022): Found design unit 1: TdmaMinTypes File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMinTypes.vhd Line: 5
+    Info (12022): Found design unit 2: TdmaMinTypes-body File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMinTypes.vhd Line: 23
+Info (12021): Found 2 design units, including 1 entities, in source file tdmamin/tdmaminswitch.vhd
+    Info (12022): Found design unit 1: TdmaMinSwitch-rtl File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMinSwitch.vhd Line: 18
+    Info (12023): Found entity 1: TdmaMinSwitch File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMinSwitch.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file tdmamin/tdmaminstage.vhd
+    Info (12022): Found design unit 1: TdmaMinStage-rtl File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMinStage.vhd Line: 19
+    Info (12023): Found entity 1: TdmaMinStage File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMinStage.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file tdmamin/tdmaminslots.vhd
+    Info (12022): Found design unit 1: TdmaMinSlots-rtl File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMinSlots.vhd Line: 15
+    Info (12023): Found entity 1: TdmaMinSlots File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMinSlots.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file tdmamin/tdmamininterface.vhd
+    Info (12022): Found design unit 1: TdmaMinInterface-rtl File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMinInterface.vhd Line: 26
+    Info (12023): Found entity 1: TdmaMinInterface File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMinInterface.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file tdmamin/tdmaminfabric.vhd
+    Info (12022): Found design unit 1: TdmaMinFabric-rtl File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMinFabric.vhd Line: 20
+    Info (12023): Found entity 1: TdmaMinFabric File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMinFabric.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file tdmamin/tdmamin.vhd
+    Info (12022): Found design unit 1: TdmaMin-rtl File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMin.vhd Line: 19
+    Info (12023): Found entity 1: TdmaMin File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMin.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file src/pdasp.vhd
+    Info (12022): Found design unit 1: PdAsp-aPdASP File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/PdAsp.vhd Line: 19
+    Info (12023): Found entity 1: PdAsp File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/PdAsp.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file src/irp_pd_asp.vhd
+    Info (12022): Found design unit 1: IRP_PD_ASP-rtl File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 29
+    Info (12023): Found entity 1: IRP_PD_ASP File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 8
+Info (12127): Elaborating entity "IRP_PD_ASP" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at IRP_PD_ASP.vhd(20): used implicit default value for signal "HEX0" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 20
+Warning (10541): VHDL Signal Declaration warning at IRP_PD_ASP.vhd(21): used implicit default value for signal "HEX1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 21
+Warning (10541): VHDL Signal Declaration warning at IRP_PD_ASP.vhd(22): used implicit default value for signal "HEX2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 22
+Warning (10541): VHDL Signal Declaration warning at IRP_PD_ASP.vhd(23): used implicit default value for signal "HEX3" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 23
+Warning (10541): VHDL Signal Declaration warning at IRP_PD_ASP.vhd(24): used implicit default value for signal "HEX4" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 24
+Warning (10541): VHDL Signal Declaration warning at IRP_PD_ASP.vhd(25): used implicit default value for signal "HEX5" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 25
+Warning (10873): Using initial value X (don't care) for net "send_port[0]" at IRP_PD_ASP.vhd(31) File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 31
+Warning (10873): Using initial value X (don't care) for net "send_port[2]" at IRP_PD_ASP.vhd(31) File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 31
+Info (12128): Elaborating entity "TdmaMin" for hierarchy "TdmaMin:tdma_min" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 38
+Info (12128): Elaborating entity "TdmaMinSlots" for hierarchy "TdmaMin:tdma_min|TdmaMinSlots:slots" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMin.vhd Line: 29
+Info (12128): Elaborating entity "TdmaMinFabric" for hierarchy "TdmaMin:tdma_min|TdmaMinFabric:fabric" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMin.vhd Line: 38
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "links" into its bus
+Info (12128): Elaborating entity "TdmaMinStage" for hierarchy "TdmaMin:tdma_min|TdmaMinFabric:fabric|TdmaMinStage:\staging:1:stage" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMinFabric.vhd Line: 34
+Info (12128): Elaborating entity "TdmaMinSwitch" for hierarchy "TdmaMin:tdma_min|TdmaMinFabric:fabric|TdmaMinStage:\staging:1:stage|TdmaMinSwitch:\switches:0:switch" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMinStage.vhd Line: 23
+Info (12128): Elaborating entity "TdmaMinInterface" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMin.vhd Line: 50
+Info (12128): Elaborating entity "TdmaMinFifo" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMinInterface.vhd Line: 44
+Info (12128): Elaborating entity "scfifo" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd Line: 94
+Info (12130): Elaborated megafunction instantiation "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd Line: 94
+Info (12133): Instantiated megafunction "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component" with the following parameter: File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd Line: 94
+    Info (12134): Parameter "add_ram_output_register" = "OFF"
+    Info (12134): Parameter "intended_device_family" = "Cyclone V"
+    Info (12134): Parameter "lpm_numwords" = "256"
+    Info (12134): Parameter "lpm_showahead" = "ON"
+    Info (12134): Parameter "lpm_type" = "scfifo"
+    Info (12134): Parameter "lpm_width" = "40"
+    Info (12134): Parameter "lpm_widthu" = "8"
+    Info (12134): Parameter "overflow_checking" = "ON"
+    Info (12134): Parameter "underflow_checking" = "ON"
+    Info (12134): Parameter "use_eab" = "ON"
+Info (12021): Found 1 design units, including 1 entities, in source file db/scfifo_l191.tdf
+    Info (12023): Found entity 1: scfifo_l191 File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/db/scfifo_l191.tdf Line: 24
+Info (12128): Elaborating entity "scfifo_l191" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/scfifo.tdf Line: 299
+Info (12021): Found 1 design units, including 1 entities, in source file db/a_dpfifo_s791.tdf
+    Info (12023): Found entity 1: a_dpfifo_s791 File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/db/a_dpfifo_s791.tdf Line: 32
+Info (12128): Elaborating entity "a_dpfifo_s791" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/db/scfifo_l191.tdf Line: 35
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_r3i1.tdf
+    Info (12023): Found entity 1: altsyncram_r3i1 File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/db/altsyncram_r3i1.tdf Line: 27
+Info (12128): Elaborating entity "altsyncram_r3i1" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/db/a_dpfifo_s791.tdf Line: 44
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_7l8.tdf
+    Info (12023): Found entity 1: cmpr_7l8 File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/db/cmpr_7l8.tdf Line: 22
+Info (12128): Elaborating entity "cmpr_7l8" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cmpr_7l8:almost_full_comparer" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/db/a_dpfifo_s791.tdf Line: 53
+Info (12128): Elaborating entity "cmpr_7l8" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cmpr_7l8:three_comparison" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/db/a_dpfifo_s791.tdf Line: 54
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_i2b.tdf
+    Info (12023): Found entity 1: cntr_i2b File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/db/cntr_i2b.tdf Line: 25
+Info (12128): Elaborating entity "cntr_i2b" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_i2b:rd_ptr_msb" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/db/a_dpfifo_s791.tdf Line: 55
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_v27.tdf
+    Info (12023): Found entity 1: cntr_v27 File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/db/cntr_v27.tdf Line: 25
+Info (12128): Elaborating entity "cntr_v27" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_v27:usedw_counter" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/db/a_dpfifo_s791.tdf Line: 56
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_j2b.tdf
+    Info (12023): Found entity 1: cntr_j2b File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/db/cntr_j2b.tdf Line: 25
+Info (12128): Elaborating entity "cntr_j2b" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_j2b:wr_ptr" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/db/a_dpfifo_s791.tdf Line: 57
+Info (12128): Elaborating entity "TdmaMinInterface" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMin.vhd Line: 50
+Info (12128): Elaborating entity "TdmaMinInterface" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/TdmaMin/TdmaMin.vhd Line: 50
+Info (12128): Elaborating entity "PdAsp" for hierarchy "PdAsp:asp_adc" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 48
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|q_b[24]" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/db/altsyncram_r3i1.tdf Line: 757
+        Warning (14320): Synthesized away node "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|q_b[25]" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/db/altsyncram_r3i1.tdf Line: 787
+        Warning (14320): Synthesized away node "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|q_b[26]" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/db/altsyncram_r3i1.tdf Line: 817
+        Warning (14320): Synthesized away node "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|q_b[27]" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/db/altsyncram_r3i1.tdf Line: 847
+        Warning (14320): Synthesized away node "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|q_b[24]" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/db/altsyncram_r3i1.tdf Line: 757
+        Warning (14320): Synthesized away node "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|q_b[25]" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/db/altsyncram_r3i1.tdf Line: 787
+        Warning (14320): Synthesized away node "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|q_b[26]" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/db/altsyncram_r3i1.tdf Line: 817
+        Warning (14320): Synthesized away node "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|q_b[27]" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/db/altsyncram_r3i1.tdf Line: 847
+        Warning (14320): Synthesized away node "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|q_b[24]" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/db/altsyncram_r3i1.tdf Line: 757
+        Warning (14320): Synthesized away node "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|q_b[25]" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/db/altsyncram_r3i1.tdf Line: 787
+        Warning (14320): Synthesized away node "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|q_b[26]" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/db/altsyncram_r3i1.tdf Line: 817
+        Warning (14320): Synthesized away node "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram|q_b[27]" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/db/altsyncram_r3i1.tdf Line: 847
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 19
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 19
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 19
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 19
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 19
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 19
+    Warning (13410): Pin "HEX0[0]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 20
+    Warning (13410): Pin "HEX0[1]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 20
+    Warning (13410): Pin "HEX0[2]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 20
+    Warning (13410): Pin "HEX0[3]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 20
+    Warning (13410): Pin "HEX0[4]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 20
+    Warning (13410): Pin "HEX0[5]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 20
+    Warning (13410): Pin "HEX0[6]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 20
+    Warning (13410): Pin "HEX1[0]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 21
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 21
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 21
+    Warning (13410): Pin "HEX1[3]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 21
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 21
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 21
+    Warning (13410): Pin "HEX1[6]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 21
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 22
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 22
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 22
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 22
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 22
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 22
+    Warning (13410): Pin "HEX2[6]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 22
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 23
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 23
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 23
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 23
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 23
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 23
+    Warning (13410): Pin "HEX3[6]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 23
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 24
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 24
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 24
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 24
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 24
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 24
+    Warning (13410): Pin "HEX4[6]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 24
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 25
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 25
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 25
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 25
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 25
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 25
+    Warning (13410): Pin "HEX5[6]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 25
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 16 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK2_50" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 14
+    Warning (15610): No output dependent on input pin "CLOCK3_50" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 15
+    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 17
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 17
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 17
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[0]" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 18
+    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 18
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 18
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 18
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 18
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 18
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 18
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 18
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 18
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/lazyp/OneDrive/Documents/IRP/IRP_PD-ASP/src/IRP_PD_ASP.vhd Line: 18
+Info (21057): Implemented 796 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 17 input pins
+    Info (21059): Implemented 52 output pins
+    Info (21061): Implemented 619 logic cells
+    Info (21064): Implemented 108 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 89 warnings
+    Info: Peak virtual memory: 4924 megabytes
+    Info: Processing ended: Mon May 26 07:41:48 2025
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:18
+
+
