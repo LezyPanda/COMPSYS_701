@@ -1,5 +1,5 @@
 Flow report for IRP_PD-ASP
-Mon May 26 07:44:24 2025
+Tue May 27 09:37:58 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,19 +40,19 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Mon May 26 07:44:19 2025       ;
+; Flow Status                     ; Successful - Tue May 27 09:37:58 2025       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; IRP_PD-ASP                                  ;
-; Top-level Entity Name           ; IRP_PD_ASP                                  ;
+; Top-level Entity Name           ; TopLevel                                    ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 268 / 32,070 ( < 1 % )                      ;
-; Total registers                 ; 359                                         ;
+; Logic utilization (in ALMs)     ; 953 / 32,070 ( 3 % )                        ;
+; Total registers                 ; 1083                                        ;
 ; Total pins                      ; 69 / 457 ( 15 % )                           ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 27,648 / 4,065,280 ( < 1 % )                ;
-; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
+; Total block memory bits         ; 651,264 / 4,065,280 ( 16 % )                ;
+; Total DSP Blocks                ; 1 / 87 ( 1 % )                              ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
 ; Total HSSI TX PCSs              ; 0                                           ;
@@ -67,28 +67,30 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/26/2025 07:41:39 ;
+; Start date & time ; 05/27/2025 09:35:06 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; IRP_PD-ASP          ;
 +-------------------+---------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                        ;
-+-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
-+-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 134442614926711.174820209950356        ; --            ; --          ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; IRP_PD_ASP  ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; IRP_PD_ASP  ; Top        ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; IRP_PD_ASP  ; Top        ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --         ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --         ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --         ;
-; TOP_LEVEL_ENTITY                    ; IRP_PD_ASP                             ; IRP_PD-ASP    ; --          ; --         ;
-+-------------------------------------+----------------------------------------+---------------+-------------+------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                            ;
++-------------------------------------+----------------------------------------+---------------+-------------+----------------+
+; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
++-------------------------------------+----------------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 134442614926711.174829530618684        ; --            ; --          ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                   ; --            ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                 ; <None>        ; --          ; --             ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --             ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; TopLevel    ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; TopLevel    ; Top            ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; TopLevel    ; Top            ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --             ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --             ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --             ;
+; TOP_LEVEL_ENTITY                    ; TopLevel                               ; IRP_PD-ASP    ; --          ; --             ;
++-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -96,11 +98,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:09     ; 1.0                     ; 4924 MB             ; 00:00:17                           ;
-; Fitter               ; 00:02:22     ; 1.0                     ; 7897 MB             ; 00:21:18                           ;
-; Assembler            ; 00:00:06     ; 1.0                     ; 4840 MB             ; 00:00:04                           ;
-; Timing Analyzer      ; 00:00:04     ; 1.6                     ; 5327 MB             ; 00:00:05                           ;
-; Total                ; 00:02:41     ; --                      ; --                  ; 00:21:44                           ;
+; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 5010 MB             ; 00:00:16                           ;
+; Fitter               ; 00:02:23     ; 1.1                     ; 7924 MB             ; 00:15:27                           ;
+; Assembler            ; 00:00:08     ; 1.0                     ; 4876 MB             ; 00:00:04                           ;
+; Timing Analyzer      ; 00:00:05     ; 2.8                     ; 5351 MB             ; 00:00:10                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4789 MB             ; 00:00:01                           ;
+; Total                ; 00:02:48     ; --                      ; --                  ; 00:15:58                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -113,6 +116,7 @@ refer to the applicable agreement for further details.
 ; Fitter               ; DH               ; Windows 10 ; 10.0       ; x86_64         ;
 ; Assembler            ; DH               ; Windows 10 ; 10.0       ; x86_64         ;
 ; Timing Analyzer      ; DH               ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DH               ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -123,6 +127,7 @@ quartus_map --read_settings_files=on --write_settings_files=off IRP_PD-ASP -c IR
 quartus_fit --read_settings_files=off --write_settings_files=off IRP_PD-ASP -c IRP_PD-ASP
 quartus_asm --read_settings_files=off --write_settings_files=off IRP_PD-ASP -c IRP_PD-ASP
 quartus_sta IRP_PD-ASP -c IRP_PD-ASP
+quartus_eda --read_settings_files=off --write_settings_files=off IRP_PD-ASP -c IRP_PD-ASP
 
 
 

@@ -7,7 +7,7 @@ use work.TdmaMinTypes.all;
 
 entity IRP_PD_ASP is
 	generic (
-		ports : positive := 3
+		ports : positive := 5
 	);
 	port (
 		CLOCK_50      : in    std_logic;
@@ -45,11 +45,17 @@ begin
 		recvs => recv_port
 	);
 
-	asp_adc : entity work.PdAsp
+	asp_pd : entity work.PdAsp
 	port map (
 		clock => clock,
 		send  => send_port(1),
 		recv  => recv_port(1)
+	);
+	asp_cor : entity work.CorAsp
+	port map (
+		clock => clock,
+		send  => send_port(2),
+		recv  => recv_port(2)
 	);
 	
 	LEDR(7 downto 0) <= recv_port(1).addr;
