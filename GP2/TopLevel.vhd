@@ -8,7 +8,7 @@ use work.TdmaMinTypes.all;
 
 entity TopLevel is
 	generic (
-		ports : positive := 6
+		ports : positive := 7
 	);
 	port (
 		CLOCK_50      : in    std_logic;
@@ -32,11 +32,10 @@ architecture rtl of TopLevel is
 	signal send_port : tdma_min_ports(0 to ports-1);
 	signal recv_port : tdma_min_ports(0 to ports-1);
 	signal recop_ledr : std_logic_vector(9 downto 0);  -- isolate recops LEDR output
-	signal adc_empty : std_logic := '1';
-	signal adc_get : std_logic := '0';
-	signal adc_data : std_logic_vector(31 downto 0) := (others => '0'); 
 	signal signal_addr : integer range 0 to ROM_DEPTH-1;
 
+	signal adc_data : std_logic_vector(7 downto 0) := (others => '0');
+	
 
 begin
 
@@ -50,25 +49,36 @@ begin
 		clock => clock,
 		sends => send_port,
 		recvs => recv_port
-
-	--	adc_empty     => adc_empty,
-	--	adc_get       => adc_get,
-	--	adc_data      => adc_data,
+	);
+	
+	asp_adc : entity work.ADCAsp
+	port map (
+		clock => clock,
+		adc   => adc_data,
+		send  => send_port(1),
+		recv  => recv_port(1)
+	);
+	
+	ldr_adc : entity work.LdrASP
+	port map (
+		clock => clock,
+		send  => send_port(2),
+		recv  => recv_port(2)
 	);
 
 	asp_pd : entity work.PdAsp
 	port map (
 		clock => clock,
-		send  => send_port(1),
-		recv  => recv_port(1)
+		send  => send_port(3),
+		recv  => recv_port(3)
 	);
 	
 	
 	asp_cor : entity work.CorAsp
 	port map (
 		clock => clock,
-		send  => send_port(2),
-		recv  => recv_port(2)
+		send  => send_port(4),
+		recv  => recv_port(4)
 	);
 	
 	recop : entity work.recop
@@ -84,8 +94,8 @@ begin
         hex3   => HEX3,
         hex4   => HEX4,
         hex5   => HEX5,
-			send  => send_port(4),
-			recv  => recv_port(4)
+			send  => send_port(5),
+			recv  => recv_port(5)
 		
 	);
 
@@ -93,8 +103,8 @@ begin
 	port map (
 		clk   => clock,
 		addr  => signal_addr,
-		send  => send_port(5),
-		recv  => recv_port(5)
+		send  => send_port(6),
+		recv  => recv_port(6)
 	);
 	
 	
