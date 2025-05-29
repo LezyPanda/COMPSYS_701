@@ -1,5 +1,5 @@
 Timing Analyzer report for IRP_PD-ASP
-Tue May 27 09:37:56 2025
+Thu May 29 16:21:28 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -96,29 +96,29 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 24          ;
+; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
-; Average used               ; 2.81        ;
+; Average used               ; 2.76        ;
 ; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;  15.1%      ;
 ;     Processor 3            ;  15.0%      ;
-;     Processor 4            ;  14.7%      ;
-;     Processor 5            ;  11.4%      ;
-;     Processor 6            ;  11.4%      ;
-;     Processor 7            ;  11.4%      ;
-;     Processor 8            ;  11.4%      ;
-;     Processor 9            ;  11.4%      ;
-;     Processor 10           ;  11.4%      ;
-;     Processor 11           ;  11.4%      ;
-;     Processor 12           ;  11.4%      ;
-;     Processor 13           ;  11.4%      ;
-;     Processor 14           ;  11.3%      ;
-;     Processor 15           ;  11.3%      ;
-;     Processor 16           ;  11.3%      ;
+;     Processor 4            ;  14.8%      ;
+;     Processor 5            ;  11.0%      ;
+;     Processor 6            ;  11.0%      ;
+;     Processor 7            ;  11.0%      ;
+;     Processor 8            ;  11.0%      ;
+;     Processor 9            ;  11.0%      ;
+;     Processor 10           ;  11.0%      ;
+;     Processor 11           ;  11.0%      ;
+;     Processor 12           ;  10.9%      ;
+;     Processor 13           ;  10.9%      ;
+;     Processor 14           ;  10.9%      ;
+;     Processor 15           ;  10.9%      ;
+;     Processor 16           ;  10.9%      ;
 +----------------------------+-------------+
 
 
@@ -839,11 +839,11 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue May 27 09:37:51 2025
+    Info: Processing started: Thu May 29 16:21:21 2025
 Info: Command: quartus_sta IRP_PD-ASP -c IRP_PD-ASP
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 16 of the 24 processors detected
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Warning (335093): The Timing Analyzer is analyzing 16 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
@@ -945,9 +945,9 @@ Info (332146): Worst-case minimum pulse width slack is -2.174
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 5351 megabytes
-    Info: Processing ended: Tue May 27 09:37:56 2025
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:10
+    Info: Peak virtual memory: 5357 megabytes
+    Info: Processing ended: Thu May 29 16:21:28 2025
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:15
 
 

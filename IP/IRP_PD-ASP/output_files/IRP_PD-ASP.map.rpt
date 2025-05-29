@@ -1,5 +1,5 @@
 Analysis & Synthesis report for IRP_PD-ASP
-Tue May 27 09:35:17 2025
+Thu May 29 16:18:39 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -105,7 +105,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue May 27 09:35:17 2025       ;
+; Analysis & Synthesis Status     ; Successful - Thu May 29 16:18:39 2025       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; IRP_PD-ASP                                  ;
 ; Top-level Entity Name           ; TopLevel                                    ;
@@ -217,7 +217,7 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 24          ;
+; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
@@ -236,65 +236,65 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                    ;
-+--------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path     ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                            ; Library ;
-+--------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------+---------+
-; ip/TdmaMinFifo/TdmaMinFifo.vhd       ; yes             ; User Wizard-Generated File   ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd       ; ip      ;
-; TdmaMin/TdmaMinTypes.vhd             ; yes             ; User VHDL File               ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinTypes.vhd             ;         ;
-; TdmaMin/TdmaMinSwitch.vhd            ; yes             ; User VHDL File               ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinSwitch.vhd            ;         ;
-; TdmaMin/TdmaMinStage.vhd             ; yes             ; User VHDL File               ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinStage.vhd             ;         ;
-; TdmaMin/TdmaMinSlots.vhd             ; yes             ; User VHDL File               ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinSlots.vhd             ;         ;
-; TdmaMin/TdmaMinInterface.vhd         ; yes             ; User VHDL File               ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinInterface.vhd         ;         ;
-; TdmaMin/TdmaMinFabric.vhd            ; yes             ; User VHDL File               ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinFabric.vhd            ;         ;
-; TdmaMin/TdmaMin.vhd                  ; yes             ; User VHDL File               ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMin.vhd                  ;         ;
-; ReCOP/various_constants.vhd          ; yes             ; User VHDL File               ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/various_constants.vhd          ;         ;
-; ReCOP/registers.vhd                  ; yes             ; User VHDL File               ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/registers.vhd                  ;         ;
-; ReCOP/regfile.vhd                    ; yes             ; User VHDL File               ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/regfile.vhd                    ;         ;
-; ReCOP/recop_types.vhd                ; yes             ; User VHDL File               ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop_types.vhd                ;         ;
-; ReCOP/recop.vhd                      ; yes             ; User VHDL File               ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd                      ;         ;
-; ReCOP/prog_mem.vhd                   ; yes             ; User Wizard-Generated File   ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/prog_mem.vhd                   ;         ;
-; ReCOP/prog_counter.vhd               ; yes             ; User VHDL File               ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/prog_counter.vhd               ;         ;
-; ReCOP/opcodes.vhd                    ; yes             ; User VHDL File               ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/opcodes.vhd                    ;         ;
-; ReCOP/inst_reg.vhd                   ; yes             ; User VHDL File               ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/inst_reg.vhd                   ;         ;
-; ReCOP/datapath.vhd                   ; yes             ; User VHDL File               ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd                   ;         ;
-; ReCOP/data_mem.vhd                   ; yes             ; User Wizard-Generated File   ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/data_mem.vhd                   ;         ;
-; ReCOP/controlunit.vhd                ; yes             ; User VHDL File               ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd                ;         ;
-; ReCOP/bcd2seg7.vhd                   ; yes             ; User VHDL File               ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/bcd2seg7.vhd                   ;         ;
-; ReCOP/ALU.vhd                        ; yes             ; User VHDL File               ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd                        ;         ;
-; signal generators/signal_rom_pkg.vhd ; yes             ; User VHDL File               ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/signal generators/signal_rom_pkg.vhd ;         ;
-; signal generators/playSignal.vhd     ; yes             ; User VHDL File               ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/signal generators/playSignal.vhd     ;         ;
-; src/CorAsp.vhd                       ; yes             ; User VHDL File               ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/CorAsp.vhd                       ;         ;
-; src/PdAsp.vhd                        ; yes             ; User VHDL File               ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/PdAsp.vhd                        ;         ;
-; src/TopLevel.vhd                     ; yes             ; User VHDL File               ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd                     ;         ;
-; scfifo.tdf                           ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/scfifo.tdf                                       ;         ;
-; a_regfifo.inc                        ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_regfifo.inc                                    ;         ;
-; a_dpfifo.inc                         ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_dpfifo.inc                                     ;         ;
-; a_i2fifo.inc                         ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_i2fifo.inc                                     ;         ;
-; a_fffifo.inc                         ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_fffifo.inc                                     ;         ;
-; a_f2fifo.inc                         ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_f2fifo.inc                                     ;         ;
-; aglobal181.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc                                   ;         ;
-; db/scfifo_l191.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/db/scfifo_l191.tdf                   ;         ;
-; db/a_dpfifo_s791.tdf                 ; yes             ; Auto-Generated Megafunction  ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/db/a_dpfifo_s791.tdf                 ;         ;
-; db/altsyncram_r3i1.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/db/altsyncram_r3i1.tdf               ;         ;
-; db/cmpr_7l8.tdf                      ; yes             ; Auto-Generated Megafunction  ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/db/cmpr_7l8.tdf                      ;         ;
-; db/cntr_i2b.tdf                      ; yes             ; Auto-Generated Megafunction  ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/db/cntr_i2b.tdf                      ;         ;
-; db/cntr_v27.tdf                      ; yes             ; Auto-Generated Megafunction  ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/db/cntr_v27.tdf                      ;         ;
-; db/cntr_j2b.tdf                      ; yes             ; Auto-Generated Megafunction  ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/db/cntr_j2b.tdf                      ;         ;
-; altsyncram.tdf                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf                                   ;         ;
-; stratix_ram_block.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc                            ;         ;
-; lpm_mux.inc                          ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc                                      ;         ;
-; lpm_decode.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc                                   ;         ;
-; a_rdenreg.inc                        ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc                                    ;         ;
-; altrom.inc                           ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc                                       ;         ;
-; altram.inc                           ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc                                       ;         ;
-; altdpram.inc                         ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc                                     ;         ;
-; db/altsyncram_qdi1.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/db/altsyncram_qdi1.tdf               ;         ;
-; db/decode_61a.tdf                    ; yes             ; Auto-Generated Megafunction  ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/db/decode_61a.tdf                    ;         ;
-; db/mux_chb.tdf                       ; yes             ; Auto-Generated Megafunction  ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/db/mux_chb.tdf                       ;         ;
-; db/altsyncram_q6j1.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/db/altsyncram_q6j1.tdf               ;         ;
-+--------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                  ;
++--------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path     ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                          ; Library ;
++--------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
+; ip/TdmaMinFifo/TdmaMinFifo.vhd       ; yes             ; User Wizard-Generated File   ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd       ; ip      ;
+; TdmaMin/TdmaMinTypes.vhd             ; yes             ; User VHDL File               ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinTypes.vhd             ;         ;
+; TdmaMin/TdmaMinSwitch.vhd            ; yes             ; User VHDL File               ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinSwitch.vhd            ;         ;
+; TdmaMin/TdmaMinStage.vhd             ; yes             ; User VHDL File               ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinStage.vhd             ;         ;
+; TdmaMin/TdmaMinSlots.vhd             ; yes             ; User VHDL File               ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinSlots.vhd             ;         ;
+; TdmaMin/TdmaMinInterface.vhd         ; yes             ; User VHDL File               ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinInterface.vhd         ;         ;
+; TdmaMin/TdmaMinFabric.vhd            ; yes             ; User VHDL File               ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinFabric.vhd            ;         ;
+; TdmaMin/TdmaMin.vhd                  ; yes             ; User VHDL File               ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMin.vhd                  ;         ;
+; ReCOP/various_constants.vhd          ; yes             ; User VHDL File               ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/various_constants.vhd          ;         ;
+; ReCOP/registers.vhd                  ; yes             ; User VHDL File               ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/registers.vhd                  ;         ;
+; ReCOP/regfile.vhd                    ; yes             ; User VHDL File               ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/regfile.vhd                    ;         ;
+; ReCOP/recop_types.vhd                ; yes             ; User VHDL File               ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop_types.vhd                ;         ;
+; ReCOP/recop.vhd                      ; yes             ; User VHDL File               ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd                      ;         ;
+; ReCOP/prog_mem.vhd                   ; yes             ; User Wizard-Generated File   ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/prog_mem.vhd                   ;         ;
+; ReCOP/prog_counter.vhd               ; yes             ; User VHDL File               ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/prog_counter.vhd               ;         ;
+; ReCOP/opcodes.vhd                    ; yes             ; User VHDL File               ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/opcodes.vhd                    ;         ;
+; ReCOP/inst_reg.vhd                   ; yes             ; User VHDL File               ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/inst_reg.vhd                   ;         ;
+; ReCOP/datapath.vhd                   ; yes             ; User VHDL File               ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd                   ;         ;
+; ReCOP/data_mem.vhd                   ; yes             ; User Wizard-Generated File   ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/data_mem.vhd                   ;         ;
+; ReCOP/controlunit.vhd                ; yes             ; User VHDL File               ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd                ;         ;
+; ReCOP/bcd2seg7.vhd                   ; yes             ; User VHDL File               ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/bcd2seg7.vhd                   ;         ;
+; ReCOP/ALU.vhd                        ; yes             ; User VHDL File               ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd                        ;         ;
+; signal generators/signal_rom_pkg.vhd ; yes             ; User VHDL File               ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/signal generators/signal_rom_pkg.vhd ;         ;
+; signal generators/playSignal.vhd     ; yes             ; User VHDL File               ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/signal generators/playSignal.vhd     ;         ;
+; src/CorAsp.vhd                       ; yes             ; User VHDL File               ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/CorAsp.vhd                       ;         ;
+; src/PdAsp.vhd                        ; yes             ; User VHDL File               ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/PdAsp.vhd                        ;         ;
+; src/TopLevel.vhd                     ; yes             ; User VHDL File               ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd                     ;         ;
+; scfifo.tdf                           ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/scfifo.tdf                     ;         ;
+; a_regfifo.inc                        ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_regfifo.inc                  ;         ;
+; a_dpfifo.inc                         ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_dpfifo.inc                   ;         ;
+; a_i2fifo.inc                         ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_i2fifo.inc                   ;         ;
+; a_fffifo.inc                         ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_fffifo.inc                   ;         ;
+; a_f2fifo.inc                         ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_f2fifo.inc                   ;         ;
+; aglobal181.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc                 ;         ;
+; db/scfifo_l191.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/db/scfifo_l191.tdf                   ;         ;
+; db/a_dpfifo_s791.tdf                 ; yes             ; Auto-Generated Megafunction  ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/db/a_dpfifo_s791.tdf                 ;         ;
+; db/altsyncram_r3i1.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/db/altsyncram_r3i1.tdf               ;         ;
+; db/cmpr_7l8.tdf                      ; yes             ; Auto-Generated Megafunction  ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/db/cmpr_7l8.tdf                      ;         ;
+; db/cntr_i2b.tdf                      ; yes             ; Auto-Generated Megafunction  ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/db/cntr_i2b.tdf                      ;         ;
+; db/cntr_v27.tdf                      ; yes             ; Auto-Generated Megafunction  ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/db/cntr_v27.tdf                      ;         ;
+; db/cntr_j2b.tdf                      ; yes             ; Auto-Generated Megafunction  ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/db/cntr_j2b.tdf                      ;         ;
+; altsyncram.tdf                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf                 ;         ;
+; stratix_ram_block.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc          ;         ;
+; lpm_mux.inc                          ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc                    ;         ;
+; lpm_decode.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc                 ;         ;
+; a_rdenreg.inc                        ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc                  ;         ;
+; altrom.inc                           ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc                     ;         ;
+; altram.inc                           ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc                     ;         ;
+; altdpram.inc                         ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc                   ;         ;
+; db/altsyncram_qdi1.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/db/altsyncram_qdi1.tdf               ;         ;
+; db/decode_61a.tdf                    ; yes             ; Auto-Generated Megafunction  ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/db/decode_61a.tdf                    ;         ;
+; db/mux_chb.tdf                       ; yes             ; Auto-Generated Megafunction  ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/db/mux_chb.tdf                       ;         ;
+; db/altsyncram_q6j1.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/db/altsyncram_q6j1.tdf               ;         ;
++--------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -1565,7 +1565,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -1575,118 +1575,118 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue May 27 09:35:05 2025
+    Info: Processing started: Thu May 29 16:18:13 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off IRP_PD-ASP -c IRP_PD-ASP
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 16 of the 24 processors detected
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file ip/tdmaminfifo/tdmaminfifo.vhd
-    Info (12022): Found design unit 1: tdmaminfifo-SYN File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd Line: 57
-    Info (12023): Found entity 1: TdmaMinFifo File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd Line: 43
+    Info (12022): Found design unit 1: tdmaminfifo-SYN File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd Line: 57
+    Info (12023): Found entity 1: TdmaMinFifo File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd Line: 43
 Info (12021): Found 2 design units, including 0 entities, in source file tdmamin/tdmamintypes.vhd
-    Info (12022): Found design unit 1: TdmaMinTypes File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinTypes.vhd Line: 5
-    Info (12022): Found design unit 2: TdmaMinTypes-body File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinTypes.vhd Line: 23
+    Info (12022): Found design unit 1: TdmaMinTypes File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinTypes.vhd Line: 5
+    Info (12022): Found design unit 2: TdmaMinTypes-body File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinTypes.vhd Line: 23
 Info (12021): Found 2 design units, including 1 entities, in source file tdmamin/tdmaminswitch.vhd
-    Info (12022): Found design unit 1: TdmaMinSwitch-rtl File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinSwitch.vhd Line: 18
-    Info (12023): Found entity 1: TdmaMinSwitch File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinSwitch.vhd Line: 8
+    Info (12022): Found design unit 1: TdmaMinSwitch-rtl File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinSwitch.vhd Line: 18
+    Info (12023): Found entity 1: TdmaMinSwitch File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinSwitch.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file tdmamin/tdmaminstage.vhd
-    Info (12022): Found design unit 1: TdmaMinStage-rtl File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinStage.vhd Line: 19
-    Info (12023): Found entity 1: TdmaMinStage File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinStage.vhd Line: 8
+    Info (12022): Found design unit 1: TdmaMinStage-rtl File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinStage.vhd Line: 19
+    Info (12023): Found entity 1: TdmaMinStage File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinStage.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file tdmamin/tdmaminslots.vhd
-    Info (12022): Found design unit 1: TdmaMinSlots-rtl File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinSlots.vhd Line: 15
-    Info (12023): Found entity 1: TdmaMinSlots File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinSlots.vhd Line: 5
+    Info (12022): Found design unit 1: TdmaMinSlots-rtl File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinSlots.vhd Line: 15
+    Info (12023): Found entity 1: TdmaMinSlots File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinSlots.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file tdmamin/tdmamininterface.vhd
-    Info (12022): Found design unit 1: TdmaMinInterface-rtl File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinInterface.vhd Line: 26
-    Info (12023): Found entity 1: TdmaMinInterface File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinInterface.vhd Line: 10
+    Info (12022): Found design unit 1: TdmaMinInterface-rtl File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinInterface.vhd Line: 26
+    Info (12023): Found entity 1: TdmaMinInterface File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinInterface.vhd Line: 10
 Info (12021): Found 2 design units, including 1 entities, in source file tdmamin/tdmaminfabric.vhd
-    Info (12022): Found design unit 1: TdmaMinFabric-rtl File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinFabric.vhd Line: 20
-    Info (12023): Found entity 1: TdmaMinFabric File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinFabric.vhd Line: 8
+    Info (12022): Found design unit 1: TdmaMinFabric-rtl File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinFabric.vhd Line: 20
+    Info (12023): Found entity 1: TdmaMinFabric File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinFabric.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file tdmamin/tdmamin.vhd
-    Info (12022): Found design unit 1: TdmaMin-rtl File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMin.vhd Line: 19
-    Info (12023): Found entity 1: TdmaMin File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMin.vhd Line: 8
+    Info (12022): Found design unit 1: TdmaMin-rtl File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMin.vhd Line: 19
+    Info (12023): Found entity 1: TdmaMin File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMin.vhd Line: 8
 Info (12021): Found 1 design units, including 0 entities, in source file recop/various_constants.vhd
-    Info (12022): Found design unit 1: various_constants File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/various_constants.vhd Line: 7
+    Info (12022): Found design unit 1: various_constants File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/various_constants.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file recop/registers.vhd
-    Info (12022): Found design unit 1: registers-beh File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/registers.vhd Line: 48
-    Info (12023): Found entity 1: registers File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/registers.vhd Line: 12
+    Info (12022): Found design unit 1: registers-beh File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/registers.vhd Line: 48
+    Info (12023): Found entity 1: registers File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/registers.vhd Line: 12
 Info (12021): Found 2 design units, including 1 entities, in source file recop/registerfile.vhd
-    Info (12022): Found design unit 1: registerfile-SYN File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/registerfile.vhd Line: 60
-    Info (12023): Found entity 1: registerfile File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/registerfile.vhd Line: 44
+    Info (12022): Found design unit 1: registerfile-SYN File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/registerfile.vhd Line: 60
+    Info (12023): Found entity 1: registerfile File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/registerfile.vhd Line: 44
 Info (12021): Found 2 design units, including 1 entities, in source file recop/regfile.vhd
-    Info (12022): Found design unit 1: regfile-beh File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/regfile.vhd Line: 45
-    Info (12023): Found entity 1: regfile File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/regfile.vhd Line: 10
+    Info (12022): Found design unit 1: regfile-beh File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/regfile.vhd Line: 45
+    Info (12023): Found entity 1: regfile File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/regfile.vhd Line: 10
 Info (12021): Found 1 design units, including 0 entities, in source file recop/recop_types.vhd
-    Info (12022): Found design unit 1: recop_types File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop_types.vhd Line: 5
+    Info (12022): Found design unit 1: recop_types File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop_types.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file recop/recop_pll.vhd
-    Info (12022): Found design unit 1: recop_pll-SYN File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop_pll.vhd Line: 52
-    Info (12023): Found entity 1: recop_pll File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop_pll.vhd Line: 43
+    Info (12022): Found design unit 1: recop_pll-SYN File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop_pll.vhd Line: 52
+    Info (12023): Found entity 1: recop_pll File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop_pll.vhd Line: 43
 Info (12021): Found 2 design units, including 1 entities, in source file recop/recop.vhd
-    Info (12022): Found design unit 1: recop-combined File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 30
-    Info (12023): Found entity 1: recop File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 12
+    Info (12022): Found design unit 1: recop-combined File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 30
+    Info (12023): Found entity 1: recop File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 12
 Info (12021): Found 2 design units, including 1 entities, in source file recop/prog_mem.vhd
-    Info (12022): Found design unit 1: prog_mem-SYN File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/prog_mem.vhd Line: 53
-    Info (12023): Found entity 1: prog_mem File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/prog_mem.vhd Line: 43
+    Info (12022): Found design unit 1: prog_mem-SYN File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/prog_mem.vhd Line: 53
+    Info (12023): Found entity 1: prog_mem File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/prog_mem.vhd Line: 43
 Info (12021): Found 2 design units, including 1 entities, in source file recop/prog_counter.vhd
-    Info (12022): Found design unit 1: prog_counter-behaviour File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/prog_counter.vhd Line: 20
-    Info (12023): Found entity 1: prog_counter File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/prog_counter.vhd Line: 9
+    Info (12022): Found design unit 1: prog_counter-behaviour File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/prog_counter.vhd Line: 20
+    Info (12023): Found entity 1: prog_counter File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/prog_counter.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file recop/pll.vhd
-    Info (12022): Found design unit 1: pll-SYN File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/pll.vhd Line: 52
-    Info (12023): Found entity 1: pll File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/pll.vhd Line: 42
+    Info (12022): Found design unit 1: pll-SYN File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/pll.vhd Line: 52
+    Info (12023): Found entity 1: pll File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/pll.vhd Line: 42
 Info (12021): Found 1 design units, including 0 entities, in source file recop/opcodes.vhd
-    Info (12022): Found design unit 1: opcodes File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/opcodes.vhd Line: 7
+    Info (12022): Found design unit 1: opcodes File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/opcodes.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file recop/memory_model.vhd
-    Info (12022): Found design unit 1: memory-beh File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/memory_model.vhd Line: 27
-    Info (12023): Found entity 1: memory File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/memory_model.vhd Line: 10
+    Info (12022): Found design unit 1: memory-beh File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/memory_model.vhd Line: 27
+    Info (12023): Found entity 1: memory File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/memory_model.vhd Line: 10
 Info (12021): Found 2 design units, including 1 entities, in source file recop/memory_arbiter.vhd
-    Info (12022): Found design unit 1: memory_arbiter-behaviour File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/memory_arbiter.vhd Line: 35
-    Info (12023): Found entity 1: memory_arbiter File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/memory_arbiter.vhd Line: 11
+    Info (12022): Found design unit 1: memory_arbiter-behaviour File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/memory_arbiter.vhd Line: 35
+    Info (12023): Found entity 1: memory_arbiter File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/memory_arbiter.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file recop/inst_reg.vhd
-    Info (12022): Found design unit 1: inst_reg-behaviour File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/inst_reg.vhd Line: 18
-    Info (12023): Found entity 1: inst_reg File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/inst_reg.vhd Line: 7
+    Info (12022): Found design unit 1: inst_reg-behaviour File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/inst_reg.vhd Line: 18
+    Info (12023): Found entity 1: inst_reg File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/inst_reg.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file recop/datapath.vhd
-    Info (12022): Found design unit 1: datapath-behaviour File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 64
-    Info (12023): Found entity 1: datapath File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 11
+    Info (12022): Found design unit 1: datapath-behaviour File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 64
+    Info (12023): Found entity 1: datapath File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file recop/data_mem.vhd
-    Info (12022): Found design unit 1: data_mem-SYN File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/data_mem.vhd Line: 55
-    Info (12023): Found entity 1: data_mem File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/data_mem.vhd Line: 43
+    Info (12022): Found design unit 1: data_mem-SYN File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/data_mem.vhd Line: 55
+    Info (12023): Found entity 1: data_mem File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/data_mem.vhd Line: 43
 Info (12021): Found 2 design units, including 1 entities, in source file recop/controlunit.vhd
-    Info (12022): Found design unit 1: control_unit-behaviour File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 45
-    Info (12023): Found entity 1: control_unit File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 9
+    Info (12022): Found design unit 1: control_unit-behaviour File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 45
+    Info (12023): Found entity 1: control_unit File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file recop/bcd2seg7.vhd
-    Info (12022): Found design unit 1: Bcd2seg7-aBcd2seg7 File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/bcd2seg7.vhd Line: 11
-    Info (12023): Found entity 1: Bcd2seg7 File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/bcd2seg7.vhd Line: 4
+    Info (12022): Found design unit 1: Bcd2seg7-aBcd2seg7 File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/bcd2seg7.vhd Line: 11
+    Info (12023): Found entity 1: Bcd2seg7 File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/bcd2seg7.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file recop/alu.vhd
-    Info (12022): Found design unit 1: alu-combined File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 34
-    Info (12023): Found entity 1: alu File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 13
+    Info (12022): Found design unit 1: alu-combined File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 34
+    Info (12023): Found entity 1: alu File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 13
 Info (12021): Found 1 design units, including 0 entities, in source file signal generators/signal_rom_pkg.vhd
-    Info (12022): Found design unit 1: signal_rom_pkg File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/signal generators/signal_rom_pkg.vhd Line: 5
+    Info (12022): Found design unit 1: signal_rom_pkg File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/signal generators/signal_rom_pkg.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file signal generators/playsignal.vhd
-    Info (12022): Found design unit 1: play_signal-rtl File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/signal generators/playSignal.vhd Line: 17
-    Info (12023): Found entity 1: play_signal File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/signal generators/playSignal.vhd Line: 8
+    Info (12022): Found design unit 1: play_signal-rtl File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/signal generators/playSignal.vhd Line: 17
+    Info (12023): Found entity 1: play_signal File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/signal generators/playSignal.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file src/corasp.vhd
-    Info (12022): Found design unit 1: CorAsp-rtl File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/CorAsp.vhd Line: 16
-    Info (12023): Found entity 1: CorAsp File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/CorAsp.vhd Line: 8
+    Info (12022): Found design unit 1: CorAsp-rtl File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/CorAsp.vhd Line: 16
+    Info (12023): Found entity 1: CorAsp File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/CorAsp.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file src/pdasp.vhd
-    Info (12022): Found design unit 1: PdAsp-aPdASP File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/PdAsp.vhd Line: 19
-    Info (12023): Found entity 1: PdAsp File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/PdAsp.vhd Line: 8
+    Info (12022): Found design unit 1: PdAsp-aPdASP File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/PdAsp.vhd Line: 19
+    Info (12023): Found entity 1: PdAsp File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/PdAsp.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file src/toplevel.vhd
-    Info (12022): Found design unit 1: TopLevel-rtl File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 30
-    Info (12023): Found entity 1: TopLevel File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 9
+    Info (12022): Found design unit 1: TopLevel-rtl File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 30
+    Info (12023): Found entity 1: TopLevel File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 9
 Info (12127): Elaborating entity "TopLevel" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at TopLevel.vhd(34): object "recop_ledr" assigned a value but never read File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 34
-Warning (10541): VHDL Signal Declaration warning at TopLevel.vhd(38): used implicit default value for signal "signal_addr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 38
-Warning (10873): Using initial value X (don't care) for net "send_port[0]" at TopLevel.vhd(32) File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 32
-Warning (10873): Using initial value X (don't care) for net "send_port[3]" at TopLevel.vhd(32) File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 32
-Info (12128): Elaborating entity "TdmaMin" for hierarchy "TdmaMin:tdma_min" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 45
-Info (12128): Elaborating entity "TdmaMinSlots" for hierarchy "TdmaMin:tdma_min|TdmaMinSlots:slots" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMin.vhd Line: 29
-Info (12128): Elaborating entity "TdmaMinFabric" for hierarchy "TdmaMin:tdma_min|TdmaMinFabric:fabric" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMin.vhd Line: 38
+Warning (10036): Verilog HDL or VHDL warning at TopLevel.vhd(34): object "recop_ledr" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 34
+Warning (10541): VHDL Signal Declaration warning at TopLevel.vhd(38): used implicit default value for signal "signal_addr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 38
+Warning (10873): Using initial value X (don't care) for net "send_port[0]" at TopLevel.vhd(32) File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 32
+Warning (10873): Using initial value X (don't care) for net "send_port[3]" at TopLevel.vhd(32) File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 32
+Info (12128): Elaborating entity "TdmaMin" for hierarchy "TdmaMin:tdma_min" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 45
+Info (12128): Elaborating entity "TdmaMinSlots" for hierarchy "TdmaMin:tdma_min|TdmaMinSlots:slots" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMin.vhd Line: 29
+Info (12128): Elaborating entity "TdmaMinFabric" for hierarchy "TdmaMin:tdma_min|TdmaMinFabric:fabric" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMin.vhd Line: 38
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "links" into its bus
-Info (12128): Elaborating entity "TdmaMinStage" for hierarchy "TdmaMin:tdma_min|TdmaMinFabric:fabric|TdmaMinStage:\staging:2:stage" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinFabric.vhd Line: 34
-Info (12128): Elaborating entity "TdmaMinSwitch" for hierarchy "TdmaMin:tdma_min|TdmaMinFabric:fabric|TdmaMinStage:\staging:2:stage|TdmaMinSwitch:\switches:0:switch" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinStage.vhd Line: 23
-Info (12128): Elaborating entity "TdmaMinInterface" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMin.vhd Line: 50
-Info (12128): Elaborating entity "TdmaMinFifo" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinInterface.vhd Line: 44
-Info (12128): Elaborating entity "scfifo" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd Line: 94
-Info (12130): Elaborated megafunction instantiation "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd Line: 94
-Info (12133): Instantiated megafunction "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component" with the following parameter: File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd Line: 94
+Info (12128): Elaborating entity "TdmaMinStage" for hierarchy "TdmaMin:tdma_min|TdmaMinFabric:fabric|TdmaMinStage:\staging:2:stage" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinFabric.vhd Line: 34
+Info (12128): Elaborating entity "TdmaMinSwitch" for hierarchy "TdmaMin:tdma_min|TdmaMinFabric:fabric|TdmaMinStage:\staging:2:stage|TdmaMinSwitch:\switches:0:switch" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinStage.vhd Line: 23
+Info (12128): Elaborating entity "TdmaMinInterface" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMin.vhd Line: 50
+Info (12128): Elaborating entity "TdmaMinFifo" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMinInterface.vhd Line: 44
+Info (12128): Elaborating entity "scfifo" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd Line: 94
+Info (12130): Elaborated megafunction instantiation "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd Line: 94
+Info (12133): Instantiated megafunction "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component" with the following parameter: File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ip/TdmaMinFifo/TdmaMinFifo.vhd Line: 94
     Info (12134): Parameter "add_ram_output_register" = "OFF"
     Info (12134): Parameter "intended_device_family" = "Cyclone V"
     Info (12134): Parameter "lpm_numwords" = "256"
@@ -1698,109 +1698,109 @@ Info (12133): Instantiated megafunction "TdmaMin:tdma_min|TdmaMinInterface:\inte
     Info (12134): Parameter "underflow_checking" = "ON"
     Info (12134): Parameter "use_eab" = "ON"
 Info (12021): Found 1 design units, including 1 entities, in source file db/scfifo_l191.tdf
-    Info (12023): Found entity 1: scfifo_l191 File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/db/scfifo_l191.tdf Line: 24
+    Info (12023): Found entity 1: scfifo_l191 File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/db/scfifo_l191.tdf Line: 24
 Info (12128): Elaborating entity "scfifo_l191" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/scfifo.tdf Line: 299
 Info (12021): Found 1 design units, including 1 entities, in source file db/a_dpfifo_s791.tdf
-    Info (12023): Found entity 1: a_dpfifo_s791 File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/db/a_dpfifo_s791.tdf Line: 32
-Info (12128): Elaborating entity "a_dpfifo_s791" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/db/scfifo_l191.tdf Line: 35
+    Info (12023): Found entity 1: a_dpfifo_s791 File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/db/a_dpfifo_s791.tdf Line: 32
+Info (12128): Elaborating entity "a_dpfifo_s791" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/db/scfifo_l191.tdf Line: 35
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_r3i1.tdf
-    Info (12023): Found entity 1: altsyncram_r3i1 File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/db/altsyncram_r3i1.tdf Line: 27
-Info (12128): Elaborating entity "altsyncram_r3i1" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/db/a_dpfifo_s791.tdf Line: 44
+    Info (12023): Found entity 1: altsyncram_r3i1 File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/db/altsyncram_r3i1.tdf Line: 27
+Info (12128): Elaborating entity "altsyncram_r3i1" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|altsyncram_r3i1:FIFOram" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/db/a_dpfifo_s791.tdf Line: 44
 Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_7l8.tdf
-    Info (12023): Found entity 1: cmpr_7l8 File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/db/cmpr_7l8.tdf Line: 22
-Info (12128): Elaborating entity "cmpr_7l8" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cmpr_7l8:almost_full_comparer" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/db/a_dpfifo_s791.tdf Line: 53
-Info (12128): Elaborating entity "cmpr_7l8" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cmpr_7l8:three_comparison" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/db/a_dpfifo_s791.tdf Line: 54
+    Info (12023): Found entity 1: cmpr_7l8 File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/db/cmpr_7l8.tdf Line: 22
+Info (12128): Elaborating entity "cmpr_7l8" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cmpr_7l8:almost_full_comparer" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/db/a_dpfifo_s791.tdf Line: 53
+Info (12128): Elaborating entity "cmpr_7l8" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cmpr_7l8:three_comparison" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/db/a_dpfifo_s791.tdf Line: 54
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_i2b.tdf
-    Info (12023): Found entity 1: cntr_i2b File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/db/cntr_i2b.tdf Line: 25
-Info (12128): Elaborating entity "cntr_i2b" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_i2b:rd_ptr_msb" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/db/a_dpfifo_s791.tdf Line: 55
+    Info (12023): Found entity 1: cntr_i2b File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/db/cntr_i2b.tdf Line: 25
+Info (12128): Elaborating entity "cntr_i2b" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_i2b:rd_ptr_msb" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/db/a_dpfifo_s791.tdf Line: 55
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_v27.tdf
-    Info (12023): Found entity 1: cntr_v27 File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/db/cntr_v27.tdf Line: 25
-Info (12128): Elaborating entity "cntr_v27" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_v27:usedw_counter" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/db/a_dpfifo_s791.tdf Line: 56
+    Info (12023): Found entity 1: cntr_v27 File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/db/cntr_v27.tdf Line: 25
+Info (12128): Elaborating entity "cntr_v27" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_v27:usedw_counter" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/db/a_dpfifo_s791.tdf Line: 56
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_j2b.tdf
-    Info (12023): Found entity 1: cntr_j2b File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/db/cntr_j2b.tdf Line: 25
-Info (12128): Elaborating entity "cntr_j2b" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_j2b:wr_ptr" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/db/a_dpfifo_s791.tdf Line: 57
-Info (12128): Elaborating entity "TdmaMinInterface" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMin.vhd Line: 50
-Info (12128): Elaborating entity "TdmaMinInterface" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMin.vhd Line: 50
-Info (12128): Elaborating entity "TdmaMinInterface" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMin.vhd Line: 50
-Info (12128): Elaborating entity "TdmaMinInterface" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMin.vhd Line: 50
-Info (12128): Elaborating entity "TdmaMinInterface" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMin.vhd Line: 50
-Info (12128): Elaborating entity "PdAsp" for hierarchy "PdAsp:asp_pd" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 59
-Info (12128): Elaborating entity "CorAsp" for hierarchy "CorAsp:asp_cor" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 67
-Warning (10036): Verilog HDL or VHDL warning at CorAsp.vhd(23): object "newest_avg_data_addr_signal" assigned a value but never read File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/CorAsp.vhd Line: 23
-Warning (10036): Verilog HDL or VHDL warning at CorAsp.vhd(28): object "avg_data_signal" assigned a value but never read File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/CorAsp.vhd Line: 28
-Warning (10036): Verilog HDL or VHDL warning at CorAsp.vhd(33): object "avg_data_mem_addr_signal" assigned a value but never read File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/CorAsp.vhd Line: 33
-Warning (10036): Verilog HDL or VHDL warning at CorAsp.vhd(45): object "correlation_rdy" assigned a value but never read File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/CorAsp.vhd Line: 45
-Warning (10873): Using initial value X (don't care) for net "sendSignal.addr" at CorAsp.vhd(35) File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/CorAsp.vhd Line: 35
-Info (12128): Elaborating entity "recop" for hierarchy "recop:recop" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 74
-Warning (10541): VHDL Signal Declaration warning at recop.vhd(26): used implicit default value for signal "send" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 26
-Warning (10036): Verilog HDL or VHDL warning at recop.vhd(58): object "debug_pc_out" assigned a value but never read File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 58
-Warning (10036): Verilog HDL or VHDL warning at recop.vhd(59): object "debug_fetch_state" assigned a value but never read File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 59
-Warning (10036): Verilog HDL or VHDL warning at recop.vhd(60): object "debug_instruction" assigned a value but never read File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 60
-Warning (10036): Verilog HDL or VHDL warning at recop.vhd(61): object "debug_prog_mem_in" assigned a value but never read File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 61
-Warning (10036): Verilog HDL or VHDL warning at recop.vhd(62): object "debug_prog_mem_out" assigned a value but never read File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 62
-Warning (10036): Verilog HDL or VHDL warning at recop.vhd(63): object "debug_rx_addr" assigned a value but never read File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 63
-Warning (10036): Verilog HDL or VHDL warning at recop.vhd(64): object "debug_rz_addr" assigned a value but never read File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 64
-Warning (10036): Verilog HDL or VHDL warning at recop.vhd(65): object "debug_rx_value" assigned a value but never read File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 65
-Warning (10036): Verilog HDL or VHDL warning at recop.vhd(66): object "debug_rz_value" assigned a value but never read File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 66
-Warning (10036): Verilog HDL or VHDL warning at recop.vhd(67): object "debug_ir_operand" assigned a value but never read File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 67
-Warning (10036): Verilog HDL or VHDL warning at recop.vhd(71): object "debug_state" assigned a value but never read File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 71
-Warning (10036): Verilog HDL or VHDL warning at recop.vhd(72): object "debug_next_state" assigned a value but never read File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 72
-Warning (10036): Verilog HDL or VHDL warning at recop.vhd(73): object "debug_flag" assigned a value but never read File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 73
-Info (12128): Elaborating entity "Bcd2seg7" for hierarchy "recop:recop|Bcd2seg7:hex0_inst" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 171
-Info (12128): Elaborating entity "datapath" for hierarchy "recop:recop|datapath:impl_datapath" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 179
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(131): used implicit default value for signal "rz_max" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 131
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(132): used implicit default value for signal "sip_hold" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 132
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(133): used implicit default value for signal "er_temp" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 133
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(134): used implicit default value for signal "dprr_res" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 134
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(135): used implicit default value for signal "dprr_res_reg" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 135
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(136): used implicit default value for signal "dprr_wren" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 136
-Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(215): object "reg_dpcr" assigned a value but never read File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 215
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(216): used implicit default value for signal "reg_dpcr_lsb_sel" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 216
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(217): used implicit default value for signal "reg_dpcr_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 217
-Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(218): object "reg_er" assigned a value but never read File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 218
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(219): used implicit default value for signal "reg_er_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 219
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(220): used implicit default value for signal "reg_er_clr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 220
-Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(221): object "reg_eot" assigned a value but never read File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 221
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(222): used implicit default value for signal "reg_eot_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 222
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(223): used implicit default value for signal "reg_eot_clr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 223
-Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(224): object "reg_svop" assigned a value but never read File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 224
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(225): used implicit default value for signal "reg_svop_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 225
-Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(226): object "reg_sip_r" assigned a value but never read File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 226
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(227): used implicit default value for signal "reg_sip" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 227
-Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(228): object "reg_sop" assigned a value but never read File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 228
-Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(229): object "reg_dprr" assigned a value but never read File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 229
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(230): used implicit default value for signal "reg_irq_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 230
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(231): used implicit default value for signal "reg_irq_clr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 231
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(232): used implicit default value for signal "reg_result_wen" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 232
-Warning (10541): VHDL Signal Declaration warning at datapath.vhd(233): used implicit default value for signal "reg_result" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 233
-Info (12128): Elaborating entity "alu" for hierarchy "recop:recop|datapath:impl_datapath|alu:impl_alu" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 252
-Warning (10631): VHDL Process Statement warning at ALU.vhd(68): inferring latch(es) for signal or variable "result", which holds its previous value in one or more paths through the process File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
-Warning (10492): VHDL Process Statement warning at ALU.vhd(90): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 90
-Info (10041): Inferred latch for "result[0]" at ALU.vhd(68) File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
-Info (10041): Inferred latch for "result[1]" at ALU.vhd(68) File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
-Info (10041): Inferred latch for "result[2]" at ALU.vhd(68) File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
-Info (10041): Inferred latch for "result[3]" at ALU.vhd(68) File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
-Info (10041): Inferred latch for "result[4]" at ALU.vhd(68) File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
-Info (10041): Inferred latch for "result[5]" at ALU.vhd(68) File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
-Info (10041): Inferred latch for "result[6]" at ALU.vhd(68) File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
-Info (10041): Inferred latch for "result[7]" at ALU.vhd(68) File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
-Info (10041): Inferred latch for "result[8]" at ALU.vhd(68) File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
-Info (10041): Inferred latch for "result[9]" at ALU.vhd(68) File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
-Info (10041): Inferred latch for "result[10]" at ALU.vhd(68) File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
-Info (10041): Inferred latch for "result[11]" at ALU.vhd(68) File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
-Info (10041): Inferred latch for "result[12]" at ALU.vhd(68) File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
-Info (10041): Inferred latch for "result[13]" at ALU.vhd(68) File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
-Info (10041): Inferred latch for "result[14]" at ALU.vhd(68) File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
-Info (10041): Inferred latch for "result[15]" at ALU.vhd(68) File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
-Info (12128): Elaborating entity "regfile" for hierarchy "recop:recop|datapath:impl_datapath|regfile:impl_rf" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 267
-Info (12128): Elaborating entity "prog_counter" for hierarchy "recop:recop|datapath:impl_datapath|prog_counter:impl_pc" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 292
-Warning (10492): VHDL Process Statement warning at prog_counter.vhd(29): signal "pc_write_flag" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/prog_counter.vhd Line: 29
-Warning (10492): VHDL Process Statement warning at prog_counter.vhd(29): signal "prev_write_flag" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/prog_counter.vhd Line: 29
-Info (12128): Elaborating entity "inst_reg" for hierarchy "recop:recop|datapath:impl_datapath|inst_reg:impl_ir" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 301
-Info (12128): Elaborating entity "prog_mem" for hierarchy "recop:recop|datapath:impl_datapath|prog_mem:impl_pm" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 311
-Info (12128): Elaborating entity "altsyncram" for hierarchy "recop:recop|datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/prog_mem.vhd Line: 87
-Info (12130): Elaborated megafunction instantiation "recop:recop|datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/prog_mem.vhd Line: 87
-Info (12133): Instantiated megafunction "recop:recop|datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/prog_mem.vhd Line: 87
+    Info (12023): Found entity 1: cntr_j2b File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/db/cntr_j2b.tdf Line: 25
+Info (12128): Elaborating entity "cntr_j2b" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:0:interface|TdmaMinFifo:fifo|scfifo:scfifo_component|scfifo_l191:auto_generated|a_dpfifo_s791:dpfifo|cntr_j2b:wr_ptr" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/db/a_dpfifo_s791.tdf Line: 57
+Info (12128): Elaborating entity "TdmaMinInterface" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:1:interface" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMin.vhd Line: 50
+Info (12128): Elaborating entity "TdmaMinInterface" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:2:interface" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMin.vhd Line: 50
+Info (12128): Elaborating entity "TdmaMinInterface" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:3:interface" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMin.vhd Line: 50
+Info (12128): Elaborating entity "TdmaMinInterface" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:4:interface" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMin.vhd Line: 50
+Info (12128): Elaborating entity "TdmaMinInterface" for hierarchy "TdmaMin:tdma_min|TdmaMinInterface:\interfaces:5:interface" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/TdmaMin/TdmaMin.vhd Line: 50
+Info (12128): Elaborating entity "PdAsp" for hierarchy "PdAsp:asp_pd" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 59
+Info (12128): Elaborating entity "CorAsp" for hierarchy "CorAsp:asp_cor" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 67
+Warning (10036): Verilog HDL or VHDL warning at CorAsp.vhd(23): object "newest_avg_data_addr_signal" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/CorAsp.vhd Line: 23
+Warning (10036): Verilog HDL or VHDL warning at CorAsp.vhd(28): object "avg_data_signal" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/CorAsp.vhd Line: 28
+Warning (10036): Verilog HDL or VHDL warning at CorAsp.vhd(33): object "avg_data_mem_addr_signal" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/CorAsp.vhd Line: 33
+Warning (10036): Verilog HDL or VHDL warning at CorAsp.vhd(45): object "correlation_rdy" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/CorAsp.vhd Line: 45
+Warning (10873): Using initial value X (don't care) for net "sendSignal.addr" at CorAsp.vhd(35) File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/CorAsp.vhd Line: 35
+Info (12128): Elaborating entity "recop" for hierarchy "recop:recop" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 74
+Warning (10541): VHDL Signal Declaration warning at recop.vhd(26): used implicit default value for signal "send" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 26
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(58): object "debug_pc_out" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 58
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(59): object "debug_fetch_state" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 59
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(60): object "debug_instruction" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 60
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(61): object "debug_prog_mem_in" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 61
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(62): object "debug_prog_mem_out" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 62
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(63): object "debug_rx_addr" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 63
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(64): object "debug_rz_addr" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 64
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(65): object "debug_rx_value" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 65
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(66): object "debug_rz_value" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 66
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(67): object "debug_ir_operand" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 67
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(71): object "debug_state" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 71
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(72): object "debug_next_state" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 72
+Warning (10036): Verilog HDL or VHDL warning at recop.vhd(73): object "debug_flag" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 73
+Info (12128): Elaborating entity "Bcd2seg7" for hierarchy "recop:recop|Bcd2seg7:hex0_inst" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 171
+Info (12128): Elaborating entity "datapath" for hierarchy "recop:recop|datapath:impl_datapath" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 179
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(131): used implicit default value for signal "rz_max" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 131
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(132): used implicit default value for signal "sip_hold" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 132
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(133): used implicit default value for signal "er_temp" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 133
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(134): used implicit default value for signal "dprr_res" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 134
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(135): used implicit default value for signal "dprr_res_reg" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 135
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(136): used implicit default value for signal "dprr_wren" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 136
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(215): object "reg_dpcr" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 215
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(216): used implicit default value for signal "reg_dpcr_lsb_sel" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 216
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(217): used implicit default value for signal "reg_dpcr_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 217
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(218): object "reg_er" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 218
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(219): used implicit default value for signal "reg_er_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 219
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(220): used implicit default value for signal "reg_er_clr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 220
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(221): object "reg_eot" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 221
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(222): used implicit default value for signal "reg_eot_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 222
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(223): used implicit default value for signal "reg_eot_clr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 223
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(224): object "reg_svop" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 224
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(225): used implicit default value for signal "reg_svop_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 225
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(226): object "reg_sip_r" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 226
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(227): used implicit default value for signal "reg_sip" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 227
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(228): object "reg_sop" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 228
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(229): object "reg_dprr" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 229
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(230): used implicit default value for signal "reg_irq_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 230
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(231): used implicit default value for signal "reg_irq_clr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 231
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(232): used implicit default value for signal "reg_result_wen" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 232
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(233): used implicit default value for signal "reg_result" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 233
+Info (12128): Elaborating entity "alu" for hierarchy "recop:recop|datapath:impl_datapath|alu:impl_alu" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 252
+Warning (10631): VHDL Process Statement warning at ALU.vhd(68): inferring latch(es) for signal or variable "result", which holds its previous value in one or more paths through the process File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
+Warning (10492): VHDL Process Statement warning at ALU.vhd(90): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 90
+Info (10041): Inferred latch for "result[0]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[1]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[2]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[3]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[4]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[5]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[6]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[7]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[8]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[9]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[10]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[11]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[12]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[13]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[14]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
+Info (10041): Inferred latch for "result[15]" at ALU.vhd(68) File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
+Info (12128): Elaborating entity "regfile" for hierarchy "recop:recop|datapath:impl_datapath|regfile:impl_rf" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 267
+Info (12128): Elaborating entity "prog_counter" for hierarchy "recop:recop|datapath:impl_datapath|prog_counter:impl_pc" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 292
+Warning (10492): VHDL Process Statement warning at prog_counter.vhd(29): signal "pc_write_flag" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/prog_counter.vhd Line: 29
+Warning (10492): VHDL Process Statement warning at prog_counter.vhd(29): signal "prev_write_flag" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/prog_counter.vhd Line: 29
+Info (12128): Elaborating entity "inst_reg" for hierarchy "recop:recop|datapath:impl_datapath|inst_reg:impl_ir" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 301
+Info (12128): Elaborating entity "prog_mem" for hierarchy "recop:recop|datapath:impl_datapath|prog_mem:impl_pm" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 311
+Info (12128): Elaborating entity "altsyncram" for hierarchy "recop:recop|datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/prog_mem.vhd Line: 87
+Info (12130): Elaborated megafunction instantiation "recop:recop|datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/prog_mem.vhd Line: 87
+Info (12133): Instantiated megafunction "recop:recop|datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/prog_mem.vhd Line: 87
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
     Info (12134): Parameter "init_file" = "simple_test.mif"
@@ -1816,20 +1816,20 @@ Info (12133): Instantiated megafunction "recop:recop|datapath:impl_datapath|prog
     Info (12134): Parameter "widthad_a" = "15"
     Info (12134): Parameter "width_a" = "16"
     Info (12134): Parameter "width_byteena_a" = "1"
-Warning (287001): Assertion warning: Device family Cyclone V does not have M4K blocks -- using available memory blocks File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/db/altsyncram_qdi1.tdf Line: 2621
+Warning (287001): Assertion warning: Device family Cyclone V does not have M4K blocks -- using available memory blocks File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/db/altsyncram_qdi1.tdf Line: 2621
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_qdi1.tdf
-    Info (12023): Found entity 1: altsyncram_qdi1 File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/db/altsyncram_qdi1.tdf Line: 31
+    Info (12023): Found entity 1: altsyncram_qdi1 File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/db/altsyncram_qdi1.tdf Line: 31
 Info (12128): Elaborating entity "altsyncram_qdi1" for hierarchy "recop:recop|datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component|altsyncram_qdi1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_61a.tdf
-    Info (12023): Found entity 1: decode_61a File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/db/decode_61a.tdf Line: 22
-Info (12128): Elaborating entity "decode_61a" for hierarchy "recop:recop|datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component|altsyncram_qdi1:auto_generated|decode_61a:rden_decode" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/db/altsyncram_qdi1.tdf Line: 39
+    Info (12023): Found entity 1: decode_61a File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/db/decode_61a.tdf Line: 22
+Info (12128): Elaborating entity "decode_61a" for hierarchy "recop:recop|datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component|altsyncram_qdi1:auto_generated|decode_61a:rden_decode" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/db/altsyncram_qdi1.tdf Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_chb.tdf
-    Info (12023): Found entity 1: mux_chb File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/db/mux_chb.tdf Line: 22
-Info (12128): Elaborating entity "mux_chb" for hierarchy "recop:recop|datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component|altsyncram_qdi1:auto_generated|mux_chb:mux2" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/db/altsyncram_qdi1.tdf Line: 40
-Info (12128): Elaborating entity "data_mem" for hierarchy "recop:recop|datapath:impl_datapath|data_mem:impl_dm" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 317
-Info (12128): Elaborating entity "altsyncram" for hierarchy "recop:recop|datapath:impl_datapath|data_mem:impl_dm|altsyncram:altsyncram_component" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/data_mem.vhd Line: 90
-Info (12130): Elaborated megafunction instantiation "recop:recop|datapath:impl_datapath|data_mem:impl_dm|altsyncram:altsyncram_component" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/data_mem.vhd Line: 90
-Info (12133): Instantiated megafunction "recop:recop|datapath:impl_datapath|data_mem:impl_dm|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/data_mem.vhd Line: 90
+    Info (12023): Found entity 1: mux_chb File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/db/mux_chb.tdf Line: 22
+Info (12128): Elaborating entity "mux_chb" for hierarchy "recop:recop|datapath:impl_datapath|prog_mem:impl_pm|altsyncram:altsyncram_component|altsyncram_qdi1:auto_generated|mux_chb:mux2" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/db/altsyncram_qdi1.tdf Line: 40
+Info (12128): Elaborating entity "data_mem" for hierarchy "recop:recop|datapath:impl_datapath|data_mem:impl_dm" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 317
+Info (12128): Elaborating entity "altsyncram" for hierarchy "recop:recop|datapath:impl_datapath|data_mem:impl_dm|altsyncram:altsyncram_component" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/data_mem.vhd Line: 90
+Info (12130): Elaborated megafunction instantiation "recop:recop|datapath:impl_datapath|data_mem:impl_dm|altsyncram:altsyncram_component" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/data_mem.vhd Line: 90
+Info (12133): Instantiated megafunction "recop:recop|datapath:impl_datapath|data_mem:impl_dm|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/data_mem.vhd Line: 90
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
     Info (12134): Parameter "intended_device_family" = "Cyclone II"
@@ -1844,98 +1844,98 @@ Info (12133): Instantiated megafunction "recop:recop|datapath:impl_datapath|data
     Info (12134): Parameter "widthad_a" = "12"
     Info (12134): Parameter "width_a" = "16"
     Info (12134): Parameter "width_byteena_a" = "1"
-Warning (287001): Assertion warning: Device family Cyclone V does not have M4K blocks -- using available memory blocks File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/db/altsyncram_q6j1.tdf Line: 413
+Warning (287001): Assertion warning: Device family Cyclone V does not have M4K blocks -- using available memory blocks File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/db/altsyncram_q6j1.tdf Line: 413
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_q6j1.tdf
-    Info (12023): Found entity 1: altsyncram_q6j1 File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/db/altsyncram_q6j1.tdf Line: 27
+    Info (12023): Found entity 1: altsyncram_q6j1 File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/db/altsyncram_q6j1.tdf Line: 27
 Info (12128): Elaborating entity "altsyncram_q6j1" for hierarchy "recop:recop|datapath:impl_datapath|data_mem:impl_dm|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Info (12128): Elaborating entity "registers" for hierarchy "recop:recop|datapath:impl_datapath|registers:impl_reg" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 325
-Info (12128): Elaborating entity "control_unit" for hierarchy "recop:recop|control_unit:impl_control_unit" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 220
-Info (12128): Elaborating entity "play_signal" for hierarchy "play_signal:SG" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 92
-Warning (10541): VHDL Signal Declaration warning at playSignal.vhd(13): used implicit default value for signal "send" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/signal generators/playSignal.vhd Line: 13
-Warning (10036): Verilog HDL or VHDL warning at playSignal.vhd(18): object "sendSignal" assigned a value but never read File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/signal generators/playSignal.vhd Line: 18
+Info (12128): Elaborating entity "registers" for hierarchy "recop:recop|datapath:impl_datapath|registers:impl_reg" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/datapath.vhd Line: 325
+Info (12128): Elaborating entity "control_unit" for hierarchy "recop:recop|control_unit:impl_control_unit" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/recop.vhd Line: 220
+Info (12128): Elaborating entity "play_signal" for hierarchy "play_signal:SG" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 92
+Warning (10541): VHDL Signal Declaration warning at playSignal.vhd(13): used implicit default value for signal "send" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/signal generators/playSignal.vhd Line: 13
+Warning (10036): Verilog HDL or VHDL warning at playSignal.vhd(18): object "sendSignal" assigned a value but never read File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/signal generators/playSignal.vhd Line: 18
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13012): Latch recop:recop|datapath:impl_datapath|alu:impl_alu|result[3] has unsafe behavior File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal recop:recop|control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 104
-Warning (13012): Latch recop:recop|datapath:impl_datapath|alu:impl_alu|result[2] has unsafe behavior File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal recop:recop|control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 104
-Warning (13012): Latch recop:recop|datapath:impl_datapath|alu:impl_alu|result[1] has unsafe behavior File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal recop:recop|control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 104
-Warning (13012): Latch recop:recop|datapath:impl_datapath|alu:impl_alu|result[0] has unsafe behavior File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal recop:recop|control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 104
-Warning (13012): Latch recop:recop|datapath:impl_datapath|alu:impl_alu|result[4] has unsafe behavior File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal recop:recop|control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 104
-Warning (13012): Latch recop:recop|datapath:impl_datapath|alu:impl_alu|result[5] has unsafe behavior File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal recop:recop|control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 104
-Warning (13012): Latch recop:recop|datapath:impl_datapath|alu:impl_alu|result[6] has unsafe behavior File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal recop:recop|control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 104
-Warning (13012): Latch recop:recop|datapath:impl_datapath|alu:impl_alu|result[7] has unsafe behavior File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal recop:recop|control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 104
-Warning (13012): Latch recop:recop|datapath:impl_datapath|alu:impl_alu|result[8] has unsafe behavior File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal recop:recop|control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 104
-Warning (13012): Latch recop:recop|datapath:impl_datapath|alu:impl_alu|result[9] has unsafe behavior File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal recop:recop|control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 104
-Warning (13012): Latch recop:recop|datapath:impl_datapath|alu:impl_alu|result[10] has unsafe behavior File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal recop:recop|control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 104
-Warning (13012): Latch recop:recop|datapath:impl_datapath|alu:impl_alu|result[11] has unsafe behavior File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal recop:recop|control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 104
-Warning (13012): Latch recop:recop|datapath:impl_datapath|alu:impl_alu|result[12] has unsafe behavior File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal recop:recop|control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 104
-Warning (13012): Latch recop:recop|datapath:impl_datapath|alu:impl_alu|result[13] has unsafe behavior File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal recop:recop|control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 104
-Warning (13012): Latch recop:recop|datapath:impl_datapath|alu:impl_alu|result[14] has unsafe behavior File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal recop:recop|control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 104
-Warning (13012): Latch recop:recop|datapath:impl_datapath|alu:impl_alu|result[15] has unsafe behavior File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal recop:recop|control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 104
+Warning (13012): Latch recop:recop|datapath:impl_datapath|alu:impl_alu|result[3] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recop:recop|control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 104
+Warning (13012): Latch recop:recop|datapath:impl_datapath|alu:impl_alu|result[2] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recop:recop|control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 104
+Warning (13012): Latch recop:recop|datapath:impl_datapath|alu:impl_alu|result[1] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recop:recop|control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 104
+Warning (13012): Latch recop:recop|datapath:impl_datapath|alu:impl_alu|result[0] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recop:recop|control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 104
+Warning (13012): Latch recop:recop|datapath:impl_datapath|alu:impl_alu|result[4] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recop:recop|control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 104
+Warning (13012): Latch recop:recop|datapath:impl_datapath|alu:impl_alu|result[5] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recop:recop|control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 104
+Warning (13012): Latch recop:recop|datapath:impl_datapath|alu:impl_alu|result[6] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recop:recop|control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 104
+Warning (13012): Latch recop:recop|datapath:impl_datapath|alu:impl_alu|result[7] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recop:recop|control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 104
+Warning (13012): Latch recop:recop|datapath:impl_datapath|alu:impl_alu|result[8] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recop:recop|control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 104
+Warning (13012): Latch recop:recop|datapath:impl_datapath|alu:impl_alu|result[9] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recop:recop|control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 104
+Warning (13012): Latch recop:recop|datapath:impl_datapath|alu:impl_alu|result[10] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recop:recop|control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 104
+Warning (13012): Latch recop:recop|datapath:impl_datapath|alu:impl_alu|result[11] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recop:recop|control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 104
+Warning (13012): Latch recop:recop|datapath:impl_datapath|alu:impl_alu|result[12] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recop:recop|control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 104
+Warning (13012): Latch recop:recop|datapath:impl_datapath|alu:impl_alu|result[13] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recop:recop|control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 104
+Warning (13012): Latch recop:recop|datapath:impl_datapath|alu:impl_alu|result[14] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recop:recop|control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 104
+Warning (13012): Latch recop:recop|datapath:impl_datapath|alu:impl_alu|result[15] has unsafe behavior File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/ALU.vhd Line: 68
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal recop:recop|control_unit:impl_control_unit|alu_operation_signal[2] File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/ReCOP/controlunit.vhd Line: 104
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 20
-    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 20
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 20
-    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 20
-    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 20
-    Warning (13410): Pin "HEX1[0]" is stuck at VCC File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 22
-    Warning (13410): Pin "HEX1[1]" is stuck at VCC File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 22
-    Warning (13410): Pin "HEX1[2]" is stuck at VCC File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 22
-    Warning (13410): Pin "HEX1[3]" is stuck at VCC File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 22
-    Warning (13410): Pin "HEX1[4]" is stuck at VCC File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 22
-    Warning (13410): Pin "HEX1[5]" is stuck at VCC File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 22
-    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 22
-    Warning (13410): Pin "HEX2[0]" is stuck at VCC File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 23
-    Warning (13410): Pin "HEX2[1]" is stuck at VCC File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 23
-    Warning (13410): Pin "HEX2[2]" is stuck at VCC File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 23
-    Warning (13410): Pin "HEX2[3]" is stuck at VCC File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 23
-    Warning (13410): Pin "HEX2[4]" is stuck at VCC File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 23
-    Warning (13410): Pin "HEX2[5]" is stuck at VCC File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 23
-    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 23
-    Warning (13410): Pin "HEX3[0]" is stuck at VCC File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 24
-    Warning (13410): Pin "HEX3[1]" is stuck at VCC File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 24
-    Warning (13410): Pin "HEX3[2]" is stuck at VCC File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 24
-    Warning (13410): Pin "HEX3[3]" is stuck at VCC File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 24
-    Warning (13410): Pin "HEX3[4]" is stuck at VCC File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 24
-    Warning (13410): Pin "HEX3[5]" is stuck at VCC File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 24
-    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 24
-    Warning (13410): Pin "HEX4[0]" is stuck at VCC File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 25
-    Warning (13410): Pin "HEX4[1]" is stuck at VCC File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 25
-    Warning (13410): Pin "HEX4[2]" is stuck at VCC File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 25
-    Warning (13410): Pin "HEX4[3]" is stuck at VCC File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 25
-    Warning (13410): Pin "HEX4[4]" is stuck at VCC File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 25
-    Warning (13410): Pin "HEX4[5]" is stuck at VCC File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 25
-    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 25
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 20
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 20
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 20
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 20
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 20
+    Warning (13410): Pin "HEX1[0]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 22
+    Warning (13410): Pin "HEX1[1]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 22
+    Warning (13410): Pin "HEX1[2]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 22
+    Warning (13410): Pin "HEX1[3]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 22
+    Warning (13410): Pin "HEX1[4]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 22
+    Warning (13410): Pin "HEX1[5]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 22
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 22
+    Warning (13410): Pin "HEX2[0]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 23
+    Warning (13410): Pin "HEX2[1]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 23
+    Warning (13410): Pin "HEX2[2]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 23
+    Warning (13410): Pin "HEX2[3]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 23
+    Warning (13410): Pin "HEX2[4]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 23
+    Warning (13410): Pin "HEX2[5]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 23
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 23
+    Warning (13410): Pin "HEX3[0]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 24
+    Warning (13410): Pin "HEX3[1]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 24
+    Warning (13410): Pin "HEX3[2]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 24
+    Warning (13410): Pin "HEX3[3]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 24
+    Warning (13410): Pin "HEX3[4]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 24
+    Warning (13410): Pin "HEX3[5]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 24
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 24
+    Warning (13410): Pin "HEX4[0]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 25
+    Warning (13410): Pin "HEX4[1]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 25
+    Warning (13410): Pin "HEX4[2]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 25
+    Warning (13410): Pin "HEX4[3]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 25
+    Warning (13410): Pin "HEX4[4]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 25
+    Warning (13410): Pin "HEX4[5]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 25
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 25
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 11 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "CLOCK2_50" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 15
-    Warning (15610): No output dependent on input pin "CLOCK3_50" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 16
-    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 18
-    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 18
-    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 18
-    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 19
-    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 19
-    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 19
-    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 19
-    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 19
-    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/lazyp/OneDrive/Documents/GitHub/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 19
+    Warning (15610): No output dependent on input pin "CLOCK2_50" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 15
+    Warning (15610): No output dependent on input pin "CLOCK3_50" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 16
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 18
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 18
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 18
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 19
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 19
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 19
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 19
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 19
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/thoye/Desktop/COMPSYS_701/IP/IRP_PD-ASP/src/TopLevel.vhd Line: 19
 Info (21057): Implemented 2491 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 17 input pins
     Info (21059): Implemented 52 output pins
@@ -1943,9 +1943,9 @@ Info (21057): Implemented 2491 device resources after synthesis - the final reso
     Info (21064): Implemented 384 RAM segments
     Info (21062): Implemented 1 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 136 warnings
-    Info: Peak virtual memory: 5010 megabytes
-    Info: Processing ended: Tue May 27 09:35:17 2025
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:16
+    Info: Peak virtual memory: 5009 megabytes
+    Info: Processing ended: Thu May 29 16:18:39 2025
+    Info: Elapsed time: 00:00:26
+    Info: Total CPU time (on all processors): 00:00:26
 
 
