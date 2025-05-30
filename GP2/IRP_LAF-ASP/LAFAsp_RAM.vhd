@@ -13,8 +13,6 @@ entity LAFAsp_RAM is
         clock         : in  std_logic;
         recv          : in  tdma_min_port;
         send          : out tdma_min_port;  
-        ram_waddr     : in  std_logic_vector(9 downto 0) := (others => '0');
-        avg_ready_out : out std_logic -- test
     );
 end entity;
 
@@ -22,6 +20,7 @@ architecture rtl of LAFAsp_RAM is
     signal avg_data_sig  : std_logic_vector(15 downto 0);
     signal avg_ready_sig : std_logic;
     signal ram_raddr     :  std_logic_vector(9 downto 0);
+    signal ram_waddr     :  std_logic_vector(9 downto 0);
     signal ram_q         :  std_logic_vector(15 downto 0);
     signal sendSignal : tdma_min_port := (
 		addr => (others => '0'),
@@ -45,10 +44,15 @@ begin
             if recv.data(31 downto 28) = "0111" then
                 ram_raddr <= recv.data(9 downto 0);
             end if;
+            if avg_ready_sig = '1' then
+                ram_waddr <= std_logic_vector(unsigned(ram_raddr) + 1);
+                sendSignal.data(16) <= '1';
+            else
+                sendSignal.data(16) <= '0';
+            end if;
         end if;
     end process;
 
-    avg_ready_out <= avg_ready_sig;
 
     -- Instantiate AverageDataRAM directly with avg signals
     RAM: entity work.AverageDataRAM
@@ -66,7 +70,6 @@ begin
         );
 
     sendSignal.data(31 downto 28) <= "0101";
-    sendSignal.data(26 downto 17) <= ram_raddr;
-    sendSignal.data(16) <= '1'; 
+    sendSignal.data(26 downto 17) <= ram_waddr;
     sendSignal.data(15 downto 0) <= ram_q;
 end architecture;
