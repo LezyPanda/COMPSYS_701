@@ -57,7 +57,7 @@ begin
 		recv  => recv_port(1)
 	);
 	
-	ldr_adc : entity work.LdrASP -- to be changed lmao :(
+	ldr_adc : entity work.LAFAsp_RAM
 	port map (
 		clock => clock,
 		send  => send_port(2),

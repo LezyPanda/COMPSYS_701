@@ -30,8 +30,8 @@ architecture rtl of LAFAsp_RAM is
 
 begin
     -- Instantiate LdrASP
-    LDR: entity work.LAFAsp
-        generic map (MAX_WIN => WINDOW_SIZE)
+    LDR: entity work.LdrASP
+        generic map (WINDOW_SIZE => WINDOW_SIZE)
         port map (
             clock     => clock,
             recv      => recv,
