@@ -7,31 +7,33 @@ library work;
 use work.TdmaMinTypes.all;
 use work.signal_rom_pkg.all;
 
-entity LdrASP_tb is
+entity LAFAsp_tb is
 end entity;
 
-architecture sim of LdrASP_tb is
+architecture sim of LAFAsp_tb is
     constant CLK_PERIOD : time := 10 ns;
     constant ROM_DEPTH  : integer := SIGNAL_ROM'length;
     -- Component Declaration
-    component LdrASP
+    component LAFAsp
         generic (
             WINDOW_SIZE : natural := 64
         );
         port (
-            clock : in  std_logic;
-            recv  : in  tdma_min_port;
-            send  : out tdma_min_port
+            clock     : in  std_logic;
+            recv      : in  tdma_min_port;
+            avg_data  : out std_logic_vector(15 downto 0);
+            avg_ready : out std_logic
         );
     end component;
 
     -- Testbench signals
-    signal clock   : std_logic := '0';
-    signal recv    : tdma_min_port := (addr => (others => '0'), data => (others => '0'));
-    signal send    : tdma_min_port;
+    signal clock         : std_logic := '0';
+    signal recv          : tdma_min_port := (addr => (others => '0'), data => (others => '0'));
+    signal avg_data_sig  : std_logic_vector(15 downto 0);
+    signal avg_ready_sig : std_logic := '0';
     signal rom_idx : integer range 1 to ROM_DEPTH := 1;
     -- Mirror of LdrASP internal variables
-    constant N_tb : natural := 8;
+    constant N_tb : natural := 64;
     subtype sample_t_tb is unsigned(7 downto 0);
     type buffer_t_tb is array (0 to N_tb-1) of sample_t_tb;
     signal buffer_tb      : buffer_t_tb := (others => (others => '0'));
@@ -42,12 +44,13 @@ architecture sim of LdrASP_tb is
 begin
 
     -- Instantiate Device Under Test
-    UUT: LdrASP
-        generic map (WINDOW_SIZE => 8)
+    UUT: LAFAsp
+        generic map (WINDOW_SIZE => 64)
         port map (
-            clock => clock,
-            recv  => recv,
-            send  => send
+            clock     => clock,
+            recv      => recv,
+            avg_data  => avg_data_sig,
+            avg_ready => avg_ready_sig
         );
 
     -- Clock generation: 100MHz
@@ -90,7 +93,8 @@ begin
     begin
         if rising_edge(clock) then
             report "Time " & time'image(now) &
-                   " DUT_Sum=" & integer'image(to_integer(unsigned(send.data(15 downto 0)))) &
+                   " DUT_Sum=" & integer'image(to_integer(unsigned(avg_data_sig))) &
+                   " Ready="   & std_logic'image(avg_ready_sig) &
                    " TB_Sum="  & integer'image(to_integer(sum_acc_tb));
         end if;
     end process;

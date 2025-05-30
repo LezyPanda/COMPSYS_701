@@ -96,23 +96,26 @@ begin
                         state <= S1;
                     end if;
                 end case;
-				if (correlation_first_half = '1') then
-					sendSignal.data <= (others => '0');
-					sendSignal.data(31 downto 28) <= "1000";
-					sendSignal.data(20) <= '0';
-					sendSignal.data(19 downto 0) <= correlation(39 downto 20);
-					correlation_first_half <= '0';
-			  elsif (correlation_second_half = '1') then
-					sendSignal.data <= (others => '0');
-					sendSignal.data(31 downto 28) <= "1001";
-					sendSignal.data(20) <= '1';
-					sendSignal.data(19 downto 0) <= correlation(19 downto 0);
-					correlation_second_half <= '0';
-			  else
-					sendSignal.data <= (others => '0');
-					sendSignal.data(31 downto 28) <= "0111";
-					sendSignal.data(9 downto 0) <= avg_data_mem_addr;
-			  end if;
+            if (correlation_first_half = '1') then
+                sendSignal.addr <= "00000011"; -- To PdAsp
+                sendSignal.data <= (others => '0');
+                sendSignal.data(31 downto 28) <= "1000";
+                sendSignal.data(20) <= '0';
+                sendSignal.data(19 downto 0) <= correlation(39 downto 20);
+                correlation_first_half <= '0';
+            elsif (correlation_second_half = '1') then
+                sendSignal.addr <= "00000011"; -- To PdAsp
+                sendSignal.data <= (others => '0');
+                sendSignal.data(31 downto 28) <= "1001";
+                sendSignal.data(20) <= '1';
+                sendSignal.data(19 downto 0) <= correlation(19 downto 0);
+                correlation_second_half <= '0';
+            else
+                sendSignal.addr <= "00000001"; -- To LdrASP
+                sendSignal.data <= (others => '0');
+                sendSignal.data(31 downto 28) <= "0111";
+                sendSignal.data(9 downto 0) <= avg_data_mem_addr;
+            end if;
         end if;
         avg_data_signal <= avg_data;
         avg_data_mem_addr_signal <= avg_data_mem_addr;

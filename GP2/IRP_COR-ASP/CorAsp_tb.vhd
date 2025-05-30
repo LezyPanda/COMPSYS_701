@@ -46,20 +46,6 @@ begin
 			data  => avg_data
 		);
 
-	-- sig_gen_origin : entity work.test_signal
-	-- 	port map (
-	-- 		clk   => t_clock,
-	-- 		addr  => addr_origin,
-	-- 		data  => avg_data_origin
-	-- 	);
-
-	-- sig_gen : entity work.test_signal
-	-- 	port map (
-	-- 		clk   => t_clock,
-	-- 		addr  => addr,
-	-- 		data  => avg_data
-	-- 	);
-
     clk_gen : process
 	begin
 		t_clock <= '0';

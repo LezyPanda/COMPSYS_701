@@ -35,8 +35,6 @@ architecture rtl of TopLevel is
 	signal signal_addr : integer range 0 to ROM_DEPTH-1;
 
 	signal adc_data : std_logic_vector(7 downto 0) := (others => '0');
-	
-
 begin
 
 	clock <= CLOCK_50;
@@ -59,31 +57,29 @@ begin
 		recv  => recv_port(1)
 	);
 	
-	ldr_adc : entity work.LdrASP
+	ldr_adc : entity work.LdrASP -- to be changed lmao :(
 	port map (
 		clock => clock,
 		send  => send_port(2),
 		recv  => recv_port(2)
 	);
-
-	asp_pd : entity work.PdAsp
+	
+	asp_cor : entity work.CorAsp
 	port map (
 		clock => clock,
 		send  => send_port(3),
 		recv  => recv_port(3)
 	);
-	
-	
-	asp_cor : entity work.CorAsp
+
+	asp_pd : entity work.PdAsp
 	port map (
 		clock => clock,
 		send  => send_port(4),
 		recv  => recv_port(4)
 	);
-	
+
 	recop : entity work.recop
 	port map (
-
 		clock  => clock,
         key    => KEY,
         sw     => SW,
@@ -94,8 +90,8 @@ begin
         hex3   => HEX3,
         hex4   => HEX4,
         hex5   => HEX5,
-			send  => send_port(5),
-			recv  => recv_port(5)
+		send  => send_port(5),
+		recv  => recv_port(5)
 		
 	);
 

@@ -36,6 +36,7 @@ begin
             else
                 adc_rdy := '0';
             end if;
+            sendSignal.addr <= "00000001"; -- To LdrASP
             sendSignal.data <= (others => '0');
             sendSignal.data(31 downto 28) <= "0110";
             sendSignal.data(8) <= adc_rdy;

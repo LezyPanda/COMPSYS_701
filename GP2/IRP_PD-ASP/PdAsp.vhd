@@ -115,10 +115,12 @@ begin
 
 			sendSignal.data <= (others => '0');
 			if (peak_type = "00") then
+				sendSignal.addr <= "00000110"; -- To Nios
 				sendSignal.data(31 downto 28) <= "1100";
 				sendSignal.data(20) <= peak_detected;
 				sendSignal.data(19 downto 0) <= std_logic_vector(counter_prev);
 			elsif (peak_type = "01") then
+				sendSignal.addr <= "00000110"; -- To Nios
 				sendSignal.data(20) <= '0';
 				if (peak_half = '0') then
 					sendSignal.data(31 downto 28) <= "1101";
@@ -131,6 +133,7 @@ begin
 					peak_type <= "00";
 				end if;
 			elsif (peak_type = "10") then
+				sendSignal.addr <= "00000110"; -- To Nios
 				sendSignal.data(20) <= '1';
 				if (peak_half = '0') then
 					sendSignal.data(31 downto 28) <= "1101";
