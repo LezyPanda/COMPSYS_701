@@ -13,7 +13,7 @@ entity LAFAsp_RAM is
         clock         : in  std_logic;
         recv          : in  tdma_min_port;
         send          : out tdma_min_port;  
-        ram_waddr     : in  std_logic_vector(9 downto 0);
+        ram_waddr     : in  std_logic_vector(9 downto 0) := (others => '0');
         avg_ready_out : out std_logic -- test
     );
 end entity;
