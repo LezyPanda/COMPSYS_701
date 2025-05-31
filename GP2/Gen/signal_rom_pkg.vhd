@@ -3,8 +3,8 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 package signal_rom_pkg is
-  constant ROM_DEPTH : integer := 1601;
-  type rom_t is array (1 to ROM_DEPTH) of std_logic_vector(7 downto 0);
+  constant ROM_DEPTH : integer := 1600;
+  type rom_t is array (0 to ROM_DEPTH) of std_logic_vector(7 downto 0);
   constant SIGNAL_ROM : rom_t := (
     x"FB",
     x"FF",

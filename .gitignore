@@ -23,3 +23,5 @@ modelsim/rawOutput.mif
 /GP2/db
 /GP2/incremental_db
 /GP2/output_files
+/GP2/simulation
+/GP2/.qsys_edit

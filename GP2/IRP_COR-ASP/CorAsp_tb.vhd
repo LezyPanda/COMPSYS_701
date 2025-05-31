@@ -59,7 +59,7 @@ begin
 	begin
 		id := t_send.data(31 downto 28);
 		-- To RAM
-		if (id = "0111") then
+		if (id = "0101") then
 			adc_addr <= t_send.data(9 downto 0);
 		-- To Peak Detector, first half
 		elsif (id = "1000") then

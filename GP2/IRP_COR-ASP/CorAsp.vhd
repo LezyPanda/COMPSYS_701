@@ -47,15 +47,15 @@ begin
     begin
         if rising_edge(clock) then
             id := recv.data(31 downto 28);
-            if (id = "0110") then
+            if (id = "0101") then
                 if (recv.data(27) = '1') then
                     window_size <= "0000000000000110"; -- 6
                 else
                     window_size <= "0000000000000011"; -- 3
                 end if;
+                newest_avg_data_addr := recv.data(26 downto 17);
                 calculate <= recv.data(16);
                 avg_data := recv.data(15 downto 0);
-                newest_avg_data_addr := recv.data(26 downto 17);
             end if;
 
             case state is
@@ -97,21 +97,21 @@ begin
                     end if;
                 end case;
             if (correlation_first_half = '1') then
-                sendSignal.addr <= "00000011"; -- To PdAsp
+                sendSignal.addr <= "00000100"; -- To PdAsp
                 sendSignal.data <= (others => '0');
                 sendSignal.data(31 downto 28) <= "1000";
                 sendSignal.data(20) <= '0';
                 sendSignal.data(19 downto 0) <= correlation(39 downto 20);
                 correlation_first_half <= '0';
             elsif (correlation_second_half = '1') then
-                sendSignal.addr <= "00000011"; -- To PdAsp
+                sendSignal.addr <= "00000100"; -- To PdAsp
                 sendSignal.data <= (others => '0');
                 sendSignal.data(31 downto 28) <= "1001";
                 sendSignal.data(20) <= '1';
                 sendSignal.data(19 downto 0) <= correlation(19 downto 0);
                 correlation_second_half <= '0';
             else
-                sendSignal.addr <= "00000001"; -- To LdrASP
+                sendSignal.addr <= "00000010"; -- To LAFAsp
                 sendSignal.data <= (others => '0');
                 sendSignal.data(31 downto 28) <= "0111";
                 sendSignal.data(9 downto 0) <= avg_data_mem_addr;

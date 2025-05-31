@@ -12,8 +12,6 @@ entity TopLevel is
 	);
 	port (
 		CLOCK_50      : in    std_logic;
-		CLOCK2_50     : in    std_logic;
-		CLOCK3_50     : in    std_logic;
 
 		KEY           : in    std_logic_vector(3 downto 0);
 		SW            : in    std_logic_vector(9 downto 0);
