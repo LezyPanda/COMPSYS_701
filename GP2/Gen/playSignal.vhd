@@ -21,6 +21,7 @@ begin
   	begin
     	if rising_edge(clk) then
 			sendSignal.data(7 downto 0) <= SIGNAL_ROM(addr);
+			sendSignal.data(8) <= '1';
     	end if;
   	end process;
     send <= sendSignal;

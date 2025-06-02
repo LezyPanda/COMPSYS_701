@@ -15,33 +15,30 @@ entity ADCAsp is
 end entity;
 
 architecture aADCAsp of ADCAsp is
-    signal period : std_logic_vector(7 downto 0) := "00000010";
-    
-
-    signal sendSignal : tdma_min_port;
+    signal adc_sample_delay       : unsigned(7 downto 0) := "00000010";
+    signal sendSignal   : tdma_min_port;
 begin 
     clock_process: process(clock)
-        variable counter : integer range 0 to 255 := 0;
-        variable adc_data : std_logic_vector(7 downto 0);
-        variable adc_rdy : std_logic := '0';
+        variable adc_sample_delay_counter    : integer range 0 to 255 := 0;
+        variable adc_rdy    : std_logic := '0';
     begin
         if rising_edge(clock) then
-            if (recv.data(31 downto 28) = "1111") then
-                period <= recv.data(7 downto 0);
+            if (recv.data(31 downto 28) = "1001" and recv.data(23) = '0') then      -- ADC Config
+                adc_sample_delay <= unsigned(recv.data(7 downto 0));                    -- ADC Sampling Delay/Period
             end if;
-            if counter >= to_integer(unsigned(period)) then
-                counter := 0;
-                adc_data := adc;
-                adc_rdy := '1';
+
+            if adc_sample_delay_counter >= to_integer(adc_sample_delay) then -- Delay has Expired, Read ADC
+                adc_sample_delay_counter := 0;
+                sendSignal.addr <= "00000010";              -- To LAFAsp
+                sendSignal.data <= (others => '0');         -- Clear
+                sendSignal.data(31 downto 28) <= "1000";    -- Data Packet
+                sendSignal.data(23 downto 20) <= "0001";    -- MODE
+                sendSignal.data(8) <= '1';                  -- ADC Ready
+                sendSignal.data(7 downto 0) <= adc;         -- ADC Data
             else
-                adc_rdy := '0';
+                sendSignal.data <= (others => '0');         -- Clear
             end if;
-            sendSignal.addr <= "00000010"; -- To LAFAsp
-            sendSignal.data <= (others => '0');
-            sendSignal.data(31 downto 28) <= "0110";
-            sendSignal.data(8) <= adc_rdy;
-            sendSignal.data(7 downto 0) <= adc_data;
-            counter := counter + 1;
+            adc_sample_delay_counter := adc_sample_delay_counter + 1;
         end if;
     end process clock_process;
 

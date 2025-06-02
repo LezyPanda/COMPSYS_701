@@ -15,52 +15,50 @@ end entity;
 
 architecture rtl of CorAsp is
     type states is (S0, S1, S2, S3);
-    signal state        : states := S0;
-    signal window_size  : unsigned(15 downto 0) := "0000000000000011";
-    signal counter      : unsigned(15 downto 0) := (others => '0');
+    signal state                    : states := S0;
+    signal correlation_window_size  : unsigned(15 downto 0) := "0000000000000011";
+    signal counter                  : unsigned(15 downto 0) := (others => '0');
 
-    signal calculate             : std_logic := '0';
+    signal calculate                    : std_logic := '0';
     signal newest_avg_data_addr_signal  : std_logic_vector(9 downto 0) := (others => '0');
 
-    signal current_corr_origin        : std_logic_vector(9 downto 0) := (others => '0');
-    signal correlation_pair_product   : std_logic_vector(31 downto 0) := (others => '0');
-    signal multiplicand_temp         : std_logic_vector(15 downto 0) := (others => '0');
-    signal avg_data_signal : std_logic_vector(15 downto 0) := (others => '0');
-    signal correlation_first_half : std_logic := '0';
-    signal correlation_second_half : std_logic := '0';
+    signal current_corr_origin          : std_logic_vector(9 downto 0) := (others => '0');
+    signal correlation_pair_product     : std_logic_vector(31 downto 0) := (others => '0');
+    signal multiplicand_temp            : std_logic_vector(15 downto 0) := (others => '0');
+    signal avg_data_signal              : std_logic_vector(15 downto 0) := (others => '0');
+    signal correlation_first_half       : std_logic := '0';
+    signal correlation_second_half      : std_logic := '0';
 
-    signal correlation : std_logic_vector(39 downto 0) := (others => '0');
-    signal avg_data_mem_addr_signal : std_logic_vector(9 downto 0) := (others => '0');
+    signal correlation                  : std_logic_vector(35 downto 0) := (others => '0');
+    signal avg_data_mem_addr_signal     : std_logic_vector(9 downto 0) := (others => '0');
 
     signal sendSignal : tdma_min_port;
 
 begin 
 
-    process(clock, recv)
-        variable id : std_logic_vector(3 downto 0);
-        variable avg_data : std_logic_vector(15 downto 0) := (others => '0');
+    process(clock)
+        variable avg_data               : std_logic_vector(15 downto 0) := (others => '0');
         -- output signals
-        variable avg_data_mem_addr : std_logic_vector(9 downto 0) := (others => '0');
-        variable newest_avg_data_addr : std_logic_vector(9 downto 0) := (others => '0');
-        variable correlation_rdy    : std_logic := '0';
+        variable avg_data_mem_addr      : std_logic_vector(9 downto 0) := (others => '0');
+        variable newest_avg_data_addr   : std_logic_vector(9 downto 0) := (others => '0');
+        variable correlation_rdy        : std_logic := '0';
         
     begin
         if rising_edge(clock) then
-            id := recv.data(31 downto 28);
-            if (id = "0101") then
-                if (recv.data(27) = '1') then
-                    window_size <= "0000000000000110"; -- 6
-                else
-                    window_size <= "0000000000000011"; -- 3
+            if (recv.data(31 downto 28) = "1010") then                                  -- Correlation Calculator Config
+                correlation_window_size <= unsigned(recv.data(15 downto 0));                -- Correlation WIndow Size
+            elsif (recv.data(31 downto 28) = "1000") then                               -- Data Packet
+                if (recv.data(23 downto 20) = "0011") then                                  -- AVG Data Packet
+                    calculate <= recv.data(16);                                             -- Enough ADC Samples, Calculate Correlation
+                    avg_data := recv.data(15 downto 0);                                     -- Average Data
+                elsif (recv.data(23 downto 20) = "0100") then                           -- AVG New Data Address Packet
+                    newest_avg_data_addr := recv.data(9 downto 0);                          -- Newest Average Data Address
                 end if;
-                newest_avg_data_addr := recv.data(26 downto 17);
-                calculate <= recv.data(16);
-                avg_data := recv.data(15 downto 0);
             end if;
 
             case state is
                 when S0 =>
-                    avg_data_mem_addr := std_logic_vector(unsigned(newest_avg_data_addr) - to_unsigned((to_integer(window_size) / 2) - 1, avg_data_mem_addr'length));
+                    avg_data_mem_addr := std_logic_vector(unsigned(newest_avg_data_addr) - to_unsigned((to_integer(correlation_window_size) / 2) - 1, avg_data_mem_addr'length));
                     correlation_rdy := '0';
                     correlation_pair_product <= (others => '0');
                     counter <= (others => '0');
@@ -84,7 +82,7 @@ begin
                     avg_data_mem_addr := std_logic_vector(unsigned(current_corr_origin) + to_unsigned(to_integer(counter), avg_data_mem_addr'length));
                     correlation <= std_logic_vector(unsigned(correlation) + unsigned(correlation_pair_product));
                     correlation_pair_product <= (others => '0');
-                    if to_integer(counter) >= to_integer(window_size) / 2 then
+                    if to_integer(counter) >= to_integer(correlation_window_size) / 2 then
                         counter <= (others => '0');
                         correlation_rdy := '1';
                         state <= S0;
@@ -96,25 +94,30 @@ begin
                         state <= S1;
                     end if;
                 end case;
-            if (correlation_first_half = '1') then
-                sendSignal.addr <= "00000100"; -- To PdAsp
-                sendSignal.data <= (others => '0');
-                sendSignal.data(31 downto 28) <= "1000";
-                sendSignal.data(20) <= '0';
-                sendSignal.data(19 downto 0) <= correlation(39 downto 20);
-                correlation_first_half <= '0';
-            elsif (correlation_second_half = '1') then
-                sendSignal.addr <= "00000100"; -- To PdAsp
-                sendSignal.data <= (others => '0');
-                sendSignal.data(31 downto 28) <= "1001";
-                sendSignal.data(20) <= '1';
-                sendSignal.data(19 downto 0) <= correlation(19 downto 0);
-                correlation_second_half <= '0';
-            else
-                sendSignal.addr <= "00000010"; -- To LAFAsp
-                sendSignal.data <= (others => '0');
-                sendSignal.data(31 downto 28) <= "0111";
-                sendSignal.data(9 downto 0) <= avg_data_mem_addr;
+
+            
+            if (correlation_first_half = '1') then                      -- Send First Half of Correlation
+                sendSignal.addr <= "00000100";                              -- To PdAsp
+                sendSignal.data <= (others => '0');                         -- Clear
+                sendSignal.data(31 downto 28) <= "1000";                    -- Data Packet
+                sendSignal.data(23 downto 20) <= "0101";                    -- MODE
+                sendSignal.data(18) <= '0';                                 -- Indicates First Half of Correlation (Correlation Not Ready)
+                sendSignal.data(17 downto 0) <= correlation(35 downto 18);  -- First Half of Correlation
+                correlation_first_half <= '0';                              -- Reset First Half Flag
+            elsif (correlation_second_half = '1') then                  -- Send Second Half of Correlation
+                sendSignal.addr <= "00000100";                              -- To PdAsp
+                sendSignal.data <= (others => '0');                         -- Clear
+                sendSignal.data(31 downto 28) <= "1000";                    -- Data Packet
+                sendSignal.data(23 downto 20) <= "0101";                    -- MODE
+                sendSignal.data(18) <= '1';                                 -- Indicates Second Half of Correlation (Correlation Ready)
+                sendSignal.data(17 downto 0) <= correlation(17 downto 0);   -- Second Half of Correlation
+                correlation_second_half <= '0';                             -- Reset Second Half Flag
+            else                                                        -- Send Average Data Request
+                sendSignal.addr <= "00000010";                              -- To LAFAsp
+                sendSignal.data <= (others => '0');                         -- Clear
+                sendSignal.data(31 downto 28) <= "1000";                    -- Data Packet
+                sendSignal.data(31 downto 28) <= "0010";                    -- MODE
+                sendSignal.data(9 downto 0) <= avg_data_mem_addr;           -- Average Data Memory Address
             end if;
         end if;
         avg_data_signal <= avg_data;
