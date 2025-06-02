@@ -15,12 +15,12 @@ entity ADCAsp is
 end entity;
 
 architecture aADCAsp of ADCAsp is
-    signal adc_sample_delay       : unsigned(7 downto 0) := "00000010";
-    signal sendSignal   : tdma_min_port;
+    signal adc_sample_delay : unsigned(7 downto 0) := "00000010";
+    signal sendSignal       : tdma_min_port;
 begin 
     clock_process: process(clock)
-        variable adc_sample_delay_counter    : integer range 0 to 255 := 0;
-        variable adc_rdy    : std_logic := '0';
+        variable adc_sample_delay_counter   : integer range 0 to 255 := 0;
+        variable adc_rdy                    : std_logic := '0';
     begin
         if rising_edge(clock) then
             if (recv.data(31 downto 28) = "1001" and recv.data(23) = '0') then      -- ADC Config
@@ -38,6 +38,7 @@ begin
             else
                 sendSignal.data <= (others => '0');         -- Clear
             end if;
+            -- Maybe we need a flag on this so we don't assume that the ADC is readable every clock cycle
             adc_sample_delay_counter := adc_sample_delay_counter + 1;
         end if;
     end process clock_process;

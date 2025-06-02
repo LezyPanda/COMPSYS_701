@@ -56,6 +56,7 @@ begin
                 end if;
             end if;
 
+            -- Our state machine advances every clock cycle, maybe we need to use flags instead
             case state is
                 when S0 =>
                     avg_data_mem_addr := std_logic_vector(unsigned(newest_avg_data_addr) - to_unsigned((to_integer(correlation_window_size) / 2) - 1, avg_data_mem_addr'length));
