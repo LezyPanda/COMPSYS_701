@@ -72,7 +72,7 @@ begin
                 sendSignal.data(23 downto 20) <= "0011";                    -- MODE
                 sendSignal.data(16) <= prev_corr_calculate;                 -- Enough ADC Samples to Calculate Correlation
                 sendSignal.data(15 downto 0) <= ram_q;                      -- Send Q From RAM
-                ram_raddr <= (others => '0')                                -- Reset Read Address
+                ram_raddr <= (others => '0');                               -- Reset Read Address
                 prev_corr_calculate <= '0';                                 -- Reset Previous Correlation Calculate Flag
             end if;
         end if;
