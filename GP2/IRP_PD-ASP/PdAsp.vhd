@@ -126,6 +126,9 @@ begin
 				end if;
 
 				correlation_peak_read := '0';											-- Reset Correlation Peak Read Flag
+			else
+				sendSignal.addr <= (others => '0'); 										-- Clear
+				sendSignal.data <= (others => '0'); 										-- Clear
 			end if;
 		end if;
     end process;

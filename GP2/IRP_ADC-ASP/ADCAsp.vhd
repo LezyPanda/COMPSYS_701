@@ -15,7 +15,7 @@ entity ADCAsp is
 end entity;
 
 architecture aADCAsp of ADCAsp is
-    signal adc_sample_delay : unsigned(15 downto 0) := x"0008";
+    signal adc_sample_delay : unsigned(15 downto 0) := "0000000000001111";
     signal sendSignal       : tdma_min_port;
 begin 
     clock_process: process(clock)
