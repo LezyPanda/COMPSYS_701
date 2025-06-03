@@ -49,7 +49,7 @@ begin
                 else
                     avg_window_size <= desired_size;
                 end if;
-            elsif (recv.data(31 downto 28) = "1000" and recv.data(23 downto 20) = "0001") then -- LAFAsp ADC Data In Packet
+            elsif (recv.data(31 downto 28) = "1000" and recv.data(23 downto 20) = "0001" and recv.data(7 downto 0) /= "00000000") then -- LAFAsp ADC Data In Packet
                 -- Moving Average Calculation
                 new_s  := unsigned(recv.data(7 downto 0));
                 oldest := buffer_reg(ptr);

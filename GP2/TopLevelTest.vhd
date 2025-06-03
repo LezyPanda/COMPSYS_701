@@ -106,10 +106,18 @@ begin
 
 	process(clock)
         variable counter : integer := 0;
+        variable adc_sent : boolean := false;
 	begin
 		if (rising_edge(clock)) then
-            counter := counter + 1;
-			signal_gen_addr <= counter mod ROM_DEPTH;
+            if send_port(1).data(8) = '1' then -- ADC has sent the data
+                adc_sent := true;
+            end if;
+
+            if adc_sent then
+                counter := counter + 1;
+                signal_gen_addr <= counter mod ROM_DEPTH;
+                adc_sent := false;
+            end if;
 		end if;
 	end process;
 

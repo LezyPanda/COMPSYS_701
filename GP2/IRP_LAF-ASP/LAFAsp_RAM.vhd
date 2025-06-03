@@ -58,7 +58,7 @@ begin
                 prev_corr_calculate <= '1';
             end if;
 
-            if (avg_ready_sig = '1') then                               -- New Average Data Ready
+            if (avg_ready_sig = '1' ) then -- New Average Data Ready and Data is not 0
                 ram_waddr <= std_logic_vector(unsigned(ram_waddr) + 1);     -- Increment Write Address
                 sendSignal.addr <= "00000011";                              -- To CorAsp
                 sendSignal.data <= (others => '0');                         -- Clear
