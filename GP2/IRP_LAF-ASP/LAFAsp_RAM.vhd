@@ -23,6 +23,8 @@ architecture rtl of LAFAsp_RAM is
     signal ram_waddr        : std_logic_vector(9 downto 0) := (others => '0');
     signal ram_q            : std_logic_vector(15 downto 0) := (others => '0');
     signal sendSignal       : tdma_min_port := (others => (others => '0'));
+    signal read_addr_reg    : std_logic_vector(9 downto 0) := (others => '0');
+    signal read_request     : std_logic := '0';
 begin
     LDR: entity work.LAFAsp
         port map (
@@ -43,7 +45,7 @@ begin
             data_in      => avg_data_sig,
             write_enable => avg_ready_sig,
             write_addr   => ram_waddr,
-            read_addr    => ram_raddr,
+            read_addr    => read_addr_reg,
             q            => ram_q
         );
 
@@ -51,7 +53,8 @@ begin
     begin
         if rising_edge(clock) then
             if (recv.data(31 downto 28) = "1000" and recv.data(23 downto 20) = "0010") then -- Request ADC Data Packet
-                ram_raddr <= recv.data(9 downto 0);                                             -- Read Address for RAM
+                read_addr_reg <= recv.data(9 downto 0);                                        -- Latch new read address
+                read_request  <= '1';                                                           -- Flag new read
             end if;
 
             if (corr_calculate = '1') then
@@ -65,14 +68,14 @@ begin
                 sendSignal.data(31 downto 28) <= "1000";                    -- New AVG Data Address Gen Packet
                 sendSignal.data(23 downto 20) <= "0100";                    -- MODE
                 sendSignal.data(9 downto 0) <= ram_waddr;                   -- Send New Average Data Address
-            elsif (ram_raddr /= "0000000000") then                      -- Has Request for AVG Data Packet
+            elsif (read_request = '1') then                                -- Pending read request
                 sendSignal.addr <= "00000011";                              -- To CorAsp
                 sendSignal.data <= (others => '0');                         -- Clear
                 sendSignal.data(31 downto 28) <= "1000";                    -- AVG Data Packet
                 sendSignal.data(23 downto 20) <= "0011";                    -- MODE
                 sendSignal.data(16) <= prev_corr_calculate;                 -- Enough ADC Samples to Calculate Correlation
                 sendSignal.data(15 downto 0) <= ram_q;                      -- Send Q From RAM
-                ram_raddr <= (others => '0');                               -- Reset Read Address
+                read_request <= '0';                                         -- Clear read flag
                 prev_corr_calculate <= '0';                                 -- Reset Previous Correlation Calculate Flag
             end if;
         end if;
