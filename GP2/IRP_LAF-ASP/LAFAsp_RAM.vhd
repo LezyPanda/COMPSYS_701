@@ -14,9 +14,10 @@ entity LAFAsp_RAM is
 end entity;
 
 architecture rtl of LAFAsp_RAM is
-    signal avg_data_sig     : std_logic_vector(15 downto 0) := (others => '0');
-    signal avg_ready_sig    : std_logic := '0';
-    signal corr_calculate   : std_logic := '0';
+    signal avg_data_sig         : std_logic_vector(15 downto 0) := (others => '0');
+    signal avg_ready_sig        : std_logic := '0';
+    signal prev_corr_calculate  : std_logic := '0';
+    signal corr_calculate       : std_logic := '0';
 
     signal ram_raddr        :  std_logic_vector(9 downto 0) := (others => '0');
     signal ram_waddr        :  std_logic_vector(9 downto 0) := (others => '0');
@@ -53,6 +54,9 @@ begin
                 ram_raddr <= recv.data(9 downto 0);                                             -- Read Address for RAM
             end if;
 
+            if (corr_calculate = '1') then
+                prev_corr_calculate <= '1';
+            end if;
 
             if (avg_ready_sig = '1') then                               -- New Average Data Ready
                 ram_waddr <= std_logic_vector(unsigned(ram_waddr) + 1);     -- Increment Write Address
@@ -61,14 +65,15 @@ begin
                 sendSignal.data(31 downto 28) <= "1000";                    -- New AVG Data Address Gen Packet
                 sendSignal.data(23 downto 20) <= "0100";                    -- MODE
                 sendSignal.data(9 downto 0) <= ram_waddr;                   -- Send New Average Data Address
-            elsif (ram_raddr /= "0000000000") then
+            elsif (ram_raddr /= "0000000000") then                      -- Has Request for AVG Data Packet
                 sendSignal.addr <= "00000011";                              -- To CorAsp
                 sendSignal.data <= (others => '0');                         -- Clear
                 sendSignal.data(31 downto 28) <= "1000";                    -- AVG Data Packet
                 sendSignal.data(23 downto 20) <= "0011";                    -- MODE
-                sendSignal.data(16) <= corr_calculate;                      -- Enough ADC Samples to Calculate Correlation
+                sendSignal.data(16) <= prev_corr_calculate;                 -- Enough ADC Samples to Calculate Correlation
                 sendSignal.data(15 downto 0) <= ram_q;                      -- Send Q From RAM
-                ram_raddr <= (others => '0');                               -- Reset Read Address
+                ram_raddr <= (others => '0')                                -- Reset Read Address
+                prev_corr_calculate <= '0';                                 -- Reset Previous Correlation Calculate Flag
             end if;
         end if;
     end process;
