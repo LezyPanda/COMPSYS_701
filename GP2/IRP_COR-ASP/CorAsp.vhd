@@ -117,7 +117,7 @@ begin
                 sendSignal.addr <= "00000010";                              -- To LAFAsp
                 sendSignal.data <= (others => '0');                         -- Clear
                 sendSignal.data(31 downto 28) <= "1000";                    -- Data Packet
-                sendSignal.data(31 downto 28) <= "0010";                    -- MODE
+                sendSignal.data(23 downto 20) <= "0010";                    -- MODE
                 sendSignal.data(9 downto 0) <= avg_data_mem_addr;           -- Average Data Memory Address
             end if;
         end if;
