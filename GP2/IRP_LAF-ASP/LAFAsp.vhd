@@ -20,7 +20,7 @@ architecture rtl of LAFAsp is
     subtype sample_t is unsigned(7 downto 0);
     type buffer_t is array (0 to MAX_N - 1) of sample_t;
 
-    signal correlation_sample_interval : unsigned(7 downto 0) := (others => '0');
+    signal correlation_sample_interval : unsigned(7 downto 0) := "00000100";
     signal avg_window_size  : natural range 4 to MAX_N := MAX_N;
 
     signal buffer_reg       : buffer_t := (others => (others => '0'));

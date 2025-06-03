@@ -19,9 +19,9 @@ architecture rtl of LAFAsp_RAM is
     signal prev_corr_calculate  : std_logic := '0';
     signal corr_calculate       : std_logic := '0';
 
-    signal ram_raddr        :  std_logic_vector(9 downto 0) := (others => '0');
-    signal ram_waddr        :  std_logic_vector(9 downto 0) := (others => '0');
-    signal ram_q            :  std_logic_vector(15 downto 0) := (others => '0');
+    signal ram_raddr        : std_logic_vector(9 downto 0) := (others => '0');
+    signal ram_waddr        : std_logic_vector(9 downto 0) := (others => '0');
+    signal ram_q            : std_logic_vector(15 downto 0) := (others => '0');
     signal sendSignal       : tdma_min_port := (others => (others => '0'));
 begin
     LDR: entity work.LAFAsp
