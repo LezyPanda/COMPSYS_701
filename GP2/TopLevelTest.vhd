@@ -42,58 +42,59 @@ begin
 		recvs => recv_port
 	);
 	
-	-- asp_adc : entity work.ADCAsp
-	-- port map (
-	-- 	clock => clock,
-	-- 	adc   => adc_data,
-	-- 	send  => send_port(1),
-	-- 	recv  => recv_port(1)
-	-- );
+	asp_adc : entity work.ADCAsp
+	port map (
+		clock => clock,
+		adc   => adc_data,
+		send  => send_port(1),
+		recv  => recv_port(1)
+	);
 	
-	-- asp_laf : entity work.LAFAsp_RAM
-	-- port map (
-	-- 	clock => clock,
-	-- 	send  => send_port(2),
-	-- 	recv  => recv_port(2)
-	-- );
+	asp_laf : entity work.LAFAsp_RAM
+	port map (
+		clock => clock,
+		send  => send_port(2),
+		recv  => recv_port(2)
+	);
 	
-	-- asp_cor : entity work.CorAsp
-	-- port map (
-	-- 	clock => clock,
-	-- 	send  => send_port(3),
-	-- 	recv  => recv_port(3)
-	-- );
+	asp_cor : entity work.CorAsp
+	port map (
+		clock => clock,
+		send  => send_port(3),
+		recv  => recv_port(3)
+	);
 
-	-- asp_pd : entity work.PdAsp
-	-- port map (
-	-- 	clock => clock,
-	-- 	send  => send_port(4),
-	-- 	recv  => recv_port(4)
-	-- );
+	asp_pd : entity work.PdAsp
+	port map (
+		clock => clock,
+		send  => send_port(4),
+		recv  => recv_port(4)
+	);
 
-	-- recop : entity work.recop
-	-- port map (
-	-- 	clock  => clock,
-    --     key    => KEY,
-    --     sw     => SW,
-    --     ledr   => recop_ledr,
-    --     hex0   => HEX0,
-    --     hex1   => HEX1,
-    --     hex2   => HEX2,
-    --     hex3   => HEX3,
-    --     hex4   => HEX4,
-    --     hex5   => HEX5,
-	-- 	send  => send_port(5),
-	-- 	recv  => recv_port(5)
-	-- );
+	recop : entity work.recop
+	port map (
+		clock  => clock,
+        key    => KEY,
+        sw     => SW,
+        ledr   => recop_ledr,
+        hex0   => HEX0,
+        hex1   => HEX1,
+        hex2   => HEX2,
+        hex3   => HEX3,
+        hex4   => HEX4,
+        hex5   => HEX5,
+		send  => send_port(5),
+		recv  => recv_port(5)
+	);
 
-	-- signal_gen : entity work.play_signal
-	-- port map (
-	-- 	clk   => clock,
-	-- 	addr  => signal_gen_addr,
-	-- 	send  => send_port(6),
-	-- 	recv  => recv_port(6)
-	-- );
+	signal_gen : entity work.play_signal
+	port map (
+		clk   => clock,
+		addr  => signal_gen_addr,
+		send  => send_port(6),
+		recv  => recv_port(6),
+		data  => adc_data
+	);
     
     clock_gen : process
 	begin
@@ -109,14 +110,7 @@ begin
 		if (rising_edge(clock)) then
             counter := counter + 1;
 			signal_gen_addr <= counter mod ROM_DEPTH;
-			adc_data <= send_port(6).data(7 downto 0);
-
-			send_port(3).addr <= "00000100"; -- To PdAsp
-			send_port(3).data <= (others => '0');
-			send_port(3).data(0) <= '1'; -- Test
 		end if;
 	end process;
-
-	LEDR(0) <= recv_port(1).addr(0);
 
 end architecture;

@@ -61,12 +61,15 @@ begin
             if (avg_ready_sig = '1') then                    -- New Average Data Ready
                 sendSignal.addr <= "00000011";                      -- To CorAsp
                 sendSignal.data <= (others => '0');                 -- Clear
+                sendSignal.data(31 downto 28) <= "1000";            -- LAFAsp ADC Data Out Packet
                 sendSignal.data(9 downto 0) <= ram_waddr;           -- Send New Average Data Address
-            else
+            elsif (ram_raddr /= "0000000000") then
                 sendSignal.addr <= "00000011";                      -- To CorAsp
                 sendSignal.data <= (others => '0');                 -- Clear
+                sendSignal.data(31 downto 28) <= "1000";            -- LAFAsp ADC Data Out Packet
                 sendSignal.data(16) <= corr_calculate;              -- Enough ADC Samples to Calculate Correlation
                 sendSignal.data(15 downto 0) <= ram_q;              -- Send Q From RAM
+                ram_raddr <= (others => '0');                       -- Reset Read Address
             end if;
         end if;
     end process;

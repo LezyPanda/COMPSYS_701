@@ -10,7 +10,8 @@ entity play_signal is
 		clk   : in  std_logic;
 		addr  : in  integer range 0 to ROM_DEPTH - 1;
 		recv  : in  tdma_min_port;
-		send  : out tdma_min_port
+		send  : out tdma_min_port;
+		data  : out std_logic_vector(7 downto 0) := (others => '0')
 	);
 end entity;
 
@@ -20,9 +21,10 @@ begin
   	process(clk)
   	begin
     	if rising_edge(clk) then
-			sendSignal.data(7 downto 0) <= SIGNAL_ROM(addr);
-			sendSignal.data(8) <= '1';
+			data <= SIGNAL_ROM(addr);
+			--sendSignal.data(7 downto 0) <= SIGNAL_ROM(addr);
+			--sendSignal.data(8) <= '1';
     	end if;
   	end process;
-    send <= sendSignal;
+    --send <= sendSignal;
 end architecture;
