@@ -15,45 +15,28 @@ entity ADCAsp is
 end entity;
 
 architecture aADCAsp of ADCAsp is
-    signal adc_sample_delay : unsigned(7 downto 0) := "00000010";
+    signal adc_sample_delay : unsigned(15 downto 0) := "0000001111111111";
     signal sendSignal       : tdma_min_port;
-    signal rate             : std_logic_vector(1 downto 0) := "01"; -- Adjustable rate
 begin 
     clock_process: process(clock)
-        variable adc_sample_delay_counter   : integer range 0 to 255 := 0;
-        variable adc_rdy                    : std_logic := '0';
-        variable tick                       : unsigned(7 downto 0) := x"00";
+        variable adc_sample_delay_counter   : integer range 0 to 65535 := 0;
     begin
         if rising_edge(clock) then
             if (recv.data(31 downto 28) = "1001" and recv.data(23) = '0') then      -- ADC Config
-                adc_sample_delay <= unsigned(recv.data(7 downto 0));                    -- ADC Sampling Delay/Period
-                rate <= "01";  -- Adjustable rate
+                adc_sample_delay <= unsigned(recv.data(15 downto 0));                   -- ADC Sampling Delay/Period
             end if;
 
             if adc_sample_delay_counter >= to_integer(adc_sample_delay) then -- Delay has Expired, Read ADC
                 adc_sample_delay_counter := 0;
 
-                if tick /= 0 then
-                    tick := tick - 1;
-                    sendSignal.addr <= (others => '0');              -- Clear
-                    sendSignal.data <= (others => '0');              -- Clear
-                else
-                    case rate is
-                        when "11"   => tick := x"ff";
-                        when "10"   => tick := x"0f";
-                        when "01"   => tick := x"03";
-                        when others => tick := x"00";
-                    end case;
-
-                    sendSignal.addr <= "00000010";              -- To LAFAsp
-                    sendSignal.data <= (others => '0');         -- Clear
-                    sendSignal.data(31 downto 28) <= "1000";    -- Data Packet
-                    sendSignal.data(23 downto 20) <= "0001";    -- MODE
-                    sendSignal.data(8) <= '1';                  -- ADC Ready
-                    sendSignal.data(7 downto 0) <= adc;         -- ADC Data
-                end if;
+                sendSignal.addr <= "00000010";              -- To LAFAsp
+                sendSignal.data <= (others => '0');         -- Clear
+                sendSignal.data(31 downto 28) <= "1000";    -- Data Packet
+                sendSignal.data(23 downto 20) <= "0001";    -- MODE
+                sendSignal.data(8) <= '1';                  -- ADC Ready
+                sendSignal.data(7 downto 0) <= adc;         -- ADC Data
             else
-                sendSignal.addr <= (others => '0');              -- Clear
+                sendSignal.addr <= (others => '0');         -- Clear
                 sendSignal.data <= (others => '0');         -- Clear
             end if;
 
