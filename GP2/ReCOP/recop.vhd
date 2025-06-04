@@ -166,6 +166,12 @@ architecture combined of recop is
         );
     end component;
 
+    -- These cache may not be accurate, the initial values depend on the individual ASPs
+    signal avg_window   : bit_3 := "100";   -- Default AVG Window
+    signal corr_window  : bit_4 := "0100";  -- Default Correlation Window
+    signal peak_type    : bit_1 := '0';     -- Default Peak Type (Low)
+
+    signal sendSignal   : tdma_min_port := (others => (others => '0'));
 begin
     -- BCD to 7-segment decoder instances
     hex0_inst: Bcd2seg7 port map (hex0_in_signal, hex0_signal);
@@ -247,37 +253,44 @@ begin
         );
 
     clk <= clock;
-    --reset <= '1' when sw(9) = '1' else '0';
-    reset <= '1' when key(0) = '1' else '0';
 
-    -- This breaks! for some reason it compiles, however the whole thing will just not work (memory could not be read)
-    -- reset <= '1' when key(0) = '0' else '1';
-    
-    -- hex0_signal <= "0000000" when sw(0) = '1' else "1111111";
-    -- hex1_signal <= "0000000" when sw(1) = '1' else "1111111";
-    -- hex2_signal <= "0000000" when sw(2) = '1' else "1111111";
-    -- hex3_signal <= "0000000" when sw(3) = '1' else "1111111";
-    -- hex4_signal <= "0000000" when sw(4) = '1' else "1111111";
-    -- hex5_signal <= "0000000" when sw(5) = '1' else "1111111";
+    process(clock)
+    begin
+        if (rising_edge(clock)) then
+            if (key(0) = '1') then                          -- 1st Button Pressed
+                sendSignal.addr <= "00000001";                  -- To ADCAsp
+                sendSignal.data <= (others => '0');             -- Clear
+                sendSignal.data(31 downto 28) <= "1001";        -- Config Packet
+                sendSignal.data(23) <= '0';                     -- ADC Config Packet
+                sendSignal.data(9 downto 0) <= sw;              -- ADC Sampling Delay/Period by Switches
+            elsif (key(1) = '1') then                       -- 2nd Button Pressed
+                sendSignal.addr <= "00000010";                  -- To LAF
+                sendSignal.data <= (others => '0');             -- Clear
+                sendSignal.data(31 downto 28) <= "1001";        -- Config Packet
+                sendSignal.data(23) <= '1';                     -- LAF Config Packet
+                sendSignal.data(9 downto 3) <= sw(9 downto 3);  -- LAF Config by Switches
+                sendSignal.data(2 downto 0) <= sw(2 downto 0);  -- AVG Window by Switches | 000 = 4, 001 = 8, 010 = 16, 011 = 32, 100 = 64 
+                avg_window <= sw(2 downto 0);                   -- Update AVG Window Cache
+            elsif (key(2) = '1') then                       -- 3rd Button Pressed
+                sendSignal.addr <= "00000011";                  -- To CorAsp
+                sendSignal.data <= (others => '0');             -- Clear
+                sendSignal.data(31 downto 28) <= "1010";        -- Cor Config Packet
+                sendSignal.data(3 downto 0) <= sw(3 downto 0);  -- Correlation Sample Interval by Switches
+                corr_window <= sw(3 downto 0);                  -- Update Correlation Window Cache
+            elsif (key(3) = '1') then                       -- 4th Button Pressed
+                sendSignal.addr <= "00000100";                  -- To PeakAsp  
+                sendSignal.data <= (others => '0');             -- Clear
+                sendSignal.data(31 downto 28) <= "1011";        -- Config Packet
+                sendSignal.data(0) <= sw(0);                    -- Peak mode low or high
+                peak_type <= sw(0);                             -- Update Peak Type Cache
+            else
+                sendSignal.addr <= (others => '0');  -- Clear
+                sendSignal.data <= (others => '0');  -- Clear
+            end if;
+        end if;
+    end process;
 
-    debug_rf_reg_listen <= to_integer(unsigned(sw(3 downto 0)));
-    hex0_in_signal <= debug_rf_reg_result(3 downto 0);
-    hex1_in_signal <= "1111";
-    hex2_in_signal <= "1111";
-    hex3_in_signal <= "1111";
-    hex4_in_signal <= "1111";
-    hex5_in_signal <= sw(3 downto 0);
+    ledr <= avg_window & '0' & corr_window & '0'& peak_type;
 
-
-    ledr_signal <= sw(9) & sw(8) & sw(7) & sw(6) & sw(5) & sw(4) & sw(3) & sw(2) & sw(1) & sw(0);
-
-
-    ledr <= ledr_signal;
-    hex0 <= hex0_signal;
-    hex1 <= hex1_signal;
-    hex2 <= hex2_signal;
-    hex3 <= hex3_signal;
-    hex4 <= hex4_signal;
-    hex5 <= hex5_signal;
-    
+    send <= sendSignal;
 end combined;

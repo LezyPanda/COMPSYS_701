@@ -16,7 +16,7 @@ end entity;
 architecture rtl of CorAsp is
     type states is (S0, S1, S2, S3);
     signal state                    : states := S0;
-    signal correlation_window_size  : unsigned(15 downto 0) := "0000000000000011";
+    signal correlation_window_size  : unsigned(3 downto 0) := "0100";
     signal counter                  : unsigned(15 downto 0) := (others => '0');
 
     signal calculate                    : std_logic := '0';
@@ -48,7 +48,7 @@ begin
     begin
         if rising_edge(clock) then
             if (recv.data(31 downto 28) = "1010") then                                  -- Correlation Calculator Config
-                correlation_window_size <= unsigned(recv.data(15 downto 0));                -- Correlation WIndow Size
+                correlation_window_size <= unsigned(recv.data(3 downto 0));                -- Correlation WIndow Size
             elsif (recv.data(31 downto 28) = "1000") then                               -- Data Packet
                 if (recv.data(23 downto 20) = "0011") then                                  -- AVG Data Packet
                     if (recv.data(16) = '1') then

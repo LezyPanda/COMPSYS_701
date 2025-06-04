@@ -18,7 +18,6 @@ end entity;
 
 architecture aPdASP of PdAsp is
     -- Prev State
-	signal last_correlation_value 	: std_logic_vector(35 downto 0);
     signal last_slope_pos 			: std_logic := '0';
 
 	-- Flags and Counters
