@@ -42,7 +42,8 @@ begin
         variable avg_data_mem_addr      : std_logic_vector(9 downto 0) := (others => '0');
         variable newest_avg_data_addr   : std_logic_vector(9 downto 0) := (others => '0');
         variable correlation_rdy        : std_logic := '0';
-        variable just_send_avg_data_rq  : std_logic := '0';
+        variable send_avg_data_rq       : std_logic := '0';
+        variable has_send_avg_data_rq   : std_logic := '0';
         variable just_recv_avg_data     : std_logic := '0';
     begin
         if rising_edge(clock) then
@@ -64,12 +65,13 @@ begin
             case state is
                 when S0 =>
                     if (just_recv_avg_data = '0') then                              -- If we have not just received average data requested
-                        if (just_send_avg_data_rq = '0') then                           -- If we have not just sent average data request
+                        if (has_send_avg_data_rq = '0') then                           -- If we have not just sent average data request
                             avg_data_mem_addr := std_logic_vector(unsigned(newest_avg_data_addr) - to_unsigned((to_integer(correlation_window_size) / 2) - 1, avg_data_mem_addr'length));
-                            just_send_avg_data_rq := '1';
+                            send_avg_data_rq := '1';
                         end if;
                     else                                                            -- We received average data requested
                         just_recv_avg_data := '0';  
+                        has_send_avg_data_rq := '0';
                         correlation_rdy := '0';
                         correlation_pair_product <= (others => '0');
                         counter <= (others => '0');
@@ -84,12 +86,13 @@ begin
                     end if;
                 when S1 =>
                     if (just_recv_avg_data = '0') then                              -- If we have not just received average data requested
-                        if (just_send_avg_data_rq = '0') then                           -- If we have not just sent average data request
+                        if (has_send_avg_data_rq = '0') then                           -- If we have not just sent average data request
                             avg_data_mem_addr := std_logic_vector(unsigned(current_corr_origin) - to_unsigned(to_integer(counter), avg_data_mem_addr'length) - 1);
-                            just_send_avg_data_rq := '1';
+                            send_avg_data_rq := '1';
                         end if;
-                    else                  
-                        just_recv_avg_data := '0';                                      -- We received average data requested
+                    else                                                            -- We received average data requested
+                        just_recv_avg_data := '0';
+                        has_send_avg_data_rq := '0';
                         correlation_pair_product <= std_logic_vector(unsigned(multiplicand_temp) * unsigned(avg_data));
                         correlation_rdy := '0';
                         state <= S2;
@@ -99,12 +102,13 @@ begin
                     state <= S3;
                 when S3 =>
                     if (just_recv_avg_data = '0') then                              -- If we have not just received average data requested
-                        if (just_send_avg_data_rq = '0') then                           -- If we have not just sent average data request
+                        if (has_send_avg_data_rq = '0') then                           -- If we have not just sent average data request
                             avg_data_mem_addr := std_logic_vector(unsigned(current_corr_origin) + to_unsigned(to_integer(counter), avg_data_mem_addr'length));
-                            just_send_avg_data_rq := '1';
+                            send_avg_data_rq := '1';
                         end if;
                     else                           
                         just_recv_avg_data := '0';
+                        has_send_avg_data_rq := '0';
                         correlation <= std_logic_vector(unsigned(correlation) + unsigned(correlation_pair_product));
                         correlation_pair_product <= (others => '0');
                         if to_integer(counter) >= to_integer(correlation_window_size) / 2 then
@@ -138,13 +142,14 @@ begin
                 sendSignal.data(18) <= '1';                                 -- Indicates Second Half of Correlation (Correlation Ready)
                 sendSignal.data(17 downto 0) <= correlation(17 downto 0);   -- Second Half of Correlation
                 correlation_second_half <= '0';                             -- Reset Second Half Flag
-            elsif (just_send_avg_data_rq = '1') then                    -- Send Average Data Request
+            elsif (send_avg_data_rq = '1' and has_send_avg_data_rq = '0') then -- Send Average Data Request
                 sendSignal.addr <= "00000010";                              -- To LAFAsp
                 sendSignal.data <= (others => '0');                         -- Clear
                 sendSignal.data(31 downto 28) <= "1000";                    -- Data Packet
                 sendSignal.data(23 downto 20) <= "0010";                    -- MODE
                 sendSignal.data(9 downto 0) <= avg_data_mem_addr;           -- Average Data Memory Address
-                just_send_avg_data_rq := '0';                               -- Reset Flag
+                send_avg_data_rq := '0';                                    -- Reset Flag
+                has_send_avg_data_rq := '1';                                -- Sent Already
             else
                 sendSignal.addr <= (others => '0');                         -- Clear
                 sendSignal.data <= (others => '0');                         -- Clear
