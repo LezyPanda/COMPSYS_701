@@ -7,7 +7,7 @@ use work.TdmaMinTypes.all;
 
 entity PdAsp is
 	generic (
-		DIFFERENCE : integer := 5000
+		DIFFERENCE : integer := 2000000
 	);
 	port (
 		clock : in  std_logic;
@@ -18,7 +18,6 @@ end entity;
 
 architecture aPdASP of PdAsp is
     -- Prev State
-	signal last_correlation_value 	: std_logic_vector(35 downto 0);
     signal last_slope_pos 			: std_logic := '0';
 
 	-- Flags and Counters
@@ -70,11 +69,13 @@ begin
 				curr_slope_pos := last_slope_pos;
 				correlation_rdy := '0';
 				if (last_slope_pos = '1') then																-- Last Slope was Positive
-					if (signed(current_correlation_value) >= signed(last_correlation_value)) then				-- Still Positive Slope
+					if (unsigned(current_correlation_value) >= unsigned(last_correlation_value)) then				-- Still Positive Slope
 						counter <= counter + 1;																		-- Increment Counter
-					elsif (signed(current_correlation_value) < signed(last_correlation_value)) and 				
-						((unsigned(previous_maximum) = 0) or 
-						(abs(signed(last_correlation_value) - signed(previous_maximum)) <= DIFFERENCE)) then	-- Slope Changed to Negative
+					elsif (unsigned(current_correlation_value) < unsigned(last_correlation_value)) and
+                          ( unsigned(previous_maximum) = to_unsigned(0, previous_maximum'length)
+                            or to_integer(abs(signed(last_correlation_value) - signed(previous_maximum))) <= DIFFERENCE
+                            or unsigned(last_correlation_value) > unsigned(previous_maximum)
+                          ) then	-- Slope Changed to Negative
 						correlation_max <= last_correlation_value;
 						previous_maximum <= last_correlation_value;  
 						curr_slope_pos := '0';
@@ -87,11 +88,11 @@ begin
 					end if;
 				else																						-- Last Slope was Negative
 					counter <= counter + 1;
-					if (signed(current_correlation_value) > signed(last_correlation_value)) and
-					(signed(correlation_min) - signed(last_correlation_value)) >= DIFFERENCE then			-- Slope Changed to Positive
+					if (unsigned(current_correlation_value) > unsigned(last_correlation_value)) and
+					(unsigned(correlation_min) - unsigned(last_correlation_value)) >= DIFFERENCE then			-- Slope Changed to Positive
 						correlation_min <= last_correlation_value;
 						curr_slope_pos := '1';
-					elsif (signed(current_correlation_value) > signed(last_correlation_value)) then
+					elsif (unsigned(current_correlation_value) > unsigned(last_correlation_value)) then
 						curr_slope_pos := '1';
 					end if;
 				end if;
