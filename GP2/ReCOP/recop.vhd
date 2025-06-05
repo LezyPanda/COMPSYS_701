@@ -15,12 +15,6 @@ entity recop is
         key         : in bit_4;
         sw          : in bit_10;
         ledr        : out bit_10;
-        hex0        : out bit_7;
-        hex1        : out bit_7;
-        hex2        : out bit_7;
-        hex3        : out bit_7;
-        hex4        : out bit_7;
-        hex5        : out bit_7;
 
         recv  : in  tdma_min_port;
 		send  : out tdma_min_port

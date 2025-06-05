@@ -20,7 +20,13 @@ entity TopLevel is
 		hex2          : out   std_logic_vector(6 downto 0);
 		hex3          : out   std_logic_vector(6 downto 0);
 		hex4          : out   std_logic_vector(6 downto 0);
-		hex5          : out   std_logic_vector(6 downto 0)
+		hex5          : out   std_logic_vector(6 downto 0);
+		DRAM_DQ       : inout std_logic_vector(15 downto 0);
+		DRAM_ADDR     : out   std_logic_vector(12 downto 0);
+		DRAM_BA       : out   std_logic_vector(1 downto 0);
+		DRAM_CAS_N, DRAM_RAS_N, DRAM_CLK : out std_logic;
+		DRAM_CKE, DRAM_CS_N, DRAM_WE_N    : out std_logic;
+		DRAM_UDQM, DRAM_LDQM              : out std_logic
 	);
 end entity;
 
@@ -81,12 +87,6 @@ begin
         key    => key,
         sw     => sw,
         ledr   => recop_ledr,
-        hex0   => hex0,
-        hex1   => hex1,
-        hex2   => hex2,
-        hex3   => hex3,
-        hex4   => hex4,
-        hex5   => hex5,
 		send  => send_port(5),
 		recv  => recv_port(5)
 	);
@@ -98,6 +98,28 @@ begin
 		send  => send_port(6),
 		recv  => recv_port(6),
 		data  => adc_data
+	);
+
+	-- Nios System 2A instantiation
+	Nios_Sys_2A_inst : entity work.Nios_Sys_2A
+	port map (
+	    CLOCK_50 => clock,
+	    KEY      => key(1 downto 0),
+	    HEX5     => hex5,
+	    HEX4     => hex4,
+	    HEX1     => hex1,
+	    HEX0     => hex0,
+	    DRAM_DQ  => DRAM_DQ,
+	    DRAM_ADDR=> DRAM_ADDR,
+	    DRAM_BA  => DRAM_BA,
+	    DRAM_CAS_N=> DRAM_CAS_N,
+	    DRAM_RAS_N=> DRAM_RAS_N,
+	    DRAM_CLK => DRAM_CLK,
+	    DRAM_CKE => DRAM_CKE,
+	    DRAM_CS_N=> DRAM_CS_N,
+	    DRAM_WE_N=> DRAM_WE_N,
+	    DRAM_UDQM=> DRAM_UDQM,
+	    DRAM_LDQM=> DRAM_LDQM
 	);
 
 	process(clock)
