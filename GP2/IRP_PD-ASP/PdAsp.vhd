@@ -54,7 +54,7 @@ begin
 						current_correlation_value := incomplete_correlation_value;						-- Update Current Correlation Value
 					end if;
 				elsif (recv.data(23 downto 20) = "0110") then 									-- Correlation Count Read Packet
-					correlation_peak_read  := recv.data(1);											-- Set Correlation Peak Read
+					correlation_peak_read  <= recv.data(1);											-- Set Correlation Peak Read
 					correlation_count_read := recv.data(0);											-- Set Correlation Count Read
 				end if;
 			end if;
@@ -108,8 +108,8 @@ begin
 						sendSignal.data(17 downto 0) <= correlation_min(17 downto 0); 	-- Send Second Half of Min Correlation Value
 					else
 						sendSignal.data(17 downto 0) <= correlation_max(17 downto 0); 	-- Send Second Half of Nax Correlation Value
-					end if;
-					correlation_peak_read := '0';												-- Reset Correlation Peak Read Flag
+						correlation_peak_read <= '0';									-- Reset Correlation Peak Read Flag
+					end if;							
 				end if;
 			elsif (peak_detected = '1') then												-- Peak Detected
 				sendSignal.addr <= "00000111"; 												-- To Nios

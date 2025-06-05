@@ -115,6 +115,9 @@ begin
 				send_port(7).data(31 downto 28) <= "1000";
 				send_port(7).data(23 downto 20) <= "0110";
 				send_port(7).data(1 downto 0) <= "11";
+			else
+				send_port(7).addr <= (others => '0');
+				send_port(7).data <= (others => '0');
 			end if;
 		end if;
 	end process;
