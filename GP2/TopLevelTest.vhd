@@ -109,12 +109,13 @@ begin
                 counter := counter + 1;
                 signal_gen_addr <= counter mod ROM_DEPTH;
             end if;
-			if (recv_port(7).data(31 downto 28) = "1000" and recv_port(7).data(23 downto 20) = "0111") then
+			if (recv_port(7).data(31 downto 28) = "1000" and recv_port(7).data(23 downto 20) = "0111" and recv_port(7).data(18) = '1') then
 				send_port(7).addr <= "00000100";
 				send_port(7).data <= (others => '0');
 				send_port(7).data(31 downto 28) <= "1000";
 				send_port(7).data(23 downto 20) <= "0110";
 				send_port(7).data(1 downto 0) <= "11";
+				
 			else
 				send_port(7).addr <= (others => '0');
 				send_port(7).data <= (others => '0');
