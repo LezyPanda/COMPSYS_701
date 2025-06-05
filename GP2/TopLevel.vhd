@@ -8,7 +8,7 @@ use work.TdmaMinTypes.all;
 
 entity TopLevel is
 	generic (
-		ports : positive := 7
+		ports : positive := 8
 	);
 	port (
 		clock_50      : in    std_logic;
@@ -32,6 +32,23 @@ architecture rtl of TopLevel is
 	signal signal_gen_addr : integer range 0 to ROM_DEPTH - 1 := 0;
 
 	signal adc_data : std_logic_vector(7 downto 0) := (others => '0');
+
+	component Nios_V1 is
+	port (
+		clk_clk                                   : in  std_logic                     := '0'; --                                clk.clk
+		hex0_external_connection_export           : out std_logic_vector(6 downto 0);         --           hex0_external_connection.export
+		hex1_external_connection_export           : out std_logic_vector(6 downto 0);         --           hex1_external_connection.export
+		hex2_external_connection_export           : out std_logic_vector(6 downto 0);         --           hex2_external_connection.export
+		hex3_external_connection_export           : out std_logic_vector(6 downto 0);         --           hex3_external_connection.export
+		hex4_external_connection_export           : out std_logic_vector(6 downto 0);         --           hex4_external_connection.export
+		hex5_external_connection_export           : out std_logic_vector(6 downto 0);         --           hex5_external_connection.export
+		reset_reset_n                             : in  std_logic                     := '0'; --                              reset.reset_n
+		tdma_recv_addr_external_connection_export : in 	std_logic_vector(7 downto 0);         -- tdma_recv_addr_external_connection.export
+		tdma_recv_data_external_connection_export : in 	std_logic_vector(31 downto 0);        -- tdma_recv_data_external_connection.export
+		tdma_send_addr_external_connection_export : out std_logic_vector(7 downto 0);         -- tdma_send_addr_external_connection.export
+		tdma_send_data_external_connection_export : out std_logic_vector(31 downto 0)         -- tdma_send_data_external_connection.export
+	);
+	end component Nios_V1;
 begin
 
 	clock <= clock_50;
@@ -81,12 +98,6 @@ begin
         key    => key,
         sw     => sw,
         ledr   => recop_ledr,
-        hex0   => hex0,
-        hex1   => hex1,
-        hex2   => hex2,
-        hex3   => hex3,
-        hex4   => hex4,
-        hex5   => hex5,
 		send  => send_port(5),
 		recv  => recv_port(5)
 	);
@@ -100,6 +111,22 @@ begin
 		data  => adc_data
 	);
 
+	nios : component Nios_V1
+	port map (
+		clk_clk                            => clock_50,
+		hex0_external_connection_export    => hex0,
+		hex1_external_connection_export    => hex1,
+		hex2_external_connection_export    => hex2,
+		hex3_external_connection_export    => hex3,
+		hex4_external_connection_export    => hex4,
+		hex5_external_connection_export    => hex5,
+		reset_reset_n                      => KEY(0),
+		tdma_recv_addr_external_connection_export => recv_port(7).addr,
+		tdma_recv_data_external_connection_export => recv_port(7).data,
+		tdma_send_addr_external_connection_export => send_port(7).addr,
+		tdma_send_data_external_connection_export => send_port(7).data
+	);
+
 	process(clock)
         variable counter : integer := 0;
 	begin
@@ -110,7 +137,7 @@ begin
             end if;
 		end if;
 	end process;
-	-- drive LEDR only from TDMA ports, avoid conflict with recops
+
 	LEDR(7 downto 0) <= recv_port(1).addr;
 	LEDR(8) <= recv_port(1).data(0);
 	LEDR(9) <= send_port(1).data(0);

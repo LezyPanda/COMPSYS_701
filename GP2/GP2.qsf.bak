@@ -1,0 +1,95 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2018  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+# Date created = 16:43:55  May 29, 2025
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		GP2_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone V"
+set_global_assignment -name DEVICE 5CSEMA5F31C6
+set_global_assignment -name TOP_LEVEL_ENTITY TopLevel
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:43:55  MAY 29, 2025"
+set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
+set_global_assignment -name BOARD "DE1-SoC Board"
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
+set_global_assignment -name QIP_FILE Nios_V1/synthesis/Nios_V1.qip
+set_global_assignment -name VHDL_FILE TdmaMin/ip/TdmaMinFifo/TdmaMinFifo.vhd -library ip
+set_global_assignment -name QIP_FILE TdmaMin/ip/TdmaMinFifo/TdmaMinFifo.qip
+set_global_assignment -name VHDL_FILE "IRP_LAF-ASP/LAFAsp_RAM.vhd"
+set_global_assignment -name VHDL_FILE "IRP_LAF-ASP/LAFAsp.vhd"
+set_global_assignment -name VHDL_FILE "IRP_LAF-ASP/AverageDataRAM.vhd"
+set_global_assignment -name VHDL_FILE Gen/signal_rom_pkg.vhd
+set_global_assignment -name VHDL_FILE Gen/playSignal.vhd
+set_global_assignment -name VHDL_FILE TopLevel.vhd
+set_global_assignment -name VHDL_FILE TdmaMin/TdmaMinTypes.vhd
+set_global_assignment -name VHDL_FILE TdmaMin/TdmaMinSwitch.vhd
+set_global_assignment -name VHDL_FILE TdmaMin/TdmaMinStage.vhd
+set_global_assignment -name VHDL_FILE TdmaMin/TdmaMinSlots.vhd
+set_global_assignment -name VHDL_FILE TdmaMin/TdmaMinInterface.vhd
+set_global_assignment -name VHDL_FILE TdmaMin/TdmaMinFabric.vhd
+set_global_assignment -name VHDL_FILE TdmaMin/TdmaMin.vhd
+set_global_assignment -name VHDL_FILE ReCOP/various_constants.vhd
+set_global_assignment -name VHDL_FILE ReCOP/registers.vhd
+set_global_assignment -name VHDL_FILE ReCOP/registerfile.vhd
+set_global_assignment -name VHDL_FILE ReCOP/regfile.vhd
+set_global_assignment -name VHDL_FILE ReCOP/recop_types.vhd
+set_global_assignment -name VHDL_FILE ReCOP/recop_pll.vhd
+set_global_assignment -name VHDL_FILE ReCOP/recop.vhd
+set_global_assignment -name VHDL_FILE ReCOP/prog_mem.vhd
+set_global_assignment -name VHDL_FILE ReCOP/prog_counter.vhd
+set_global_assignment -name VHDL_FILE ReCOP/pll.vhd
+set_global_assignment -name VHDL_FILE ReCOP/opcodes.vhd
+set_global_assignment -name VHDL_FILE ReCOP/memory_model.vhd
+set_global_assignment -name VHDL_FILE ReCOP/memory_arbiter.vhd
+set_global_assignment -name VHDL_FILE ReCOP/inst_reg.vhd
+set_global_assignment -name VHDL_FILE ReCOP/datapath.vhd
+set_global_assignment -name VHDL_FILE ReCOP/data_mem.vhd
+set_global_assignment -name VHDL_FILE ReCOP/controlunit.vhd
+set_global_assignment -name VHDL_FILE ReCOP/bcd2seg7.vhd
+set_global_assignment -name VHDL_FILE ReCOP/ALU.vhd
+set_global_assignment -name VHDL_FILE "IRP_PD-ASP/PdAsp.vhd"
+set_global_assignment -name VHDL_FILE "IRP_COR-ASP/CorAsp.vhd"
+set_global_assignment -name VHDL_FILE "IRP_ADC-ASP/ADCAsp.vhd"
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

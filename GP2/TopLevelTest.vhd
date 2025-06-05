@@ -8,7 +8,7 @@ use work.TdmaMinTypes.all;
 
 entity TopLevelTest is
 	generic (
-		ports : positive := 7
+		ports : positive := 8
 	);
 end entity;
 
@@ -18,12 +18,12 @@ architecture rtl of TopLevelTest is
 	signal KEY           : std_logic_vector(3 downto 0) := (others => '0');
 	signal SW            : std_logic_vector(9 downto 0) := (others => '0');
 	signal LEDR          : std_logic_vector(9 downto 0) := (others => '0');
-	signal HEX0          : std_logic_vector(6 downto 0) := (others => '0');
-	signal HEX1          : std_logic_vector(6 downto 0) := (others => '0');
-	signal HEX2          : std_logic_vector(6 downto 0) := (others => '0');
-	signal HEX3          : std_logic_vector(6 downto 0) := (others => '0');
-	signal HEX4          : std_logic_vector(6 downto 0) := (others => '0');
-	signal HEX5          : std_logic_vector(6 downto 0) := (others => '0');
+	signal hex0          : std_logic_vector(6 downto 0) := (others => '0');
+	signal hex1          : std_logic_vector(6 downto 0) := (others => '0');
+	signal hex2          : std_logic_vector(6 downto 0) := (others => '0');
+	signal hex3          : std_logic_vector(6 downto 0) := (others => '0');
+	signal hex4          : std_logic_vector(6 downto 0) := (others => '0');
+	signal hex5          : std_logic_vector(6 downto 0) := (others => '0');
 
 	signal send_port : tdma_min_ports(0 to ports - 1);
 	signal recv_port : tdma_min_ports(0 to ports - 1);
@@ -31,6 +31,9 @@ architecture rtl of TopLevelTest is
 	signal signal_gen_addr : integer range 0 to ROM_DEPTH - 1 := 0;
 
 	signal adc_data : std_logic_vector(7 downto 0) := (others => '0');
+
+	signal nios_recv : tdma_min_port;
+	signal nios_send : tdma_min_port;
 begin
 	tdma_min : entity work.TdmaMin
 	generic map (
@@ -77,12 +80,6 @@ begin
         key    => KEY,
         sw     => SW,
         ledr   => recop_ledr,
-        hex0   => HEX0,
-        hex1   => HEX1,
-        hex2   => HEX2,
-        hex3   => HEX3,
-        hex4   => HEX4,
-        hex5   => HEX5,
 		send  => send_port(5),
 		recv  => recv_port(5)
 	);
@@ -106,19 +103,23 @@ begin
 
 	process(clock)
         variable counter : integer := 0;
-        variable adc_sent : boolean := false;
 	begin
 		if (rising_edge(clock)) then
-            if send_port(1).data(8) = '1' then -- ADC has sent the data
-                adc_sent := true;
-            end if;
-
-            if adc_sent then
+            if send_port(1).data(8) = '1' then
                 counter := counter + 1;
                 signal_gen_addr <= counter mod ROM_DEPTH;
-                adc_sent := false;
             end if;
+			if (recv_port(7).data(31 downto 28) = "1000" and recv_port(7).data(23 downto 20) = "0111") then
+				send_port(7).addr <= "00000100";
+				send_port(7).data <= (others => '0');
+				send_port(7).data(31 downto 28) <= "1000";
+				send_port(7).data(23 downto 20) <= "0110";
+				send_port(7).data(1 downto 0) <= "11";
+			end if;
 		end if;
 	end process;
+
+	nios_recv.addr <= recv_port(7).addr;
+	nios_recv.data <= recv_port(7).data;
 
 end architecture;

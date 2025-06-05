@@ -1,0 +1,169 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 608 544)
+	(text "Nios_V1" (rect 280 -1 315 11)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 528 20 540)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "clk_clk" (rect 0 0 27 12)(font "Arial" (font_size 8)))
+		(text "clk_clk" (rect 4 61 46 72)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 272 72)(line_width 1))
+	)
+	(port
+		(pt 0 352)
+		(input)
+		(text "reset_reset_n" (rect 0 0 56 12)(font "Arial" (font_size 8)))
+		(text "reset_reset_n" (rect 4 341 82 352)(font "Arial" (font_size 8)))
+		(line (pt 0 352)(pt 272 352)(line_width 1))
+	)
+	(port
+		(pt 0 392)
+		(input)
+		(text "tdma_recv_addr_external_connection_export[7..0]" (rect 0 0 202 12)(font "Arial" (font_size 8)))
+		(text "tdma_recv_addr_external_connection_export[7..0]" (rect 4 381 286 392)(font "Arial" (font_size 8)))
+		(line (pt 0 392)(pt 272 392)(line_width 3))
+	)
+	(port
+		(pt 0 432)
+		(input)
+		(text "tdma_recv_data_external_connection_export[31..0]" (rect 0 0 205 12)(font "Arial" (font_size 8)))
+		(text "tdma_recv_data_external_connection_export[31..0]" (rect 4 421 292 432)(font "Arial" (font_size 8)))
+		(line (pt 0 432)(pt 272 432)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(output)
+		(text "hex0_external_connection_export[6..0]" (rect 0 0 153 12)(font "Arial" (font_size 8)))
+		(text "hex0_external_connection_export[6..0]" (rect 4 101 226 112)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 272 112)(line_width 3))
+	)
+	(port
+		(pt 0 152)
+		(output)
+		(text "hex1_external_connection_export[6..0]" (rect 0 0 152 12)(font "Arial" (font_size 8)))
+		(text "hex1_external_connection_export[6..0]" (rect 4 141 226 152)(font "Arial" (font_size 8)))
+		(line (pt 0 152)(pt 272 152)(line_width 3))
+	)
+	(port
+		(pt 0 192)
+		(output)
+		(text "hex2_external_connection_export[6..0]" (rect 0 0 153 12)(font "Arial" (font_size 8)))
+		(text "hex2_external_connection_export[6..0]" (rect 4 181 226 192)(font "Arial" (font_size 8)))
+		(line (pt 0 192)(pt 272 192)(line_width 3))
+	)
+	(port
+		(pt 0 232)
+		(output)
+		(text "hex3_external_connection_export[6..0]" (rect 0 0 153 12)(font "Arial" (font_size 8)))
+		(text "hex3_external_connection_export[6..0]" (rect 4 221 226 232)(font "Arial" (font_size 8)))
+		(line (pt 0 232)(pt 272 232)(line_width 3))
+	)
+	(port
+		(pt 0 272)
+		(output)
+		(text "hex4_external_connection_export[6..0]" (rect 0 0 154 12)(font "Arial" (font_size 8)))
+		(text "hex4_external_connection_export[6..0]" (rect 4 261 226 272)(font "Arial" (font_size 8)))
+		(line (pt 0 272)(pt 272 272)(line_width 3))
+	)
+	(port
+		(pt 0 312)
+		(output)
+		(text "hex5_external_connection_export[6..0]" (rect 0 0 153 12)(font "Arial" (font_size 8)))
+		(text "hex5_external_connection_export[6..0]" (rect 4 301 226 312)(font "Arial" (font_size 8)))
+		(line (pt 0 312)(pt 272 312)(line_width 3))
+	)
+	(port
+		(pt 0 472)
+		(output)
+		(text "tdma_send_addr_external_connection_export[7..0]" (rect 0 0 202 12)(font "Arial" (font_size 8)))
+		(text "tdma_send_addr_external_connection_export[7..0]" (rect 4 461 286 472)(font "Arial" (font_size 8)))
+		(line (pt 0 472)(pt 272 472)(line_width 3))
+	)
+	(port
+		(pt 0 512)
+		(output)
+		(text "tdma_send_data_external_connection_export[31..0]" (rect 0 0 205 12)(font "Arial" (font_size 8)))
+		(text "tdma_send_data_external_connection_export[31..0]" (rect 4 501 292 512)(font "Arial" (font_size 8)))
+		(line (pt 0 512)(pt 272 512)(line_width 3))
+	)
+	(drawing
+		(text "clk" (rect 257 43 532 99)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 277 67 572 144)(font "Arial" (color 0 0 0)))
+		(text "hex0_external_connection" (rect 123 83 390 179)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 277 107 590 224)(font "Arial" (color 0 0 0)))
+		(text "hex1_external_connection" (rect 125 123 394 259)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 277 147 590 304)(font "Arial" (color 0 0 0)))
+		(text "hex2_external_connection" (rect 123 163 390 339)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 277 187 590 384)(font "Arial" (color 0 0 0)))
+		(text "hex3_external_connection" (rect 123 203 390 419)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 277 227 590 464)(font "Arial" (color 0 0 0)))
+		(text "hex4_external_connection" (rect 123 243 390 499)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 277 267 590 544)(font "Arial" (color 0 0 0)))
+		(text "hex5_external_connection" (rect 123 283 390 579)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 277 307 590 624)(font "Arial" (color 0 0 0)))
+		(text "reset" (rect 243 323 516 659)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "reset_n" (rect 277 347 596 704)(font "Arial" (color 0 0 0)))
+		(text "tdma_recv_addr_external_connection" (rect 55 363 314 739)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 277 387 590 784)(font "Arial" (color 0 0 0)))
+		(text "tdma_recv_data_external_connection" (rect 56 403 316 819)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 277 427 590 864)(font "Arial" (color 0 0 0)))
+		(text "tdma_send_addr_external_connection" (rect 51 443 306 899)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 277 467 590 944)(font "Arial" (color 0 0 0)))
+		(text "tdma_send_data_external_connection" (rect 52 483 308 979)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 277 507 590 1024)(font "Arial" (color 0 0 0)))
+		(text " Nios_V1 " (rect 568 528 1190 1066)(font "Arial" ))
+		(line (pt 272 32)(pt 336 32)(line_width 1))
+		(line (pt 336 32)(pt 336 528)(line_width 1))
+		(line (pt 272 528)(pt 336 528)(line_width 1))
+		(line (pt 272 32)(pt 272 528)(line_width 1))
+		(line (pt 273 52)(pt 273 76)(line_width 1))
+		(line (pt 274 52)(pt 274 76)(line_width 1))
+		(line (pt 273 92)(pt 273 116)(line_width 1))
+		(line (pt 274 92)(pt 274 116)(line_width 1))
+		(line (pt 273 132)(pt 273 156)(line_width 1))
+		(line (pt 274 132)(pt 274 156)(line_width 1))
+		(line (pt 273 172)(pt 273 196)(line_width 1))
+		(line (pt 274 172)(pt 274 196)(line_width 1))
+		(line (pt 273 212)(pt 273 236)(line_width 1))
+		(line (pt 274 212)(pt 274 236)(line_width 1))
+		(line (pt 273 252)(pt 273 276)(line_width 1))
+		(line (pt 274 252)(pt 274 276)(line_width 1))
+		(line (pt 273 292)(pt 273 316)(line_width 1))
+		(line (pt 274 292)(pt 274 316)(line_width 1))
+		(line (pt 273 332)(pt 273 356)(line_width 1))
+		(line (pt 274 332)(pt 274 356)(line_width 1))
+		(line (pt 273 372)(pt 273 396)(line_width 1))
+		(line (pt 274 372)(pt 274 396)(line_width 1))
+		(line (pt 273 412)(pt 273 436)(line_width 1))
+		(line (pt 274 412)(pt 274 436)(line_width 1))
+		(line (pt 273 452)(pt 273 476)(line_width 1))
+		(line (pt 274 452)(pt 274 476)(line_width 1))
+		(line (pt 273 492)(pt 273 516)(line_width 1))
+		(line (pt 274 492)(pt 274 516)(line_width 1))
+		(line (pt 0 0)(pt 608 0)(line_width 1))
+		(line (pt 608 0)(pt 608 544)(line_width 1))
+		(line (pt 0 544)(pt 608 544)(line_width 1))
+		(line (pt 0 0)(pt 0 544)(line_width 1))
+	)
+)

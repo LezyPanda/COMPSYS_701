@@ -15,12 +15,12 @@ entity recop is
         key         : in bit_4;
         sw          : in bit_10;
         ledr        : out bit_10;
-        hex0        : out bit_7;
-        hex1        : out bit_7;
-        hex2        : out bit_7;
-        hex3        : out bit_7;
-        hex4        : out bit_7;
-        hex5        : out bit_7;
+        -- hex0        : out bit_7;
+        -- hex1        : out bit_7;
+        -- hex2        : out bit_7;
+        -- hex3        : out bit_7;
+        -- hex4        : out bit_7;
+        -- hex5        : out bit_7;
 
         recv  : in  tdma_min_port;
 		send  : out tdma_min_port
@@ -174,12 +174,12 @@ architecture combined of recop is
     signal sendSignal   : tdma_min_port := (others => (others => '0'));
 begin
     -- BCD to 7-segment decoder instances
-    hex0_inst: Bcd2seg7 port map (hex0_in_signal, hex0_signal);
-    hex1_inst: Bcd2seg7 port map (hex1_in_signal, hex1_signal);
-    hex2_inst: Bcd2seg7 port map (hex2_in_signal, hex2_signal);
-    hex3_inst: Bcd2seg7 port map (hex3_in_signal, hex3_signal);
-    hex4_inst: Bcd2seg7 port map (hex4_in_signal, hex4_signal);
-    hex5_inst: Bcd2seg7 port map (hex5_in_signal, hex5_signal);
+    -- hex0_inst: Bcd2seg7 port map (hex0_in_signal, hex0_signal);
+    -- hex1_inst: Bcd2seg7 port map (hex1_in_signal, hex1_signal);
+    -- hex2_inst: Bcd2seg7 port map (hex2_in_signal, hex2_signal);
+    -- hex3_inst: Bcd2seg7 port map (hex3_in_signal, hex3_signal);
+    -- hex4_inst: Bcd2seg7 port map (hex4_in_signal, hex4_signal);
+    -- hex5_inst: Bcd2seg7 port map (hex5_in_signal, hex5_signal);
 
     -- Datapath Instance
     impl_datapath: datapath
@@ -257,13 +257,14 @@ begin
     process(clock)
     begin
         if (rising_edge(clock)) then
-            if (key(0) = '1') then                          -- 1st Button Pressed
+            -- Button/Key 0 is used for reset, dis
+            if (key(1) = '1') then                          -- 1st Button Pressed
                 sendSignal.addr <= "00000001";                  -- To ADCAsp
                 sendSignal.data <= (others => '0');             -- Clear
                 sendSignal.data(31 downto 28) <= "1001";        -- Config Packet
                 sendSignal.data(23) <= '0';                     -- ADC Config Packet
                 sendSignal.data(9 downto 0) <= sw;              -- ADC Sampling Delay/Period by Switches
-            elsif (key(1) = '1') then                       -- 2nd Button Pressed
+            elsif (key(2) = '1') then                       -- 2nd Button Pressed
                 sendSignal.addr <= "00000010";                  -- To LAF
                 sendSignal.data <= (others => '0');             -- Clear
                 sendSignal.data(31 downto 28) <= "1001";        -- Config Packet
@@ -271,18 +272,18 @@ begin
                 sendSignal.data(9 downto 3) <= sw(9 downto 3);  -- LAF Config by Switches
                 sendSignal.data(2 downto 0) <= sw(2 downto 0);  -- AVG Window by Switches | 000 = 4, 001 = 8, 010 = 16, 011 = 32, 100 = 64 
                 avg_window <= sw(2 downto 0);                   -- Update AVG Window Cache
-            elsif (key(2) = '1') then                       -- 3rd Button Pressed
+            elsif (key(3) = '1') then                       -- 3rd Button Pressed
                 sendSignal.addr <= "00000011";                  -- To CorAsp
                 sendSignal.data <= (others => '0');             -- Clear
                 sendSignal.data(31 downto 28) <= "1010";        -- Cor Config Packet
                 sendSignal.data(3 downto 0) <= sw(3 downto 0);  -- Correlation Sample Interval by Switches
                 corr_window <= sw(3 downto 0);                  -- Update Correlation Window Cache
             elsif (key(3) = '1') then                       -- 4th Button Pressed
-                sendSignal.addr <= "00000100";                  -- To PeakAsp  
-                sendSignal.data <= (others => '0');             -- Clear
-                sendSignal.data(31 downto 28) <= "1011";        -- Config Packet
-                sendSignal.data(0) <= sw(0);                    -- Peak mode low or high
-                peak_type <= sw(0);                             -- Update Peak Type Cache
+                -- sendSignal.addr <= "00000100";                  -- To PeakAsp  
+                -- sendSignal.data <= (others => '0');             -- Clear
+                -- sendSignal.data(31 downto 28) <= "1011";        -- Config Packet
+                -- sendSignal.data(0) <= sw(0);                    -- Peak mode low or high
+                -- peak_type <= sw(0);                             -- Update Peak Type Cache
             else
                 sendSignal.addr <= (others => '0');  -- Clear
                 sendSignal.data <= (others => '0');  -- Clear
