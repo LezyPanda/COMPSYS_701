@@ -27,6 +27,7 @@ architecture aPdASP of PdAsp is
 
 	signal peak_type 				: std_logic := '0';
 	signal send_half        		: std_logic := '0';
+	signal peak_detect_sent 		: std_logic := '0';
 	signal correlation_peak_read 	: std_logic := '0';
 
     signal sendSignal : tdma_min_port := (others => (others => '0'));
@@ -87,7 +88,7 @@ begin
 
 
 
-			if (correlation_peak_read = '1' and peak_detected = '1' ) then									-- Correlation Peak Read
+			if (correlation_peak_read = '1' and peak_detect_sent = '1') then									-- Correlation Peak Read
 				sendSignal.addr <= "00000111"; 												-- To Nios
 				sendSignal.data <= (others => '0'); 										-- Clear Data
 				sendSignal.data(31 downto 28) <= "1000"; 									-- Data Packet
@@ -109,6 +110,7 @@ begin
 					else
 						sendSignal.data(17 downto 0) <= correlation_max(17 downto 0); 	-- Send Second Half of Nax Correlation Value
 					end if;							
+					peak_detect_sent <= '0';												-- Reset Peak Detect Sent Flag
 					correlation_peak_read <= '0';									-- Reset Correlation Peak Read Flag
 				end if;
 			elsif (peak_detected = '1') then												-- Peak Detected
@@ -118,7 +120,7 @@ begin
 				sendSignal.data(23 downto 20) <= "0111"; 									-- MODE
 				sendSignal.data(18) <= '1';													-- Peak Detected
 				sendSignal.data(17 downto 0) <= std_logic_vector(counter_prev); 			-- Send Counter Value
-
+				peak_detect_sent <= '1';														-- Set Peak Detect Sent Flag
 				peak_detected <= '0';														-- Reset Peak Detected Flag
 			else
 				sendSignal.addr <= (others => '0'); 										-- Clear
