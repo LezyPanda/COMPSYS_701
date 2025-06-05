@@ -28,7 +28,6 @@ architecture rtl of TopLevel is
 	signal clock : std_logic;
 	signal send_port : tdma_min_ports(0 to ports - 1);
 	signal recv_port : tdma_min_ports(0 to ports - 1);
-	signal recop_ledr : std_logic_vector(9 downto 0) := (others => '0');
 	signal signal_gen_addr : integer range 0 to ROM_DEPTH - 1 := 0;
 
 	signal adc_data : std_logic_vector(7 downto 0) := (others => '0');
@@ -97,7 +96,7 @@ begin
 		clock  => clock,
         key    => key,
         sw     => sw,
-        ledr   => recop_ledr,
+        ledr   => ledr,
 		send  => send_port(5),
 		recv  => recv_port(5)
 	);
@@ -137,8 +136,4 @@ begin
             end if;
 		end if;
 	end process;
-
-	LEDR(7 downto 0) <= recv_port(1).addr;
-	LEDR(8) <= recv_port(1).data(0);
-	LEDR(9) <= send_port(1).data(0);
 end architecture;

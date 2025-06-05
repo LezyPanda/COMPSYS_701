@@ -258,27 +258,27 @@ begin
     begin
         if (rising_edge(clock)) then
             -- Button/Key 0 is used for reset, dis
-            if (key(1) = '1') then                          -- 1st Button Pressed
+            if (key(1) = '0') then                          -- 2nd Button Pressed
                 sendSignal.addr <= "00000001";                  -- To ADCAsp
                 sendSignal.data <= (others => '0');             -- Clear
                 sendSignal.data(31 downto 28) <= "1001";        -- Config Packet
                 sendSignal.data(23) <= '0';                     -- ADC Config Packet
                 sendSignal.data(9 downto 0) <= sw;              -- ADC Sampling Delay/Period by Switches
-            elsif (key(2) = '1') then                       -- 2nd Button Pressed
+            elsif (key(2) = '0') then                       -- 3rd Button Pressed
                 sendSignal.addr <= "00000010";                  -- To LAF
                 sendSignal.data <= (others => '0');             -- Clear
                 sendSignal.data(31 downto 28) <= "1001";        -- Config Packet
                 sendSignal.data(23) <= '1';                     -- LAF Config Packet
-                sendSignal.data(9 downto 3) <= sw(9 downto 3);  -- LAF Config by Switches
+                sendSignal.data(9 downto 3) <= sw(9 downto 3);  -- Correlation Sample Interval by Switches
                 sendSignal.data(2 downto 0) <= sw(2 downto 0);  -- AVG Window by Switches | 000 = 4, 001 = 8, 010 = 16, 011 = 32, 100 = 64 
                 avg_window <= sw(2 downto 0);                   -- Update AVG Window Cache
-            elsif (key(3) = '1') then                       -- 3rd Button Pressed
+            elsif (key(3) = '0') then                       -- 4th Button Pressed
                 sendSignal.addr <= "00000011";                  -- To CorAsp
                 sendSignal.data <= (others => '0');             -- Clear
                 sendSignal.data(31 downto 28) <= "1010";        -- Cor Config Packet
-                sendSignal.data(3 downto 0) <= sw(3 downto 0);  -- Correlation Sample Interval by Switches
+                sendSignal.data(3 downto 0) <= sw(3 downto 0);  -- Correlation Window by Switches
                 corr_window <= sw(3 downto 0);                  -- Update Correlation Window Cache
-            elsif (key(3) = '1') then                       -- 4th Button Pressed
+            elsif (key(3) = '0') then                       -- 4th Button Pressed
                 -- sendSignal.addr <= "00000100";                  -- To PeakAsp  
                 -- sendSignal.data <= (others => '0');             -- Clear
                 -- sendSignal.data(31 downto 28) <= "1011";        -- Config Packet
@@ -291,7 +291,7 @@ begin
         end if;
     end process;
 
-    ledr <= avg_window & '0' & corr_window & '0'& peak_type;
+    ledr <= avg_window & '0' & corr_window & '0' & peak_type;
 
     send <= sendSignal;
 end combined;
