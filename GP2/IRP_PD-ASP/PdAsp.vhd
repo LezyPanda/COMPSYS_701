@@ -87,7 +87,7 @@ begin
 
 
 
-			if (correlation_peak_read = '1') then									-- Correlation Peak Read
+			if (correlation_peak_read = '1' and peak_detected = '1' ) then									-- Correlation Peak Read
 				sendSignal.addr <= "00000111"; 												-- To Nios
 				sendSignal.data <= (others => '0'); 										-- Clear Data
 				sendSignal.data(31 downto 28) <= "1000"; 									-- Data Packet
