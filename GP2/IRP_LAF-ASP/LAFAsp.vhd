@@ -45,31 +45,31 @@ begin
                     when others => desired_size := MAX_N;
                 end case;
                 if desired_size > MAX_N then
-                    avg_window_size <= MAX_N;
+                    avg_window_size <= MAX_N;                   -- Cap Window Size at MAX_N
                 else
-                    avg_window_size <= desired_size;
+                    avg_window_size <= desired_size;                -- Set Window Size
                 end if;
             elsif (recv.data(31 downto 28) = "1000" and recv.data(23 downto 20) = "0001" and recv.data(7 downto 0) /= "00000000") then -- LAFAsp ADC Data In Packet
                 -- Moving Average Calculation
-                new_s  := unsigned(recv.data(7 downto 0));
-                oldest := buffer_reg(ptr);
-                buffer_reg(ptr) <= new_s;
-                sum_acc <= sum_acc + resize(new_s, sum_acc'length) - resize(oldest, sum_acc'length);
-                -- Advance Pointer Within Dynamic Window
-                ptr <= (ptr + 1) mod avg_window_size;
+                new_s  := unsigned(recv.data(7 downto 0));     -- new signal 
+                oldest := buffer_reg(ptr);                     -- oldest signal in the window
+                buffer_reg(ptr) <= new_s;                       -- Update Buffer with New Sample
+                sum_acc <= sum_acc + resize(new_s, sum_acc'length) - resize(oldest, sum_acc'length); -- Update Sum Accumulator
+                -- Advance Pointer Within Dynamic Window   
+                ptr <= (ptr + 1) mod avg_window_size;           -- Wrap Pointer Around
                 -- Prepare Output
-                avg_data  <= std_logic_vector(sum_acc);
-                avg_ready <= '1';
-                correlation_sample_interval_counter := correlation_sample_interval_counter + 1;
+                avg_data  <= std_logic_vector(sum_acc);         -- Output Average Data
+                avg_ready <= '1';                                 -- Indicate Average Data is Ready
+                correlation_sample_interval_counter := correlation_sample_interval_counter + 1;      -- Increment Sample Interval Counter
                 if correlation_sample_interval_counter >= to_integer(unsigned(correlation_sample_interval)) then -- Trigger Correlation Calculation
-                    corr_calculate <= '1';
-                    correlation_sample_interval_counter := 0;
+                    corr_calculate <= '1';                      -- Set Correlation Calculate Flag
+                    correlation_sample_interval_counter := 0;   -- Reset Sample Interval Counter
                 else
-                    corr_calculate <= '0';
-                end if;
+                    corr_calculate <= '0';           -- Clear Correlation Calculate Flag
+                end if;    
             else
-                avg_data  <= (others => '0');
-                avg_ready <= '0';
+                avg_data  <= (others => '0');      -- Clear Average Data
+                avg_ready <= '0';                   -- Clear Average Ready Flag
             end if;
         end if;
     end process;

@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 -- AverageDataRAM: stores 16-bit average results into RAM
 entity AverageDataRAM is
     generic (
-        ADDR_WIDTH : natural := 20;  
+        ADDR_WIDTH : natural := 10;  
         DATA_WIDTH : natural := 16   
     );
     port (
