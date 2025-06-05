@@ -108,8 +108,8 @@ begin
 						sendSignal.data(17 downto 0) <= correlation_min(17 downto 0); 	-- Send Second Half of Min Correlation Value
 					else
 						sendSignal.data(17 downto 0) <= correlation_max(17 downto 0); 	-- Send Second Half of Nax Correlation Value
-						correlation_peak_read <= '0';									-- Reset Correlation Peak Read Flag
 					end if;							
+					correlation_peak_read <= '0';									-- Reset Correlation Peak Read Flag
 				end if;
 			elsif (peak_detected = '1') then												-- Peak Detected
 				sendSignal.addr <= "00000111"; 												-- To Nios
