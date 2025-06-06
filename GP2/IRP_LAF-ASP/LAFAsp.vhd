@@ -49,14 +49,12 @@ begin
                 else
                     avg_window_size <= desired_size;                -- Set Window Size
                 end if;
-            elsif (recv.data(31 downto 28) = "1000" and recv.data(23 downto 20) = "0001" 
-                and recv.data(9 downto 0) /= "0000000000") then -- LAFAsp ADC Data In Packet
-                -- Moving Average Calculation       
-                -- Determine bit-width from bit 11
+            elsif (recv.data(31 downto 28) = "1000" and recv.data(23 downto 20) = "0001" and recv.data(9 downto 0) /= "0000000000") then -- LAFAsp ADC Data In Packet
+                -- Moving Average Calculation
+                -- select 10-bit or 8-bit data based on flag at bit 11
                 if recv.data(11) = '1' then
                     new_s := unsigned(recv.data(9 downto 0));
                 else
-                    -- zero-extend 8-bit data to 10 bits
                     new_s := to_unsigned(0,2) & unsigned(recv.data(7 downto 0));
                 end if;
                 oldest := buffer_reg(ptr);                     -- oldest signal in the window

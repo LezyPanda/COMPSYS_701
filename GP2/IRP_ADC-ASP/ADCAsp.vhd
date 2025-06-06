@@ -15,7 +15,7 @@ entity ADCAsp is
 end entity;
 
 architecture aADCAsp of ADCAsp is
-    signal adc_sample_delay : unsigned(15 downto 0) := to_unsigned(1, 16);
+    signal adc_sample_delay : unsigned(15 downto 0) := "0000000000001111";
     signal sendSignal       : tdma_min_port;
 begin 
     clock_process: process(clock)
@@ -23,9 +23,9 @@ begin
     begin
         if rising_edge(clock) then
             if (recv.data(31 downto 28) = "1001" and recv.data(23) = '0') then      -- ADC Config
-                adc_sample_delay <= unsigned(recv.data(15 downto 0));                   -- ADC Sampling Delay/Period
+                -- ADC Sampling Delay/Period from packet
+                adc_sample_delay <= unsigned(recv.data(15 downto 0));
             end if;
-
             if adc_sample_delay_counter >= to_integer(adc_sample_delay) then -- Delay has Expired, Read ADC
                 adc_sample_delay_counter := 0;
 

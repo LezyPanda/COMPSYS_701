@@ -22,7 +22,7 @@ architecture rtl of TopLevelTest is
 
 	signal clock : std_logic;
 
-	signal KEY           : std_logic_vector(3 downto 0) := (others => '0');
+	signal KEY           : std_logic_vector(3 downto 0) := (others => '1');
 	signal SW            : std_logic_vector(9 downto 0) := (others => '0');
 	signal LEDR          : std_logic_vector(9 downto 0) := (others => '0');
 	signal hex0          : std_logic_vector(6 downto 0) := (others => '0');
@@ -121,8 +121,10 @@ begin
 	begin
 		if rising_edge(clock) then
             -- increment play_signal address when ADC ready (bit 10)
-        	counter := counter + 1;
-            signal_gen_addr <= counter mod ROM_DEPTH_C;
+            if send_port(1).data(10) = '1' then
+                counter := counter + 1;
+                signal_gen_addr <= counter mod ROM_DEPTH_C;
+            end if;
 			if (recv_port(7).data(31 downto 28) = "1000" and recv_port(7).data(23 downto 20) = "0111" and recv_port(7).data(18) = '1') then
 				send_port(7).addr <= "00000100";
 				send_port(7).data <= (others => '0');
