@@ -27,6 +27,7 @@ entity control_unit is
         alu_sel_op2     : out bit_1;
         dpcr_write_flag : out bit_1;
         dpcr_sel        : out bit_1;
+        irq_clr         : out bit_1;
         sop_write       : out bit_1;
 
         -- From Datapath
@@ -63,10 +64,12 @@ architecture behaviour of control_unit is
     signal alu_sel_op1_signal       : bit_2 := "00";
     signal alu_sel_op2_signal       : bit_1 := '0';
     signal dpcr_sel_signal          : bit_1 := '0';
+    signal dpcr_write_flag_signal   : bit_1 := '0';
+    signal irq_clr_signal            : bit_1 := '0';
     signal sop_write_signal         : bit_1 := '0';
     signal alu_clr_z_flag_signal    : bit_1 := '0';
     signal rf_write_signal          : bit_1 := '0';
-    signal dpcr_write_flag_signal   : bit_1 := '0';
+   
 
 begin
 
@@ -106,6 +109,7 @@ begin
             rf_write_signal         <= '0';
             pc_write_flag_signal    <= '0';
             dpcr_write_flag_signal  <= '0';
+            irq_clr_signal           <= '0';
             alu_clr_z_flag_signal   <= '0';
             sop_write_signal        <= '0';
             ir_fetch_start_signal   <= '0';
@@ -113,6 +117,8 @@ begin
             -- Default Values
             pc_write_flag_signal    <= '0';
             dpcr_write_flag_signal  <= '0';
+            irq_clr_signal           <= '0';
+
             alu_clr_z_flag_signal   <= '0';
             sop_write_signal        <= '0';
             ir_fetch_start_signal   <= '0';
@@ -216,11 +222,9 @@ begin
                         when present => -- present --
                             pc_mode_signal <= pc_mode_value;
                         when datacall => -- datacall --
-                            if am = am_immediate then 
-                                dpcr_sel_signal <= dpcr_value;
-                            elsif am = am_register then
-                                dpcr_sel_signal <= dpcr_r7;
-                            end if;
+                            dpcr_sel_signal <= dpcr_r7;
+                        when datacall2 => -- datacall2 --
+                            dpcr_sel_signal <= dpcr_value;
                         when sz => -- sz --
                             pc_mode_signal <= pc_mode_value;
                         when strpc => -- strpc --
@@ -247,15 +251,20 @@ begin
                         -- jmp --
                         when jmp =>
                             pc_write_flag_signal <= '1'; 
-                    -- present --
+                        -- present --
                         when present =>
                             if rz_empty = '0' then
                                 pc_mode_signal <= pc_mode_incr_2;
                             end if;
                             pc_write_flag_signal <= '1'; 
-                    -- datacall --
+                        -- datacall --
                         when datacall => 
                             dpcr_write_flag_signal <= '1';
+                            irq_clr_signal <= '1';
+                        -- datacall2 --
+                        when datacall2 =>
+                            dpcr_write_flag_signal <= '1';
+                            irq_clr_signal <= '1';
                         -- sz --
                         when sz =>
                             -- if z flag is one then pc is operand mode
@@ -297,10 +306,11 @@ begin
     alu_sel_op2       <= alu_sel_op2_signal;
     pc_write_flag     <= pc_write_flag_signal;
     dpcr_sel          <= dpcr_sel_signal;
+    dpcr_write_flag   <= dpcr_write_flag_signal;
+    irq_clr           <= irq_clr_signal;
     sop_write         <= sop_write_signal;
     alu_clr_z_flag    <= alu_clr_z_flag_signal;
     rf_write_flag     <= rf_write_signal;
-    dpcr_write_flag   <= dpcr_write_flag_signal;
     ir_fetch_start    <= ir_fetch_start_signal;
 
 end behaviour;

@@ -47,6 +47,7 @@ architecture combined of recop is
     signal alu_sel_op2     : bit_1;
     signal dpcr_write_flag : bit_1;
     signal dpcr_sel        : bit_1;
+    signal irq_clr         : bit_1;
     signal sop_write       : bit_1;
     signal alu_z_flag      : bit_1;
     signal alu_result      : bit_16;
@@ -112,6 +113,7 @@ architecture combined of recop is
             alu_sel_op2     : in bit_1;
             dpcr_write_flag : in bit_1;
             dpcr_sel        : in bit_1;
+            irq_clr         : in bit_1;
             sop_write       : in bit_1;
             alu_z_flag      : out bit_1;
             alu_result      : out bit_16;
@@ -154,6 +156,7 @@ architecture combined of recop is
             alu_sel_op2     : out bit_1;
             dpcr_write_flag : out bit_1;
             dpcr_sel        : out bit_1;
+            irq_clr         : out bit_1;
             sop_write       : out bit_1;
             alu_z_flag      : in bit_1;
             alu_result      : in bit_16;
@@ -200,6 +203,7 @@ begin
             alu_sel_op2     => alu_sel_op2,
             dpcr_write_flag => dpcr_write_flag,
             dpcr_sel        => dpcr_sel,
+            irq_clr         => irq_clr,
             sop_write       => sop_write,
             alu_z_flag      => alu_z_flag,
             alu_result      => alu_result,
@@ -241,6 +245,7 @@ begin
             alu_sel_op2     => alu_sel_op2,
             dpcr_write_flag => dpcr_write_flag,
             dpcr_sel        => dpcr_sel,
+            irq_clr         => irq_clr,
             sop_write       => sop_write,
             alu_z_flag      => alu_z_flag,
             alu_result      => alu_result,
@@ -254,9 +259,17 @@ begin
 
     clk <= clock;
 
+    
     process(clock)
+        variable reset_counter : integer := 0;
     begin
         if (rising_edge(clock)) then
+            if (reset_counter < 100) then
+                reset <= '1';
+                reset_counter := reset_counter + 1;
+            else
+                reset <= '0';
+            end if;
             -- Button/Key 0 is used for reset, dis
             if (key(1) = '0') then                          -- 2nd Button Pressed
                 sendSignal.addr <= "00000001";                  -- To ADCAsp

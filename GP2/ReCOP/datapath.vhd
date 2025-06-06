@@ -29,6 +29,7 @@ entity datapath is
         alu_sel_op2     : in bit_1;
         dpcr_write_flag : in bit_1;
         dpcr_sel        : in bit_1;
+        irq_clr         : in bit_1;
         sop_write       : in bit_1;
 
         -- Out
@@ -57,7 +58,7 @@ entity datapath is
         debug_flag          : out bit_8;
         debug_inst_raw_1    : out bit_16;
         debug_inst_raw_2    : out bit_16;
-        debug_all_regs     : out reg_array
+        debug_all_regs      : out reg_array
     );
 end datapath;
 
@@ -213,8 +214,6 @@ architecture behaviour of datapath is
         );
     end component;
     signal reg_dpcr         : bit_32;
-    signal reg_dpcr_lsb_sel : bit_1;
-    signal reg_dpcr_wr      : bit_1;
     signal reg_er           : bit_1;
     signal reg_er_wr        : bit_1;
     signal reg_er_clr       : bit_1;
@@ -228,26 +227,12 @@ architecture behaviour of datapath is
     signal reg_sop          : bit_16;
     signal reg_dprr         : bit_2;
     signal reg_irq_wr       : bit_1;
-    signal reg_irq_clr      : bit_1;
     signal reg_result_wen   : bit_1;
     signal reg_result       : bit_1;
 
-    -- component memory is
-    --     port (
-    --         clk: in bit_1 := '0';
-    --         --pm_rd: in bit_1 := '0';
-    --         pm_address: in bit_16 := X"0000";
-    --         pm_outdata: out bit_16 := X"0000";
-    --         --dm_rd: in bit_1 := '0';
-    --         dm_address: in bit_16 := X"0000";
-    --         dm_outdata: out bit_16 := X"0000";
-    --         dm_wr: in bit_1 := '0';
-    --         dm_indata: in bit_16 := X"0000"
-    --     );
-    -- end component;
-    signal mem_model_pm_in_addr : bit_16 := (others => '0');
-    signal mem_model_dm_in_addr : bit_16 := (others => '0');
     -- End Components
+
+    
 begin
     impl_alu : alu
         port map (
@@ -330,8 +315,8 @@ begin
             r7              => r7,
             rx              => rxValue,
             ir_operand      => ir_operand,
-            dpcr_lsb_sel    => reg_dpcr_lsb_sel,
-            dpcr_wr         => reg_dpcr_wr,
+            dpcr_lsb_sel    => dpcr_sel,
+            dpcr_wr         => dpcr_write_flag,
             er              => reg_er,
             er_wr           => reg_er_wr,
             er_clr          => reg_er_clr,
@@ -346,22 +331,11 @@ begin
             sop_wr          => sop_write,
             dprr            => reg_dprr,
             irq_wr          => reg_irq_wr,
-            irq_clr         => reg_irq_clr,
+            irq_clr         => irq_clr,
             result_wen      => reg_result_wen,
             result          => reg_result
         );
-    -- impl_mem : memory
-    --     port map (
-    --         clk         => clk,
-    --         --pm_rd      => '0',
-    --         pm_address  => mem_model_pm_in_addr,
-    --         pm_outdata => prog_mem_out,
-    --         --dm_rd      => '0',
-    --         dm_address  => mem_model_dm_in_addr,
-    --         dm_outdata  => data_mem_out,
-    --         dm_wr       => dm_write,
-    --         dm_indata   => data_mem_in_data
-    --     );
+
     -- Debug Signals
     debug_pc_out        <= pc_out(14 downto 0);
     debug_fetch_state   <= "00" when fetch_state = IDLE else
@@ -469,10 +443,5 @@ begin
                                          ("0" & pc_out) when dm_sel_in = dm_sel_in_pc else
                                                 rxValue when dm_sel_in = dm_sel_in_rx else
                                      "0000000000000000";
-
-    -- Memory Model weird
-    -- mem_model_pm_in_addr <= "0" & prog_mem_in;
-    -- mem_model_dm_in_addr <= "0000" & data_mem_in_addr;
-
 end behaviour;
 
