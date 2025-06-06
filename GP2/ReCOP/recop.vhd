@@ -264,6 +264,7 @@ begin
         variable reset_counter : integer := 0;
     begin
         if (rising_edge(clock)) then
+            -- To be replaced with keys, this is for modelsim
             if (reset_counter < 100) then
                 reset <= '1';
                 reset_counter := reset_counter + 1;
