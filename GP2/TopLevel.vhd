@@ -1,7 +1,6 @@
 library ieee;
 use ieee.numeric_std.all;
 use ieee.std_logic_1164.all;
-use work.signal_rom_pkg.all;
 
 library work;
 use work.TdmaMinTypes.all;
@@ -25,10 +24,13 @@ entity TopLevel is
 end entity;
 
 architecture rtl of TopLevel is
+	-- ROM parameters
+	constant ROM_DEPTH_C : integer := 4096;
+	constant ADDR_WIDTH  : integer := 12;
 	signal clock : std_logic;
 	signal send_port : tdma_min_ports(0 to ports - 1);
 	signal recv_port : tdma_min_ports(0 to ports - 1);
-	signal signal_gen_addr : integer range 0 to ROM_DEPTH - 1 := 0;
+	signal signal_gen_addr : integer range 0 to ROM_DEPTH_C - 1 := 0;
 
 	signal adc_data : std_logic_vector(9 downto 0) := (others => '0');
 
@@ -132,7 +134,7 @@ begin
 		if (rising_edge(clock)) then
             if (send_port(1).data(8) = '1') then -- ADC has sent the data
                 counter := counter + 1;
-                signal_gen_addr <= counter mod ROM_DEPTH;
+                signal_gen_addr <= counter mod ROM_DEPTH_C;
             end if;
 		end if;
 	end process;

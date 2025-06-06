@@ -54,44 +54,6 @@ set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_RO
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
-set_global_assignment -name QIP_FILE Nios_V1/synthesis/Nios_V1.qip
-set_global_assignment -name VHDL_FILE TdmaMin/ip/TdmaMinFifo/TdmaMinFifo.vhd -library ip
-set_global_assignment -name QIP_FILE TdmaMin/ip/TdmaMinFifo/TdmaMinFifo.qip
-set_global_assignment -name VHDL_FILE "IRP_LAF-ASP/LAFAsp_RAM.vhd"
-set_global_assignment -name VHDL_FILE "IRP_LAF-ASP/LAFAsp.vhd"
-set_global_assignment -name VHDL_FILE "IRP_LAF-ASP/AverageDataRAM.vhd"
-set_global_assignment -name VHDL_FILE Gen/signal_rom_pkg.vhd
-set_global_assignment -name VHDL_FILE Gen/playSignal.vhd
-set_global_assignment -name VHDL_FILE TopLevel.vhd
-set_global_assignment -name VHDL_FILE TdmaMin/TdmaMinTypes.vhd
-set_global_assignment -name VHDL_FILE TdmaMin/TdmaMinSwitch.vhd
-set_global_assignment -name VHDL_FILE TdmaMin/TdmaMinStage.vhd
-set_global_assignment -name VHDL_FILE TdmaMin/TdmaMinSlots.vhd
-set_global_assignment -name VHDL_FILE TdmaMin/TdmaMinInterface.vhd
-set_global_assignment -name VHDL_FILE TdmaMin/TdmaMinFabric.vhd
-set_global_assignment -name VHDL_FILE TdmaMin/TdmaMin.vhd
-set_global_assignment -name VHDL_FILE ReCOP/various_constants.vhd
-set_global_assignment -name VHDL_FILE ReCOP/registers.vhd
-set_global_assignment -name VHDL_FILE ReCOP/registerfile.vhd
-set_global_assignment -name VHDL_FILE ReCOP/regfile.vhd
-set_global_assignment -name VHDL_FILE ReCOP/recop_types.vhd
-set_global_assignment -name VHDL_FILE ReCOP/recop_pll.vhd
-set_global_assignment -name VHDL_FILE ReCOP/recop.vhd
-set_global_assignment -name VHDL_FILE ReCOP/prog_mem.vhd
-set_global_assignment -name VHDL_FILE ReCOP/prog_counter.vhd
-set_global_assignment -name VHDL_FILE ReCOP/pll.vhd
-set_global_assignment -name VHDL_FILE ReCOP/opcodes.vhd
-set_global_assignment -name VHDL_FILE ReCOP/memory_model.vhd
-set_global_assignment -name VHDL_FILE ReCOP/memory_arbiter.vhd
-set_global_assignment -name VHDL_FILE ReCOP/inst_reg.vhd
-set_global_assignment -name VHDL_FILE ReCOP/datapath.vhd
-set_global_assignment -name VHDL_FILE ReCOP/data_mem.vhd
-set_global_assignment -name VHDL_FILE ReCOP/controlunit.vhd
-set_global_assignment -name VHDL_FILE ReCOP/bcd2seg7.vhd
-set_global_assignment -name VHDL_FILE ReCOP/ALU.vhd
-set_global_assignment -name VHDL_FILE "IRP_PD-ASP/PdAsp.vhd"
-set_global_assignment -name VHDL_FILE "IRP_COR-ASP/CorAsp.vhd"
-set_global_assignment -name VHDL_FILE "IRP_ADC-ASP/ADCAsp.vhd"
 set_location_assignment PIN_AJ4 -to ADC_CS_N
 set_location_assignment PIN_AK4 -to ADC_DIN
 set_location_assignment PIN_AK3 -to ADC_DOUT
@@ -350,4 +312,41 @@ set_location_assignment PIN_E12 -to VGA_R[6]
 set_location_assignment PIN_F13 -to VGA_R[7]
 set_location_assignment PIN_C10 -to VGA_SYNC_N
 set_location_assignment PIN_D11 -to VGA_VS
+set_global_assignment -name QIP_FILE Nios_V1/synthesis/Nios_V1.qip
+set_global_assignment -name VHDL_FILE TdmaMin/ip/TdmaMinFifo/TdmaMinFifo.vhd -library ip
+set_global_assignment -name QIP_FILE TdmaMin/ip/TdmaMinFifo/TdmaMinFifo.qip
+set_global_assignment -name VHDL_FILE "IRP_LAF-ASP/LAFAsp_RAM.vhd"
+set_global_assignment -name VHDL_FILE "IRP_LAF-ASP/LAFAsp.vhd"
+set_global_assignment -name VHDL_FILE "IRP_LAF-ASP/AverageDataRAM.vhd"
+set_global_assignment -name VHDL_FILE Gen/playSignal.vhd
+set_global_assignment -name VHDL_FILE TopLevel.vhd
+set_global_assignment -name VHDL_FILE TdmaMin/TdmaMinTypes.vhd
+set_global_assignment -name VHDL_FILE TdmaMin/TdmaMinSwitch.vhd
+set_global_assignment -name VHDL_FILE TdmaMin/TdmaMinStage.vhd
+set_global_assignment -name VHDL_FILE TdmaMin/TdmaMinSlots.vhd
+set_global_assignment -name VHDL_FILE TdmaMin/TdmaMinInterface.vhd
+set_global_assignment -name VHDL_FILE TdmaMin/TdmaMinFabric.vhd
+set_global_assignment -name VHDL_FILE TdmaMin/TdmaMin.vhd
+set_global_assignment -name VHDL_FILE ReCOP/various_constants.vhd
+set_global_assignment -name VHDL_FILE ReCOP/registers.vhd
+set_global_assignment -name VHDL_FILE ReCOP/registerfile.vhd
+set_global_assignment -name VHDL_FILE ReCOP/regfile.vhd
+set_global_assignment -name VHDL_FILE ReCOP/recop_types.vhd
+set_global_assignment -name VHDL_FILE ReCOP/recop_pll.vhd
+set_global_assignment -name VHDL_FILE ReCOP/recop.vhd
+set_global_assignment -name VHDL_FILE ReCOP/prog_mem.vhd
+set_global_assignment -name VHDL_FILE ReCOP/prog_counter.vhd
+set_global_assignment -name VHDL_FILE ReCOP/pll.vhd
+set_global_assignment -name VHDL_FILE ReCOP/opcodes.vhd
+set_global_assignment -name VHDL_FILE ReCOP/memory_model.vhd
+set_global_assignment -name VHDL_FILE ReCOP/memory_arbiter.vhd
+set_global_assignment -name VHDL_FILE ReCOP/inst_reg.vhd
+set_global_assignment -name VHDL_FILE ReCOP/datapath.vhd
+set_global_assignment -name VHDL_FILE ReCOP/data_mem.vhd
+set_global_assignment -name VHDL_FILE ReCOP/controlunit.vhd
+set_global_assignment -name VHDL_FILE ReCOP/bcd2seg7.vhd
+set_global_assignment -name VHDL_FILE ReCOP/ALU.vhd
+set_global_assignment -name VHDL_FILE "IRP_PD-ASP/PdAsp.vhd"
+set_global_assignment -name VHDL_FILE "IRP_COR-ASP/CorAsp.vhd"
+set_global_assignment -name VHDL_FILE "IRP_ADC-ASP/ADCAsp.vhd"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
