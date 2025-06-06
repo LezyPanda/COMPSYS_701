@@ -8,14 +8,14 @@ use work.TdmaMinTypes.all;
 entity ADCAsp is
 	port (
 		clock : in  std_logic;
-        adc   : in  std_logic_vector(7 downto 0);
+        adc   : in  std_logic_vector(9 downto 0);
 		recv  : in  tdma_min_port;
 		send  : out tdma_min_port
 	);
 end entity;
 
 architecture aADCAsp of ADCAsp is
-    signal adc_sample_delay : unsigned(15 downto 0) := "0000000000001111";
+    signal adc_sample_delay : unsigned(15 downto 0) := to_unsigned(1, 16);
     signal sendSignal       : tdma_min_port;
 begin 
     clock_process: process(clock)
@@ -33,8 +33,10 @@ begin
                 sendSignal.data <= (others => '0');         -- Clear
                 sendSignal.data(31 downto 28) <= "1000";    -- Data Packet
                 sendSignal.data(23 downto 20) <= "0001";    -- MODE
-                sendSignal.data(8) <= '1';                  -- ADC Ready
-                sendSignal.data(7 downto 0) <= adc;         -- ADC Data
+                sendSignal.data(10) <= '1';                  -- ADC Ready
+                sendsignal.data(11) <= '0';                  -- 8 bit
+                sendSignal.data(9 downto 0) <= adc;         -- ADC Data
+                
             else
                 sendSignal.addr <= (others => '0');         -- Clear
                 sendSignal.data <= (others => '0');         -- Clear

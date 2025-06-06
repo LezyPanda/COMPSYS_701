@@ -30,7 +30,7 @@ architecture rtl of TopLevel is
 	signal recv_port : tdma_min_ports(0 to ports - 1);
 	signal signal_gen_addr : integer range 0 to ROM_DEPTH - 1 := 0;
 
-	signal adc_data : std_logic_vector(7 downto 0) := (others => '0');
+	signal adc_data : std_logic_vector(9 downto 0) := (others => '0');
 
 	component Nios_V1 is
 	port (
