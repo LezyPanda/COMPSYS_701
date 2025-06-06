@@ -25,7 +25,7 @@ architecture aPdASP of PdAsp is
 	signal correlation_min 	: std_logic_vector(35 downto 0) := (others => '0');
 	signal correlation_max 	: std_logic_vector(35 downto 0) := (others => '0');
 
-	signal peak_type 				: std_logic := '0';
+	signal peak_type 				: std_logic := '1';
 	signal send_half        		: std_logic := '0';
 	signal peak_detect_sent 		: std_logic := '0';
 	signal correlation_peak_read 	: std_logic := '0';
@@ -68,7 +68,9 @@ begin
 					if (unsigned(current_correlation_value) > unsigned(last_correlation_value)) then				-- Still Positive Slope
 						counter <= counter + 1;																		-- Increment Counter
 					else
-						correlation_max <= last_correlation_value; 
+						if (unsigned(last_correlation_value) > unsigned(correlation_max)) then
+							correlation_max <= last_correlation_value;
+						end if;
 						curr_slope_pos := '0';
 						peak_detected <= '1';
 						counter_prev <= counter;
@@ -76,7 +78,9 @@ begin
 					end if;
 				else																						-- Last Slope was Negative
 					if (unsigned(current_correlation_value) >= unsigned(last_correlation_value)) then				-- Slope Changed to Positive
-						correlation_min <= last_correlation_value; 
+						if (unsigned(last_correlation_value) < unsigned(correlation_min)) then
+							correlation_min <= last_correlation_value;
+						end if;
 						curr_slope_pos := '1';
 					else
 						counter <= counter + 1;

@@ -119,7 +119,7 @@ begin
 		hex3_external_connection_export    => hex3,
 		hex4_external_connection_export    => hex4,
 		hex5_external_connection_export    => hex5,
-		reset_reset_n                      => KEY(0),
+		reset_reset_n                      => key(0),
 		tdma_recv_addr_external_connection_export => recv_port(7).addr,
 		tdma_recv_data_external_connection_export => recv_port(7).data,
 		tdma_send_addr_external_connection_export => send_port(7).addr,

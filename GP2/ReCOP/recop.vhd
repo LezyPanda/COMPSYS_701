@@ -169,7 +169,7 @@ architecture combined of recop is
     -- These cache may not be accurate, the initial values depend on the individual ASPs
     signal avg_window   : bit_3 := "100";   -- Default AVG Window
     signal corr_window  : bit_4 := "0100";  -- Default Correlation Window
-    signal peak_type    : bit_1 := '0';     -- Default Peak Type (Low)
+    signal peak_type    : bit_1 := '1';     -- Default Peak Type (Low)
 
     signal sendSignal   : tdma_min_port := (others => (others => '0'));
 begin
@@ -291,6 +291,7 @@ begin
         end if;
     end process;
 
+    -- AVG Window(3), Correlation Window(4), Peak Type(1)
     ledr <= avg_window & '0' & corr_window & '0' & peak_type;
 
     send <= sendSignal;

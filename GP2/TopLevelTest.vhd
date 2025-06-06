@@ -15,7 +15,7 @@ end entity;
 architecture rtl of TopLevelTest is
 	signal clock : std_logic;
 
-	signal KEY           : std_logic_vector(3 downto 0) := (others => '0');
+	signal KEY           : std_logic_vector(3 downto 0) := (others => '1');
 	signal SW            : std_logic_vector(9 downto 0) := (others => '0');
 	signal LEDR          : std_logic_vector(9 downto 0) := (others => '0');
 	signal hex0          : std_logic_vector(6 downto 0) := (others => '0');

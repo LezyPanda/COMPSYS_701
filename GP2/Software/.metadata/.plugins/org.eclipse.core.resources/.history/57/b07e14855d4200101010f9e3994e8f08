@@ -36,7 +36,7 @@ int main()
 {
 	uint64_t peakValue = 0;
 	uint8_t sent = 0;
-	uint64_t count = 0;
+	uint8_t count = 0;
 	uint8_t incomplete_half = 0;
 	IOWR_ALTERA_AVALON_PIO_DATA(HEX0_BASE, 0);
 	IOWR_ALTERA_AVALON_PIO_DATA(HEX1_BASE, 0);
