@@ -39,6 +39,9 @@ entity datapath is
         inst_fetched    : out bit_1;
         rz_empty        : out bit_1;
 
+        -- External
+        dpcr            : out bit_32;
+
         -- Debug Signals
         debug_pc_out        : out bit_15;
         debug_fetch_state   : out bit_2;
@@ -213,7 +216,6 @@ architecture behaviour of datapath is
             result      : in bit_1
         );
     end component;
-    signal reg_dpcr         : bit_32;
     signal reg_er           : bit_1;
     signal reg_er_wr        : bit_1;
     signal reg_er_clr       : bit_1;
@@ -311,7 +313,7 @@ begin
         port map (
             clk             =>   clk,
             reset           => reset,
-            dpcr            => reg_dpcr,
+            dpcr            => dpcr,
             r7              => r7,
             rx              => rxValue,
             ir_operand      => ir_operand,

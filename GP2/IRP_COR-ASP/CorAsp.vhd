@@ -16,7 +16,7 @@ end entity;
 architecture rtl of CorAsp is
     type states is (S0, S1, S2, S3);
     signal state                    : states := S0;
-    signal correlation_window_size  : unsigned(3 downto 0) := "0100";
+    signal correlation_window_size  : integer range 0 to 15 := 4;
     signal counter                  : unsigned(15 downto 0) := (others => '0');
 
     signal calculate                    : std_logic := '0';
@@ -48,7 +48,13 @@ begin
     begin
         if rising_edge(clock) then
             if (recv.data(31 downto 28) = "1010") then                                  -- Correlation Calculator Config
-                correlation_window_size <= unsigned(recv.data(3 downto 0));                -- Correlation WIndow Size
+                case recv.data(2 downto 0) is                                               -- Correlation WIndow Size
+                    when "000" => correlation_window_size <= 1;
+                    when "001" => correlation_window_size <= 2;
+                    when "010" => correlation_window_size <= 4;
+                    when "011" => correlation_window_size <= 8;
+                    when others => correlation_window_size <= 15;
+                end case;          
             elsif (recv.data(31 downto 28) = "1000") then                               -- Data Packet
                 if (recv.data(23 downto 20) = "0011") then                                  -- AVG Data Packet
                     if (recv.data(16) = '1') then
@@ -66,7 +72,7 @@ begin
                 when S0 =>
                     if (just_recv_avg_data = '0') then                              -- If we have not just received average data requested
                         if (has_send_avg_data_rq = '0') then                           -- If we have not just sent average data request
-                            avg_data_mem_addr := std_logic_vector(unsigned(newest_avg_data_addr) - to_unsigned((to_integer(correlation_window_size) / 2) - 1, avg_data_mem_addr'length));
+                            avg_data_mem_addr := std_logic_vector(unsigned(newest_avg_data_addr) - to_unsigned(correlation_window_size / 2 - 1, avg_data_mem_addr'length));
                             send_avg_data_rq := '1';
                         end if;
                     else                                                            -- We received average data requested
@@ -111,7 +117,7 @@ begin
                         has_send_avg_data_rq := '0';
                         correlation <= std_logic_vector(unsigned(correlation) + unsigned(correlation_pair_product));
                         correlation_pair_product <= (others => '0');
-                        if to_integer(counter) >= to_integer(correlation_window_size) / 2 then
+                        if to_integer(counter) >= correlation_window_size / 2 then
                             counter <= (others => '0');
                             correlation_rdy := '1';
                             state <= S0;

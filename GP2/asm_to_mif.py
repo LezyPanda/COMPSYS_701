@@ -42,8 +42,8 @@ def parse_register(reg):
 
 def parse_immediate(val):
     if val.startswith('#'):
-        return int(val[1:])
-    return int(val)
+        val = val[1:]
+    return int(val, 0)
 
 def parse_line(line):
     line = line.split(';')[0].strip()
@@ -194,14 +194,16 @@ def write_mif(words, filename, depth=4096, width=16):
         f.write("\tEND;\n")
 
 def main():
-    asm_file = 'ReCOP-ASM Package/test.asm'
-    mif_file = 'modelsim/rawOutput.mif'
-    mif_file2 = 'ReCOP (To be sorted)/rawOutput.mif'
+    asm_file = 'asm_init.asm'
+    mif_file = 'simulation/modelsim/rawOutput.mif'
+    mif_file2 = 'ReCOP/rawOutput.mif'
     with open(asm_file, 'r', encoding='utf-8') as f:
         asm_lines = f.readlines()
     words = assemble(asm_lines)
     write_mif(words, mif_file)
     write_mif(words, mif_file2)
+    
+    input("Done")
 
 if __name__ == '__main__':
     main()

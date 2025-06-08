@@ -15,18 +15,27 @@ entity ADCAsp is
 end entity;
 
 architecture aADCAsp of ADCAsp is
-    signal adc_sample_delay : unsigned(15 downto 0) := "0000000000001111";
+    signal adc_sample_delay : integer range 0 to 255 := 16;
     signal sendSignal       : tdma_min_port;
 begin 
     clock_process: process(clock)
-        variable adc_sample_delay_counter   : integer range 0 to 65535 := 0;
+        variable adc_sample_delay_counter : integer range 0 to 65535 := 0;
     begin
         if rising_edge(clock) then
             if (recv.data(31 downto 28) = "1001" and recv.data(23) = '0') then      -- ADC Config
-                -- ADC Sampling Delay/Period from packet
-                adc_sample_delay <= unsigned(recv.data(15 downto 0));
+                case recv.data(2 downto 0) is                                           -- ADC Sampling Delay/Period from packet
+                    when "000" => adc_sample_delay <= 1;
+                    when "001" => adc_sample_delay <= 2;
+                    when "010" => adc_sample_delay <= 4;
+                    when "011" => adc_sample_delay <= 8;
+                    when "100" => adc_sample_delay <= 16;
+                    when "101" => adc_sample_delay <= 32;
+                    when "110" => adc_sample_delay <= 64;
+                    when "111" => adc_sample_delay <= 128;
+                    when others => adc_sample_delay <= 255;
+                end case;
             end if;
-            if adc_sample_delay_counter >= to_integer(adc_sample_delay) then -- Delay has Expired, Read ADC
+            if adc_sample_delay_counter >= adc_sample_delay then -- Delay has Expired, Read ADC
                 adc_sample_delay_counter := 0;
 
                 sendSignal.addr <= "00000010";              -- To LAFAsp

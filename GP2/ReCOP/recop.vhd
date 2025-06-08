@@ -54,6 +54,7 @@ architecture combined of recop is
     signal ir_opcode       : bit_8;
     signal inst_fetched    : bit_1;
     signal rz_empty        : bit_1;
+    signal dpcr            : bit_32 := (others => '0');
 
     -- Debug Signals DP
     signal debug_pc_out         : bit_15;
@@ -120,6 +121,7 @@ architecture combined of recop is
             ir_opcode       : out bit_8;
             inst_fetched    : out bit_1;
             rz_empty        : out bit_1;
+            dpcr            : out bit_32;
             -- Debug Signals
             debug_pc_out        : out bit_15;
             debug_fetch_state   : out bit_2;
@@ -169,11 +171,6 @@ architecture combined of recop is
         );
     end component;
 
-    -- These cache may not be accurate, the initial values depend on the individual ASPs
-    signal avg_window   : bit_3 := "100";   -- Default AVG Window
-    signal corr_window  : bit_4 := "0100";  -- Default Correlation Window
-    signal peak_type    : bit_1 := '1';     -- Default Peak Type (Low)
-
     signal sendSignal   : tdma_min_port := (others => (others => '0'));
 begin
     -- BCD to 7-segment decoder instances
@@ -203,6 +200,7 @@ begin
             alu_sel_op2     => alu_sel_op2,
             dpcr_write_flag => dpcr_write_flag,
             dpcr_sel        => dpcr_sel,
+            dpcr            => dpcr,
             irq_clr         => irq_clr,
             sop_write       => sop_write,
             alu_z_flag      => alu_z_flag,
@@ -264,49 +262,49 @@ begin
         variable reset_counter : integer := 0;
     begin
         if (rising_edge(clock)) then
-            -- To be replaced with keys, this is for modelsim
             if (reset_counter < 100) then
                 reset <= '1';
                 reset_counter := reset_counter + 1;
             else
-                reset <= '0';
-            end if;
-            -- Button/Key 0 is used for reset, dis
-            if (key(1) = '0') then                          -- 2nd Button Pressed
-                sendSignal.addr <= "00000001";                  -- To ADCAsp
-                sendSignal.data <= (others => '0');             -- Clear
-                sendSignal.data(31 downto 28) <= "1001";        -- Config Packet
-                sendSignal.data(23) <= '0';                     -- ADC Config Packet
-                sendSignal.data(9 downto 0) <= sw;              -- ADC Sampling Delay/Period by Switches
-            elsif (key(2) = '0') then                       -- 3rd Button Pressed
-                sendSignal.addr <= "00000010";                  -- To LAF
-                sendSignal.data <= (others => '0');             -- Clear
-                sendSignal.data(31 downto 28) <= "1001";        -- Config Packet
-                sendSignal.data(23) <= '1';                     -- LAF Config Packet
-                sendSignal.data(9 downto 3) <= sw(9 downto 3);  -- Correlation Sample Interval by Switches
-                sendSignal.data(2 downto 0) <= sw(2 downto 0);  -- AVG Window by Switches | 000 = 4, 001 = 8, 010 = 16, 011 = 32, 100 = 64 
-                avg_window <= sw(2 downto 0);                   -- Update AVG Window Cache
-            elsif (key(3) = '0') then                       -- 4th Button Pressed
-                sendSignal.addr <= "00000011";                  -- To CorAsp
-                sendSignal.data <= (others => '0');             -- Clear
-                sendSignal.data(31 downto 28) <= "1010";        -- Cor Config Packet
-                sendSignal.data(3 downto 0) <= sw(3 downto 0);  -- Correlation Window by Switches
-                corr_window <= sw(3 downto 0);                  -- Update Correlation Window Cache
-            elsif (key(3) = '0') then                       -- 4th Button Pressed
-                -- sendSignal.addr <= "00000100";                  -- To PeakAsp  
-                -- sendSignal.data <= (others => '0');             -- Clear
-                -- sendSignal.data(31 downto 28) <= "1011";        -- Config Packet
-                -- sendSignal.data(0) <= sw(0);                    -- Peak mode low or high
-                -- peak_type <= sw(0);                             -- Update Peak Type Cache
-            else
-                sendSignal.addr <= (others => '0');  -- Clear
-                sendSignal.data <= (others => '0');  -- Clear
+                if (key(0) = '0') then -- First Button Pressed: Reset
+                    reset <= '1';
+                else
+                    reset <= '0';
+                    if (dpcr(31 downto 28) = "0000") then           -- DPCR is empty
+                        if (key(1) = '0') then                          -- 2nd Button Pressed
+                            sendSignal.addr <= "00000001";                  -- To ADCAsp
+                            sendSignal.data <= (others => '0');             -- Clear
+                            sendSignal.data(31 downto 28) <= "1001";        -- Config Packet
+                            sendSignal.data(23) <= '0';                     -- ADC Config Packet
+                            sendSignal.data(3) <= sw(3);                    -- ADC Bit Size
+                            sendSignal.data(2 downto 0) <= sw(2 downto 0);  -- ADC Sampling Delay/Period | 1 | 2 | 4 | 8 | 16 | 32 | 64 | 128 |
+                        elsif (key(2) = '0') then                       -- 3rd Button Pressed
+                            sendSignal.addr <= "00000010";                  -- To LAF
+                            sendSignal.data <= (others => '0');             -- Clear
+                            sendSignal.data(31 downto 28) <= "1001";        -- Config Packet
+                            sendSignal.data(23) <= '1';                     -- LAF Config Packet
+                            sendSignal.data(9 downto 3) <= sw(9 downto 3);  -- Correlation Sample Interval
+                            sendSignal.data(2 downto 0) <= sw(2 downto 0);  -- AVG Window | 4 | 8 | 16 | 32 | 64 |
+                        elsif (key(3) = '0') then                       -- 4th Button Pressed
+                            sendSignal.addr <= "00000011";                  -- To CorAsp
+                            sendSignal.data <= (others => '0');             -- Clear
+                            sendSignal.data(31 downto 28) <= "1010";        -- Cor Config Packet
+                            sendSignal.data(2 downto 0) <= sw(2 downto 0);  -- Correlation Window
+                        else
+                            sendSignal.addr <= (others => '0');  -- Clear
+                            sendSignal.data <= (others => '0');  -- Clear
+                        end if;
+                    else                                            -- DPCR is not empty
+                        sendSignal.addr <= (others => '0');                     -- Clear
+                        sendSignal.addr(3 downto 0) <= dpcr(27 downto 24);      -- Target Address
+                        sendSignal.data <= (others => '0');                     -- Clear
+                        sendSignal.data(31 downto 28) <= dpcr(31 downto 28);    -- Packet Type
+                        sendSignal.data(23 downto 0) <= dpcr(23 downto 0);      -- Data
+                    end if;
+                end if;
             end if;
         end if;
     end process;
-
-    -- AVG Window(3), Correlation Window(4), Peak Type(1)
-    ledr <= avg_window & '0' & corr_window & '0' & peak_type;
 
     send <= sendSignal;
 end combined;
