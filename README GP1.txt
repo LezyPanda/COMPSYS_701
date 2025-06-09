@@ -6,8 +6,6 @@ Simulate -> Start Simulation.. -> select work/recop_tb2
 Add desired signals to Waves
 Transcript -> run xxx ns
 
-To Update Memory (mif) just recompile everything and Simulate -> Restart
-
 -- Quartus Setup --
 open ../ReCOP (To be sorted)/recop.qpf
 Start Compilation

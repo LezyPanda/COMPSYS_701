@@ -120,7 +120,6 @@ begin
         variable counter : integer := 0;
 	begin
 		if rising_edge(clock) then
-            -- increment play_signal address when ADC ready (bit 10)
             if send_port(1).data(10) = '1' then
                 counter := counter + 1;
                 signal_gen_addr <= counter mod ROM_DEPTH_C;
