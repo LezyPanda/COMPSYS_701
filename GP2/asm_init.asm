@@ -1,3 +1,4 @@
+	NOOP					;              31~28 = Packet   27~24 = Addr
 	LDR R0 #0x9100			;ADC 	Config 31~28 = 1001, 	27~24 = 0001,	23 = 0
 	DATACALL2 R0 #0x0004 	;ADC 	Config 3	 = 0, 		  2~0 = 100
 	LDR R0 #0x9280			;LAF 	Config 31~28 = 1001, 	27~24 = 0002,	23 = 1
