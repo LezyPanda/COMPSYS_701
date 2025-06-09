@@ -17,6 +17,7 @@ end entity;
 architecture aADCAsp of ADCAsp is
     signal adc_sample_delay : integer range 0 to 255 := 16;
     signal sendSignal       : tdma_min_port;
+    signal bit_size       : std_logic := '0';
 begin 
     clock_process: process(clock)
         variable adc_sample_delay_counter : integer range 0 to 65535 := 0;
@@ -35,15 +36,24 @@ begin
                     when others => adc_sample_delay <= 255;
                 end case;
             end if;
+
+
+            if (recv.data(31 downto 28) = "1001" and recv.data(23) = '0' and recv.data(3) = '0') then      -- ADC Config
+                bit_size <= '0'; --8 bit
+            else
+                bit_size <= '1'; --10 bit
+            end if;
+
             if adc_sample_delay_counter >= adc_sample_delay then -- Delay has Expired, Read ADC
                 adc_sample_delay_counter := 0;
 
                 sendSignal.addr <= "00000010";              -- To LAFAsp
                 sendSignal.data <= (others => '0');         -- Clear
+
                 sendSignal.data(31 downto 28) <= "1000";    -- Data Packet
                 sendSignal.data(23 downto 20) <= "0001";    -- MODE
-                sendSignal.data(10) <= '1';                  -- ADC Ready
-                sendsignal.data(11) <= '0';                  -- 8 bit
+                sendSignal.data(10) <= '1';                 -- ADC Ready
+                sendsignal.data(11) <= bit_size;            -- bit size  
                 sendSignal.data(9 downto 0) <= adc;         -- ADC Data
                 
             else
