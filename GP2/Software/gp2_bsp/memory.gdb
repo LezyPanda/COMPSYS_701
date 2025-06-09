@@ -3,7 +3,7 @@
 # Machine generated for CPU 'cpu' in SOPC Builder design 'Nios_V1'
 # SOPC Builder design path: ../../Nios_V1.sopcinfo
 #
-# Generated: Fri Jun 06 10:28:38 NZST 2025
+# Generated: Mon Jun 09 16:46:45 NZST 2025
 
 # DO NOT MODIFY THIS FILE
 #

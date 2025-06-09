@@ -27,7 +27,7 @@ architecture rtl of TopLevel is
 	-- ROM parameters
 	constant ROM_DEPTH_C : integer := 4096;
 	constant ADDR_WIDTH  : integer := 12;
-	signal clock : std_logic;
+	signal clock : std_logic := '0';
 	signal send_port : tdma_min_ports(0 to ports - 1);
 	signal recv_port : tdma_min_ports(0 to ports - 1);
 	signal signal_gen_addr : integer range 0 to ROM_DEPTH_C - 1 := 0;
@@ -132,10 +132,10 @@ begin
         variable counter : integer := 0;
 	begin
 		if (rising_edge(clock)) then
-            if (send_port(1).data(8) = '1') then -- ADC has sent the data
-                counter := counter + 1;
-                signal_gen_addr <= counter mod ROM_DEPTH_C;
-            end if;
+			if (send_port(1).data(10) = '1') then -- ADC has sent the data
+				counter := counter + 1;
+				signal_gen_addr <= counter mod ROM_DEPTH_C;
+			end if;
 		end if;
 	end process;
 end architecture;

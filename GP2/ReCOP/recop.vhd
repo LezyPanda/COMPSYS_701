@@ -257,7 +257,6 @@ begin
 
     clk <= clock;
 
-    
     process(clock)
         variable reset_counter : integer := 0;
     begin
@@ -306,5 +305,6 @@ begin
         end if;
     end process;
 
+    ledr <= sw;
     send <= sendSignal;
 end combined;

@@ -57,6 +57,7 @@ begin
 				elsif (recv.data(23 downto 20) = "0110") then 									-- Correlation Count Read Packet
 					correlation_peak_read  <= recv.data(1);											-- Set Correlation Peak Read
 					correlation_count_read := recv.data(0);											-- Set Correlation Count Read
+					peak_detected <= '0';															-- Reset Peak Detected
 				end if;
 			end if;
 
@@ -90,42 +91,39 @@ begin
 				last_slope_pos <= curr_slope_pos;
         	end if;
 
+			-- if (correlation_peak_read = '1' and peak_detect_sent = '1') then			-- Correlation Peak Read
+			-- 	sendSignal.addr <= "00000111"; 												-- To Nios
+			-- 	sendSignal.data <= (others => '0'); 										-- Clear Data
+			-- 	sendSignal.data(31 downto 28) <= "1000"; 									-- Data Packet
+			-- 	sendSignal.data(23 downto 20) <= "1000"; 									-- MODE
 
-
-			if (correlation_peak_read = '1' and peak_detect_sent = '1') then									-- Correlation Peak Read
-				sendSignal.addr <= "00000111"; 												-- To Nios
-				sendSignal.data <= (others => '0'); 										-- Clear Data
-				sendSignal.data(31 downto 28) <= "1000"; 									-- Data Packet
-				sendSignal.data(23 downto 20) <= "1000"; 									-- MODE
-
-				if (send_half = '0') then													-- Send First Half of Correlation Value
-					send_half <= '1';															-- Set Send Half
-					sendSignal.data(18) <= '0';													-- First Half
-					if (peak_type = '0') then
-						sendSignal.data(17 downto 0) <= correlation_min(35 downto 18); 	-- Send First Half of Min Correlation Value
-					else
-						sendSignal.data(17 downto 0) <= correlation_max(35 downto 18); 	-- Send First Half of Nax Correlation Value
-					end if;
-				else																		-- Send Second Half of Correlation Value
-					send_half <= '0';															-- Reset Send Half
-					sendSignal.data(18) <= '1';													-- Second Half
-					if (peak_type = '0') then
-						sendSignal.data(17 downto 0) <= correlation_min(17 downto 0); 	-- Send Second Half of Min Correlation Value
-					else
-						sendSignal.data(17 downto 0) <= correlation_max(17 downto 0); 	-- Send Second Half of Nax Correlation Value
-					end if;							
-					peak_detect_sent <= '0';												-- Reset Peak Detect Sent Flag
-					correlation_peak_read <= '0';									-- Reset Correlation Peak Read Flag
-				end if;
-			elsif (peak_detected = '1') then												-- Peak Detected
+			-- 	if (send_half = '0') then													-- Send First Half of Correlation Value
+			-- 		send_half <= '1';															-- Set Send Half
+			-- 		sendSignal.data(18) <= '0';													-- First Half
+			-- 		if (peak_type = '0') then
+			-- 			sendSignal.data(17 downto 0) <= correlation_min(35 downto 18); 	-- Send First Half of Min Correlation Value
+			-- 		else
+			-- 			sendSignal.data(17 downto 0) <= correlation_max(35 downto 18); 	-- Send First Half of Nax Correlation Value
+			-- 		end if;
+			-- 	else																		-- Send Second Half of Correlation Value
+			-- 		send_half <= '0';															-- Reset Send Half
+			-- 		sendSignal.data(18) <= '1';													-- Second Half
+			-- 		if (peak_type = '0') then
+			-- 			sendSignal.data(17 downto 0) <= correlation_min(17 downto 0); 	-- Send Second Half of Min Correlation Value
+			-- 		else
+			-- 			sendSignal.data(17 downto 0) <= correlation_max(17 downto 0); 	-- Send Second Half of Nax Correlation Value
+			-- 		end if;							
+			-- 		peak_detect_sent <= '0';												-- Reset Peak Detect Sent Flag
+			-- 		correlation_peak_read <= '0';									-- Reset Correlation Peak Read Flag
+			-- 	end if;
+			if (peak_detected = '1') then												-- Peak Detected
 				sendSignal.addr <= "00000111"; 												-- To Nios
 				sendSignal.data <= (others => '0'); 										-- Clear Data
 				sendSignal.data(31 downto 28) <= "1000"; 									-- Data Packet
 				sendSignal.data(23 downto 20) <= "0111"; 									-- MODE
 				sendSignal.data(18) <= '1';													-- Peak Detected
 				sendSignal.data(17 downto 0) <= std_logic_vector(counter_prev); 			-- Send Counter Value
-				peak_detect_sent <= '1';														-- Set Peak Detect Sent Flag
-				peak_detected <= '0';														-- Reset Peak Detected Flag
+				peak_detect_sent <= '1';													-- Set Peak Detect Sent Flag
 			else
 				sendSignal.addr <= (others => '0'); 										-- Clear
 				sendSignal.data <= (others => '0'); 										-- Clear
