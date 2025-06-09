@@ -25,6 +25,7 @@ begin
     begin
         if reset = '1' then
             pc_out_signal <= "000000000000000";
+            prev_write_flag <= '0';
         -- Only want to check for write flag change
         elsif rising_edge(clk) and pc_write_flag /= prev_write_flag then
             prev_write_flag <= pc_write_flag;

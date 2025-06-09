@@ -376,7 +376,7 @@ begin
 
 
     -- Instruction Register
-    fsm_process : process(clk, reset, next_fetch_state)
+    fsm_process : process(clk, reset)
     begin
         if reset = '1' then
             fetch_state <= IDLE;
@@ -384,12 +384,21 @@ begin
             fetch_state <= next_fetch_state;
         end if;
     end process fsm_process;
-    ir_process : process(clk, reset, ir_fetch_start, pc_out, prog_mem_out)
+    ir_process : process(clk, reset)
     begin
         if reset = '1' then
             next_fetch_state <= IDLE;
             fetch_inst_1 <= (others => '0');
             fetch_inst_2 <= (others => '0');
+            inst_fetched_signal <= '0';
+            rf_input_sel <= "000";
+            rz_max <= (others => '0');
+            sip_hold <= (others => '0');
+            er_temp <= '0';
+            dprr_res <= '0';
+            dprr_res_reg <= '0';
+            dprr_wren <= '0';
+            prog_mem_in <= (others => '0');
         elsif rising_edge(clk) then
             inst_fetched_signal <= '0';
             case fetch_state is

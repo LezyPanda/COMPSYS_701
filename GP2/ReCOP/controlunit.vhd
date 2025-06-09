@@ -60,6 +60,7 @@ architecture behaviour of control_unit is
     signal dm_write_signal          : bit_1 := '0';
     signal ir_fetch_start_signal    : bit_1 := '0';
     signal rf_sel_in_signal         : bit_3 := (others => '0');
+    signal rf_write_signal          : bit_1 := '0';
     signal alu_operation_signal     : bit_3 := alu_idle;
     signal alu_sel_op1_signal       : bit_2 := "00";
     signal alu_sel_op2_signal       : bit_1 := '0';
@@ -68,7 +69,7 @@ architecture behaviour of control_unit is
     signal irq_clr_signal            : bit_1 := '0';
     signal sop_write_signal         : bit_1 := '0';
     signal alu_clr_z_flag_signal    : bit_1 := '0';
-    signal rf_write_signal          : bit_1 := '0';
+    
    
 
 begin
@@ -105,14 +106,23 @@ begin
         opcode  := ir_opcode(5 downto 0);
 
         if (reset = '1') then
-            dm_write_signal         <= '0';
-            rf_write_signal         <= '0';
-            pc_write_flag_signal    <= '0';
-            dpcr_write_flag_signal  <= '0';
-            irq_clr_signal           <= '0';
-            alu_clr_z_flag_signal   <= '0';
-            sop_write_signal        <= '0';
-            ir_fetch_start_signal   <= '0';
+            next_state <= T1;
+            pc_write_flag_signal <= '0';
+            pc_mode_signal <= pc_mode_incr_1;
+            dm_sel_addr_signal <= dm_sel_addr_value;
+            dm_sel_in_signal <= dm_sel_in_value;
+            dm_write_signal <= '0';
+            ir_fetch_start_signal <= '0';
+            rf_sel_in_signal <= rf_sel_in_value;
+            rf_write_signal <= '0';
+            alu_operation_signal <= alu_idle;
+            alu_sel_op1_signal <= alu_sel_op1_value;
+            alu_sel_op2_signal <= alu_sel_op2_rz;
+            dpcr_sel_signal <= dpcr_value;
+            dpcr_write_flag_signal <= '0';
+            irq_clr_signal <= '0';
+            sop_write_signal <= '0';
+            alu_clr_z_flag_signal <= '0';
         elsif (rising_edge(clk)) then
             -- Default Values
             pc_write_flag_signal    <= '0';

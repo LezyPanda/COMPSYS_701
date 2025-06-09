@@ -365,3 +365,21 @@ Caused by: org.eclipse.swt.SWTException: Widget is disposed
 
 !ENTRY com.altera.sbtgui.launch 1 0 2025-06-09 16:48:16.513
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/thoye/Desktop/COMPSYS_701/GP2/Software/gp2/gp2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-06-09 18:30:21.719
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-06-09 18:30:22.216
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-06-09 18:30:23.980
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/thoye/Desktop/COMPSYS_701/GP2/Software/gp2/gp2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-06-09 18:52:55.804
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-06-09 18:52:56.298
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2025-06-09 18:52:58.059
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/thoye/Desktop/COMPSYS_701/GP2/Software/gp2/gp2.elf]

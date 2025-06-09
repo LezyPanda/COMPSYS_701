@@ -257,6 +257,7 @@ begin
 
     clk <= clock;
 
+    
     process(clock)
         variable reset_counter : integer := 0;
     begin
@@ -267,6 +268,8 @@ begin
             else
                 if (key(0) = '0') then -- First Button Pressed: Reset
                     reset <= '1';
+                    sendSignal.addr <= (others => '0');  -- Clear
+                    sendSignal.data <= (others => '0');  -- Clear
                 else
                     reset <= '0';
                     if (dpcr(31 downto 28) = "0000") then           -- DPCR is empty
@@ -305,6 +308,5 @@ begin
         end if;
     end process;
 
-    ledr <= sw;
     send <= sendSignal;
 end combined;
