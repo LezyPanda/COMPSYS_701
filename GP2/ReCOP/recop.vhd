@@ -308,5 +308,6 @@ begin
         end if;
     end process;
 
+    ledr <= sw;
     send <= sendSignal;
 end combined;
