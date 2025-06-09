@@ -7,15 +7,15 @@ library work;
 use work.TdmaMinTypes.all;
 use work.signal_rom_pkg.all;
 
-entity LAFAsp_WithRAM_tb2 is
+entity AvgAsp_WithRAM_tb2 is
 end entity;
 
-architecture sim of LAFAsp_WithRAM_tb2 is
+architecture sim of AvgAsp_WithRAM_tb2 is
     constant CLK_PERIOD : time := 10 ns;
     constant ROM_DEPTH  : integer := SIGNAL_ROM'length;
 
     -- Component Declaration
-    component LAFAsp_RAM
+    component AvgAsp_RAM
         generic (
             WINDOW_SIZE : natural := 64
         );
@@ -37,7 +37,7 @@ architecture sim of LAFAsp_WithRAM_tb2 is
 begin
 
     -- Instantiate DUT
-    UUT: LAFAsp_RAM
+    UUT: AvgAsp_RAM
         generic map (WINDOW_SIZE => 64)
         port map (
             clock         => clock,

@@ -7,7 +7,7 @@ library altera_mf;
 use altera_mf.all;
 
 -- get data from signal rom pkg
-entity play_signal is
+entity SignalGen is
 	port (
 		clk   : in  std_logic;
 		addr  : in  integer range 0 to 4095;
@@ -17,7 +17,7 @@ entity play_signal is
 	);
 end entity;
 
-architecture rtl of play_signal is
+architecture aSignalGen of SignalGen is
     signal sendSignal : tdma_min_port := (others => (others => '0'));
 
     -- ROM parameters

@@ -1,6 +1,7 @@
-To update mif:
+-- Update .mif --
 - Modify asm_init.asm
 - Run asm_to_mif.py
+
 
 -- Quartus Setup --
 open ../GP2/GP2.qpf
@@ -14,11 +15,14 @@ Change the File for Device 5CSEMA5 to ../GP2/output files/GP2.sof
 Tick Program/Configure for 5CSEMA5
 Start
 
--- Nios II Setup
+
+-- Nios II Setup --
 Quartus -> Eclipse
 Open ../GP2/Software
+Generate BSP on gp2_gsp
 Build Both Projects
-Run As -> Nios II Hardware
+gp2 -> Run As -> Nios II Hardware
+
 
 -- ModelSim Setup --
 Setup Quartus Fist
@@ -26,6 +30,10 @@ Start Simulation From Quartus
 Compile TopLevelTest.vhd
 Simulate topleveltest
 
+
 -- FPGA Control --
 KEY0    -> Reset All
 KEY1~2  -> Send current SW to corresponding ASP to configure
+
+-- IPs --
+The Individual Projects are under ../ip/

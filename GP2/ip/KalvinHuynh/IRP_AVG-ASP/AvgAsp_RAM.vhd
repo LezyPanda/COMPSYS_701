@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 library work;
 use work.TdmaMinTypes.all;
 
-entity LAFAsp_RAM is
+entity AvgAsp_RAM is
     port (
         clock         : in  std_logic;
         recv          : in  tdma_min_port;
@@ -13,7 +13,7 @@ entity LAFAsp_RAM is
     );
 end entity;
 
-architecture rtl of LAFAsp_RAM is
+architecture rtl of AvgAsp_RAM is
     signal avg_data_sig         : std_logic_vector(15 downto 0) := (others => '0');
     signal avg_ready_sig        : std_logic := '0';
     signal prev_corr_calculate  : std_logic := '0';
@@ -25,7 +25,7 @@ architecture rtl of LAFAsp_RAM is
     signal sendSignal       : tdma_min_port := (others => (others => '0'));
     signal read_request     : std_logic := '0';
 begin
-    LDR: entity work.LAFAsp
+    LDR: entity work.AvgAsp
         port map (
             clock           => clock,
             recv            => recv,

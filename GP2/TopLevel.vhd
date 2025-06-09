@@ -72,7 +72,7 @@ begin
 		recv  => recv_port(1)
 	);
 	
-	asp_laf : entity work.LAFAsp_RAM
+	asp_laf : entity work.AvgAsp_RAM
 	port map (
 		clock => clock,
 		send  => send_port(2),
@@ -103,7 +103,7 @@ begin
 		recv  => recv_port(5)
 	);
 
-	signal_gen : entity work.play_signal
+	signal_gen : entity work.SignalGen
 	port map (
 		clk   => clock,
 		addr  => signal_gen_addr,

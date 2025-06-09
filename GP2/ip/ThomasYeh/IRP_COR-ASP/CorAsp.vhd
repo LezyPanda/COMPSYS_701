@@ -149,7 +149,7 @@ begin
                 sendSignal.data(17 downto 0) <= correlation(17 downto 0);   -- Second Half of Correlation
                 correlation_second_half <= '0';                             -- Reset Second Half Flag
             elsif (send_avg_data_rq = '1' and has_send_avg_data_rq = '0') then -- Send Average Data Request
-                sendSignal.addr <= "00000010";                              -- To LAFAsp
+                sendSignal.addr <= "00000010";                              -- To AvgAsp
                 sendSignal.data <= (others => '0');                         -- Clear
                 sendSignal.data(31 downto 28) <= "1000";                    -- Data Packet
                 sendSignal.data(23 downto 20) <= "0010";                    -- MODE

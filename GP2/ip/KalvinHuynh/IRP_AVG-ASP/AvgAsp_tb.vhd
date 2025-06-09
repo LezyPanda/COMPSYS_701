@@ -7,14 +7,14 @@ library work;
 use work.TdmaMinTypes.all;
 use work.signal_rom_pkg.all;
 
-entity LAFAsp_tb is
+entity AvgAsp_tb is
 end entity;
 
-architecture sim of LAFAsp_tb is
+architecture sim of AvgAsp_tb is
     constant CLK_PERIOD : time := 10 ns;
     constant ROM_DEPTH  : integer := SIGNAL_ROM'length;
     -- Component Declaration
-    component LAFAsp
+    component AvgAsp
         generic (
             WINDOW_SIZE : natural := 64
         );
@@ -44,7 +44,7 @@ architecture sim of LAFAsp_tb is
 begin
 
     -- Instantiate Device Under Test
-    UUT: LAFAsp
+    UUT: AvgAsp
         generic map (WINDOW_SIZE => 64)
         port map (
             clock     => clock,

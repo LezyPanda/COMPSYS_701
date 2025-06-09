@@ -47,7 +47,7 @@ begin
             if adc_sample_delay_counter >= adc_sample_delay then -- Delay has Expired, Read ADC
                 adc_sample_delay_counter := 0;
 
-                sendSignal.addr <= "00000010";              -- To LAFAsp
+                sendSignal.addr <= "00000010";              -- To AvgAsp
                 sendSignal.data <= (others => '0');         -- Clear
 
                 sendSignal.data(31 downto 28) <= "1000";    -- Data Packet

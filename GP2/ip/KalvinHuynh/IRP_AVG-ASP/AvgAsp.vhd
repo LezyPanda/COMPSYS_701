@@ -5,7 +5,7 @@ use ieee.std_logic_1164.all;
 library work;
 use work.TdmaMinTypes.all;
 
-entity LAFAsp is
+entity AvgAsp is
     port (
         clock                   : in  std_logic;
         recv                    : in  tdma_min_port;   
@@ -15,7 +15,7 @@ entity LAFAsp is
     );
 end entity; -- tdma future 3 bits needed to use io to change from 4 8 16 32 64
 
-architecture rtl of LAFAsp is
+architecture rtl of AvgAsp is
     constant MAX_N          : natural := 64;  
     subtype sample_t is unsigned(9 downto 0);
     type buffer_t is array (0 to MAX_N - 1) of sample_t;
@@ -34,7 +34,7 @@ begin
         variable correlation_sample_interval_counter : integer range 0 to 255 := 0;
     begin
         if rising_edge(clock) then
-            if (recv.data(31 downto 28) = "1001" and recv.data(23) = '1') then      -- LAFAsp Config
+            if (recv.data(31 downto 28) = "1001" and recv.data(23) = '1') then      -- AvgAsp Config
                 correlation_sample_interval <= unsigned(recv.data(10 downto 3));        -- Correlation Sample Interval
                 case recv.data(2 downto 0) is                                           -- Window Size Selection
                     when "000" => desired_size := 4;
@@ -49,7 +49,7 @@ begin
                 else
                     avg_window_size <= desired_size;                -- Set Window Size
                 end if;
-            elsif (recv.data(31 downto 28) = "1000" and recv.data(23 downto 20) = "0001" and recv.data(9 downto 0) /= "0000000000") then -- LAFAsp ADC Data In Packet
+            elsif (recv.data(31 downto 28) = "1000" and recv.data(23 downto 20) = "0001" and recv.data(9 downto 0) /= "0000000000") then -- AvgAsp ADC Data In Packet
                 -- Moving Average Calculation
                 -- select 10-bit or 8-bit data based on flag at bit 11
                 if recv.data(11) = '1' then

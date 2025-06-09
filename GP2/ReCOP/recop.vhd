@@ -281,10 +281,10 @@ begin
                             sendSignal.data(3) <= sw(3);                    -- ADC Bit Size
                             sendSignal.data(2 downto 0) <= sw(2 downto 0);  -- ADC Sampling Delay/Period | 1 | 2 | 4 | 8 | 16 | 32 | 64 | 128 |
                         elsif (key(2) = '0') then                       -- 3rd Button Pressed
-                            sendSignal.addr <= "00000010";                  -- To LAF
+                            sendSignal.addr <= "00000010";                  -- To Avg
                             sendSignal.data <= (others => '0');             -- Clear
                             sendSignal.data(31 downto 28) <= "1001";        -- Config Packet
-                            sendSignal.data(23) <= '1';                     -- LAF Config Packet
+                            sendSignal.data(23) <= '1';                     -- Avg Config Packet
                             sendSignal.data(9 downto 3) <= sw(9 downto 3);  -- Correlation Sample Interval
                             sendSignal.data(2 downto 0) <= sw(2 downto 0);  -- AVG Window | 4 | 8 | 16 | 32 | 64 |
                         elsif (key(3) = '0') then                       -- 4th Button Pressed
